@@ -63,7 +63,6 @@ $k8s-node2_ip k8s-node2
 $k8s-lb1_ip k8s-lb1
 $k8s-lb2_ip k8s-lb2
 EOF
-
 ```
 
 ### 添加源 (每台主机都需要执行)
@@ -224,7 +223,6 @@ chmod +x cfssl_linux-amd64 cfssljson_linux-amd64 cfssl-certinfo_linux-amd64
 mv cfssl_linux-amd64 /usr/local/bin/cfssl
 mv cfssljson_linux-amd64 /usr/local/bin/cfssljson
 mv cfssl-certinfo_linux-amd64 /usr/bin/cfssl-certinfo
-
 ```
 ### 自答证书颁发机构（k8s-master1）
 ```
@@ -267,13 +265,11 @@ cat > ca-csr.json << EOF
     ]
 }
 EOF
-
 ```
 ### 生成证书(k8s-master1)
 ```
 cfssl gencert -initca ca-csr.json | cfssljson -bare ca -
 ls *pem
-
 ```
 ### 创建证书申请文件(k8s-master1)
 ```
@@ -298,14 +294,12 @@ cat > server-csr.json << EOF
     ]
 }
 EOF
-
 ```
 ### 生成证书(k8s-master1)
 ```
 cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=www server-csr.json | cfssljson -bare server
 
 ls server*pem
-
 ```
 ### 下载二进制文件(k8s-master1)
 `wget https://github.com/etcd-io/etcd/releases/download/v3.4.13/etcd-v3.4.13-linux-amd64.tar.gz `
@@ -315,7 +309,6 @@ ls server*pem
 mkdir /opt/etcd/{bin,cfg,ssl} -p
 tar zxvf etcd-v3.4.13-linux-amd64.tar.gz
 mv etcd-v3.4.13-linux-amd64/{etcd,etcdctl} /opt/etcd/bin/
-
 ```
 ### 创建etcd配置文件（k8s-master1）
 ```
@@ -332,7 +325,6 @@ ETCD_INITIAL_CLUSTER="etcd-1=https://$k8s-master1_ip:2380,etcd-2=https://$k8s-ma
 ETCD_INITIAL_CLUSTER_TOKEN="etcd-cluster"
 ETCD_INITIAL_CLUSTER_STATE="new"
 EOF
-
 ```
 
 ### systemd管理etcd(k8s-master1)
@@ -374,7 +366,6 @@ scp /usr/lib/systemd/system/etcd.service root@$k8s-master2_ip:/usr/lib/systemd/s
 scp -r /opt/etcd/ root@$k8s-master3_ip:/opt/
 
 scp /usr/lib/systemd/system/etcd.service root@$k8s-master3_ip:/usr/lib/systemd/system/
-
 ```
 
 ### 修正etcd配置(k8s-master2, k8s-master3)
@@ -392,18 +383,19 @@ ETCD_ADVERTISE_CLIENT_URLS="https://$k8s-master1_ip:2379" # 修改此处为当�
 ETCD_INITIAL_CLUSTER="etcd-1=https://$k8s-master1_ip:2380,etcd-2=https://$k8s-master2_ip:2380,etcd-3=https://$k8s-master3_ip:2380"
 ETCD_INITIAL_CLUSTER_TOKEN="etcd-cluster"
 ETCD_INITIAL_CLUSTER_STATE="new"
-
 ```
 ### 启动并设置开机启动（k8s-master{1,2,3}）
 ```
 systemctl daemon-reload
 systemctl start etcd
 systemctl enable etcd
-
 ```
 ### 检查etcd集群状态(k8s-master1)
-`ETCDCTL_API=3 /opt/etcd/bin/etcdctl --cacert=/opt/etcd/ssl/ca.pem --cert=/opt/etcd/ssl/server.pem --key=/opt/etcd/ssl/server-key.pem --endpoints="https://$k8s-master1_ip:2379,https://$k8s-master2_ip:2379,https://$k8s-master3_ip:2379" endpoint health
-`
+```
+ETCDCTL_API=3 /opt/etcd/bin/etcdctl --cacert=/opt/etcd/ssl/ca.pem --cert=/opt/etcd/ssl/server.pem --key=/opt/etcd/ssl/server-key.pem --endpoints="https://$k8s-master1_ip:2379,https://$k8s-master2_ip:2379,https://$k8s-master3_ip:2379" endpoint health
+```
+
+
 
 ## Master 部署（k8s-master1）
 ### 自签证书颁发机构
@@ -449,7 +441,6 @@ cat > ca-csr.json << EOF
     ]
 }
 EOF
-
 ```
 
 ### 生成CA证书(k8s-master1)
@@ -457,7 +448,6 @@ EOF
 cfssl gencert -initca ca-csr.json | cfssljson -bare ca -
 
 ls *pem
-
 ```
 ### 签发kube-apiserver https证书（k8s-master1）
 创建证书申请文件
@@ -495,14 +485,12 @@ cat > server-csr.json << EOF
     ]
 }
 EOF
-
 ```
 生成证书
 ```
 cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kubernetes server-csr.json | cfssljson -bare server
 
 ls server*pem
-
 ```
 ### 下载二进制文件(k8s-master1)
 `wget https://dl.k8s.io/v1.18.10/kubernetes-server-linux-amd64.tar.gz`
@@ -514,7 +502,6 @@ tar zxf kubernetes-server-linux-amd64.tar.gz
 cd kubernetes/server/bin
 cp kube-apiserver kube-scheduler kube-controller-manager /opt/kubernetes/bin
 cp kubectl /usr/bin/
-
 ```
 ### 部署kube-apiserver(k8s-master1)
 创建配置文件
@@ -548,12 +535,10 @@ KUBE_APISERVER_OPTS="--logtostderr=false \\
 --audit-log-maxsize=100 \\
 --audit-log-path=/opt/kubernetes/logs/k8s-audit.log"
 EOF
-
 ```
 拷贝证书
 ```
 cp ~/TLS/k8s/ca*pem ~/TLS/k8s/server*pem /opt/kubernetes/ssl/
-
 ```
 
 创建TLS Bootstrapping 机制token
@@ -561,12 +546,10 @@ cp ~/TLS/k8s/ca*pem ~/TLS/k8s/server*pem /opt/kubernetes/ssl/
 cat > /opt/kubernetes/cfg/token.csv << EOF
 8054b7219e601b121e8d2b4f73d255ad,kubelet-bootstrap,10001,"system:node-bootstrapper"
 EOF
-
 ```
 生成token命令
 ```
 head -c 16 /dev/urandom | od -An -t x | tr -d ' '
-
 ```
 
 systemd管理kube-apiserver
@@ -582,21 +565,18 @@ Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 EOF
-
 ```
 启动设置开机启动
 ```
 systemctl daemon-reload
 systemctl start kube-apiserver
 systemctl enable kube-apiserver
-
 ```
 授权kubelet-bootstrap用户允许请求证书
 ```
 kubectl create clusterrolebinding kubelet-bootstrap \
 --clusterrole=system:node-bootstrapper \
 --user=kubelet-bootstrap
-
 ```
 
 ### 部署kube-controller-manager(k8s-master1)
@@ -618,7 +598,6 @@ KUBE_CONTROLLER_MANAGER_OPTS="--logtostderr=false \\
 --service-account-private-key-file=/opt/kubernetes/ssl/ca-key.pem \\
 --experimental-cluster-signing-duration=876000h0m0s"
 EOF
-
 ```
 systemd管理controller-manager
 ```
@@ -633,14 +612,12 @@ Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 EOF
-
 ```
 启动并设置开机启动
 ```
 systemctl daemon-reload
 systemctl start kube-controller-manager
 systemctl enable kube-controller-manager
-
 ```
 ### 部署kube-scheduler(k8s-master1)
 创建配置文件
@@ -653,7 +630,6 @@ KUBE_SCHEDULER_OPTS="--logtostderr=false \
 --master=127.0.0.1:8080 \
 --bind-address=127.0.0.1"
 EOF
-
 ```
 systemd管理scheduler
 ```
@@ -668,14 +644,12 @@ Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 EOF
-
 ```
 启动并设置开机启动
 ```
 systemctl daemon-reload
 systemctl start kube-scheduler
 systemctl enable kube-scheduler
-
 ```
 
 ### 查看集群状态(k8s-master1)
@@ -686,12 +660,10 @@ kubectl get cs
 ### 创建工作目录
 ```
 mkdir -p /opt/kubernetes/{bin,cfg,ssl,logs}
-
 ```
 ### 拷贝二进制文件
 ```
 cp kubelet kube-proxy /opt/kubernetes/bin   # 本地拷贝
-
 ```
 ### 部署kubelet
 创建配置文件
@@ -708,7 +680,6 @@ KUBELET_OPTS="--logtostderr=false \\
 --cert-dir=/opt/kubernetes/ssl \\
 --pod-infra-container-image=lizhenliang/pause-amd64:3.0"
 EOF
-
 ```
 配置参数文件
 ```
@@ -744,7 +715,6 @@ evictionHard:
 maxOpenFiles: 1000000
 maxPods: 110
 EOF
-
 ```
 生成bootstrap.kubeconfig文件
 ```
@@ -768,12 +738,10 @@ kubectl config set-context default \
   --kubeconfig=bootstrap.kubeconfig
 
 kubectl config use-context default --kubeconfig=bootstrap.kubeconfig
-
 ```
 拷贝到配置文件路径：
 ```
 cp bootstrap.kubeconfig /opt/kubernetes/cfg
-
 ```
 systemd管理kubelet
 ```
@@ -789,37 +757,40 @@ LimitNOFILE=65536
 [Install]
 WantedBy=multi-user.target
 EOF
-
 ```
 启动并设置开机启动
 ```
 systemctl daemon-reload
 systemctl start kubelet
 systemctl enable kubelet
-
 ```
 ### 批准kubelet证书申请并加入集群
 查看kubelet证书请求
 
-`kubectl get csr`
+```
+kubectl get csr
+```
 
 批准
 
-`kubectl certificate approve $name`
+```
+kubectl certificate approve $name
+```
+
+
 
 ### 部署kube-proxy(k8s-master1)
 创建配置文件
-```
+```bash
 cat > /opt/kubernetes/cfg/kube-proxy.conf << EOF
 KUBE_PROXY_OPTS="--logtostderr=false \\
 --v=2 \\
 --log-dir=/opt/kubernetes/logs \\
 --config=/opt/kubernetes/cfg/kube-proxy-config.yml"
 EOF
-
 ```
 配置参数文件
-```
+```yaml
 cat > /opt/kubernetes/cfg/kube-proxy-config.yml << EOF
 kind: KubeProxyConfiguration
 apiVersion: kubeproxy.config.k8s.io/v1alpha1
@@ -830,10 +801,9 @@ clientConnection:
 hostnameOverride: k8s-master1
 clusterCIDR: 10.0.0.0/24
 EOF
-
 ```
 生成kube-proxy证书
-```
+```json
 # 切换工作目录
 cd ~/TLS/k8s
 
@@ -862,10 +832,9 @@ EOF
 cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kubernetes kube-proxy-csr.json | cfssljson -bare kube-proxy
 
 ls kube-proxy*pem
-
 ```
 生成kubeconfig文件：
-```
+```bash
 KUBE_APISERVER="https://$k8s-master1_ip:6443"
 
 kubectl config set-cluster kubernetes \
@@ -886,12 +855,10 @@ kubectl config set-context default \
   --kubeconfig=kube-proxy.kubeconfig
 
 kubectl config use-context default --kubeconfig=kube-proxy.kubeconfig
-
 ```
 拷贝到配置文件指定路径
 ```
 cp kube-proxy.kubeconfig /opt/kubernetes/cfg/
-
 ```
 systemd管理kube-proxy
 ```
@@ -907,26 +874,22 @@ LimitNOFILE=65536
 [Install]
 WantedBy=multi-user.target
 EOF
-
 ```
 启动并设置开机启动
 ```
 systemctl daemon-reload
 systemctl start kube-proxy
 systemctl enable kube-proxy
-
 ```
 ### 部署CNI网络(k8s-master1)
 下载文件
 ```
 wget https://github.com/containernetworking/plugins/releases/download/v0.8.7/cni-plugins-linux-amd64-v0.8.7.tgz
-
 ```
 解压
 ```
 mkdir -p /opt/cni/bin
 tar zxvf cni-plugins-linux-amd64-v0.8.7.tgz -C /opt/cni/bin
-
 ```
 部署
 ```
@@ -938,10 +901,9 @@ docker tag quay.io/coreos/flannel:v0.13.0-amd64 quay.io/
 coreos/flannel:v0.13.0
 
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-
 ```
 ### 授权apiserver访问kubelet
-```
+```yaml
 cat > apiserver-to-kubelet-rbac.yaml << EOF
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -980,7 +942,6 @@ subjects:
 EOF
 
 kubectl apply -f apiserver-to-kubelet-rbac.yaml
-
 ```
 ## 新加worker节点(k8s-node{1,2}以worker node加入k8s集群)
 ### 拷贝文件
@@ -994,47 +955,52 @@ scp -r /opt/kubernetes root@$k8s-node2_ip:/opt/
 scp -r /usr/lib/systemd/system/{kubelet,kube-proxy}.service root@$k8s-node2_ip:/usr/lib/systemd/system
 scp -r /opt/cni/ root@$k8s-node2_ip:/opt/
 scp -r /opt/kubernetes/ssl/ca.pem root@$k8s-node2_ip:/opt/kubernetes/ssl
-
 ```
 ### 删除kubelet证书和kubeconfig文件(k8s-node{1,2}上执行)
 ```
 rm -f /opt/kubernetes/cfg/kubelet.kubeconfig
 rm -f /opt/kubernetes/ssl/kubelet*
-
 ```
 ### 修改主机名
 k8s-node1执行
 ```
 sed -i "s/k8s-master1/k8s-node1/g" /opt/kubernetes/cfg/kubelet.conf
 sed -i "s/k8s-master1/k8s-node1/g" /opt/kubernetes/cfg/kube-proxy-config.yml
-
 ```
 k8s-node2执行
 ```
 sed -i "s/k8s-master1/k8s-node2/g" /opt/kubernetes/cfg/kubelet.conf
 sed -i "s/k8s-master1/k8s-node2/g" /opt/kubernetes/cfg/kube-proxy-config.yml
-
 ```
 ### 启动并设置开机启动(k8s-worker1/2上执行)
-```
+```bash
 systemctl daemon-reload
 systemctl start kubelet
 systemctl enable kubelet
 systemctl start kube-proxy
 systemctl enable kube-proxy
-
 ```
 ### 在Master上批准新Node kubelet证书申请(k8s-master1)
 ```
 kubectl get csr
-
 kubectl certificate approve $name
 ```
 ### 查看node状态(k8s-master1)
 `kubectl get node`
 
-## 部署CoreDNS(k8s-master1)
+### 调理master最大pod数量
+
 ```
+sed -i "s/110/1/g" /opt/kubernetes/cfg/kubelet-config.yml
+systemctl restart kubelet
+```
+
+限制master节点pod为1即仅有一个flannel的pod，使master节点更专注于其控制平面的功能。
+
+
+
+## 部署CoreDNS(k8s-master1)
+```yaml
 cat >coredns.yaml <<EOF
 apiVersion: v1
 kind: ServiceAccount
@@ -1240,15 +1206,16 @@ kubectl apply -f coredns.yaml
 
 ```
 查看pod状态
-```
+```bash
 kubectl get pods -n kube-system
-
 ```
 DNS解析测试
 
-`kubectl run -it --rm dns-test --image=busybox:1.28.4 sh`
+```
+kubectl run -it --rm dns-test --image=busybox:1.28.4 sh
 
-`nslookup kubernetes`
+nslookup kubernetes
+```
 
 正确解析示例
 ```
@@ -1527,7 +1494,7 @@ kubectl apply -f deploy.yaml
 ```
 
 
-# Kubefate
+# Kubefate(v1.4.4)
 假设有两个k8s集群，分别为A方， B方。
 
 A方信息如下
@@ -1543,7 +1510,9 @@ cd kubefate && wget https://github.com/FederatedAI/KubeFATE/releases/download/v1
 tar -zxvf kubefate-k8s-1.4.4.tar.gz
 ```
 ### 安装RBAC(AB双方master主机执行)
-`kubectl apply -f ./rbac-config.yaml`
+```
+kubectl apply -f ./rbac-config.yaml
+```
 
 ### 安装kubefate(AB双方master主机执行)
 ```
@@ -1553,14 +1522,20 @@ kubectl apply -f ./kubefate.yaml
 ### 创建命名空间(AB双方master主机执行)
 A方 master
 
-`kubectl create namespace fate-10000`
+```
+kubectl create namespace fate-10000
+````
 
 B方 master
 
-`kubectl create namespace fate-9999`
+````
+kubectl create namespace fate-9999
+````
 
 ### 检查pod状态(AB双方master主机执行)
-`kubectl get pod -n kube-fate`
+```
+kubectl get pod -n kube-fate
+````
 
 当所有pod状态均为runnging时执行下一步
 
@@ -1586,19 +1561,29 @@ sed -i "27s|192.168.10.1|192.168.92.128|" cluster.yaml
 sed -i '22,24d' cluster.yaml
 ```
 ### kubefate移入到服务(AB双方master主机执行)
-`chmod +x ./kubefate && sudo mv ./kubefate /usr/local/bin/kubefate`
+```
+chmod +x ./kubefate && sudo mv ./kubefate /usr/local/bin/kubefate
+```
 ### 获取kubefate的cluster ip(双方分别执行)
-`kubectl get svc -n kube-fate`
+```
+kubectl get svc -n kube-fate
+```
 
 假设得到ip 为$ip, 执行
 
-`echo $ip kubefate.net >> /etc/hosts`
+```
+echo $ip kubefate.net >> /etc/hosts
+```
 
 ### 开始部署(AB双方master主机执行)
-`kubefate cluster install -f ./cluster.yaml`
+```
+kubefate cluster install -f ./cluster.yaml
+```
 
 ### 查看部署进度(AB双方master主机执行)
-`kubefate job ls`
+```
+kubefate job ls
+```
 
 当状态为sucess时部署完成
 
@@ -1618,6 +1603,154 @@ A方master执行
 cd examples/toy_example/
 python run_toy_example.py 10000 9999 1
 ```
+# Kubefate(v1.5.0)
+假设有两个k8s集群，分别为A方， B方。
+
+A方信息如下
+
+## KubeFATE部署(AB双方master主机执行)
+### 新建kubefate文件夹（以后执行kubefate命令需要在此文件夹下）下载kubefate并解压
+```
+cd ~
+mkdir kubefate
+
+cd kubefate && wget https://github.com/FederatedAI/KubeFATE/releases/download/v1.5.0/kubefate-k8s-v1.5.0.tar.gz
+
+tar -zxvf kubefate-k8s-v1.5.0.tar.gz
+```
+### 安装RBAC(AB双方master主机执行)
+```
+kubectl apply -f ./rbac-config.yaml
+```
+
+### 安装kubefate(AB双方master主机执行)
+```
+sed -i "147s|8080|80|" kubefate.yaml
+kubectl apply -f ./kubefate.yaml
+```
+### 创建命名空间(AB双方master主机执行)
+A方 master
+
+```
+kubectl create namespace fate-10000
+```
+
+B方 master
+
+````
+kubectl create namespace fate-9999
+````
+
+### 检查pod状态(AB双方master主机执行)
+```
+kubectl get pod -n kube-fate
+```
+
+当所有pod状态均为runnging时执行下一步
+
+### 配置cluster信息
+A方 master
+
+```
+sed -i "s|registry: \"\"|registry: \"hub.c.163.com/federatedai\"|" cluster.yaml
+
+sed -i "1,5s|9999|10000|" cluster.yaml
+sed -i "21s|30009|30010|" cluster.yaml
+sed -i "26s|10000|9999|" cluster.yaml
+sed -i "27s|192.168.10.1|192.168.92.130|" cluster.yaml
+sed -i "28s|30010|30009|" cluster.yaml
+sed -i '22,24d' cluster.yaml
+```
+
+B方 master
+```
+sed -i "s|registry: \"\"|registry: \"hub.c.163.com/federatedai\"|" cluster.yaml
+
+sed -i "27s|192.168.10.1|192.168.92.128|" cluster.yaml
+sed -i '22,24d' cluster.yaml
+```
+### kubefate移入到服务(AB双方master主机执行)
+````
+chmod +x ./kubefate && sudo mv ./kubefate /usr/local/bin/kubefate
+````
+### 获取kubefate的cluster ip(双方分别执行)
+```
+kubectl get svc -n kube-fate
+```
+
+假设得到ip 为$ip, 执行
+
+```
+echo $ip kubefate.net >> /etc/hosts
+```
+### 修正mariadb
+进入mariadb容器
+```
+kubectl exec -it svc/mariadb -n kube-fate -- bash
+```
+登录mysql
+```
+mysql -u kubefate -p
+```
+密码:kubefate
+
+
+修正
+```
+use kube_fate;
+ALTER TABLE helm_charts MODIFY templates mediumblob;
+```
+退出 mysql
+```
+exit
+```
+退出容器
+```
+ctrl + A +D
+```
+### 开始部署(AB双方master主机执行)
+```
+kubefate cluster install -f ./cluster.yaml
+```
+
+### 查看部署进度(AB双方master主机执行)
+```
+kubefate job ls
+```
+
+当状态为sucess时部署完成
+
+## 测试toy_example
+### 双方分别进入容器
+A方 master
+
+```bash
+kubectl exec -it svc/fateflow -c python -n fate-10000 -- bash
+```
+
+B方 master
+
+```bash
+kubectl exec -it svc/fateflow -c python -n fate-9999 -- bash
+```
+
+### 开始测试
+A方master执行
+```
+cd examples/toy_example/
+python run_toy_example.py 10000 9999 1
+```
+
+## flow不能用的问题，解决办法
+
+```
+localedef -v -c -i en_US -f UTF-8 en_US.UTF-8
+echo "export LC_ALL=en_US.utf-8" >> /etc/profile
+source /etc/profile
+```
+
+
+
 # 参考
 
 https://blog.csdn.net/weixin_30254435/article/details/102045117
@@ -1640,3 +1773,26 @@ https://blog.csdn.net/weixin_30254435/article/details/102045117
 systemctl daemon-reload
 systemctl restart docker
 ```
+## 更改服务配置
+```
+kubectl edit service_name -n namespace_name
+```
+## 后期加入联邦学习的其他方
+```
+kubectl edit cm rollsite-config -n fate-10000
+```
+
+## k8s复制文件
+
+```
+kubectl cp $pods_name:$dir -c $container $destinction_dir -n $namespace
+# example
+kubectl cp python-5594d88c57-5lnxn:/data/projects/fate/logs/202011200231350021282 -c python ./log -n fate-10000
+```
+
+## stop_job
+
+```
+python fate_flow_client.py -f stop_job -j $job_id
+```
+
