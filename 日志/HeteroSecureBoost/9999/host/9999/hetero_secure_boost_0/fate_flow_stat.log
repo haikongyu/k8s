@@ -1,0 +1,3 @@
+[INFO] [2020-11-20 07:17:02,013] [20527:139871606757184] - pipelined_model.py[line:73]: Save hetero_secure_boost_0 model HeteroSecureBoostingTreeHostMeta buffer
+[INFO] [2020-11-20 07:17:02,016] [20527:139871606757184] - pipelined_model.py[line:73]: Save hetero_secure_boost_0 model HeteroSecureBoostingTreeHostParam buffer
+[INFO] [2020-11-20 07:17:02,062] [20527:139871606757184] - pipelined_model.py[line:78]: Save hetero_secure_boost_0 model successfully

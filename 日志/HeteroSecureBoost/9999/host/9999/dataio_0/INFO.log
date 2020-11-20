@@ -1,0 +1,41 @@
+[INFO] [2020-11-20 07:09:09,169] [19507:140606740244288] - task_executor.py[line:302]: report task 202011200707112994524_dataio_0 0 host 9999 to driver
+[INFO] [2020-11-20 07:09:09,172] [19507:140606740244288] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_dataio_0 0 on host 9999
+[INFO] [2020-11-20 07:09:22,396] [19507:140606740244288] - task_executor.py[line:156]: Run 202011200707112994524 dataio_0 202011200707112994524_dataio_0 host 9999 task
+[INFO] [2020-11-20 07:09:22,398] [19507:140606740244288] - task_executor.py[line:157]: Component parameters on party {'DataIOParam': {'input_format': 'dense', 'delimitor': ',', 'data_type': 'float64', 'exclusive_data_type': None, 'tag_with_value': False, 'tag_value_delimitor': ':', 'missing_fill': False, 'default_value': 0, 'missing_fill_method': None, 'missing_impute': None, 'outlier_replace': False, 'outlier_replace_method': None, 'outlier_impute': None, 'outlier_replace_value': 0, 'with_label': False, 'label_name': 'y', 'label_type': 'int', 'output_format': 'dense', 'need_run': True}, 'dsl_version': 2, 'initiator': {'role': 'guest', 'party_id': 10000}, 'role': {'host': [9999], 'guest': [10000]}, 'job_parameters': {'job_type': 'train', 'work_mode': 1, 'backend': 0, 'computing_engine': 'EGGROLL', 'federation_engine': 'EGGROLL', 'storage_engine': 'EGGROLL', 'engines_address': {'computing': {'cores_per_node': 20, 'nodes': 1}, 'federation': {'host': 'rollsite', 'port': 9370}, 'storage': {'cores_per_node': 20, 'nodes': 1}}, 'federated_mode': 'MULTIPLE', 'task_parallelism': 1, 'computing_partitions': 4, 'federated_status_collect_type': 'PUSH', 'model_id': 'guest-10000#host-9999#model', 'model_version': '202011200707112994524', 'eggroll_run': {'eggroll.session.processors.per.node': 4}, 'spark_run': {}, 'rabbitmq_run': {}, 'adaptation_parameters': {'task_nodes': 1, 'task_cores_per_node': 4, 'task_memory_per_node': 0}}, 'component_parameters': {'common': {'hetero_secure_boost_0': {'task_type': 'classification', 'objective_param': {'objective': 'cross_entropy'}, 'num_trees': 3, 'validation_freqs': 1, 'encrypt_param': {'method': 'iterativeAffine'}, 'tree_param': {'max_depth': 3}}, 'evaluation_0': {'eval_type': 'binary'}}, 'role': {'guest': {'0': {'reader_1': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'reader_0': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': True, 'output_format': 'dense'}, 'dataio_1': {'with_label': True, 'output_format': 'dense'}}}, 'host': {'0': {'reader_1': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'reader_0': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': False}, 'dataio_1': {'with_label': False}}}}}, 'config': '/data/projects/fate/python/fate_flow/examples/hetero_secureboost_conf.json', 'dsl': 'examples/hetero_secureboost_dsl.json', 'function': 'submit_job', 'local': {'role': 'host', 'party_id': 9999}, 'CodePath': 'federatedml/util/data_io.py/DataIO', 'module': 'DataIO', 'output_data_name': ['data']}
+[INFO] [2020-11-20 07:09:22,400] [19507:140606740244288] - task_executor.py[line:158]: Task input dsl {'data': {'data': ['reader_0.data']}}
+[INFO] [2020-11-20 07:09:22,402] [19507:140606740244288] - tracker_client.py[line:150]: Request read job 202011200707112994524 task None None on host 9999 data data info
+[INFO] [2020-11-20 07:09:22,563] [19507:140606740244288] - task_executor.py[line:260]: load computing table use 4
+[INFO] [2020-11-20 07:09:29,747] [19507:140606740244288] - data_io.py[line:118]: start to read dense data and change data to instance
+[INFO] [2020-11-20 07:09:31,900] [19507:140606740244288] - tracker_client.py[line:173]: Request save job 202011200707112994524 task 202011200707112994524_dataio_0 0 on host 9999 component summary
+[INFO] [2020-11-20 07:09:32,588] [19507:140606740244288] - profile.py[line:249]: 
+Computing:
++----------+---------------------------------------------+
+| function |  function    n   sum(s)   mean(s)   max(s)  |
+|          | ----------- --- -------- --------- -------- |
+|          |    load      1    6.63     6.63      6.63   |
+|          |  mapValues   2   2.075     1.038    1.534   |
+|          |    count     2   0.533     0.267    0.479   |
++----------+---------------------------------------------+
+|  total   |  n=5, sum=9.2391, mean=1.8478, max=6.6304   |
++----------+---------------------------------------------+
+
+Federation:
++--------+------------------------------------------+
+|  get   |                                          |
++--------+------------------------------------------+
+| remote |                                          |
++--------+------------------------------------------+
+| total  | n=0, sum=0.0000, mean=0.0000, max=0.0000 |
++--------+------------------------------------------+
+
+[INFO] [2020-11-20 07:09:33,529] [19507:140606740244288] - pipelined_model.py[line:73]: Save dataio_0 model DataIOMeta buffer
+[INFO] [2020-11-20 07:09:33,532] [19507:140606740244288] - pipelined_model.py[line:73]: Save dataio_0 model DataIOParam buffer
+[INFO] [2020-11-20 07:09:33,553] [19507:140606740244288] - pipelined_model.py[line:78]: Save dataio_0 model successfully
+[INFO] [2020-11-20 07:09:33,555] [19507:140606740244288] - task_executor.py[line:302]: report task 202011200707112994524_dataio_0 0 host 9999 to driver
+[INFO] [2020-11-20 07:09:33,557] [19507:140606740244288] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_dataio_0 0 on host 9999
+[INFO] [2020-11-20 07:09:34,679] [19507:140606740244288] - task_executor.py[line:207]: task 202011200707112994524_dataio_0 host 9999 start time: 2020-11-20 07:09:08
+[INFO] [2020-11-20 07:09:34,680] [19507:140606740244288] - task_executor.py[line:209]: task 202011200707112994524_dataio_0 host 9999 end time: 2020-11-20 07:09:33
+[INFO] [2020-11-20 07:09:34,682] [19507:140606740244288] - task_executor.py[line:211]: task 202011200707112994524_dataio_0 host 9999 takes 24.805s
+[INFO] [2020-11-20 07:09:34,684] [19507:140606740244288] - task_executor.py[line:214]: Finish 202011200707112994524 dataio_0 202011200707112994524_dataio_0 0 host 9999 task success
+[INFO] [2020-11-20 07:09:34,686] [19507:140606740244288] - task_executor.py[line:302]: report task 202011200707112994524_dataio_0 0 host 9999 to driver
+[INFO] [2020-11-20 07:09:34,688] [19507:140606740244288] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_dataio_0 0 on host 9999

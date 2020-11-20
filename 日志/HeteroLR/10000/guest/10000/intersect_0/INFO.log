@@ -1,0 +1,59 @@
+[INFO] [2020-11-20 02:33:33,012] [1300:139933096580928] - task_executor.py[line:302]: report task 202011200231350021282_intersect_0 0 guest 10000 to driver
+[INFO] [2020-11-20 02:33:33,013] [1300:139933096580928] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_intersect_0 0 on guest 10000
+[INFO] [2020-11-20 02:33:38,756] [1300:139933096580928] - task_executor.py[line:156]: Run 202011200231350021282 intersect_0 202011200231350021282_intersect_0 guest 10000 task
+[INFO] [2020-11-20 02:33:38,757] [1300:139933096580928] - task_executor.py[line:157]: Component parameters on party {'IntersectParam': {'intersect_method': 'raw', 'random_bit': 128, 'sync_intersect_ids': True, 'join_role': 'guest', 'with_encode': False, 'encode_params': {'salt': '', 'encode_method': 'none', 'base64': False}, 'only_output_key': False, 'intersect_cache_param': {'use_cache': False, 'id_type': 'phone', 'encrypt_type': 'sha256'}, 'repeated_id_process': False, 'repeated_id_owner': 'guest', 'allow_info_share': False, 'info_owner': 'guest'}, 'dsl_version': '2', 'initiator': {'role': 'guest', 'party_id': 10000}, 'role': {'guest': [10000], 'host': [9999], 'arbiter': [9999]}, 'job_parameters': {'job_type': 'train', 'work_mode': 1, 'backend': 0, 'computing_engine': 'EGGROLL', 'federation_engine': 'EGGROLL', 'storage_engine': 'EGGROLL', 'engines_address': {'computing': {'cores_per_node': 20, 'nodes': 1}, 'federation': {'host': 'rollsite', 'port': 9370}, 'storage': {'cores_per_node': 20, 'nodes': 1}}, 'federated_mode': 'MULTIPLE', 'task_parallelism': 2, 'computing_partitions': 8, 'federated_status_collect_type': 'PUSH', 'model_id': 'arbiter-9999#guest-10000#host-9999#model', 'model_version': '202011200231350021282', 'eggroll_run': {'eggroll.session.processors.per.node': 2}, 'spark_run': {'num-executors': 1, 'executor-cores': 2}, 'rabbitmq_run': {}, 'adaptation_parameters': {'task_nodes': 1, 'task_cores_per_node': 2, 'task_memory_per_node': 0}}, 'component_parameters': {'common': {'intersect_0': {'intersect_method': 'raw', 'sync_intersect_ids': True, 'only_output_key': False}, 'hetero_lr_0': {'penalty': 'L2', 'optimizer': 'rmsprop', 'alpha': 0.01, 'max_iter': 3, 'batch_size': 320, 'learning_rate': 0.15, 'init_param': {'init_method': 'random_uniform'}}}, 'role': {'guest': {'0': {'reader_0': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': True, 'label_name': 'y', 'label_type': 'int', 'output_format': 'dense'}}}, 'host': {'0': {'reader_0': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': False, 'output_format': 'dense'}}}}}, 'config': '/data/projects/fate/python/fate_flow/examples/test_hetero_lr_job_conf.json', 'dsl': 'examples/test_hetero_lr_job_dsl.json', 'function': 'submit_job', 'local': {'role': 'guest', 'party_id': 10000}, 'CodePath': 'federatedml/statistic/intersect/intersect_model.py/IntersectGuest', 'module': 'Intersection', 'output_data_name': ['train']}
+[INFO] [2020-11-20 02:33:38,758] [1300:139933096580928] - task_executor.py[line:158]: Task input dsl {'data': {'data': ['dataio_0.train']}}
+[INFO] [2020-11-20 02:33:38,758] [1300:139933096580928] - tracker_client.py[line:150]: Request read job 202011200231350021282 task None None on guest 10000 data train info
+[INFO] [2020-11-20 02:33:38,847] [1300:139933096580928] - task_executor.py[line:260]: load computing table use 8
+[INFO] [2020-11-20 02:33:45,152] [1300:139933096580928] - intersect_model.py[line:50]: Using raw intersection, role is guest
+[INFO] [2020-11-20 02:33:45,153] [1300:139933096580928] - intersect_guest.py[line:215]: Start raw intersection
+[INFO] [2020-11-20 02:33:45,154] [1300:139933096580928] - intersect.py[line:189]: Join id role is guest
+[INFO] [2020-11-20 02:34:03,203] [1300:139933096580928] - intersect.py[line:213]: Get ids_list from role-send, ids_list size is 1
+[INFO] [2020-11-20 02:34:03,453] [1300:139933096580928] - intersect.py[line:224]: Finish intersect_ids computing
+[INFO] [2020-11-20 02:34:03,463] [1300:139933096580928] - intersect.py[line:239]: Remote intersect ids to role-send
+[INFO] [2020-11-20 02:34:03,755] [1300:139933096580928] - intersect.py[line:82]: get intersect data_instances!
+[INFO] [2020-11-20 02:34:04,289] [1300:139933096580928] - intersect.py[line:261]: save guest_0's id in name:202011200231350021282_intersect_0_0_0, namespace:10000#None#mountain
+[INFO] [2020-11-20 02:34:04,290] [1300:139933096580928] - intersect_model.py[line:150]: Finish intersection
+[INFO] [2020-11-20 02:34:04,411] [1300:139933096580928] - tracker_client.py[line:70]: Request save job 202011200231350021282 task 202011200231350021282_intersect_0 0 on guest 10000 metric train intersection data
+[INFO] [2020-11-20 02:34:04,467] [1300:139933096580928] - tracker_client.py[line:103]: Request save job 202011200231350021282 task 202011200231350021282_intersect_0 0 on guest 10000 metric train intersection meta
+[INFO] [2020-11-20 02:34:04,515] [1300:139933096580928] - tracker_client.py[line:173]: Request save job 202011200231350021282 task 202011200231350021282_intersect_0 0 on guest 10000 component summary
+[INFO] [2020-11-20 02:34:05,246] [1300:139933096580928] - profile.py[line:249]: 
+Computing:
++----------+---------------------------------------------+
+| function |  function    n   sum(s)   mean(s)   max(s)  |
+|          | ----------- --- -------- --------- -------- |
+|          |  mapValues   1   5.628     5.628    5.628   |
+|          |    join      2   0.524     0.262    0.278   |
+|          |    load      1   0.326     0.326    0.326   |
+|          |    count     4   0.223     0.056    0.062   |
+|          |    save      1    0.21     0.21      0.21   |
+|          |   collect    1   0.004     0.004    0.004   |
++----------+---------------------------------------------+
+|  total   |  n=10, sum=6.9153, mean=0.6915, max=5.6280  |
++----------+---------------------------------------------+
+
+Federation:
++--------+-------------------------------------------------------------------------------------------------------------+
+|  get   |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.raw_intersect_transfer_varia | 1 | 12.414 | 12.414  | 12.414  |
+|        |               ble.RawIntersectTransferVariable.send_ids_host               |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| remote |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.raw_intersect_transfer_varia | 1 | 0.008  |  0.008  | 0.008   |
+|        |            ble.RawIntersectTransferVariable.intersect_ids_guest            |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| total  |                                 n=2, sum=12.4221, mean=6.2110, max=12.4144                                  |
++--------+-------------------------------------------------------------------------------------------------------------+
+
+[INFO] [2020-11-20 02:34:05,313] [1300:139933096580928] - intersect_model.py[line:168]: intersect_ids count:569
+[INFO] [2020-11-20 02:34:05,314] [1300:139933096580928] - intersect_model.py[line:169]: intersect_ids header schema:{'header': ['x0', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9'], 'sid_name': 'id', 'label_name': 'y'}
+[INFO] [2020-11-20 02:34:05,995] [1300:139933096580928] - task_executor.py[line:302]: report task 202011200231350021282_intersect_0 0 guest 10000 to driver
+[INFO] [2020-11-20 02:34:05,996] [1300:139933096580928] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_intersect_0 0 on guest 10000
+[INFO] [2020-11-20 02:34:06,249] [1300:139933096580928] - task_executor.py[line:207]: task 202011200231350021282_intersect_0 guest 10000 start time: 2020-11-20 02:33:32
+[INFO] [2020-11-20 02:34:06,249] [1300:139933096580928] - task_executor.py[line:209]: task 202011200231350021282_intersect_0 guest 10000 end time: 2020-11-20 02:34:05
+[INFO] [2020-11-20 02:34:06,250] [1300:139933096580928] - task_executor.py[line:211]: task 202011200231350021282_intersect_0 guest 10000 takes 33.298s
+[INFO] [2020-11-20 02:34:06,251] [1300:139933096580928] - task_executor.py[line:214]: Finish 202011200231350021282 intersect_0 202011200231350021282_intersect_0 0 guest 10000 task success
+[INFO] [2020-11-20 02:34:06,252] [1300:139933096580928] - task_executor.py[line:302]: report task 202011200231350021282_intersect_0 0 guest 10000 to driver
+[INFO] [2020-11-20 02:34:06,252] [1300:139933096580928] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_intersect_0 0 on guest 10000

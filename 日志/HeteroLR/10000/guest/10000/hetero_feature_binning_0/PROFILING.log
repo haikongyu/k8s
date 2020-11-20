@@ -1,0 +1,103 @@
+[DEBUG] [2020-11-20 02:34:44,924] [1681:139887538198336] - profile.py[line:84]: [computing#41d092c3c4]function_stack: [component_properties.py:225]extract_input_data <-[component_properties.py:238]extract_running_rules <-[model_base.py:87]run
+[DEBUG] [2020-11-20 02:34:44,925] [1681:139887538198336] - profile.py[line:87]: [computing#41d092c3c4]start
+[DEBUG] [2020-11-20 02:34:44,985] [1681:139887538198336] - profile.py[line:93]: [computing#41d092c3c4]done, elapse: 0.060768842697143555, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:34:44,992] [1681:139887538198336] - profile.py[line:84]: [computing#e499578e87]function_stack: [abnormal_detection.py:27]empty_table_detection <-[base_feature_binning.py:209]_abnormal_detection <-[hetero_binning_guest.py:38]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:34:44,992] [1681:139887538198336] - profile.py[line:87]: [computing#e499578e87]start
+[DEBUG] [2020-11-20 02:34:45,042] [1681:139887538198336] - profile.py[line:93]: [computing#e499578e87]done, elapse: 0.05061745643615723, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:34:45,046] [1681:139887538198336] - profile.py[line:84]: [computing#25c2948fdb]function_stack: [data_overview.py:27]get_features_shape <-[data_overview.py:105]is_empty_feature <-[abnormal_detection.py:33]empty_feature_detection <-[base_feature_binning.py:210]_abnormal_detection <-[hetero_binning_guest.py:38]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:34:45,046] [1681:139887538198336] - profile.py[line:87]: [computing#25c2948fdb]start
+[DEBUG] [2020-11-20 02:34:45,224] [1681:139887538198336] - profile.py[line:93]: [computing#25c2948fdb]done, elapse: 0.17858123779296875, function: first(self: Table(partition=8)) -> tuple
+[DEBUG] [2020-11-20 02:34:45,232] [1681:139887538198336] - profile.py[line:84]: [computing#04f628f141]function_stack: [data_overview.py:112]is_sparse_data <-[quantile_binning.py:85]fit_split_points <-[hetero_binning_guest.py:43]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:34:45,233] [1681:139887538198336] - profile.py[line:87]: [computing#04f628f141]start
+[DEBUG] [2020-11-20 02:34:45,408] [1681:139887538198336] - profile.py[line:93]: [computing#04f628f141]done, elapse: 0.17597532272338867, function: first(self: Table(partition=8)) -> tuple
+[DEBUG] [2020-11-20 02:34:45,411] [1681:139887538198336] - profile.py[line:84]: [computing#d1d002c2c7]function_stack: [quantile_binning.py:105]_fit_split_point <-[quantile_binning.py:87]fit_split_points <-[hetero_binning_guest.py:43]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:34:45,411] [1681:139887538198336] - profile.py[line:87]: [computing#d1d002c2c7]start
+[DEBUG] [2020-11-20 02:34:51,688] [1681:139887538198336] - profile.py[line:93]: [computing#d1d002c2c7]done, elapse: 6.2769317626953125, function: mapReducePartitions(self: Table(partition=8), mapper: partial, reducer: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:34:51,691] [1681:139887538198336] - profile.py[line:84]: [computing#ebd1213f70]function_stack: [quantile_binning.py:106]_fit_split_point <-[quantile_binning.py:87]fit_split_points <-[hetero_binning_guest.py:43]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:34:51,691] [1681:139887538198336] - profile.py[line:87]: [computing#ebd1213f70]start
+[DEBUG] [2020-11-20 02:34:51,694] [1681:139887538198336] - profile.py[line:93]: [computing#ebd1213f70]done, elapse: 0.0036220550537109375, function: collect(self: Table(partition=8)) -> generator
+[DEBUG] [2020-11-20 02:34:52,169] [1681:139887538198336] - profile.py[line:84]: [computing#2fd1047b0f]function_stack: [data_overview.py:112]is_sparse_data <-[base_binning.py:98]fit_category_features <-[quantile_binning.py:89]fit_split_points <-[hetero_binning_guest.py:43]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:34:52,170] [1681:139887538198336] - profile.py[line:87]: [computing#2fd1047b0f]start
+[DEBUG] [2020-11-20 02:34:52,352] [1681:139887538198336] - profile.py[line:93]: [computing#2fd1047b0f]done, elapse: 0.18282198905944824, function: first(self: Table(partition=8)) -> tuple
+[DEBUG] [2020-11-20 02:34:52,355] [1681:139887538198336] - profile.py[line:84]: [computing#81c2382cd5]function_stack: [data_overview.py:131]count_labels <-[hetero_binning_guest.py:48]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:34:52,356] [1681:139887538198336] - profile.py[line:87]: [computing#81c2382cd5]start
+[DEBUG] [2020-11-20 02:34:52,596] [1681:139887538198336] - profile.py[line:93]: [computing#81c2382cd5]done, elapse: 0.24103093147277832, function: applyPartitions(self: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:34:52,598] [1681:139887538198336] - profile.py[line:84]: [computing#2b572b6889]function_stack: [data_overview.py:132]count_labels <-[hetero_binning_guest.py:48]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:34:52,599] [1681:139887538198336] - profile.py[line:87]: [computing#2b572b6889]start
+[DEBUG] [2020-11-20 02:34:52,653] [1681:139887538198336] - profile.py[line:93]: [computing#2b572b6889]done, elapse: 0.0545656681060791, function: reduce(self: Table(partition=8), func: function) -> set
+[DEBUG] [2020-11-20 02:34:52,655] [1681:139887538198336] - profile.py[line:84]: [computing#e0832f4289]function_stack: [hetero_binning_guest.py:52]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:34:52,655] [1681:139887538198336] - profile.py[line:87]: [computing#e0832f4289]start
+[DEBUG] [2020-11-20 02:34:56,793] [1681:139887538198336] - profile.py[line:93]: [computing#e0832f4289]done, elapse: 4.138495922088623, function: mapValues(self: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:34:56,796] [1681:139887538198336] - profile.py[line:84]: [computing#1d698e8df1]function_stack: [hetero_binning_guest.py:54]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:34:56,796] [1681:139887538198336] - profile.py[line:87]: [computing#1d698e8df1]start
+[DEBUG] [2020-11-20 02:34:57,022] [1681:139887538198336] - profile.py[line:93]: [computing#1d698e8df1]done, elapse: 0.22563433647155762, function: mapValues(self: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:34:57,053] [1681:139887538198336] - profile.py[line:84]: [computing#2da44f8106]function_stack: [hetero_binning_guest.py:68]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:34:57,054] [1681:139887538198336] - profile.py[line:87]: [computing#2da44f8106]start
+[DEBUG] [2020-11-20 02:34:58,430] [1681:139887538198336] - profile.py[line:93]: [computing#2da44f8106]done, elapse: 1.3766191005706787, function: mapValues(self: Table(partition=8), func: partial) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:34:58,431] [1681:139887538198336] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_feature_binning_transfer_variable.HeteroFeatureBinningTransferVariable.encrypted_label.fit]guest->[Party(role=host, party_id=9999)] start
+[DEBUG] [2020-11-20 02:34:58,440] [1681:139887538198336] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_feature_binning_transfer_variable.HeteroFeatureBinningTransferVariable.encrypted_label.fit]guest->[Party(role=host, party_id=9999)] done
+[DEBUG] [2020-11-20 02:34:58,444] [1681:139887538198336] - profile.py[line:84]: [computing#d64c2e7072]function_stack: [data_overview.py:112]is_sparse_data <-[base_binning.py:152]get_data_bin <-[base_binning.py:328]cal_local_iv <-[hetero_binning_guest.py:75]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:34:58,445] [1681:139887538198336] - profile.py[line:87]: [computing#d64c2e7072]start
+[DEBUG] [2020-11-20 02:34:58,704] [1681:139887538198336] - profile.py[line:93]: [computing#d64c2e7072]done, elapse: 0.2602970600128174, function: first(self: Table(partition=8)) -> tuple
+[DEBUG] [2020-11-20 02:34:58,707] [1681:139887538198336] - profile.py[line:84]: [computing#5d575ffc6d]function_stack: [base_binning.py:162]get_data_bin <-[base_binning.py:328]cal_local_iv <-[hetero_binning_guest.py:75]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:34:58,708] [1681:139887538198336] - profile.py[line:87]: [computing#5d575ffc6d]start
+[DEBUG] [2020-11-20 02:34:58,922] [1681:139887538198336] - profile.py[line:93]: [computing#5d575ffc6d]done, elapse: 0.21491003036499023, function: mapValues(self: Table(partition=8), func: partial) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:34:58,925] [1681:139887538198336] - profile.py[line:84]: [computing#02acb25bf9]function_stack: [base_binning.py:332]cal_local_iv <-[hetero_binning_guest.py:75]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:34:58,925] [1681:139887538198336] - profile.py[line:87]: [computing#02acb25bf9]start
+[DEBUG] [2020-11-20 02:34:59,180] [1681:139887538198336] - profile.py[line:93]: [computing#02acb25bf9]done, elapse: 0.2556285858154297, function: join(self: Table(partition=8), other: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:34:59,183] [1681:139887538198336] - profile.py[line:84]: [computing#2c13b8bad2]function_stack: [base_binning.py:337]cal_local_iv <-[hetero_binning_guest.py:75]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:34:59,183] [1681:139887538198336] - profile.py[line:87]: [computing#2c13b8bad2]start
+[DEBUG] [2020-11-20 02:34:59,407] [1681:139887538198336] - profile.py[line:93]: [computing#2c13b8bad2]done, elapse: 0.22411727905273438, function: applyPartitions(self: Table(partition=8), func: partial) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:34:59,410] [1681:139887538198336] - profile.py[line:84]: [computing#f76cf9f46f]function_stack: [base_binning.py:338]cal_local_iv <-[hetero_binning_guest.py:75]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:34:59,411] [1681:139887538198336] - profile.py[line:87]: [computing#f76cf9f46f]start
+[DEBUG] [2020-11-20 02:34:59,479] [1681:139887538198336] - profile.py[line:93]: [computing#f76cf9f46f]done, elapse: 0.06911873817443848, function: reduce(self: Table(partition=8), func: function) -> dict
+[DEBUG] [2020-11-20 02:34:59,481] [1681:139887538198336] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_feature_binning_transfer_variable.HeteroFeatureBinningTransferVariable.encrypted_bin_sum.fit]guest<-[Party(role=host, party_id=9999)] start
+[DEBUG] [2020-11-20 02:35:28,042] [1681:139887538198336] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_feature_binning_transfer_variable.HeteroFeatureBinningTransferVariable.encrypted_bin_sum.fit]guest<-[Party(role=host, party_id=9999)] done
+[DEBUG] [2020-11-20 02:35:28,963] [1681:139887538198336] - profile.py[line:84]: [computing#741bc4cbb1]function_stack: [io_check.py:28]_func <-[hetero_binning_guest.py:118]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:35:28,964] [1681:139887538198336] - profile.py[line:87]: [computing#741bc4cbb1]start
+[DEBUG] [2020-11-20 02:35:29,018] [1681:139887538198336] - profile.py[line:93]: [computing#741bc4cbb1]done, elapse: 0.05527925491333008, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:35:29,022] [1681:139887538198336] - profile.py[line:84]: [computing#eb940ec74c]function_stack: [data_overview.py:112]is_sparse_data <-[base_binning.py:188]convert_feature_to_bin <-[base_binning.py:118]transform <-[base_feature_binning.py:111]transform <-[schema_check.py:44]_func <-[io_check.py:31]_func <-[hetero_binning_guest.py:118]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:35:29,022] [1681:139887538198336] - profile.py[line:87]: [computing#eb940ec74c]start
+[DEBUG] [2020-11-20 02:35:29,207] [1681:139887538198336] - profile.py[line:93]: [computing#eb940ec74c]done, elapse: 0.18496012687683105, function: first(self: Table(partition=8)) -> tuple
+[DEBUG] [2020-11-20 02:35:29,210] [1681:139887538198336] - profile.py[line:84]: [computing#f8df3d8e10]function_stack: [base_binning.py:211]convert_feature_to_bin <-[base_binning.py:118]transform <-[base_feature_binning.py:111]transform <-[schema_check.py:44]_func <-[io_check.py:31]_func <-[hetero_binning_guest.py:118]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:35:29,211] [1681:139887538198336] - profile.py[line:87]: [computing#f8df3d8e10]start
+[DEBUG] [2020-11-20 02:35:29,506] [1681:139887538198336] - profile.py[line:93]: [computing#f8df3d8e10]done, elapse: 0.29521703720092773, function: mapValues(self: Table(partition=8), func: partial) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:35:29,509] [1681:139887538198336] - profile.py[line:84]: [computing#8034836761]function_stack: [schema_check.py:47]_func <-[io_check.py:31]_func <-[hetero_binning_guest.py:118]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:35:29,510] [1681:139887538198336] - profile.py[line:87]: [computing#8034836761]start
+[DEBUG] [2020-11-20 02:35:29,568] [1681:139887538198336] - profile.py[line:93]: [computing#8034836761]done, elapse: 0.0586395263671875, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:35:29,571] [1681:139887538198336] - profile.py[line:84]: [computing#2402112c7d]function_stack: [io_check.py:34]_func <-[hetero_binning_guest.py:118]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:35:29,571] [1681:139887538198336] - profile.py[line:87]: [computing#2402112c7d]start
+[DEBUG] [2020-11-20 02:35:29,619] [1681:139887538198336] - profile.py[line:93]: [computing#2402112c7d]done, elapse: 0.04860544204711914, function: count(self: Table(partition=8)) -> int
+[INFO] [2020-11-20 02:35:31,030] [1681:139887538198336] - profile.py[line:249]: 
+Computing:
++----------+-------------------------------------------------------+
+| function |       function         n   sum(s)   mean(s)   max(s)  |
+|          | --------------------- --- -------- --------- -------- |
+|          |  mapReducePartitions   1   6.277     6.277    6.277   |
+|          |       mapValues        5   6.251     1.25     4.138   |
+|          |         first          5   0.983     0.197     0.26   |
+|          |    applyPartitions     2   0.465     0.233    0.241   |
+|          |         load           1   0.288     0.288    0.288   |
+|          |         count          5   0.274     0.055    0.061   |
+|          |         join           1   0.256     0.256    0.256   |
+|          |        reduce          2   0.124     0.062    0.069   |
+|          |        collect         1   0.004     0.004    0.004   |
++----------+-------------------------------------------------------+
+|  total   |      n=23, sum=14.9202, mean=0.6487, max=6.2769       |
++----------+-------------------------------------------------------+
+
+Federation:
++--------+-------------------------------------------------------------------------------------------------------------+
+|  get   |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_feature_binning_trans | 1 | 28.56  |  28.56  | 28.56   |
+|        |     fer_variable.HeteroFeatureBinningTransferVariable.encrypted_bin_sum    |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| remote |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_feature_binning_trans | 1 | 0.008  |  0.008  | 0.008   |
+|        |      fer_variable.HeteroFeatureBinningTransferVariable.encrypted_label     |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| total  |                                 n=2, sum=28.5677, mean=14.2839, max=28.5596                                 |
++--------+-------------------------------------------------------------------------------------------------------------+
+

@@ -1,0 +1,723 @@
+[INFO] [2020-11-20 07:07:24,166] [5700:139847706072896] - task_executor.py[line:302]: report task 202011200707112994524_reader_1 0 guest 10000 to driver
+[INFO] [2020-11-20 07:07:24,169] [5700:139847706072896] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_reader_1 0 on guest 10000
+[INFO] [2020-11-20 07:07:30,621] [5700:139847706072896] - task_executor.py[line:156]: Run 202011200707112994524 reader_1 202011200707112994524_reader_1 guest 10000 task
+[INFO] [2020-11-20 07:07:30,623] [5700:139847706072896] - task_executor.py[line:157]: Component parameters on party {'ReaderParam': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'dsl_version': 2, 'initiator': {'role': 'guest', 'party_id': 10000}, 'role': {'host': [9999], 'guest': [10000]}, 'job_parameters': {'job_type': 'train', 'work_mode': 1, 'backend': 0, 'computing_engine': 'EGGROLL', 'federation_engine': 'EGGROLL', 'storage_engine': 'EGGROLL', 'engines_address': {'computing': {'cores_per_node': 20, 'nodes': 1}, 'federation': {'host': 'rollsite', 'port': 9370}, 'storage': {'cores_per_node': 20, 'nodes': 1}}, 'federated_mode': 'MULTIPLE', 'task_parallelism': 1, 'computing_partitions': 4, 'federated_status_collect_type': 'PUSH', 'model_id': 'guest-10000#host-9999#model', 'model_version': '202011200707112994524', 'eggroll_run': {'eggroll.session.processors.per.node': 4}, 'spark_run': {}, 'rabbitmq_run': {}, 'adaptation_parameters': {'task_nodes': 1, 'task_cores_per_node': 4, 'task_memory_per_node': 0}}, 'component_parameters': {'common': {'hetero_secure_boost_0': {'task_type': 'classification', 'objective_param': {'objective': 'cross_entropy'}, 'num_trees': 3, 'validation_freqs': 1, 'encrypt_param': {'method': 'iterativeAffine'}, 'tree_param': {'max_depth': 3}}, 'evaluation_0': {'eval_type': 'binary'}}, 'role': {'guest': {'0': {'reader_1': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'reader_0': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': True, 'output_format': 'dense'}, 'dataio_1': {'with_label': True, 'output_format': 'dense'}}}, 'host': {'0': {'reader_1': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'reader_0': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': False}, 'dataio_1': {'with_label': False}}}}}, 'config': '/data/projects/fate/python/fate_flow/examples/hetero_secureboost_conf.json', 'dsl': 'examples/hetero_secureboost_dsl.json', 'function': 'submit_job', 'local': {'role': 'guest', 'party_id': 10000}, 'CodePath': 'fate_flow/components/reader.py/Reader', 'module': 'Reader', 'output_data_name': ['data']}
+[INFO] [2020-11-20 07:07:30,623] [5700:139847706072896] - task_executor.py[line:158]: Task input dsl {}
+[INFO] [2020-11-20 07:07:34,549] [5700:139847706072896] - reader.py[line:84]: the EGGROLL engine input table does not require conversion to support computing engine EGGROLL
+[INFO] [2020-11-20 07:07:35,523] [5700:139847706072896] - tracker_client.py[line:127]: Request save job 202011200707112994524 task 202011200707112994524_reader_1 0 on guest 10000 data data info
+[INFO] [2020-11-20 07:07:35,581] [5700:139847706072896] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_reader_1 0 on guest 10000 metric reader_namespace reader_name meta
+[INFO] [2020-11-20 07:07:35,669] [5700:139847706072896] - profile.py[line:249]: 
+Computing:
++----------+------------------------------------------+
+| function |                                          |
++----------+------------------------------------------+
+|  total   | n=0, sum=0.0000, mean=0.0000, max=0.0000 |
++----------+------------------------------------------+
+
+Federation:
++--------+------------------------------------------+
+|  get   |                                          |
++--------+------------------------------------------+
+| remote |                                          |
++--------+------------------------------------------+
+| total  | n=0, sum=0.0000, mean=0.0000, max=0.0000 |
++--------+------------------------------------------+
+
+[INFO] [2020-11-20 07:07:35,673] [5700:139847706072896] - task_executor.py[line:302]: report task 202011200707112994524_reader_1 0 guest 10000 to driver
+[INFO] [2020-11-20 07:07:35,674] [5700:139847706072896] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_reader_1 0 on guest 10000
+[INFO] [2020-11-20 07:07:35,855] [5700:139847706072896] - task_executor.py[line:207]: task 202011200707112994524_reader_1 guest 10000 start time: 2020-11-20 07:07:23
+[INFO] [2020-11-20 07:07:35,856] [5700:139847706072896] - task_executor.py[line:209]: task 202011200707112994524_reader_1 guest 10000 end time: 2020-11-20 07:07:35
+[INFO] [2020-11-20 07:07:35,856] [5700:139847706072896] - task_executor.py[line:211]: task 202011200707112994524_reader_1 guest 10000 takes 11.796s
+[INFO] [2020-11-20 07:07:35,857] [5700:139847706072896] - task_executor.py[line:214]: Finish 202011200707112994524 reader_1 202011200707112994524_reader_1 0 guest 10000 task success
+[INFO] [2020-11-20 07:07:35,858] [5700:139847706072896] - task_executor.py[line:302]: report task 202011200707112994524_reader_1 0 guest 10000 to driver
+[INFO] [2020-11-20 07:07:35,859] [5700:139847706072896] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_reader_1 0 on guest 10000
+[INFO] [2020-11-20 07:08:17,967] [5883:140628870334272] - task_executor.py[line:302]: report task 202011200707112994524_reader_0 0 guest 10000 to driver
+[INFO] [2020-11-20 07:08:17,969] [5883:140628870334272] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_reader_0 0 on guest 10000
+[INFO] [2020-11-20 07:08:24,025] [5883:140628870334272] - task_executor.py[line:156]: Run 202011200707112994524 reader_0 202011200707112994524_reader_0 guest 10000 task
+[INFO] [2020-11-20 07:08:24,026] [5883:140628870334272] - task_executor.py[line:157]: Component parameters on party {'ReaderParam': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'dsl_version': 2, 'initiator': {'role': 'guest', 'party_id': 10000}, 'role': {'host': [9999], 'guest': [10000]}, 'job_parameters': {'job_type': 'train', 'work_mode': 1, 'backend': 0, 'computing_engine': 'EGGROLL', 'federation_engine': 'EGGROLL', 'storage_engine': 'EGGROLL', 'engines_address': {'computing': {'cores_per_node': 20, 'nodes': 1}, 'federation': {'host': 'rollsite', 'port': 9370}, 'storage': {'cores_per_node': 20, 'nodes': 1}}, 'federated_mode': 'MULTIPLE', 'task_parallelism': 1, 'computing_partitions': 4, 'federated_status_collect_type': 'PUSH', 'model_id': 'guest-10000#host-9999#model', 'model_version': '202011200707112994524', 'eggroll_run': {'eggroll.session.processors.per.node': 4}, 'spark_run': {}, 'rabbitmq_run': {}, 'adaptation_parameters': {'task_nodes': 1, 'task_cores_per_node': 4, 'task_memory_per_node': 0}}, 'component_parameters': {'common': {'hetero_secure_boost_0': {'task_type': 'classification', 'objective_param': {'objective': 'cross_entropy'}, 'num_trees': 3, 'validation_freqs': 1, 'encrypt_param': {'method': 'iterativeAffine'}, 'tree_param': {'max_depth': 3}}, 'evaluation_0': {'eval_type': 'binary'}}, 'role': {'guest': {'0': {'reader_1': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'reader_0': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': True, 'output_format': 'dense'}, 'dataio_1': {'with_label': True, 'output_format': 'dense'}}}, 'host': {'0': {'reader_1': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'reader_0': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': False}, 'dataio_1': {'with_label': False}}}}}, 'config': '/data/projects/fate/python/fate_flow/examples/hetero_secureboost_conf.json', 'dsl': 'examples/hetero_secureboost_dsl.json', 'function': 'submit_job', 'local': {'role': 'guest', 'party_id': 10000}, 'CodePath': 'fate_flow/components/reader.py/Reader', 'module': 'Reader', 'output_data_name': ['data']}
+[INFO] [2020-11-20 07:08:24,027] [5883:140628870334272] - task_executor.py[line:158]: Task input dsl {}
+[INFO] [2020-11-20 07:08:28,054] [5883:140628870334272] - reader.py[line:84]: the EGGROLL engine input table does not require conversion to support computing engine EGGROLL
+[INFO] [2020-11-20 07:08:29,535] [5883:140628870334272] - tracker_client.py[line:127]: Request save job 202011200707112994524 task 202011200707112994524_reader_0 0 on guest 10000 data data info
+[INFO] [2020-11-20 07:08:29,641] [5883:140628870334272] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_reader_0 0 on guest 10000 metric reader_namespace reader_name meta
+[INFO] [2020-11-20 07:08:29,853] [5883:140628870334272] - profile.py[line:249]: 
+Computing:
++----------+------------------------------------------+
+| function |                                          |
++----------+------------------------------------------+
+|  total   | n=0, sum=0.0000, mean=0.0000, max=0.0000 |
++----------+------------------------------------------+
+
+Federation:
++--------+------------------------------------------+
+|  get   |                                          |
++--------+------------------------------------------+
+| remote |                                          |
++--------+------------------------------------------+
+| total  | n=0, sum=0.0000, mean=0.0000, max=0.0000 |
++--------+------------------------------------------+
+
+[INFO] [2020-11-20 07:08:29,855] [5883:140628870334272] - task_executor.py[line:302]: report task 202011200707112994524_reader_0 0 guest 10000 to driver
+[INFO] [2020-11-20 07:08:29,856] [5883:140628870334272] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_reader_0 0 on guest 10000
+[INFO] [2020-11-20 07:08:29,976] [5883:140628870334272] - task_executor.py[line:207]: task 202011200707112994524_reader_0 guest 10000 start time: 2020-11-20 07:08:17
+[INFO] [2020-11-20 07:08:29,977] [5883:140628870334272] - task_executor.py[line:209]: task 202011200707112994524_reader_0 guest 10000 end time: 2020-11-20 07:08:29
+[INFO] [2020-11-20 07:08:29,978] [5883:140628870334272] - task_executor.py[line:211]: task 202011200707112994524_reader_0 guest 10000 takes 12.224s
+[INFO] [2020-11-20 07:08:29,979] [5883:140628870334272] - task_executor.py[line:214]: Finish 202011200707112994524 reader_0 202011200707112994524_reader_0 0 guest 10000 task success
+[INFO] [2020-11-20 07:08:29,980] [5883:140628870334272] - task_executor.py[line:302]: report task 202011200707112994524_reader_0 0 guest 10000 to driver
+[INFO] [2020-11-20 07:08:29,981] [5883:140628870334272] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_reader_0 0 on guest 10000
+[INFO] [2020-11-20 07:09:07,614] [6101:140692923815744] - task_executor.py[line:302]: report task 202011200707112994524_dataio_0 0 guest 10000 to driver
+[INFO] [2020-11-20 07:09:07,616] [6101:140692923815744] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_dataio_0 0 on guest 10000
+[INFO] [2020-11-20 07:09:13,455] [6101:140692923815744] - task_executor.py[line:156]: Run 202011200707112994524 dataio_0 202011200707112994524_dataio_0 guest 10000 task
+[INFO] [2020-11-20 07:09:13,456] [6101:140692923815744] - task_executor.py[line:157]: Component parameters on party {'DataIOParam': {'input_format': 'dense', 'delimitor': ',', 'data_type': 'float64', 'exclusive_data_type': None, 'tag_with_value': False, 'tag_value_delimitor': ':', 'missing_fill': False, 'default_value': 0, 'missing_fill_method': None, 'missing_impute': None, 'outlier_replace': False, 'outlier_replace_method': None, 'outlier_impute': None, 'outlier_replace_value': 0, 'with_label': True, 'label_name': 'y', 'label_type': 'int', 'output_format': 'dense', 'need_run': True}, 'dsl_version': 2, 'initiator': {'role': 'guest', 'party_id': 10000}, 'role': {'host': [9999], 'guest': [10000]}, 'job_parameters': {'job_type': 'train', 'work_mode': 1, 'backend': 0, 'computing_engine': 'EGGROLL', 'federation_engine': 'EGGROLL', 'storage_engine': 'EGGROLL', 'engines_address': {'computing': {'cores_per_node': 20, 'nodes': 1}, 'federation': {'host': 'rollsite', 'port': 9370}, 'storage': {'cores_per_node': 20, 'nodes': 1}}, 'federated_mode': 'MULTIPLE', 'task_parallelism': 1, 'computing_partitions': 4, 'federated_status_collect_type': 'PUSH', 'model_id': 'guest-10000#host-9999#model', 'model_version': '202011200707112994524', 'eggroll_run': {'eggroll.session.processors.per.node': 4}, 'spark_run': {}, 'rabbitmq_run': {}, 'adaptation_parameters': {'task_nodes': 1, 'task_cores_per_node': 4, 'task_memory_per_node': 0}}, 'component_parameters': {'common': {'hetero_secure_boost_0': {'task_type': 'classification', 'objective_param': {'objective': 'cross_entropy'}, 'num_trees': 3, 'validation_freqs': 1, 'encrypt_param': {'method': 'iterativeAffine'}, 'tree_param': {'max_depth': 3}}, 'evaluation_0': {'eval_type': 'binary'}}, 'role': {'guest': {'0': {'reader_1': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'reader_0': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': True, 'output_format': 'dense'}, 'dataio_1': {'with_label': True, 'output_format': 'dense'}}}, 'host': {'0': {'reader_1': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'reader_0': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': False}, 'dataio_1': {'with_label': False}}}}}, 'config': '/data/projects/fate/python/fate_flow/examples/hetero_secureboost_conf.json', 'dsl': 'examples/hetero_secureboost_dsl.json', 'function': 'submit_job', 'local': {'role': 'guest', 'party_id': 10000}, 'CodePath': 'federatedml/util/data_io.py/DataIO', 'module': 'DataIO', 'output_data_name': ['data']}
+[INFO] [2020-11-20 07:09:13,457] [6101:140692923815744] - task_executor.py[line:158]: Task input dsl {'data': {'data': ['reader_0.data']}}
+[INFO] [2020-11-20 07:09:13,458] [6101:140692923815744] - tracker_client.py[line:150]: Request read job 202011200707112994524 task None None on guest 10000 data data info
+[INFO] [2020-11-20 07:09:13,551] [6101:140692923815744] - task_executor.py[line:260]: load computing table use 4
+[INFO] [2020-11-20 07:09:13,806] [6101:140692923815744] - data_io.py[line:118]: start to read dense data and change data to instance
+[INFO] [2020-11-20 07:09:15,303] [6101:140692923815744] - tracker_client.py[line:173]: Request save job 202011200707112994524 task 202011200707112994524_dataio_0 0 on guest 10000 component summary
+[INFO] [2020-11-20 07:09:15,787] [6101:140692923815744] - profile.py[line:249]: 
+Computing:
++----------+---------------------------------------------+
+| function |  function    n   sum(s)   mean(s)   max(s)  |
+|          | ----------- --- -------- --------- -------- |
+|          |  mapValues   2   1.168     0.584     1.04   |
+|          |    load      1    0.18     0.18      0.18   |
+|          |    join      1    0.17     0.17      0.17   |
+|          |    first     1   0.112     0.112    0.112   |
+|          |    count     2   0.061     0.031    0.034   |
++----------+---------------------------------------------+
+|  total   |  n=7, sum=1.6910, mean=0.2416, max=1.0402   |
++----------+---------------------------------------------+
+
+Federation:
++--------+------------------------------------------+
+|  get   |                                          |
++--------+------------------------------------------+
+| remote |                                          |
++--------+------------------------------------------+
+| total  | n=0, sum=0.0000, mean=0.0000, max=0.0000 |
++--------+------------------------------------------+
+
+[INFO] [2020-11-20 07:09:16,224] [6101:140692923815744] - pipelined_model.py[line:73]: Save dataio_0 model DataIOMeta buffer
+[INFO] [2020-11-20 07:09:16,226] [6101:140692923815744] - pipelined_model.py[line:73]: Save dataio_0 model DataIOParam buffer
+[INFO] [2020-11-20 07:09:16,242] [6101:140692923815744] - pipelined_model.py[line:78]: Save dataio_0 model successfully
+[INFO] [2020-11-20 07:09:16,243] [6101:140692923815744] - task_executor.py[line:302]: report task 202011200707112994524_dataio_0 0 guest 10000 to driver
+[INFO] [2020-11-20 07:09:16,244] [6101:140692923815744] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_dataio_0 0 on guest 10000
+[INFO] [2020-11-20 07:09:16,384] [6101:140692923815744] - task_executor.py[line:207]: task 202011200707112994524_dataio_0 guest 10000 start time: 2020-11-20 07:09:07
+[INFO] [2020-11-20 07:09:16,385] [6101:140692923815744] - task_executor.py[line:209]: task 202011200707112994524_dataio_0 guest 10000 end time: 2020-11-20 07:09:16
+[INFO] [2020-11-20 07:09:16,385] [6101:140692923815744] - task_executor.py[line:211]: task 202011200707112994524_dataio_0 guest 10000 takes 8.921s
+[INFO] [2020-11-20 07:09:16,386] [6101:140692923815744] - task_executor.py[line:214]: Finish 202011200707112994524 dataio_0 202011200707112994524_dataio_0 0 guest 10000 task success
+[INFO] [2020-11-20 07:09:16,387] [6101:140692923815744] - task_executor.py[line:302]: report task 202011200707112994524_dataio_0 0 guest 10000 to driver
+[INFO] [2020-11-20 07:09:16,387] [6101:140692923815744] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_dataio_0 0 on guest 10000
+[INFO] [2020-11-20 07:09:59,647] [6366:140464771700544] - task_executor.py[line:302]: report task 202011200707112994524_dataio_1 0 guest 10000 to driver
+[INFO] [2020-11-20 07:09:59,649] [6366:140464771700544] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_dataio_1 0 on guest 10000
+[INFO] [2020-11-20 07:10:05,515] [6366:140464771700544] - task_executor.py[line:156]: Run 202011200707112994524 dataio_1 202011200707112994524_dataio_1 guest 10000 task
+[INFO] [2020-11-20 07:10:05,516] [6366:140464771700544] - task_executor.py[line:157]: Component parameters on party {'DataIOParam': {'input_format': 'dense', 'delimitor': ',', 'data_type': 'float64', 'exclusive_data_type': None, 'tag_with_value': False, 'tag_value_delimitor': ':', 'missing_fill': False, 'default_value': 0, 'missing_fill_method': None, 'missing_impute': None, 'outlier_replace': False, 'outlier_replace_method': None, 'outlier_impute': None, 'outlier_replace_value': 0, 'with_label': True, 'label_name': 'y', 'label_type': 'int', 'output_format': 'dense', 'need_run': True}, 'dsl_version': 2, 'initiator': {'role': 'guest', 'party_id': 10000}, 'role': {'host': [9999], 'guest': [10000]}, 'job_parameters': {'job_type': 'train', 'work_mode': 1, 'backend': 0, 'computing_engine': 'EGGROLL', 'federation_engine': 'EGGROLL', 'storage_engine': 'EGGROLL', 'engines_address': {'computing': {'cores_per_node': 20, 'nodes': 1}, 'federation': {'host': 'rollsite', 'port': 9370}, 'storage': {'cores_per_node': 20, 'nodes': 1}}, 'federated_mode': 'MULTIPLE', 'task_parallelism': 1, 'computing_partitions': 4, 'federated_status_collect_type': 'PUSH', 'model_id': 'guest-10000#host-9999#model', 'model_version': '202011200707112994524', 'eggroll_run': {'eggroll.session.processors.per.node': 4}, 'spark_run': {}, 'rabbitmq_run': {}, 'adaptation_parameters': {'task_nodes': 1, 'task_cores_per_node': 4, 'task_memory_per_node': 0}}, 'component_parameters': {'common': {'hetero_secure_boost_0': {'task_type': 'classification', 'objective_param': {'objective': 'cross_entropy'}, 'num_trees': 3, 'validation_freqs': 1, 'encrypt_param': {'method': 'iterativeAffine'}, 'tree_param': {'max_depth': 3}}, 'evaluation_0': {'eval_type': 'binary'}}, 'role': {'guest': {'0': {'reader_1': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'reader_0': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': True, 'output_format': 'dense'}, 'dataio_1': {'with_label': True, 'output_format': 'dense'}}}, 'host': {'0': {'reader_1': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'reader_0': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': False}, 'dataio_1': {'with_label': False}}}}}, 'config': '/data/projects/fate/python/fate_flow/examples/hetero_secureboost_conf.json', 'dsl': 'examples/hetero_secureboost_dsl.json', 'function': 'submit_job', 'local': {'role': 'guest', 'party_id': 10000}, 'CodePath': 'federatedml/util/data_io.py/DataIO', 'module': 'DataIO', 'output_data_name': ['data']}
+[INFO] [2020-11-20 07:10:05,517] [6366:140464771700544] - task_executor.py[line:158]: Task input dsl {'data': {'data': ['reader_1.data']}, 'model': ['dataio_0.model']}
+[INFO] [2020-11-20 07:10:05,518] [6366:140464771700544] - tracker_client.py[line:150]: Request read job 202011200707112994524 task None None on guest 10000 data data info
+[INFO] [2020-11-20 07:10:05,629] [6366:140464771700544] - task_executor.py[line:260]: load computing table use 4
+[INFO] [2020-11-20 07:10:05,857] [6366:140464771700544] - pipelined_model.py[line:185]: parse DataIOMeta proto object normal
+[INFO] [2020-11-20 07:10:05,862] [6366:140464771700544] - pipelined_model.py[line:185]: parse DataIOParam proto object normal
+[INFO] [2020-11-20 07:10:05,932] [6366:140464771700544] - data_io.py[line:118]: start to read dense data and change data to instance
+[INFO] [2020-11-20 07:10:07,424] [6366:140464771700544] - tracker_client.py[line:173]: Request save job 202011200707112994524 task 202011200707112994524_dataio_1 0 on guest 10000 component summary
+[INFO] [2020-11-20 07:10:08,032] [6366:140464771700544] - profile.py[line:249]: 
+Computing:
++----------+---------------------------------------------+
+| function |  function    n   sum(s)   mean(s)   max(s)  |
+|          | ----------- --- -------- --------- -------- |
+|          |  mapValues   2   1.078     0.539    0.962   |
+|          |    load      1   0.203     0.203    0.203   |
+|          |    join      1    0.19     0.19      0.19   |
+|          |    count     4   0.117     0.029    0.034   |
+|          |    first     1   0.113     0.113    0.113   |
++----------+---------------------------------------------+
+|  total   |  n=9, sum=1.7022, mean=0.1891, max=0.9618   |
++----------+---------------------------------------------+
+
+Federation:
++--------+------------------------------------------+
+|  get   |                                          |
++--------+------------------------------------------+
+| remote |                                          |
++--------+------------------------------------------+
+| total  | n=0, sum=0.0000, mean=0.0000, max=0.0000 |
++--------+------------------------------------------+
+
+[INFO] [2020-11-20 07:10:08,440] [6366:140464771700544] - pipelined_model.py[line:73]: Save dataio_1 model DataIOMeta buffer
+[INFO] [2020-11-20 07:10:08,441] [6366:140464771700544] - pipelined_model.py[line:73]: Save dataio_1 model DataIOParam buffer
+[INFO] [2020-11-20 07:10:08,462] [6366:140464771700544] - pipelined_model.py[line:78]: Save dataio_1 model successfully
+[INFO] [2020-11-20 07:10:08,463] [6366:140464771700544] - task_executor.py[line:302]: report task 202011200707112994524_dataio_1 0 guest 10000 to driver
+[INFO] [2020-11-20 07:10:08,464] [6366:140464771700544] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_dataio_1 0 on guest 10000
+[INFO] [2020-11-20 07:10:08,609] [6366:140464771700544] - task_executor.py[line:207]: task 202011200707112994524_dataio_1 guest 10000 start time: 2020-11-20 07:09:59
+[INFO] [2020-11-20 07:10:08,610] [6366:140464771700544] - task_executor.py[line:209]: task 202011200707112994524_dataio_1 guest 10000 end time: 2020-11-20 07:10:08
+[INFO] [2020-11-20 07:10:08,610] [6366:140464771700544] - task_executor.py[line:211]: task 202011200707112994524_dataio_1 guest 10000 takes 9.098s
+[INFO] [2020-11-20 07:10:08,611] [6366:140464771700544] - task_executor.py[line:214]: Finish 202011200707112994524 dataio_1 202011200707112994524_dataio_1 0 guest 10000 task success
+[INFO] [2020-11-20 07:10:08,612] [6366:140464771700544] - task_executor.py[line:302]: report task 202011200707112994524_dataio_1 0 guest 10000 to driver
+[INFO] [2020-11-20 07:10:08,612] [6366:140464771700544] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_dataio_1 0 on guest 10000
+[INFO] [2020-11-20 07:10:50,500] [6627:140060433749824] - task_executor.py[line:302]: report task 202011200707112994524_intersection_1 0 guest 10000 to driver
+[INFO] [2020-11-20 07:10:50,502] [6627:140060433749824] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_intersection_1 0 on guest 10000
+[INFO] [2020-11-20 07:10:56,255] [6627:140060433749824] - task_executor.py[line:156]: Run 202011200707112994524 intersection_1 202011200707112994524_intersection_1 guest 10000 task
+[INFO] [2020-11-20 07:10:56,257] [6627:140060433749824] - task_executor.py[line:157]: Component parameters on party {'IntersectParam': {'intersect_method': 'raw', 'random_bit': 128, 'sync_intersect_ids': True, 'join_role': 'guest', 'with_encode': False, 'encode_params': {'salt': '', 'encode_method': 'none', 'base64': False}, 'only_output_key': False, 'intersect_cache_param': {'use_cache': False, 'id_type': 'phone', 'encrypt_type': 'sha256'}, 'repeated_id_process': False, 'repeated_id_owner': 'guest', 'allow_info_share': False, 'info_owner': 'guest'}, 'dsl_version': 2, 'initiator': {'role': 'guest', 'party_id': 10000}, 'role': {'host': [9999], 'guest': [10000]}, 'job_parameters': {'job_type': 'train', 'work_mode': 1, 'backend': 0, 'computing_engine': 'EGGROLL', 'federation_engine': 'EGGROLL', 'storage_engine': 'EGGROLL', 'engines_address': {'computing': {'cores_per_node': 20, 'nodes': 1}, 'federation': {'host': 'rollsite', 'port': 9370}, 'storage': {'cores_per_node': 20, 'nodes': 1}}, 'federated_mode': 'MULTIPLE', 'task_parallelism': 1, 'computing_partitions': 4, 'federated_status_collect_type': 'PUSH', 'model_id': 'guest-10000#host-9999#model', 'model_version': '202011200707112994524', 'eggroll_run': {'eggroll.session.processors.per.node': 4}, 'spark_run': {}, 'rabbitmq_run': {}, 'adaptation_parameters': {'task_nodes': 1, 'task_cores_per_node': 4, 'task_memory_per_node': 0}}, 'component_parameters': {'common': {'hetero_secure_boost_0': {'task_type': 'classification', 'objective_param': {'objective': 'cross_entropy'}, 'num_trees': 3, 'validation_freqs': 1, 'encrypt_param': {'method': 'iterativeAffine'}, 'tree_param': {'max_depth': 3}}, 'evaluation_0': {'eval_type': 'binary'}}, 'role': {'guest': {'0': {'reader_1': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'reader_0': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': True, 'output_format': 'dense'}, 'dataio_1': {'with_label': True, 'output_format': 'dense'}}}, 'host': {'0': {'reader_1': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'reader_0': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': False}, 'dataio_1': {'with_label': False}}}}}, 'config': '/data/projects/fate/python/fate_flow/examples/hetero_secureboost_conf.json', 'dsl': 'examples/hetero_secureboost_dsl.json', 'function': 'submit_job', 'local': {'role': 'guest', 'party_id': 10000}, 'CodePath': 'federatedml/statistic/intersect/intersect_model.py/IntersectGuest', 'module': 'Intersection', 'output_data_name': ['data']}
+[INFO] [2020-11-20 07:10:56,258] [6627:140060433749824] - task_executor.py[line:158]: Task input dsl {'data': {'data': ['dataio_1.data']}}
+[INFO] [2020-11-20 07:10:56,259] [6627:140060433749824] - tracker_client.py[line:150]: Request read job 202011200707112994524 task None None on guest 10000 data data info
+[INFO] [2020-11-20 07:10:56,370] [6627:140060433749824] - task_executor.py[line:260]: load computing table use 4
+[INFO] [2020-11-20 07:10:59,875] [6627:140060433749824] - intersect_model.py[line:50]: Using raw intersection, role is guest
+[INFO] [2020-11-20 07:10:59,876] [6627:140060433749824] - intersect_guest.py[line:215]: Start raw intersection
+[INFO] [2020-11-20 07:10:59,877] [6627:140060433749824] - intersect.py[line:189]: Join id role is guest
+[INFO] [2020-11-20 07:11:17,289] [6627:140060433749824] - intersect.py[line:213]: Get ids_list from role-send, ids_list size is 1
+[INFO] [2020-11-20 07:11:17,449] [6627:140060433749824] - intersect.py[line:224]: Finish intersect_ids computing
+[INFO] [2020-11-20 07:11:17,462] [6627:140060433749824] - intersect.py[line:239]: Remote intersect ids to role-send
+[INFO] [2020-11-20 07:11:17,689] [6627:140060433749824] - intersect.py[line:82]: get intersect data_instances!
+[INFO] [2020-11-20 07:11:18,018] [6627:140060433749824] - intersect.py[line:261]: save guest_0's id in name:202011200707112994524_intersection_1_0_0, namespace:10000#None#mountain
+[INFO] [2020-11-20 07:11:18,019] [6627:140060433749824] - intersect_model.py[line:150]: Finish intersection
+[INFO] [2020-11-20 07:11:18,076] [6627:140060433749824] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_intersection_1 0 on guest 10000 metric train intersection data
+[INFO] [2020-11-20 07:11:18,128] [6627:140060433749824] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_intersection_1 0 on guest 10000 metric train intersection meta
+[INFO] [2020-11-20 07:11:18,168] [6627:140060433749824] - tracker_client.py[line:173]: Request save job 202011200707112994524 task 202011200707112994524_intersection_1 0 on guest 10000 component summary
+[INFO] [2020-11-20 07:11:18,916] [6627:140060433749824] - profile.py[line:249]: 
+Computing:
++----------+---------------------------------------------+
+| function |  function    n   sum(s)   mean(s)   max(s)  |
+|          | ----------- --- -------- --------- -------- |
+|          |  mapValues   1   4.871     4.871    4.871   |
+|          |    join      2   0.364     0.182    0.208   |
+|          |    load      1   0.202     0.202    0.202   |
+|          |    save      1   0.145     0.145    0.145   |
+|          |    count     4   0.114     0.028    0.035   |
+|          |   collect    1   0.004     0.004    0.004   |
++----------+---------------------------------------------+
+|  total   |  n=10, sum=5.6991, mean=0.5699, max=4.8707  |
++----------+---------------------------------------------+
+
+Federation:
++--------+-------------------------------------------------------------------------------------------------------------+
+|  get   |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.raw_intersect_transfer_varia | 1 | 12.535 | 12.535  | 12.535  |
+|        |               ble.RawIntersectTransferVariable.send_ids_host               |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| remote |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.raw_intersect_transfer_varia | 1 | 0.008  |  0.008  | 0.008   |
+|        |            ble.RawIntersectTransferVariable.intersect_ids_guest            |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| total  |                                 n=2, sum=12.5431, mean=6.2715, max=12.5354                                  |
++--------+-------------------------------------------------------------------------------------------------------------+
+
+[INFO] [2020-11-20 07:11:18,954] [6627:140060433749824] - intersect_model.py[line:168]: intersect_ids count:569
+[INFO] [2020-11-20 07:11:18,955] [6627:140060433749824] - intersect_model.py[line:169]: intersect_ids header schema:{'header': ['x0', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9'], 'sid_name': 'id', 'label_name': 'y'}
+[INFO] [2020-11-20 07:11:19,371] [6627:140060433749824] - task_executor.py[line:302]: report task 202011200707112994524_intersection_1 0 guest 10000 to driver
+[INFO] [2020-11-20 07:11:19,373] [6627:140060433749824] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_intersection_1 0 on guest 10000
+[INFO] [2020-11-20 07:11:19,542] [6627:140060433749824] - task_executor.py[line:207]: task 202011200707112994524_intersection_1 guest 10000 start time: 2020-11-20 07:10:50
+[INFO] [2020-11-20 07:11:19,543] [6627:140060433749824] - task_executor.py[line:209]: task 202011200707112994524_intersection_1 guest 10000 end time: 2020-11-20 07:11:19
+[INFO] [2020-11-20 07:11:19,544] [6627:140060433749824] - task_executor.py[line:211]: task 202011200707112994524_intersection_1 guest 10000 takes 29.174s
+[INFO] [2020-11-20 07:11:19,544] [6627:140060433749824] - task_executor.py[line:214]: Finish 202011200707112994524 intersection_1 202011200707112994524_intersection_1 0 guest 10000 task success
+[INFO] [2020-11-20 07:11:19,549] [6627:140060433749824] - task_executor.py[line:302]: report task 202011200707112994524_intersection_1 0 guest 10000 to driver
+[INFO] [2020-11-20 07:11:19,551] [6627:140060433749824] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_intersection_1 0 on guest 10000
+[INFO] [2020-11-20 07:11:48,129] [6950:140412476294976] - task_executor.py[line:302]: report task 202011200707112994524_intersection_0 0 guest 10000 to driver
+[INFO] [2020-11-20 07:11:48,131] [6950:140412476294976] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_intersection_0 0 on guest 10000
+[INFO] [2020-11-20 07:11:53,866] [6950:140412476294976] - task_executor.py[line:156]: Run 202011200707112994524 intersection_0 202011200707112994524_intersection_0 guest 10000 task
+[INFO] [2020-11-20 07:11:53,867] [6950:140412476294976] - task_executor.py[line:157]: Component parameters on party {'IntersectParam': {'intersect_method': 'raw', 'random_bit': 128, 'sync_intersect_ids': True, 'join_role': 'guest', 'with_encode': False, 'encode_params': {'salt': '', 'encode_method': 'none', 'base64': False}, 'only_output_key': False, 'intersect_cache_param': {'use_cache': False, 'id_type': 'phone', 'encrypt_type': 'sha256'}, 'repeated_id_process': False, 'repeated_id_owner': 'guest', 'allow_info_share': False, 'info_owner': 'guest'}, 'dsl_version': 2, 'initiator': {'role': 'guest', 'party_id': 10000}, 'role': {'host': [9999], 'guest': [10000]}, 'job_parameters': {'job_type': 'train', 'work_mode': 1, 'backend': 0, 'computing_engine': 'EGGROLL', 'federation_engine': 'EGGROLL', 'storage_engine': 'EGGROLL', 'engines_address': {'computing': {'cores_per_node': 20, 'nodes': 1}, 'federation': {'host': 'rollsite', 'port': 9370}, 'storage': {'cores_per_node': 20, 'nodes': 1}}, 'federated_mode': 'MULTIPLE', 'task_parallelism': 1, 'computing_partitions': 4, 'federated_status_collect_type': 'PUSH', 'model_id': 'guest-10000#host-9999#model', 'model_version': '202011200707112994524', 'eggroll_run': {'eggroll.session.processors.per.node': 4}, 'spark_run': {}, 'rabbitmq_run': {}, 'adaptation_parameters': {'task_nodes': 1, 'task_cores_per_node': 4, 'task_memory_per_node': 0}}, 'component_parameters': {'common': {'hetero_secure_boost_0': {'task_type': 'classification', 'objective_param': {'objective': 'cross_entropy'}, 'num_trees': 3, 'validation_freqs': 1, 'encrypt_param': {'method': 'iterativeAffine'}, 'tree_param': {'max_depth': 3}}, 'evaluation_0': {'eval_type': 'binary'}}, 'role': {'guest': {'0': {'reader_1': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'reader_0': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': True, 'output_format': 'dense'}, 'dataio_1': {'with_label': True, 'output_format': 'dense'}}}, 'host': {'0': {'reader_1': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'reader_0': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': False}, 'dataio_1': {'with_label': False}}}}}, 'config': '/data/projects/fate/python/fate_flow/examples/hetero_secureboost_conf.json', 'dsl': 'examples/hetero_secureboost_dsl.json', 'function': 'submit_job', 'local': {'role': 'guest', 'party_id': 10000}, 'CodePath': 'federatedml/statistic/intersect/intersect_model.py/IntersectGuest', 'module': 'Intersection', 'output_data_name': ['data']}
+[INFO] [2020-11-20 07:11:53,867] [6950:140412476294976] - task_executor.py[line:158]: Task input dsl {'data': {'data': ['dataio_0.data']}}
+[INFO] [2020-11-20 07:11:53,868] [6950:140412476294976] - tracker_client.py[line:150]: Request read job 202011200707112994524 task None None on guest 10000 data data info
+[INFO] [2020-11-20 07:11:53,945] [6950:140412476294976] - task_executor.py[line:260]: load computing table use 4
+[INFO] [2020-11-20 07:11:57,094] [6950:140412476294976] - intersect_model.py[line:50]: Using raw intersection, role is guest
+[INFO] [2020-11-20 07:11:57,095] [6950:140412476294976] - intersect_guest.py[line:215]: Start raw intersection
+[INFO] [2020-11-20 07:11:57,096] [6950:140412476294976] - intersect.py[line:189]: Join id role is guest
+[INFO] [2020-11-20 07:12:16,283] [6950:140412476294976] - intersect.py[line:213]: Get ids_list from role-send, ids_list size is 1
+[INFO] [2020-11-20 07:12:16,432] [6950:140412476294976] - intersect.py[line:224]: Finish intersect_ids computing
+[INFO] [2020-11-20 07:12:16,442] [6950:140412476294976] - intersect.py[line:239]: Remote intersect ids to role-send
+[INFO] [2020-11-20 07:12:16,692] [6950:140412476294976] - intersect.py[line:82]: get intersect data_instances!
+[INFO] [2020-11-20 07:12:17,020] [6950:140412476294976] - intersect.py[line:261]: save guest_0's id in name:202011200707112994524_intersection_0_0_0, namespace:10000#None#mountain
+[INFO] [2020-11-20 07:12:17,021] [6950:140412476294976] - intersect_model.py[line:150]: Finish intersection
+[INFO] [2020-11-20 07:12:17,090] [6950:140412476294976] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_intersection_0 0 on guest 10000 metric train intersection data
+[INFO] [2020-11-20 07:12:17,137] [6950:140412476294976] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_intersection_0 0 on guest 10000 metric train intersection meta
+[INFO] [2020-11-20 07:12:17,182] [6950:140412476294976] - tracker_client.py[line:173]: Request save job 202011200707112994524 task 202011200707112994524_intersection_0 0 on guest 10000 component summary
+[INFO] [2020-11-20 07:12:17,967] [6950:140412476294976] - profile.py[line:249]: 
+Computing:
++----------+---------------------------------------------+
+| function |  function    n   sum(s)   mean(s)   max(s)  |
+|          | ----------- --- -------- --------- -------- |
+|          |  mapValues   1   4.071     4.071    4.071   |
+|          |    join      2    0.39     0.195    0.246   |
+|          |    load      1   0.196     0.196    0.196   |
+|          |    save      1   0.129     0.129    0.129   |
+|          |    count     4   0.126     0.031    0.034   |
+|          |   collect    1   0.004     0.004    0.004   |
++----------+---------------------------------------------+
+|  total   |  n=10, sum=4.9160, mean=0.4916, max=4.0707  |
++----------+---------------------------------------------+
+
+Federation:
++--------+-------------------------------------------------------------------------------------------------------------+
+|  get   |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.raw_intersect_transfer_varia | 1 | 15.111 | 15.111  | 15.111  |
+|        |               ble.RawIntersectTransferVariable.send_ids_host               |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| remote |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.raw_intersect_transfer_varia | 1 | 0.008  |  0.008  | 0.008   |
+|        |            ble.RawIntersectTransferVariable.intersect_ids_guest            |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| total  |                                 n=2, sum=15.1182, mean=7.5591, max=15.1107                                  |
++--------+-------------------------------------------------------------------------------------------------------------+
+
+[INFO] [2020-11-20 07:12:18,008] [6950:140412476294976] - intersect_model.py[line:168]: intersect_ids count:569
+[INFO] [2020-11-20 07:12:18,009] [6950:140412476294976] - intersect_model.py[line:169]: intersect_ids header schema:{'header': ['x0', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9'], 'sid_name': 'id', 'label_name': 'y'}
+[INFO] [2020-11-20 07:12:18,439] [6950:140412476294976] - task_executor.py[line:302]: report task 202011200707112994524_intersection_0 0 guest 10000 to driver
+[INFO] [2020-11-20 07:12:18,441] [6950:140412476294976] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_intersection_0 0 on guest 10000
+[INFO] [2020-11-20 07:12:18,591] [6950:140412476294976] - task_executor.py[line:207]: task 202011200707112994524_intersection_0 guest 10000 start time: 2020-11-20 07:11:47
+[INFO] [2020-11-20 07:12:18,593] [6950:140412476294976] - task_executor.py[line:209]: task 202011200707112994524_intersection_0 guest 10000 end time: 2020-11-20 07:12:18
+[INFO] [2020-11-20 07:12:18,594] [6950:140412476294976] - task_executor.py[line:211]: task 202011200707112994524_intersection_0 guest 10000 takes 30.605s
+[INFO] [2020-11-20 07:12:18,594] [6950:140412476294976] - task_executor.py[line:214]: Finish 202011200707112994524 intersection_0 202011200707112994524_intersection_0 0 guest 10000 task success
+[INFO] [2020-11-20 07:12:18,596] [6950:140412476294976] - task_executor.py[line:302]: report task 202011200707112994524_intersection_0 0 guest 10000 to driver
+[INFO] [2020-11-20 07:12:18,598] [6950:140412476294976] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_intersection_0 0 on guest 10000
+[INFO] [2020-11-20 07:12:47,011] [7272:140206541801280] - task_executor.py[line:302]: report task 202011200707112994524_hetero_secure_boost_0 0 guest 10000 to driver
+[INFO] [2020-11-20 07:12:47,014] [7272:140206541801280] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000
+[INFO] [2020-11-20 07:12:53,522] [7272:140206541801280] - task_executor.py[line:156]: Run 202011200707112994524 hetero_secure_boost_0 202011200707112994524_hetero_secure_boost_0 guest 10000 task
+[INFO] [2020-11-20 07:12:53,523] [7272:140206541801280] - task_executor.py[line:157]: Component parameters on party {'HeteroSecureBoostParam': {'task_type': 'classification', 'objective_param': {'objective': 'cross_entropy', 'params': None}, 'learning_rate': 0.3, 'num_trees': 3, 'subsample_feature_rate': 1.0, 'n_iter_no_change': True, 'tol': 0.0001, 'bin_num': 32, 'predict_param': {'threshold': 0.5}, 'cv_param': {'n_splits': 5, 'mode': 'hetero', 'role': 'guest', 'shuffle': True, 'random_seed': 1, 'need_cv': False}, 'validation_freqs': 1, 'metrics': None, 'subsample_random_seed': None, 'binning_error': 0.001, 'encrypt_param': {'method': 'iterativeAffine', 'key_length': 1024}, 'encrypted_mode_calculator_param': {'mode': 'strict', 're_encrypted_rate': 1}, 'early_stopping_rounds': None, 'use_first_metric_only': False, 'tree_param': {'criterion_method': 'xgboost', 'criterion_params': [0.1], 'max_depth': 3, 'min_sample_split': 2, 'min_impurity_split': 0.001, 'min_leaf_node': 1, 'max_split_nodes': 65536, 'feature_importance_type': 'split', 'n_iter_no_change': True, 'tol': 0.001, 'use_missing': False, 'zero_as_missing': False}, 'zero_as_missing': False, 'use_missing': False, 'complete_secure': False, 'sparse_optimization': False}, 'dsl_version': 2, 'initiator': {'role': 'guest', 'party_id': 10000}, 'role': {'host': [9999], 'guest': [10000]}, 'job_parameters': {'job_type': 'train', 'work_mode': 1, 'backend': 0, 'computing_engine': 'EGGROLL', 'federation_engine': 'EGGROLL', 'storage_engine': 'EGGROLL', 'engines_address': {'computing': {'cores_per_node': 20, 'nodes': 1}, 'federation': {'host': 'rollsite', 'port': 9370}, 'storage': {'cores_per_node': 20, 'nodes': 1}}, 'federated_mode': 'MULTIPLE', 'task_parallelism': 1, 'computing_partitions': 4, 'federated_status_collect_type': 'PUSH', 'model_id': 'guest-10000#host-9999#model', 'model_version': '202011200707112994524', 'eggroll_run': {'eggroll.session.processors.per.node': 4}, 'spark_run': {}, 'rabbitmq_run': {}, 'adaptation_parameters': {'task_nodes': 1, 'task_cores_per_node': 4, 'task_memory_per_node': 0}}, 'component_parameters': {'common': {'hetero_secure_boost_0': {'task_type': 'classification', 'objective_param': {'objective': 'cross_entropy'}, 'num_trees': 3, 'validation_freqs': 1, 'encrypt_param': {'method': 'iterativeAffine'}, 'tree_param': {'max_depth': 3}}, 'evaluation_0': {'eval_type': 'binary'}}, 'role': {'guest': {'0': {'reader_1': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'reader_0': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': True, 'output_format': 'dense'}, 'dataio_1': {'with_label': True, 'output_format': 'dense'}}}, 'host': {'0': {'reader_1': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'reader_0': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': False}, 'dataio_1': {'with_label': False}}}}}, 'config': '/data/projects/fate/python/fate_flow/examples/hetero_secureboost_conf.json', 'dsl': 'examples/hetero_secureboost_dsl.json', 'function': 'submit_job', 'local': {'role': 'guest', 'party_id': 10000}, 'CodePath': 'federatedml/ensemble/boosting/hetero/hetero_secureboost_guest.py/HeteroSecureBoostingTreeGuest', 'module': 'HeteroSecureBoost', 'output_data_name': ['data']}
+[INFO] [2020-11-20 07:12:53,524] [7272:140206541801280] - task_executor.py[line:158]: Task input dsl {'data': {'train_data': ['intersection_0.data'], 'validate_data': ['intersection_1.data']}}
+[INFO] [2020-11-20 07:12:53,525] [7272:140206541801280] - tracker_client.py[line:150]: Request read job 202011200707112994524 task None None on guest 10000 data data info
+[INFO] [2020-11-20 07:12:53,605] [7272:140206541801280] - task_executor.py[line:260]: load computing table use 4
+[INFO] [2020-11-20 07:12:53,820] [7272:140206541801280] - tracker_client.py[line:150]: Request read job 202011200707112994524 task None None on guest 10000 data data info
+[INFO] [2020-11-20 07:12:53,902] [7272:140206541801280] - task_executor.py[line:260]: load computing table use 4
+[INFO] [2020-11-20 07:13:01,815] [7272:140206541801280] - hetero_boosting.py[line:140]: begin to fit a hetero boosting model, model is HeteroSecureBoost
+[INFO] [2020-11-20 07:13:10,496] [7272:140206541801280] - boosting.py[line:167]: convert feature to bins
+[INFO] [2020-11-20 07:13:13,717] [7272:140206541801280] - boosting.py[line:176]: convert feature to bins over
+[INFO] [2020-11-20 07:13:14,290] [7272:140206541801280] - hetero_boosting.py[line:81]: check label
+[INFO] [2020-11-20 07:13:14,502] [7272:140206541801280] - hetero_boosting.py[line:148]: class index is [0, 1]
+[INFO] [2020-11-20 07:13:14,503] [7272:140206541801280] - boosting.py[line:290]: set objective, objective is cross_entropy
+[INFO] [2020-11-20 07:13:14,504] [7272:140206541801280] - hetero_boosting.py[line:120]: sync booster_dim to host
+[INFO] [2020-11-20 07:13:14,660] [7272:140206541801280] - hetero_boosting.py[line:62]: generate encrypter
+[INFO] [2020-11-20 07:13:14,666] [7272:140206541801280] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train loss meta
+[INFO] [2020-11-20 07:13:14,717] [7272:140206541801280] - hetero_boosting.py[line:168]: cur epoch idx is 0
+[INFO] [2020-11-20 07:13:14,718] [7272:140206541801280] - hetero_secureboost_guest.py[line:51]: compute grad and hess
+[INFO] [2020-11-20 07:13:14,924] [7272:140206541801280] - hetero_secureboost_guest.py[line:66]: get grad and hess of tree 0
+[INFO] [2020-11-20 07:13:15,087] [7272:140206541801280] - splitter.py[line:59]: splitter init!
+[INFO] [2020-11-20 07:13:15,089] [7272:140206541801280] - hetero_decision_tree_guest.py[line:73]: set encrypter
+[INFO] [2020-11-20 07:13:15,090] [7272:140206541801280] - boosting.py[line:181]: sample valid features
+[INFO] [2020-11-20 07:13:15,094] [7272:140206541801280] - decision_tree.py[line:101]: set valid features
+[INFO] [2020-11-20 07:13:15,095] [7272:140206541801280] - boosting.py[line:391]: generate flowid, flowid fit
+[INFO] [2020-11-20 07:13:15,096] [7272:140206541801280] - decision_tree.py[line:93]: set flowid, flowid is fit.0.0
+[INFO] [2020-11-20 07:13:15,096] [7272:140206541801280] - hetero_decision_tree_guest.py[line:540]: fitting a hetero decision tree
+[INFO] [2020-11-20 07:13:15,313] [7272:140206541801280] - decision_tree.py[line:87]: calculate the sum of grad and hess
+[INFO] [2020-11-20 07:13:15,540] [7272:140206541801280] - hetero_decision_tree_guest.py[line:262]: send tree node queue of depth 0
+[INFO] [2020-11-20 07:13:15,554] [7272:140206541801280] - hetero_decision_tree_guest.py[line:273]: send node positions of depth 0
+[INFO] [2020-11-20 07:13:15,851] [7272:140206541801280] - decision_tree.py[line:114]: start to get node histograms
+[INFO] [2020-11-20 07:13:15,851] [7272:140206541801280] - feature_histogram.py[line:197]: bin_shape is (10, 32), node num is 1
+[INFO] [2020-11-20 07:13:17,445] [7272:140206541801280] - splitter.py[line:167]: splitter find split of raw data
+[INFO] [2020-11-20 07:13:20,659] [7272:140206541801280] - hetero_decision_tree_guest.py[line:186]: federated find split of depth 0, batch 0
+[INFO] [2020-11-20 07:13:20,660] [7272:140206541801280] - hetero_decision_tree_guest.py[line:280]: get encrypted splitinfo of depth 0, batch 0
+[INFO] [2020-11-20 07:13:46,604] [7272:140206541801280] - hetero_decision_tree_guest.py[line:295]: send federated best splitinfo of depth 0, batch 0
+[INFO] [2020-11-20 07:13:46,615] [7272:140206541801280] - hetero_decision_tree_guest.py[line:302]: get host final splitinfo of depth 0, batch 0
+[INFO] [2020-11-20 07:13:48,022] [7272:140206541801280] - hetero_decision_tree_guest.py[line:159]: merge splitinfo, merge_host_split_only is False
+[INFO] [2020-11-20 07:13:48,916] [7272:140206541801280] - hetero_decision_tree_guest.py[line:386]: update tree node, splitlist length is 1, tree node queue size is
+[INFO] [2020-11-20 07:13:48,917] [7272:140206541801280] - hetero_decision_tree_guest.py[line:481]: redispatch node of depth 0
+[INFO] [2020-11-20 07:13:49,079] [7272:140206541801280] - hetero_decision_tree_guest.py[line:493]: remask dispatch node result of depth 0
+[INFO] [2020-11-20 07:13:49,780] [7272:140206541801280] - hetero_decision_tree_guest.py[line:309]: send node to host to dispath, depth is 0
+[INFO] [2020-11-20 07:13:49,793] [7272:140206541801280] - hetero_decision_tree_guest.py[line:314]: get host dispatch result, depth is 0
+[INFO] [2020-11-20 07:13:51,638] [7272:140206541801280] - hetero_decision_tree_guest.py[line:262]: send tree node queue of depth 1
+[INFO] [2020-11-20 07:13:51,647] [7272:140206541801280] - hetero_decision_tree_guest.py[line:273]: send node positions of depth 1
+[INFO] [2020-11-20 07:13:52,061] [7272:140206541801280] - decision_tree.py[line:114]: start to get node histograms
+[INFO] [2020-11-20 07:13:52,062] [7272:140206541801280] - feature_histogram.py[line:197]: bin_shape is (10, 32), node num is 2
+[INFO] [2020-11-20 07:13:53,194] [7272:140206541801280] - splitter.py[line:167]: splitter find split of raw data
+[INFO] [2020-11-20 07:13:54,151] [7272:140206541801280] - hetero_decision_tree_guest.py[line:186]: federated find split of depth 1, batch 0
+[INFO] [2020-11-20 07:13:54,155] [7272:140206541801280] - hetero_decision_tree_guest.py[line:280]: get encrypted splitinfo of depth 1, batch 0
+[INFO] [2020-11-20 07:14:03,774] [7272:140206541801280] - hetero_decision_tree_guest.py[line:295]: send federated best splitinfo of depth 1, batch 0
+[INFO] [2020-11-20 07:14:03,783] [7272:140206541801280] - hetero_decision_tree_guest.py[line:302]: get host final splitinfo of depth 1, batch 0
+[INFO] [2020-11-20 07:14:05,121] [7272:140206541801280] - hetero_decision_tree_guest.py[line:159]: merge splitinfo, merge_host_split_only is False
+[INFO] [2020-11-20 07:14:06,126] [7272:140206541801280] - hetero_decision_tree_guest.py[line:386]: update tree node, splitlist length is 2, tree node queue size is
+[INFO] [2020-11-20 07:14:06,128] [7272:140206541801280] - hetero_decision_tree_guest.py[line:481]: redispatch node of depth 1
+[INFO] [2020-11-20 07:14:06,280] [7272:140206541801280] - hetero_decision_tree_guest.py[line:493]: remask dispatch node result of depth 1
+[INFO] [2020-11-20 07:14:07,012] [7272:140206541801280] - hetero_decision_tree_guest.py[line:309]: send node to host to dispath, depth is 1
+[INFO] [2020-11-20 07:14:07,025] [7272:140206541801280] - hetero_decision_tree_guest.py[line:314]: get host dispatch result, depth is 1
+[INFO] [2020-11-20 07:14:08,606] [7272:140206541801280] - hetero_decision_tree_guest.py[line:262]: send tree node queue of depth 2
+[INFO] [2020-11-20 07:14:08,617] [7272:140206541801280] - hetero_decision_tree_guest.py[line:273]: send node positions of depth 2
+[INFO] [2020-11-20 07:14:09,071] [7272:140206541801280] - decision_tree.py[line:114]: start to get node histograms
+[INFO] [2020-11-20 07:14:09,072] [7272:140206541801280] - feature_histogram.py[line:197]: bin_shape is (10, 32), node num is 4
+[INFO] [2020-11-20 07:14:10,595] [7272:140206541801280] - splitter.py[line:167]: splitter find split of raw data
+[INFO] [2020-11-20 07:14:11,571] [7272:140206541801280] - hetero_decision_tree_guest.py[line:186]: federated find split of depth 2, batch 0
+[INFO] [2020-11-20 07:14:11,572] [7272:140206541801280] - hetero_decision_tree_guest.py[line:280]: get encrypted splitinfo of depth 2, batch 0
+[INFO] [2020-11-20 07:14:21,707] [7272:140206541801280] - hetero_decision_tree_guest.py[line:295]: send federated best splitinfo of depth 2, batch 0
+[INFO] [2020-11-20 07:14:21,717] [7272:140206541801280] - hetero_decision_tree_guest.py[line:302]: get host final splitinfo of depth 2, batch 0
+[INFO] [2020-11-20 07:14:23,168] [7272:140206541801280] - hetero_decision_tree_guest.py[line:159]: merge splitinfo, merge_host_split_only is False
+[INFO] [2020-11-20 07:14:24,141] [7272:140206541801280] - hetero_decision_tree_guest.py[line:386]: update tree node, splitlist length is 4, tree node queue size is
+[INFO] [2020-11-20 07:14:24,143] [7272:140206541801280] - hetero_decision_tree_guest.py[line:481]: redispatch node of depth 2
+[INFO] [2020-11-20 07:14:24,296] [7272:140206541801280] - hetero_decision_tree_guest.py[line:493]: remask dispatch node result of depth 2
+[INFO] [2020-11-20 07:14:25,143] [7272:140206541801280] - hetero_decision_tree_guest.py[line:309]: send node to host to dispath, depth is 2
+[INFO] [2020-11-20 07:14:25,616] [7272:140206541801280] - hetero_decision_tree_guest.py[line:314]: get host dispatch result, depth is 2
+[INFO] [2020-11-20 07:14:27,094] [7272:140206541801280] - hetero_decision_tree_guest.py[line:386]: update tree node, splitlist length is 0, tree node queue size is
+[INFO] [2020-11-20 07:14:27,282] [7272:140206541801280] - hetero_decision_tree_guest.py[line:481]: redispatch node of depth 3
+[INFO] [2020-11-20 07:14:27,505] [7272:140206541801280] - hetero_decision_tree_guest.py[line:493]: remask dispatch node result of depth 3
+[INFO] [2020-11-20 07:14:28,049] [7272:140206541801280] - hetero_decision_tree_guest.py[line:369]: convert tree node bins to real value
+[INFO] [2020-11-20 07:14:28,050] [7272:140206541801280] - hetero_decision_tree_guest.py[line:319]: sync tree to host
+[INFO] [2020-11-20 07:14:28,060] [7272:140206541801280] - hetero_decision_tree_guest.py[line:571]: end to fit guest decision tree
+[INFO] [2020-11-20 07:14:28,286] [7272:140206541801280] - boosting.py[line:336]: compute loss
+[INFO] [2020-11-20 07:14:28,799] [7272:140206541801280] - hetero_boosting.py[line:188]: round 0 loss is 0.4721718463740097
+[INFO] [2020-11-20 07:14:28,800] [7272:140206541801280] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train loss data
+[INFO] [2020-11-20 07:14:29,871] [7272:140206541801280] - hetero_secureboost_guest.py[line:303]: running prediction
+[INFO] [2020-11-20 07:14:30,313] [7272:140206541801280] - hetero_boosting.py[line:135]: sync predict start round 0
+[INFO] [2020-11-20 07:14:30,324] [7272:140206541801280] - splitter.py[line:59]: splitter init!
+[INFO] [2020-11-20 07:14:30,325] [7272:140206541801280] - decision_tree.py[line:229]: load tree model
+[INFO] [2020-11-20 07:14:30,326] [7272:140206541801280] - boosting.py[line:391]: generate flowid, flowid fit_iteration_0_validate
+[INFO] [2020-11-20 07:14:30,327] [7272:140206541801280] - decision_tree.py[line:93]: set flowid, flowid is fit_iteration_0_validate.0.0
+[INFO] [2020-11-20 07:14:30,880] [7272:140206541801280] - hetero_secureboost_guest.py[line:269]: cur predict round is 0
+[INFO] [2020-11-20 07:14:32,343] [7272:140206541801280] - hetero_secureboost_guest.py[line:292]: federated prediction process done
+[WARNING] [2020-11-20 07:14:33,954] [7272:140206541801280] - evaluation_param.py[line:144]: use default metric ['auc', 'ks'] for eval type binary
+[INFO] [2020-11-20 07:14:33,956] [7272:140206541801280] - evaluation_param.py[line:134]: Finish evaluation parameter check!
+[INFO] [2020-11-20 07:14:34,251] [7272:140206541801280] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_0 data
+[INFO] [2020-11-20 07:14:34,303] [7272:140206541801280] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_0 meta
+[INFO] [2020-11-20 07:14:34,354] [7272:140206541801280] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_0 data
+[INFO] [2020-11-20 07:14:34,399] [7272:140206541801280] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_0 meta
+[INFO] [2020-11-20 07:14:34,486] [7272:140206541801280] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_0_ks_fpr data
+[INFO] [2020-11-20 07:14:34,668] [7272:140206541801280] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_0_ks_fpr meta
+[INFO] [2020-11-20 07:14:34,743] [7272:140206541801280] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_0_ks_tpr data
+[INFO] [2020-11-20 07:14:34,924] [7272:140206541801280] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_0_ks_tpr meta
+[INFO] [2020-11-20 07:14:34,979] [7272:140206541801280] - boosting.py[line:356]: check convergence
+[INFO] [2020-11-20 07:14:34,980] [7272:140206541801280] - hetero_boosting.py[line:127]: sync stop flag to host, boosting_core round is 0
+[INFO] [2020-11-20 07:14:34,990] [7272:140206541801280] - hetero_boosting.py[line:168]: cur epoch idx is 1
+[INFO] [2020-11-20 07:14:34,991] [7272:140206541801280] - hetero_secureboost_guest.py[line:51]: compute grad and hess
+[INFO] [2020-11-20 07:14:35,244] [7272:140206541801280] - hetero_secureboost_guest.py[line:66]: get grad and hess of tree 0
+[INFO] [2020-11-20 07:14:35,592] [7272:140206541801280] - splitter.py[line:59]: splitter init!
+[INFO] [2020-11-20 07:14:35,593] [7272:140206541801280] - hetero_decision_tree_guest.py[line:73]: set encrypter
+[INFO] [2020-11-20 07:14:35,594] [7272:140206541801280] - boosting.py[line:181]: sample valid features
+[INFO] [2020-11-20 07:14:35,595] [7272:140206541801280] - decision_tree.py[line:101]: set valid features
+[INFO] [2020-11-20 07:14:35,596] [7272:140206541801280] - boosting.py[line:391]: generate flowid, flowid fit
+[INFO] [2020-11-20 07:14:35,597] [7272:140206541801280] - decision_tree.py[line:93]: set flowid, flowid is fit.1.0
+[INFO] [2020-11-20 07:14:35,597] [7272:140206541801280] - hetero_decision_tree_guest.py[line:540]: fitting a hetero decision tree
+[INFO] [2020-11-20 07:14:35,811] [7272:140206541801280] - decision_tree.py[line:87]: calculate the sum of grad and hess
+[INFO] [2020-11-20 07:14:36,138] [7272:140206541801280] - hetero_decision_tree_guest.py[line:262]: send tree node queue of depth 0
+[INFO] [2020-11-20 07:14:36,147] [7272:140206541801280] - hetero_decision_tree_guest.py[line:273]: send node positions of depth 0
+[INFO] [2020-11-20 07:14:36,549] [7272:140206541801280] - decision_tree.py[line:114]: start to get node histograms
+[INFO] [2020-11-20 07:14:36,550] [7272:140206541801280] - feature_histogram.py[line:197]: bin_shape is (10, 32), node num is 1
+[INFO] [2020-11-20 07:14:38,147] [7272:140206541801280] - splitter.py[line:167]: splitter find split of raw data
+[INFO] [2020-11-20 07:14:38,764] [7272:140206541801280] - hetero_decision_tree_guest.py[line:186]: federated find split of depth 0, batch 0
+[INFO] [2020-11-20 07:14:38,765] [7272:140206541801280] - hetero_decision_tree_guest.py[line:280]: get encrypted splitinfo of depth 0, batch 0
+[INFO] [2020-11-20 07:14:46,439] [7272:140206541801280] - hetero_decision_tree_guest.py[line:295]: send federated best splitinfo of depth 0, batch 0
+[INFO] [2020-11-20 07:14:46,447] [7272:140206541801280] - hetero_decision_tree_guest.py[line:302]: get host final splitinfo of depth 0, batch 0
+[INFO] [2020-11-20 07:14:48,015] [7272:140206541801280] - hetero_decision_tree_guest.py[line:159]: merge splitinfo, merge_host_split_only is False
+[INFO] [2020-11-20 07:14:48,771] [7272:140206541801280] - hetero_decision_tree_guest.py[line:386]: update tree node, splitlist length is 1, tree node queue size is
+[INFO] [2020-11-20 07:14:48,772] [7272:140206541801280] - hetero_decision_tree_guest.py[line:481]: redispatch node of depth 0
+[INFO] [2020-11-20 07:14:48,908] [7272:140206541801280] - hetero_decision_tree_guest.py[line:493]: remask dispatch node result of depth 0
+[INFO] [2020-11-20 07:14:49,583] [7272:140206541801280] - hetero_decision_tree_guest.py[line:309]: send node to host to dispath, depth is 0
+[INFO] [2020-11-20 07:14:49,739] [7272:140206541801280] - hetero_decision_tree_guest.py[line:314]: get host dispatch result, depth is 0
+[INFO] [2020-11-20 07:14:51,734] [7272:140206541801280] - hetero_decision_tree_guest.py[line:262]: send tree node queue of depth 1
+[INFO] [2020-11-20 07:14:51,741] [7272:140206541801280] - hetero_decision_tree_guest.py[line:273]: send node positions of depth 1
+[INFO] [2020-11-20 07:14:52,235] [7272:140206541801280] - decision_tree.py[line:114]: start to get node histograms
+[INFO] [2020-11-20 07:14:52,236] [7272:140206541801280] - feature_histogram.py[line:197]: bin_shape is (10, 32), node num is 2
+[INFO] [2020-11-20 07:14:54,334] [7272:140206541801280] - splitter.py[line:167]: splitter find split of raw data
+[INFO] [2020-11-20 07:14:55,005] [7272:140206541801280] - hetero_decision_tree_guest.py[line:186]: federated find split of depth 1, batch 0
+[INFO] [2020-11-20 07:14:55,006] [7272:140206541801280] - hetero_decision_tree_guest.py[line:280]: get encrypted splitinfo of depth 1, batch 0
+[INFO] [2020-11-20 07:15:02,775] [7272:140206541801280] - hetero_decision_tree_guest.py[line:295]: send federated best splitinfo of depth 1, batch 0
+[INFO] [2020-11-20 07:15:02,786] [7272:140206541801280] - hetero_decision_tree_guest.py[line:302]: get host final splitinfo of depth 1, batch 0
+[INFO] [2020-11-20 07:15:04,033] [7272:140206541801280] - hetero_decision_tree_guest.py[line:159]: merge splitinfo, merge_host_split_only is False
+[INFO] [2020-11-20 07:15:04,657] [7272:140206541801280] - hetero_decision_tree_guest.py[line:386]: update tree node, splitlist length is 2, tree node queue size is
+[INFO] [2020-11-20 07:15:04,659] [7272:140206541801280] - hetero_decision_tree_guest.py[line:481]: redispatch node of depth 1
+[INFO] [2020-11-20 07:15:04,795] [7272:140206541801280] - hetero_decision_tree_guest.py[line:493]: remask dispatch node result of depth 1
+[INFO] [2020-11-20 07:15:05,483] [7272:140206541801280] - hetero_decision_tree_guest.py[line:309]: send node to host to dispath, depth is 1
+[INFO] [2020-11-20 07:15:05,664] [7272:140206541801280] - hetero_decision_tree_guest.py[line:314]: get host dispatch result, depth is 1
+[INFO] [2020-11-20 07:15:07,630] [7272:140206541801280] - hetero_decision_tree_guest.py[line:262]: send tree node queue of depth 2
+[INFO] [2020-11-20 07:15:07,637] [7272:140206541801280] - hetero_decision_tree_guest.py[line:273]: send node positions of depth 2
+[INFO] [2020-11-20 07:15:07,941] [7272:140206541801280] - decision_tree.py[line:114]: start to get node histograms
+[INFO] [2020-11-20 07:15:07,942] [7272:140206541801280] - feature_histogram.py[line:197]: bin_shape is (10, 32), node num is 4
+[INFO] [2020-11-20 07:15:09,944] [7272:140206541801280] - splitter.py[line:167]: splitter find split of raw data
+[INFO] [2020-11-20 07:15:10,655] [7272:140206541801280] - hetero_decision_tree_guest.py[line:186]: federated find split of depth 2, batch 0
+[INFO] [2020-11-20 07:15:10,656] [7272:140206541801280] - hetero_decision_tree_guest.py[line:280]: get encrypted splitinfo of depth 2, batch 0
+[INFO] [2020-11-20 07:15:20,678] [7272:140206541801280] - hetero_decision_tree_guest.py[line:295]: send federated best splitinfo of depth 2, batch 0
+[INFO] [2020-11-20 07:15:20,689] [7272:140206541801280] - hetero_decision_tree_guest.py[line:302]: get host final splitinfo of depth 2, batch 0
+[INFO] [2020-11-20 07:15:22,073] [7272:140206541801280] - hetero_decision_tree_guest.py[line:159]: merge splitinfo, merge_host_split_only is False
+[INFO] [2020-11-20 07:15:22,686] [7272:140206541801280] - hetero_decision_tree_guest.py[line:386]: update tree node, splitlist length is 4, tree node queue size is
+[INFO] [2020-11-20 07:15:22,688] [7272:140206541801280] - hetero_decision_tree_guest.py[line:481]: redispatch node of depth 2
+[INFO] [2020-11-20 07:15:22,834] [7272:140206541801280] - hetero_decision_tree_guest.py[line:493]: remask dispatch node result of depth 2
+[INFO] [2020-11-20 07:15:23,550] [7272:140206541801280] - hetero_decision_tree_guest.py[line:309]: send node to host to dispath, depth is 2
+[INFO] [2020-11-20 07:15:23,738] [7272:140206541801280] - hetero_decision_tree_guest.py[line:314]: get host dispatch result, depth is 2
+[INFO] [2020-11-20 07:15:25,754] [7272:140206541801280] - hetero_decision_tree_guest.py[line:386]: update tree node, splitlist length is 0, tree node queue size is
+[INFO] [2020-11-20 07:15:25,982] [7272:140206541801280] - hetero_decision_tree_guest.py[line:481]: redispatch node of depth 3
+[INFO] [2020-11-20 07:15:26,174] [7272:140206541801280] - hetero_decision_tree_guest.py[line:493]: remask dispatch node result of depth 3
+[INFO] [2020-11-20 07:15:26,838] [7272:140206541801280] - hetero_decision_tree_guest.py[line:369]: convert tree node bins to real value
+[INFO] [2020-11-20 07:15:26,839] [7272:140206541801280] - hetero_decision_tree_guest.py[line:319]: sync tree to host
+[INFO] [2020-11-20 07:15:26,849] [7272:140206541801280] - hetero_decision_tree_guest.py[line:571]: end to fit guest decision tree
+[INFO] [2020-11-20 07:15:27,077] [7272:140206541801280] - boosting.py[line:336]: compute loss
+[INFO] [2020-11-20 07:15:27,558] [7272:140206541801280] - hetero_boosting.py[line:188]: round 1 loss is 0.34085371588613145
+[INFO] [2020-11-20 07:15:27,559] [7272:140206541801280] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train loss data
+[INFO] [2020-11-20 07:15:28,678] [7272:140206541801280] - hetero_secureboost_guest.py[line:303]: running prediction
+[INFO] [2020-11-20 07:15:28,679] [7272:140206541801280] - hetero_boosting.py[line:135]: sync predict start round 1
+[INFO] [2020-11-20 07:15:28,685] [7272:140206541801280] - splitter.py[line:59]: splitter init!
+[INFO] [2020-11-20 07:15:28,686] [7272:140206541801280] - decision_tree.py[line:229]: load tree model
+[INFO] [2020-11-20 07:15:28,688] [7272:140206541801280] - boosting.py[line:391]: generate flowid, flowid fit_iteration_1_validate
+[INFO] [2020-11-20 07:15:28,690] [7272:140206541801280] - decision_tree.py[line:93]: set flowid, flowid is fit_iteration_1_validate.1.0
+[INFO] [2020-11-20 07:15:28,892] [7272:140206541801280] - hetero_secureboost_guest.py[line:324]: load predict cache of round 0
+[INFO] [2020-11-20 07:15:29,265] [7272:140206541801280] - hetero_secureboost_guest.py[line:269]: cur predict round is 0
+[INFO] [2020-11-20 07:15:33,857] [7272:140206541801280] - hetero_secureboost_guest.py[line:269]: cur predict round is 1
+[INFO] [2020-11-20 07:15:35,035] [7272:140206541801280] - hetero_secureboost_guest.py[line:292]: federated prediction process done
+[WARNING] [2020-11-20 07:15:36,962] [7272:140206541801280] - evaluation_param.py[line:144]: use default metric ['auc', 'ks'] for eval type binary
+[INFO] [2020-11-20 07:15:36,963] [7272:140206541801280] - evaluation_param.py[line:134]: Finish evaluation parameter check!
+[INFO] [2020-11-20 07:15:37,220] [7272:140206541801280] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_1 data
+[INFO] [2020-11-20 07:15:37,302] [7272:140206541801280] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_1 meta
+[INFO] [2020-11-20 07:15:37,383] [7272:140206541801280] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_1 data
+[INFO] [2020-11-20 07:15:37,455] [7272:140206541801280] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_1 meta
+[INFO] [2020-11-20 07:15:37,534] [7272:140206541801280] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_1_ks_fpr data
+[INFO] [2020-11-20 07:15:37,717] [7272:140206541801280] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_1_ks_fpr meta
+[INFO] [2020-11-20 07:15:37,800] [7272:140206541801280] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_1_ks_tpr data
+[INFO] [2020-11-20 07:15:37,978] [7272:140206541801280] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_1_ks_tpr meta
+[INFO] [2020-11-20 07:15:38,046] [7272:140206541801280] - boosting.py[line:356]: check convergence
+[INFO] [2020-11-20 07:15:38,047] [7272:140206541801280] - hetero_boosting.py[line:127]: sync stop flag to host, boosting_core round is 1
+[INFO] [2020-11-20 07:15:38,056] [7272:140206541801280] - hetero_boosting.py[line:168]: cur epoch idx is 2
+[INFO] [2020-11-20 07:15:38,057] [7272:140206541801280] - hetero_secureboost_guest.py[line:51]: compute grad and hess
+[INFO] [2020-11-20 07:15:38,258] [7272:140206541801280] - hetero_secureboost_guest.py[line:66]: get grad and hess of tree 0
+[INFO] [2020-11-20 07:15:38,474] [7272:140206541801280] - splitter.py[line:59]: splitter init!
+[INFO] [2020-11-20 07:15:38,475] [7272:140206541801280] - hetero_decision_tree_guest.py[line:73]: set encrypter
+[INFO] [2020-11-20 07:15:38,476] [7272:140206541801280] - boosting.py[line:181]: sample valid features
+[INFO] [2020-11-20 07:15:38,477] [7272:140206541801280] - decision_tree.py[line:101]: set valid features
+[INFO] [2020-11-20 07:15:38,478] [7272:140206541801280] - boosting.py[line:391]: generate flowid, flowid fit
+[INFO] [2020-11-20 07:15:38,479] [7272:140206541801280] - decision_tree.py[line:93]: set flowid, flowid is fit.2.0
+[INFO] [2020-11-20 07:15:38,479] [7272:140206541801280] - hetero_decision_tree_guest.py[line:540]: fitting a hetero decision tree
+[INFO] [2020-11-20 07:15:39,048] [7272:140206541801280] - decision_tree.py[line:87]: calculate the sum of grad and hess
+[INFO] [2020-11-20 07:15:39,231] [7272:140206541801280] - hetero_decision_tree_guest.py[line:262]: send tree node queue of depth 0
+[INFO] [2020-11-20 07:15:39,238] [7272:140206541801280] - hetero_decision_tree_guest.py[line:273]: send node positions of depth 0
+[INFO] [2020-11-20 07:15:39,546] [7272:140206541801280] - decision_tree.py[line:114]: start to get node histograms
+[INFO] [2020-11-20 07:15:39,547] [7272:140206541801280] - feature_histogram.py[line:197]: bin_shape is (10, 32), node num is 1
+[INFO] [2020-11-20 07:15:41,035] [7272:140206541801280] - splitter.py[line:167]: splitter find split of raw data
+[INFO] [2020-11-20 07:15:41,866] [7272:140206541801280] - hetero_decision_tree_guest.py[line:186]: federated find split of depth 0, batch 0
+[INFO] [2020-11-20 07:15:41,870] [7272:140206541801280] - hetero_decision_tree_guest.py[line:280]: get encrypted splitinfo of depth 0, batch 0
+[INFO] [2020-11-20 07:15:50,725] [7272:140206541801280] - hetero_decision_tree_guest.py[line:295]: send federated best splitinfo of depth 0, batch 0
+[INFO] [2020-11-20 07:15:50,732] [7272:140206541801280] - hetero_decision_tree_guest.py[line:302]: get host final splitinfo of depth 0, batch 0
+[INFO] [2020-11-20 07:15:52,098] [7272:140206541801280] - hetero_decision_tree_guest.py[line:159]: merge splitinfo, merge_host_split_only is False
+[INFO] [2020-11-20 07:15:52,727] [7272:140206541801280] - hetero_decision_tree_guest.py[line:386]: update tree node, splitlist length is 1, tree node queue size is
+[INFO] [2020-11-20 07:15:52,728] [7272:140206541801280] - hetero_decision_tree_guest.py[line:481]: redispatch node of depth 0
+[INFO] [2020-11-20 07:15:52,859] [7272:140206541801280] - hetero_decision_tree_guest.py[line:493]: remask dispatch node result of depth 0
+[INFO] [2020-11-20 07:15:53,391] [7272:140206541801280] - hetero_decision_tree_guest.py[line:309]: send node to host to dispath, depth is 0
+[INFO] [2020-11-20 07:15:53,551] [7272:140206541801280] - hetero_decision_tree_guest.py[line:314]: get host dispatch result, depth is 0
+[INFO] [2020-11-20 07:15:55,526] [7272:140206541801280] - hetero_decision_tree_guest.py[line:262]: send tree node queue of depth 1
+[INFO] [2020-11-20 07:15:55,536] [7272:140206541801280] - hetero_decision_tree_guest.py[line:273]: send node positions of depth 1
+[INFO] [2020-11-20 07:15:55,971] [7272:140206541801280] - decision_tree.py[line:114]: start to get node histograms
+[INFO] [2020-11-20 07:15:55,972] [7272:140206541801280] - feature_histogram.py[line:197]: bin_shape is (10, 32), node num is 2
+[INFO] [2020-11-20 07:15:57,451] [7272:140206541801280] - splitter.py[line:167]: splitter find split of raw data
+[INFO] [2020-11-20 07:15:58,231] [7272:140206541801280] - hetero_decision_tree_guest.py[line:186]: federated find split of depth 1, batch 0
+[INFO] [2020-11-20 07:15:58,232] [7272:140206541801280] - hetero_decision_tree_guest.py[line:280]: get encrypted splitinfo of depth 1, batch 0
+[INFO] [2020-11-20 07:16:07,236] [7272:140206541801280] - hetero_decision_tree_guest.py[line:295]: send federated best splitinfo of depth 1, batch 0
+[INFO] [2020-11-20 07:16:07,243] [7272:140206541801280] - hetero_decision_tree_guest.py[line:302]: get host final splitinfo of depth 1, batch 0
+[INFO] [2020-11-20 07:16:08,752] [7272:140206541801280] - hetero_decision_tree_guest.py[line:159]: merge splitinfo, merge_host_split_only is False
+[INFO] [2020-11-20 07:16:09,461] [7272:140206541801280] - hetero_decision_tree_guest.py[line:386]: update tree node, splitlist length is 2, tree node queue size is
+[INFO] [2020-11-20 07:16:09,466] [7272:140206541801280] - hetero_decision_tree_guest.py[line:481]: redispatch node of depth 1
+[INFO] [2020-11-20 07:16:09,623] [7272:140206541801280] - hetero_decision_tree_guest.py[line:493]: remask dispatch node result of depth 1
+[INFO] [2020-11-20 07:16:10,553] [7272:140206541801280] - hetero_decision_tree_guest.py[line:309]: send node to host to dispath, depth is 1
+[INFO] [2020-11-20 07:16:10,891] [7272:140206541801280] - hetero_decision_tree_guest.py[line:314]: get host dispatch result, depth is 1
+[INFO] [2020-11-20 07:16:12,751] [7272:140206541801280] - hetero_decision_tree_guest.py[line:262]: send tree node queue of depth 2
+[INFO] [2020-11-20 07:16:12,758] [7272:140206541801280] - hetero_decision_tree_guest.py[line:273]: send node positions of depth 2
+[INFO] [2020-11-20 07:16:13,046] [7272:140206541801280] - decision_tree.py[line:114]: start to get node histograms
+[INFO] [2020-11-20 07:16:13,047] [7272:140206541801280] - feature_histogram.py[line:197]: bin_shape is (10, 32), node num is 4
+[INFO] [2020-11-20 07:16:14,133] [7272:140206541801280] - splitter.py[line:167]: splitter find split of raw data
+[INFO] [2020-11-20 07:16:15,046] [7272:140206541801280] - hetero_decision_tree_guest.py[line:186]: federated find split of depth 2, batch 0
+[INFO] [2020-11-20 07:16:15,046] [7272:140206541801280] - hetero_decision_tree_guest.py[line:280]: get encrypted splitinfo of depth 2, batch 0
+[INFO] [2020-11-20 07:16:29,266] [7272:140206541801280] - hetero_decision_tree_guest.py[line:295]: send federated best splitinfo of depth 2, batch 0
+[INFO] [2020-11-20 07:16:29,273] [7272:140206541801280] - hetero_decision_tree_guest.py[line:302]: get host final splitinfo of depth 2, batch 0
+[INFO] [2020-11-20 07:16:30,606] [7272:140206541801280] - hetero_decision_tree_guest.py[line:159]: merge splitinfo, merge_host_split_only is False
+[INFO] [2020-11-20 07:16:31,368] [7272:140206541801280] - hetero_decision_tree_guest.py[line:386]: update tree node, splitlist length is 4, tree node queue size is
+[INFO] [2020-11-20 07:16:31,369] [7272:140206541801280] - hetero_decision_tree_guest.py[line:481]: redispatch node of depth 2
+[INFO] [2020-11-20 07:16:31,519] [7272:140206541801280] - hetero_decision_tree_guest.py[line:493]: remask dispatch node result of depth 2
+[INFO] [2020-11-20 07:16:32,191] [7272:140206541801280] - hetero_decision_tree_guest.py[line:309]: send node to host to dispath, depth is 2
+[INFO] [2020-11-20 07:16:32,518] [7272:140206541801280] - hetero_decision_tree_guest.py[line:314]: get host dispatch result, depth is 2
+[INFO] [2020-11-20 07:16:34,193] [7272:140206541801280] - hetero_decision_tree_guest.py[line:386]: update tree node, splitlist length is 0, tree node queue size is
+[INFO] [2020-11-20 07:16:34,431] [7272:140206541801280] - hetero_decision_tree_guest.py[line:481]: redispatch node of depth 3
+[INFO] [2020-11-20 07:16:34,606] [7272:140206541801280] - hetero_decision_tree_guest.py[line:493]: remask dispatch node result of depth 3
+[INFO] [2020-11-20 07:16:35,249] [7272:140206541801280] - hetero_decision_tree_guest.py[line:369]: convert tree node bins to real value
+[INFO] [2020-11-20 07:16:35,250] [7272:140206541801280] - hetero_decision_tree_guest.py[line:319]: sync tree to host
+[INFO] [2020-11-20 07:16:35,263] [7272:140206541801280] - hetero_decision_tree_guest.py[line:571]: end to fit guest decision tree
+[INFO] [2020-11-20 07:16:35,497] [7272:140206541801280] - boosting.py[line:336]: compute loss
+[INFO] [2020-11-20 07:16:35,973] [7272:140206541801280] - hetero_boosting.py[line:188]: round 2 loss is 0.2537315310583895
+[INFO] [2020-11-20 07:16:35,974] [7272:140206541801280] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train loss data
+[INFO] [2020-11-20 07:16:37,059] [7272:140206541801280] - hetero_secureboost_guest.py[line:303]: running prediction
+[INFO] [2020-11-20 07:16:37,060] [7272:140206541801280] - hetero_boosting.py[line:135]: sync predict start round 2
+[INFO] [2020-11-20 07:16:37,067] [7272:140206541801280] - splitter.py[line:59]: splitter init!
+[INFO] [2020-11-20 07:16:37,068] [7272:140206541801280] - decision_tree.py[line:229]: load tree model
+[INFO] [2020-11-20 07:16:37,070] [7272:140206541801280] - boosting.py[line:391]: generate flowid, flowid fit_iteration_2_validate
+[INFO] [2020-11-20 07:16:37,071] [7272:140206541801280] - decision_tree.py[line:93]: set flowid, flowid is fit_iteration_2_validate.2.0
+[INFO] [2020-11-20 07:16:37,362] [7272:140206541801280] - hetero_secureboost_guest.py[line:324]: load predict cache of round 1
+[INFO] [2020-11-20 07:16:38,190] [7272:140206541801280] - hetero_secureboost_guest.py[line:269]: cur predict round is 0
+[INFO] [2020-11-20 07:16:42,097] [7272:140206541801280] - hetero_secureboost_guest.py[line:269]: cur predict round is 1
+[INFO] [2020-11-20 07:16:43,193] [7272:140206541801280] - hetero_secureboost_guest.py[line:292]: federated prediction process done
+[WARNING] [2020-11-20 07:16:45,089] [7272:140206541801280] - evaluation_param.py[line:144]: use default metric ['auc', 'ks'] for eval type binary
+[INFO] [2020-11-20 07:16:45,090] [7272:140206541801280] - evaluation_param.py[line:134]: Finish evaluation parameter check!
+[INFO] [2020-11-20 07:16:45,356] [7272:140206541801280] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_2 data
+[INFO] [2020-11-20 07:16:45,417] [7272:140206541801280] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_2 meta
+[INFO] [2020-11-20 07:16:45,486] [7272:140206541801280] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_2 data
+[INFO] [2020-11-20 07:16:45,534] [7272:140206541801280] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_2 meta
+[INFO] [2020-11-20 07:16:45,620] [7272:140206541801280] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_2_ks_fpr data
+[INFO] [2020-11-20 07:16:45,821] [7272:140206541801280] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_2_ks_fpr meta
+[INFO] [2020-11-20 07:16:45,930] [7272:140206541801280] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_2_ks_tpr data
+[INFO] [2020-11-20 07:16:46,152] [7272:140206541801280] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train iteration_2_ks_tpr meta
+[INFO] [2020-11-20 07:16:46,248] [7272:140206541801280] - boosting.py[line:356]: check convergence
+[INFO] [2020-11-20 07:16:46,249] [7272:140206541801280] - hetero_boosting.py[line:127]: sync stop flag to host, boosting_core round is 2
+[INFO] [2020-11-20 07:16:46,255] [7272:140206541801280] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 metric train loss meta
+[INFO] [2020-11-20 07:16:46,354] [7272:140206541801280] - hetero_secureboost_guest.py[line:303]: running prediction
+[INFO] [2020-11-20 07:16:46,761] [7272:140206541801280] - hetero_boosting.py[line:135]: sync predict start round 0
+[INFO] [2020-11-20 07:16:46,770] [7272:140206541801280] - splitter.py[line:59]: splitter init!
+[INFO] [2020-11-20 07:16:46,771] [7272:140206541801280] - decision_tree.py[line:229]: load tree model
+[INFO] [2020-11-20 07:16:46,772] [7272:140206541801280] - boosting.py[line:391]: generate flowid, flowid validate
+[INFO] [2020-11-20 07:16:46,773] [7272:140206541801280] - decision_tree.py[line:93]: set flowid, flowid is validate.0.0
+[INFO] [2020-11-20 07:16:46,776] [7272:140206541801280] - splitter.py[line:59]: splitter init!
+[INFO] [2020-11-20 07:16:46,777] [7272:140206541801280] - decision_tree.py[line:229]: load tree model
+[INFO] [2020-11-20 07:16:46,778] [7272:140206541801280] - boosting.py[line:391]: generate flowid, flowid validate
+[INFO] [2020-11-20 07:16:46,779] [7272:140206541801280] - decision_tree.py[line:93]: set flowid, flowid is validate.1.0
+[INFO] [2020-11-20 07:16:46,782] [7272:140206541801280] - splitter.py[line:59]: splitter init!
+[INFO] [2020-11-20 07:16:46,782] [7272:140206541801280] - decision_tree.py[line:229]: load tree model
+[INFO] [2020-11-20 07:16:46,784] [7272:140206541801280] - boosting.py[line:391]: generate flowid, flowid validate
+[INFO] [2020-11-20 07:16:46,785] [7272:140206541801280] - decision_tree.py[line:93]: set flowid, flowid is validate.2.0
+[INFO] [2020-11-20 07:16:47,114] [7272:140206541801280] - hetero_secureboost_guest.py[line:269]: cur predict round is 0
+[INFO] [2020-11-20 07:16:52,821] [7272:140206541801280] - hetero_secureboost_guest.py[line:269]: cur predict round is 1
+[INFO] [2020-11-20 07:16:54,057] [7272:140206541801280] - hetero_secureboost_guest.py[line:292]: federated prediction process done
+[INFO] [2020-11-20 07:16:55,265] [7272:140206541801280] - hetero_secureboost_guest.py[line:303]: running prediction
+[INFO] [2020-11-20 07:16:55,266] [7272:140206541801280] - hetero_boosting.py[line:135]: sync predict start round 3
+[INFO] [2020-11-20 07:16:55,452] [7272:140206541801280] - hetero_secureboost_guest.py[line:324]: load predict cache of round 2
+[INFO] [2020-11-20 07:16:55,886] [7272:140206541801280] - hetero_secureboost_guest.py[line:269]: cur predict round is 0
+[INFO] [2020-11-20 07:16:57,224] [7272:140206541801280] - hetero_secureboost_guest.py[line:292]: federated prediction process done
+[INFO] [2020-11-20 07:16:59,277] [7272:140206541801280] - tracker_client.py[line:173]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000 component summary
+[INFO] [2020-11-20 07:17:07,622] [7272:140206541801280] - profile.py[line:249]: 
+Computing:
++----------+---------------------------------------------------------+
+| function |       function          n    sum(s)   mean(s)   max(s)  |
+|          | --------------------- ----- -------- --------- -------- |
+|          |       mapValues        126   31.125    0.247    8.522   |
+|          |         join           71    14.947    0.211    0.381   |
+|          |      parallelize       27    12.652    0.469    2.838   |
+|          |  mapReducePartitions   10    11.565    1.157    2.528   |
+|          |     subtractByKey      37     5.8      0.157    0.254   |
+|          |        filter          32    4.654     0.145    0.312   |
+|          |         union          30    4.465     0.149    0.178   |
+|          |         count          36    1.282     0.036    0.063   |
+|          |         first           6    0.723     0.121    0.129   |
+|          |         load            2    0.408     0.204    0.212   |
+|          |        reduce           6    0.393     0.066    0.153   |
+|          |    applyPartitions      2    0.205     0.103    0.171   |
+|          |        collect         31    0.103     0.003    0.005   |
++----------+---------------------------------------------------------+
+|  total   |       n=416, sum=88.3237, mean=0.2123, max=8.5216       |
++----------+---------------------------------------------------------+
+
+Federation:
++--------+-------------------------------------------------------------------------------------------------------------+
+|  get   |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfe | 9 | 94.03  | 10.448  | 24.154  |
+|        |   r_variable.HeteroDecisionTreeTransferVariable.encrypted_splitinfo_host   |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfe | 9 | 14.114 |  1.568  | 1.726   |
+|        |   r_variable.HeteroDecisionTreeTransferVariable.dispatch_node_host_result  |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfe | 9 | 12.575 |  1.397  | 1.561   |
+|        |     r_variable.HeteroDecisionTreeTransferVariable.final_splitinfo_host     |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_secure_boosting_predi | 3 | 8.905  |  2.968  | 3.968   |
+|        |  ct_transfer_variable.HeteroSecureBoostTransferVariable.host_predict_data  |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| remote |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_secure_boosting_predi | 8 | 0.132  |  0.016  | 0.099   |
+|        |  ct_transfer_variable.HeteroSecureBoostTransferVariable.predict_stop_flag  |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfe | 9 | 0.099  |  0.011  | 0.018   |
+|        |        r_variable.HeteroDecisionTreeTransferVariable.node_positions        |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfe | 9 | 0.089  |  0.01   | 0.012   |
+|        |      r_variable.HeteroDecisionTreeTransferVariable.dispatch_node_host      |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfe | 9 | 0.056  |  0.006  | 0.009   |
+|        |  r_variable.HeteroDecisionTreeTransferVariable.federated_best_splitinfo_ho |   |        |         |         |
+|        |                                     st                                     |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfe | 9 | 0.051  |  0.006  | 0.011   |
+|        |        r_variable.HeteroDecisionTreeTransferVariable.tree_node_queue       |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfe | 3 | 0.028  |  0.009  |  0.01   |
+|        |    r_variable.HeteroDecisionTreeTransferVariable.encrypted_grad_and_hess   |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_secure_boosting_predi | 3 | 0.028  |  0.009  | 0.012   |
+|        |  ct_transfer_variable.HeteroSecureBoostTransferVariable.guest_predict_data |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_boosting_transfer_var | 5 | 0.027  |  0.005  | 0.008   |
+|        |          iable.HeteroBoostingTransferVariable.predict_start_round          |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_boosting_transfer_var | 3 | 0.018  |  0.006  | 0.007   |
+|        |               iable.HeteroBoostingTransferVariable.stop_flag               |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfe | 3 | 0.017  |  0.006  | 0.008   |
+|        |             r_variable.HeteroDecisionTreeTransferVariable.tree             |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_boosting_transfer_var | 1 | 0.008  |  0.008  | 0.008   |
+|        |              iable.HeteroBoostingTransferVariable.booster_dim              |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| total  |                                n=92, sum=130.1757, mean=1.4150, max=24.1540                                 |
++--------+-------------------------------------------------------------------------------------------------------------+
+
+[INFO] [2020-11-20 07:17:08,090] [7272:140206541801280] - pipelined_model.py[line:73]: Save hetero_secure_boost_0 model HeteroSecureBoostingTreeGuestMeta buffer
+[INFO] [2020-11-20 07:17:08,092] [7272:140206541801280] - pipelined_model.py[line:73]: Save hetero_secure_boost_0 model HeteroSecureBoostingTreeGuestParam buffer
+[INFO] [2020-11-20 07:17:08,128] [7272:140206541801280] - pipelined_model.py[line:78]: Save hetero_secure_boost_0 model successfully
+[INFO] [2020-11-20 07:17:08,129] [7272:140206541801280] - task_executor.py[line:302]: report task 202011200707112994524_hetero_secure_boost_0 0 guest 10000 to driver
+[INFO] [2020-11-20 07:17:08,130] [7272:140206541801280] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000
+[INFO] [2020-11-20 07:17:08,287] [7272:140206541801280] - task_executor.py[line:207]: task 202011200707112994524_hetero_secure_boost_0 guest 10000 start time: 2020-11-20 07:12:46
+[INFO] [2020-11-20 07:17:08,288] [7272:140206541801280] - task_executor.py[line:209]: task 202011200707112994524_hetero_secure_boost_0 guest 10000 end time: 2020-11-20 07:17:08
+[INFO] [2020-11-20 07:17:08,289] [7272:140206541801280] - task_executor.py[line:211]: task 202011200707112994524_hetero_secure_boost_0 guest 10000 takes 261.429s
+[INFO] [2020-11-20 07:17:08,290] [7272:140206541801280] - task_executor.py[line:214]: Finish 202011200707112994524 hetero_secure_boost_0 202011200707112994524_hetero_secure_boost_0 0 guest 10000 task success
+[INFO] [2020-11-20 07:17:08,291] [7272:140206541801280] - task_executor.py[line:302]: report task 202011200707112994524_hetero_secure_boost_0 0 guest 10000 to driver
+[INFO] [2020-11-20 07:17:08,292] [7272:140206541801280] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on guest 10000
+[INFO] [2020-11-20 07:17:34,995] [11809:140710994700096] - task_executor.py[line:302]: report task 202011200707112994524_evaluation_0 0 guest 10000 to driver
+[INFO] [2020-11-20 07:17:34,997] [11809:140710994700096] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000
+[INFO] [2020-11-20 07:17:41,696] [11809:140710994700096] - task_executor.py[line:156]: Run 202011200707112994524 evaluation_0 202011200707112994524_evaluation_0 guest 10000 task
+[INFO] [2020-11-20 07:17:41,697] [11809:140710994700096] - task_executor.py[line:157]: Component parameters on party {'EvaluateParam': {'eval_type': 'binary', 'pos_label': 1, 'need_run': True, 'metrics': None, 'run_clustering_arbiter_metric': False, 'default_metrics': {'binary': ['auc', 'ks', 'lift', 'gain', 'accuracy', 'precision', 'recall', 'roc', 'confusion_mat', 'psi', 'f1_score', 'quantile_pr'], 'multi': ['accuracy', 'precision', 'recall'], 'regression': ['explained_variance', 'mean_absolute_error', 'mean_squared_error', 'median_absolute_error', 'r2_score', 'root_mean_squared_error'], 'clustering': ['jaccard_similarity_score', 'fowlkes_mallows_score', 'adjusted_rand_score', 'davies_bouldin_index', 'distance_measure', 'contingency_matrix']}, 'allowed_metrics': {'binary': ['auc', 'ks', 'lift', 'gain', 'accuracy', 'precision', 'recall', 'roc', 'confusion_mat', 'psi', 'f1_score', 'quantile_pr'], 'multi': ['accuracy', 'precision', 'recall'], 'regression': ['explained_variance', 'mean_absolute_error', 'mean_squared_error', 'median_absolute_error', 'r2_score', 'root_mean_squared_error'], 'clustering': ['jaccard_similarity_score', 'fowlkes_mallows_score', 'adjusted_rand_score', 'davies_bouldin_index', 'distance_measure', 'contingency_matrix']}}, 'dsl_version': 2, 'initiator': {'role': 'guest', 'party_id': 10000}, 'role': {'host': [9999], 'guest': [10000]}, 'job_parameters': {'job_type': 'train', 'work_mode': 1, 'backend': 0, 'computing_engine': 'EGGROLL', 'federation_engine': 'EGGROLL', 'storage_engine': 'EGGROLL', 'engines_address': {'computing': {'cores_per_node': 20, 'nodes': 1}, 'federation': {'host': 'rollsite', 'port': 9370}, 'storage': {'cores_per_node': 20, 'nodes': 1}}, 'federated_mode': 'MULTIPLE', 'task_parallelism': 1, 'computing_partitions': 4, 'federated_status_collect_type': 'PUSH', 'model_id': 'guest-10000#host-9999#model', 'model_version': '202011200707112994524', 'eggroll_run': {'eggroll.session.processors.per.node': 4}, 'spark_run': {}, 'rabbitmq_run': {}, 'adaptation_parameters': {'task_nodes': 1, 'task_cores_per_node': 4, 'task_memory_per_node': 0}}, 'component_parameters': {'common': {'hetero_secure_boost_0': {'task_type': 'classification', 'objective_param': {'objective': 'cross_entropy'}, 'num_trees': 3, 'validation_freqs': 1, 'encrypt_param': {'method': 'iterativeAffine'}, 'tree_param': {'max_depth': 3}}, 'evaluation_0': {'eval_type': 'binary'}}, 'role': {'guest': {'0': {'reader_1': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'reader_0': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': True, 'output_format': 'dense'}, 'dataio_1': {'with_label': True, 'output_format': 'dense'}}}, 'host': {'0': {'reader_1': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'reader_0': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': False}, 'dataio_1': {'with_label': False}}}}}, 'config': '/data/projects/fate/python/fate_flow/examples/hetero_secureboost_conf.json', 'dsl': 'examples/hetero_secureboost_dsl.json', 'function': 'submit_job', 'local': {'role': 'guest', 'party_id': 10000}, 'CodePath': 'federatedml/evaluation/evaluation.py/Evaluation', 'module': 'Evaluation', 'output_data_name': ['data']}
+[INFO] [2020-11-20 07:17:41,698] [11809:140710994700096] - task_executor.py[line:158]: Task input dsl {'data': {'data': ['hetero_secure_boost_0.data']}}
+[INFO] [2020-11-20 07:17:41,699] [11809:140710994700096] - tracker_client.py[line:150]: Request read job 202011200707112994524 task None None on guest 10000 data data info
+[INFO] [2020-11-20 07:17:41,779] [11809:140710994700096] - task_executor.py[line:260]: load computing table use 4
+[WARNING] [2020-11-20 07:17:43,856] [11809:140710994700096] - evaluation_param.py[line:130]: use default metric ['auc', 'ks', 'lift', 'gain', 'accuracy', 'precision', 'recall', 'roc', 'confusion_mat', 'psi', 'f1_score', 'quantile_pr'] for eval type binary
+[INFO] [2020-11-20 07:17:43,858] [11809:140710994700096] - evaluation_param.py[line:134]: Finish evaluation parameter check!
+[INFO] [2020-11-20 07:17:44,493] [11809:140710994700096] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0 data
+[INFO] [2020-11-20 07:17:44,541] [11809:140710994700096] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0 meta
+[INFO] [2020-11-20 07:17:44,587] [11809:140710994700096] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0 data
+[INFO] [2020-11-20 07:17:44,628] [11809:140710994700096] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0 meta
+[INFO] [2020-11-20 07:17:44,685] [11809:140710994700096] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0_ks_fpr data
+[INFO] [2020-11-20 07:17:44,841] [11809:140710994700096] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0_ks_fpr meta
+[INFO] [2020-11-20 07:17:44,900] [11809:140710994700096] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0_ks_tpr data
+[INFO] [2020-11-20 07:17:45,095] [11809:140710994700096] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0_ks_tpr meta
+[INFO] [2020-11-20 07:17:45,188] [11809:140710994700096] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0_lift data
+[INFO] [2020-11-20 07:17:45,294] [11809:140710994700096] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0_lift meta
+[INFO] [2020-11-20 07:17:45,368] [11809:140710994700096] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0_gain data
+[INFO] [2020-11-20 07:17:45,471] [11809:140710994700096] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0_gain meta
+[INFO] [2020-11-20 07:17:45,534] [11809:140710994700096] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0_accuracy data
+[INFO] [2020-11-20 07:17:45,691] [11809:140710994700096] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0_accuracy meta
+[INFO] [2020-11-20 07:17:45,783] [11809:140710994700096] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0_precision data
+[INFO] [2020-11-20 07:17:45,913] [11809:140710994700096] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0_precision meta
+[INFO] [2020-11-20 07:17:46,005] [11809:140710994700096] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0_recall data
+[INFO] [2020-11-20 07:17:46,105] [11809:140710994700096] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0_recall meta
+[INFO] [2020-11-20 07:17:46,191] [11809:140710994700096] - tracker_client.py[line:70]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0_roc data
+[INFO] [2020-11-20 07:17:46,335] [11809:140710994700096] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0_roc meta
+[INFO] [2020-11-20 07:17:46,393] [11809:140710994700096] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0_confusion_mat meta
+[INFO] [2020-11-20 07:17:46,449] [11809:140710994700096] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0_f1_score meta
+[INFO] [2020-11-20 07:17:46,513] [11809:140710994700096] - tracker_client.py[line:103]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 metric train hetero_secure_boost_0_quantile_pr meta
+[INFO] [2020-11-20 07:17:46,585] [11809:140710994700096] - tracker_client.py[line:173]: Request save job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000 component summary
+[INFO] [2020-11-20 07:17:46,958] [11809:140710994700096] - profile.py[line:249]: 
+Computing:
++----------+--------------------------------------------+
+| function |  function   n   sum(s)   mean(s)   max(s)  |
+|          | ---------- --- -------- --------- -------- |
+|          |    load     1   0.174     0.174    0.174   |
+|          |   count     1   0.038     0.038    0.038   |
+|          |  collect    1   0.003     0.003    0.003   |
++----------+--------------------------------------------+
+|  total   |  n=3, sum=0.2151, mean=0.0717, max=0.1735  |
++----------+--------------------------------------------+
+
+Federation:
++--------+------------------------------------------+
+|  get   |                                          |
++--------+------------------------------------------+
+| remote |                                          |
++--------+------------------------------------------+
+| total  | n=0, sum=0.0000, mean=0.0000, max=0.0000 |
++--------+------------------------------------------+
+
+[INFO] [2020-11-20 07:17:46,964] [11809:140710994700096] - task_executor.py[line:302]: report task 202011200707112994524_evaluation_0 0 guest 10000 to driver
+[INFO] [2020-11-20 07:17:46,965] [11809:140710994700096] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000
+[INFO] [2020-11-20 07:17:47,090] [11809:140710994700096] - task_executor.py[line:207]: task 202011200707112994524_evaluation_0 guest 10000 start time: 2020-11-20 07:17:34
+[INFO] [2020-11-20 07:17:47,091] [11809:140710994700096] - task_executor.py[line:209]: task 202011200707112994524_evaluation_0 guest 10000 end time: 2020-11-20 07:17:46
+[INFO] [2020-11-20 07:17:47,092] [11809:140710994700096] - task_executor.py[line:211]: task 202011200707112994524_evaluation_0 guest 10000 takes 12.311s
+[INFO] [2020-11-20 07:17:47,093] [11809:140710994700096] - task_executor.py[line:214]: Finish 202011200707112994524 evaluation_0 202011200707112994524_evaluation_0 0 guest 10000 task success
+[INFO] [2020-11-20 07:17:47,095] [11809:140710994700096] - task_executor.py[line:302]: report task 202011200707112994524_evaluation_0 0 guest 10000 to driver
+[INFO] [2020-11-20 07:17:47,098] [11809:140710994700096] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_evaluation_0 0 on guest 10000

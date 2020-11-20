@@ -1,0 +1,47 @@
+[DEBUG] [2020-11-20 07:11:09,696] [19973:139632274605888] - profile.py[line:84]: [computing#41d092c3c4]function_stack: [component_properties.py:225]extract_input_data <-[component_properties.py:238]extract_running_rules <-[model_base.py:87]run
+[DEBUG] [2020-11-20 07:11:09,698] [19973:139632274605888] - profile.py[line:87]: [computing#41d092c3c4]start
+[DEBUG] [2020-11-20 07:11:09,778] [19973:139632274605888] - profile.py[line:93]: [computing#41d092c3c4]done, elapse: 0.08237433433532715, function: count(self: Table(partition=4)) -> int
+[DEBUG] [2020-11-20 07:11:09,793] [19973:139632274605888] - profile.py[line:84]: [computing#4097bba6a9]function_stack: [intersect.py:132]intersect_send_id <-[intersect_host.py:223]run <-[intersect_model.py:145]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 07:11:09,795] [19973:139632274605888] - profile.py[line:87]: [computing#4097bba6a9]start
+[DEBUG] [2020-11-20 07:11:16,770] [19973:139632274605888] - profile.py[line:93]: [computing#4097bba6a9]done, elapse: 6.977796792984009, function: mapValues(self: Table(partition=4), func: function) -> Table(partition=4)
+[DEBUG] [2020-11-20 07:11:16,774] [19973:139632274605888] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.raw_intersect_transfer_variable.RawIntersectTransferVariable.send_ids_host.fit]host->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 07:11:16,784] [19973:139632274605888] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.raw_intersect_transfer_variable.RawIntersectTransferVariable.send_ids_host.fit]host->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 07:11:16,793] [19973:139632274605888] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.raw_intersect_transfer_variable.RawIntersectTransferVariable.intersect_ids_guest.fit]host<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 07:11:18,449] [19973:139632274605888] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.raw_intersect_transfer_variable.RawIntersectTransferVariable.intersect_ids_guest.fit]host<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 07:11:18,456] [19973:139632274605888] - profile.py[line:84]: [computing#88c5295fe7]function_stack: [intersect.py:80]_get_value_from_data <-[intersect.py:184]intersect_send_id <-[intersect_host.py:223]run <-[intersect_model.py:145]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 07:11:18,456] [19973:139632274605888] - profile.py[line:87]: [computing#88c5295fe7]start
+[DEBUG] [2020-11-20 07:11:18,774] [19973:139632274605888] - profile.py[line:93]: [computing#88c5295fe7]done, elapse: 0.31798458099365234, function: join(self: Table(partition=4), other: Table(partition=4), func: function) -> Table(partition=4)
+[DEBUG] [2020-11-20 07:11:18,781] [19973:139632274605888] - profile.py[line:84]: [computing#5655dc08fa]function_stack: [intersect_model.py:153]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 07:11:18,782] [19973:139632274605888] - profile.py[line:87]: [computing#5655dc08fa]start
+[DEBUG] [2020-11-20 07:11:18,863] [19973:139632274605888] - profile.py[line:93]: [computing#5655dc08fa]done, elapse: 0.08176207542419434, function: count(self: Table(partition=4)) -> int
+[DEBUG] [2020-11-20 07:11:18,865] [19973:139632274605888] - profile.py[line:84]: [computing#529d4dedac]function_stack: [intersect_model.py:154]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 07:11:18,867] [19973:139632274605888] - profile.py[line:87]: [computing#529d4dedac]start
+[DEBUG] [2020-11-20 07:11:18,954] [19973:139632274605888] - profile.py[line:93]: [computing#529d4dedac]done, elapse: 0.0889132022857666, function: count(self: Table(partition=4)) -> int
+[INFO] [2020-11-20 07:11:19,839] [19973:139632274605888] - profile.py[line:249]: 
+Computing:
++----------+---------------------------------------------+
+| function |  function    n   sum(s)   mean(s)   max(s)  |
+|          | ----------- --- -------- --------- -------- |
+|          |  mapValues   1   6.978     6.978    6.978   |
+|          |    load      1   0.537     0.537    0.537   |
+|          |    join      1   0.318     0.318    0.318   |
+|          |    count     3   0.253     0.084    0.089   |
++----------+---------------------------------------------+
+|  total   |  n=6, sum=8.0862, mean=1.3477, max=6.9778   |
++----------+---------------------------------------------+
+
+Federation:
++--------+-------------------------------------------------------------------------------------------------------------+
+|  get   |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.raw_intersect_transfer_varia | 1 | 1.654  |  1.654  | 1.654   |
+|        |            ble.RawIntersectTransferVariable.intersect_ids_guest            |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| remote |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.raw_intersect_transfer_varia | 1 | 0.009  |  0.009  | 0.009   |
+|        |               ble.RawIntersectTransferVariable.send_ids_host               |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| total  |                                  n=2, sum=1.6632, mean=0.8316, max=1.6544                                   |
++--------+-------------------------------------------------------------------------------------------------------------+
+

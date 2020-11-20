@@ -1,0 +1,1297 @@
+[INFO] [2020-11-20 02:36:03,305] [1708:140062557472576] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_hetero_feature_selection_0 0 on host 9999
+[DEBUG] [2020-11-20 02:36:15,053] [1708:140062557472576] - _federation.py[line:35]: [federation.eggroll]init federation: rp_session_id=202011200231350021282_hetero_feature_selection_0_0_host_9999, rs_session_id=202011200231350021282_hetero_feature_selection_0_0, party=Party(role=host, party_id=9999), proxy_endpoint=rollsite:9370
+[DEBUG] [2020-11-20 02:36:15,058] [1708:140062557472576] - _federation.py[line:45]: [federation.eggroll]init federation context done
+[INFO] [2020-11-20 02:36:15,065] [1708:140062557472576] - tracker_client.py[line:150]: Request read job 202011200231350021282 task None None on host 9999 data train info
+[INFO] [2020-11-20 02:36:15,219] [1708:140062557472576] - task_executor.py[line:260]: load computing table use 8
+[DEBUG] [2020-11-20 02:36:21,403] [1708:140062557472576] - component_properties.py[line:73]: {'FeatureSelectionParam': {'select_col_indexes': -1, 'select_names': [], 'filter_methods': ['manually'], 'unique_param': {'eps': 1e-05}, 'iv_value_param': {'value_threshold': 0.0, 'host_thresholds': None, 'local_only': False}, 'iv_percentile_param': {'percentile_threshold': 1.0, 'local_only': False}, 'iv_top_k_param': {'k': 10, 'local_only': False}, 'variance_coe_param': {'value_threshold': 1.0}, 'outlier_param': {'percentile': 1.0, 'upper_threshold': 1.0}, 'percentage_value_param': {'upper_pct': 1.0}, 'manually_param': {'filter_out_indexes': None, 'filter_out_names': None, 'left_col_indexes': None, 'left_col_names': None}, 'iv_param': {'metrics': 'iv', 'filter_type': 'threshold', 'take_high': True, 'threshold': 1, 'host_thresholds': None, 'select_federated': True}, 'statistic_param': {'metrics': 'mean', 'filter_type': 'threshold', 'take_high': True, 'threshold': 1, 'host_thresholds': None, 'select_federated': True}, 'psi_param': {'metrics': 'psi', 'filter_type': 'threshold', 'take_high': False, 'threshold': 1, 'host_thresholds': None, 'select_federated': True}, 'sbt_param': {'metrics': 'feature_importance', 'filter_type': 'threshold', 'take_high': True, 'threshold': 1, 'host_thresholds': None, 'select_federated': True}, 'need_run': True}, 'dsl_version': '2', 'initiator': {'role': 'guest', 'party_id': 10000}, 'role': {'guest': [10000], 'host': [9999], 'arbiter': [9999]}, 'job_parameters': {'job_type': 'train', 'work_mode': 1, 'backend': 0, 'computing_engine': 'EGGROLL', 'federation_engine': 'EGGROLL', 'storage_engine': 'EGGROLL', 'engines_address': {'computing': {'cores_per_node': 20, 'nodes': 1}, 'federation': {'host': 'rollsite', 'port': 9370}, 'storage': {'cores_per_node': 20, 'nodes': 1}}, 'federated_mode': 'MULTIPLE', 'task_parallelism': 2, 'computing_partitions': 8, 'federated_status_collect_type': 'PUSH', 'model_id': 'arbiter-9999#guest-10000#host-9999#model', 'model_version': '202011200231350021282', 'eggroll_run': {'eggroll.session.processors.per.node': 2}, 'spark_run': {'num-executors': 1, 'executor-cores': 2}, 'rabbitmq_run': {}, 'adaptation_parameters': {'task_nodes': 1, 'task_cores_per_node': 2, 'task_memory_per_node': 0}}, 'component_parameters': {'common': {'intersect_0': {'intersect_method': 'raw', 'sync_intersect_ids': True, 'only_output_key': False}, 'hetero_lr_0': {'penalty': 'L2', 'optimizer': 'rmsprop', 'alpha': 0.01, 'max_iter': 3, 'batch_size': 320, 'learning_rate': 0.15, 'init_param': {'init_method': 'random_uniform'}}}, 'role': {'guest': {'0': {'reader_0': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': True, 'label_name': 'y', 'label_type': 'int', 'output_format': 'dense'}}}, 'host': {'0': {'reader_0': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': False, 'output_format': 'dense'}}}}}, 'config': '/data/projects/fate/python/fate_flow/examples/test_hetero_lr_job_conf.json', 'dsl': 'examples/test_hetero_lr_job_dsl.json', 'function': 'submit_job', 'local': {'role': 'host', 'party_id': 9999}, 'CodePath': 'federatedml/feature/hetero_feature_selection/feature_selection_host.py/HeteroFeatureSelectionHost', 'module': 'HeteroFeatureSelection', 'output_data_name': ['train']}
+[DEBUG] [2020-11-20 02:36:21,408] [1708:140062557472576] - component_properties.py[line:80]: need_run: True, need_cv: False
+[DEBUG] [2020-11-20 02:36:21,409] [1708:140062557472576] - component_properties.py[line:102]: parse_dsl_args data_sets: {'hetero_feature_binning_0': {'data': [<fate_arch.computing.eggroll._table.Table object at 0x7f62c8e619e8>]}}
+[DEBUG] [2020-11-20 02:36:21,410] [1708:140062557472576] - component_properties.py[line:112]: [Data Parser], has_train_data: False
+[DEBUG] [2020-11-20 02:36:21,410] [1708:140062557472576] - component_properties.py[line:112]: [Data Parser], has_eval_data: False
+[DEBUG] [2020-11-20 02:36:21,412] [1708:140062557472576] - component_properties.py[line:112]: [Data Parser], has_validate_data: False
+[DEBUG] [2020-11-20 02:36:21,414] [1708:140062557472576] - component_properties.py[line:112]: [Data Parser], has_test_data: False
+[DEBUG] [2020-11-20 02:36:21,414] [1708:140062557472576] - component_properties.py[line:118]: [Data Parser], has_normal_data: True
+[DEBUG] [2020-11-20 02:36:21,415] [1708:140062557472576] - component_properties.py[line:179]: Input data_sets: {'hetero_feature_binning_0': {'data': [<fate_arch.computing.eggroll._table.Table object at 0x7f62c8e619e8>]}}
+[DEBUG] [2020-11-20 02:36:21,416] [1708:140062557472576] - component_properties.py[line:189]: data_dict: {'data': [<fate_arch.computing.eggroll._table.Table object at 0x7f62c8e619e8>]}
+[DEBUG] [2020-11-20 02:36:21,416] [1708:140062557472576] - component_properties.py[line:192]: data_list: <fate_arch.computing.eggroll._table.Table object at 0x7f62c8e619e8>
+[DEBUG] [2020-11-20 02:36:21,800] [1708:140062557472576] - component_properties.py[line:231]: train_data: None, validate_data: None, test_data: None, data: {'hetero_feature_binning_0.data': <fate_arch.computing.eggroll._table.Table object at 0x7f62c8e619e8>}
+[DEBUG] [2020-11-20 02:36:21,802] [1708:140062557472576] - model_base.py[line:88]: running_funcs: [<bound method BaseHeteroFeatureSelection.load_model of <federatedml.feature.hetero_feature_selection.feature_selection_host.HeteroFeatureSelectionHost object at 0x7f62cc396278>>, <function ModelBase.extract_data at 0x7f62c30d71e0>, <bound method ModelBase.set_flowid of <federatedml.feature.hetero_feature_selection.feature_selection_host.HeteroFeatureSelectionHost object at 0x7f62cc396278>>, <bound method BaseHeteroFeatureSelection.fit of <federatedml.feature.hetero_feature_selection.feature_selection_host.HeteroFeatureSelectionHost object at 0x7f62cc396278>>]
+[DEBUG] [2020-11-20 02:36:21,805] [1708:140062557472576] - base_feature_selection.py[line:204]: In load_model, model_dict: {'data': {'hetero_feature_binning_0': {'data': [<fate_arch.computing.eggroll._table.Table object at 0x7f62c8e619e8>]}}, 'isometric_model': {'hetero_feature_binning_0': {'FeatureBinningMeta': need_run: true
+compress_thres: 10000
+head_size: 10000
+error: 0.001
+bin_num: 10
+cols: "x0"
+cols: "x1"
+cols: "x2"
+cols: "x3"
+cols: "x4"
+cols: "x5"
+cols: "x6"
+cols: "x7"
+cols: "x8"
+cols: "x9"
+cols: "x10"
+cols: "x11"
+cols: "x12"
+cols: "x13"
+cols: "x14"
+cols: "x15"
+cols: "x16"
+cols: "x17"
+cols: "x18"
+cols: "x19"
+adjustment_factor: 0.5
+transform_param {
+  transform_cols: 0
+  transform_cols: 1
+  transform_cols: 2
+  transform_cols: 3
+  transform_cols: 4
+  transform_cols: 5
+  transform_cols: 6
+  transform_cols: 7
+  transform_cols: 8
+  transform_cols: 9
+  transform_cols: 10
+  transform_cols: 11
+  transform_cols: 12
+  transform_cols: 13
+  transform_cols: 14
+  transform_cols: 15
+  transform_cols: 16
+  transform_cols: 17
+  transform_cols: 18
+  transform_cols: 19
+  transform_type: "bin_num"
+}
+method: "quantile"
+, 'FeatureBinningParam': binning_result {
+  binning_result {
+    key: "x0"
+    value {
+      split_points: -1.098366
+      split_points: -0.78595
+      split_points: -0.604181
+      split_points: -0.399691
+      split_points: -0.215082
+      split_points: -0.019112
+      split_points: 0.264902
+      split_points: 0.838611
+      split_points: 1.534446
+      split_points: 3.971288
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x1"
+    value {
+      split_points: -1.214647
+      split_points: -0.846971
+      split_points: -0.57005
+      split_points: -0.321053
+      split_points: -0.104636
+      split_points: 0.158322
+      split_points: 0.463168
+      split_points: 0.733108
+      split_points: 1.328837
+      split_points: 4.651889
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x10"
+    value {
+      split_points: -0.804753
+      split_points: -0.671573
+      split_points: -0.575929
+      split_points: -0.451772
+      split_points: -0.292245
+      split_points: -0.127304
+      split_points: 0.093579
+      split_points: 0.508999
+      split_points: 1.261881
+      split_points: 8.906909
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x11"
+    value {
+      split_points: -1.051691
+      split_points: -0.792602
+      split_points: -0.571797
+      split_points: -0.384375
+      split_points: -0.197498
+      split_points: 0.040181
+      split_points: 0.312333
+      split_points: 0.628029
+      split_points: 1.259421
+      split_points: 6.655279
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x12"
+    value {
+      split_points: -0.786633
+      split_points: -0.668321
+      split_points: -0.557434
+      split_points: -0.40942
+      split_points: -0.286652
+      split_points: -0.136163
+      split_points: 0.093531
+      split_points: 0.446983
+      split_points: 1.12765
+      split_points: 9.461986
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x13"
+    value {
+      split_points: -0.598822
+      split_points: -0.521376
+      split_points: -0.469232
+      split_points: -0.424349
+      split_points: -0.347783
+      split_points: -0.241955
+      split_points: -0.040639
+      split_points: 0.304128
+      split_points: 1.154494
+      split_points: 11.041842
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x14"
+    value {
+      split_points: -0.947031
+      split_points: -0.724356
+      split_points: -0.542015
+      split_points: -0.400009
+      split_points: -0.220335
+      split_points: -0.029327
+      split_points: 0.246684
+      split_points: 0.598031
+      split_points: 1.14972
+      split_points: 8.029999
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x15"
+    value {
+      split_points: -0.91151
+      split_points: -0.764465
+      split_points: -0.629212
+      split_points: -0.47328
+      split_points: -0.28102
+      split_points: -0.055227
+      split_points: 0.267256
+      split_points: 0.606506
+      split_points: 1.239175
+      split_points: 6.143482
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x16"
+    value {
+      split_points: -0.803352
+      split_points: -0.622812
+      split_points: -0.494494
+      split_points: -0.37944
+      split_points: -0.199065
+      split_points: -0.044554
+      split_points: 0.181577
+      split_points: 0.482311
+      split_points: 0.90009
+      split_points: 12.07268
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x17"
+    value {
+      split_points: -1.02389
+      split_points: -0.796147
+      split_points: -0.540667
+      split_points: -0.353802
+      split_points: -0.140496
+      split_points: 0.099574
+      split_points: 0.308825
+      split_points: 0.654332
+      split_points: 1.129606
+      split_points: 6.649601
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x18"
+    value {
+      split_points: -0.915632
+      split_points: -0.726749
+      split_points: -0.58872
+      split_points: -0.408313
+      split_points: -0.21943
+      split_points: -0.057185
+      split_points: 0.177707
+      split_points: 0.625698
+      split_points: 1.198399
+      split_points: 7.071917
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x19"
+    value {
+      split_points: -0.789374
+      split_points: -0.659256
+      split_points: -0.535568
+      split_points: -0.394858
+      split_points: -0.22994
+      split_points: -0.068427
+      split_points: 0.143394
+      split_points: 0.391905
+      split_points: 0.904814
+      split_points: 9.851593
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x2"
+    value {
+      split_points: -1.079967
+      split_points: -0.769805
+      split_points: -0.603397
+      split_points: -0.413922
+      split_points: -0.23598
+      split_points: -0.022203
+      split_points: 0.257479
+      split_points: 0.816841
+      split_points: 1.529432
+      split_points: 3.97613
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x3"
+    value {
+      split_points: -0.947908
+      split_points: -0.734885
+      split_points: -0.601781
+      split_points: -0.450759
+      split_points: -0.295187
+      split_points: -0.127954
+      split_points: 0.133704
+      split_points: 0.750021
+      split_points: 1.524754
+      split_points: 5.250529
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x4"
+    value {
+      split_points: -1.190618
+      split_points: -0.865392
+      split_points: -0.601368
+      split_points: -0.325246
+      split_points: -0.034891
+      split_points: 0.212053
+      split_points: 0.493868
+      split_points: 0.792763
+      split_points: 1.319387
+      split_points: 4.770911
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x5"
+    value {
+      split_points: -1.036286
+      split_points: -0.848666
+      split_points: -0.645696
+      split_points: -0.470394
+      split_points: -0.22194
+      split_points: 0.084505
+      split_points: 0.34414
+      split_points: 0.728855
+      split_points: 1.36752
+      split_points: 4.568425
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x6"
+    value {
+      split_points: -0.943246
+      split_points: -0.802254
+      split_points: -0.685995
+      split_points: -0.549271
+      split_points: -0.34224
+      split_points: -0.032007
+      split_points: 0.293795
+      split_points: 0.778417
+      split_points: 1.436297
+      split_points: 4.243589
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x7"
+    value {
+      split_points: -0.974217
+      split_points: -0.801139
+      split_points: -0.674233
+      split_points: -0.540104
+      split_points: -0.397721
+      split_points: -0.014681
+      split_points: 0.404988
+      split_points: 0.921641
+      split_points: 1.340793
+      split_points: 3.92793
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x8"
+    value {
+      split_points: -1.155957
+      split_points: -0.82007
+      split_points: -0.59006
+      split_points: -0.334494
+      split_points: -0.071627
+      split_points: 0.158383
+      split_points: 0.424902
+      split_points: 0.720628
+      split_points: 1.239062
+      split_points: 4.484751
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x9"
+    value {
+      split_points: -1.058611
+      split_points: -0.844553
+      split_points: -0.561032
+      split_points: -0.368238
+      split_points: -0.178279
+      split_points: 0.049955
+      split_points: 0.320717
+      split_points: 0.689294
+      split_points: 1.356986
+      split_points: 4.910919
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  role: "host"
+  party_id: "9999"
+}
+header: "x0"
+header: "x1"
+header: "x2"
+header: "x3"
+header: "x4"
+header: "x5"
+header: "x6"
+header: "x7"
+header: "x8"
+header: "x9"
+header: "x10"
+header: "x11"
+header: "x12"
+header: "x13"
+header: "x14"
+header: "x15"
+header: "x16"
+header: "x17"
+header: "x18"
+header: "x19"
+header_anonymous: "host_9999_0"
+header_anonymous: "host_9999_1"
+header_anonymous: "host_9999_2"
+header_anonymous: "host_9999_3"
+header_anonymous: "host_9999_4"
+header_anonymous: "host_9999_5"
+header_anonymous: "host_9999_6"
+header_anonymous: "host_9999_7"
+header_anonymous: "host_9999_8"
+header_anonymous: "host_9999_9"
+header_anonymous: "host_9999_10"
+header_anonymous: "host_9999_11"
+header_anonymous: "host_9999_12"
+header_anonymous: "host_9999_13"
+header_anonymous: "host_9999_14"
+header_anonymous: "host_9999_15"
+header_anonymous: "host_9999_16"
+header_anonymous: "host_9999_17"
+header_anonymous: "host_9999_18"
+header_anonymous: "host_9999_19"
+model_name: "binning_model"
+}}}
+[DEBUG] [2020-11-20 02:36:21,810] [1708:140062557472576] - base_feature_selection.py[line:182]: In _load_isometric_model, iso_model: {'hetero_feature_binning_0': {'FeatureBinningMeta': need_run: true
+compress_thres: 10000
+head_size: 10000
+error: 0.001
+bin_num: 10
+cols: "x0"
+cols: "x1"
+cols: "x2"
+cols: "x3"
+cols: "x4"
+cols: "x5"
+cols: "x6"
+cols: "x7"
+cols: "x8"
+cols: "x9"
+cols: "x10"
+cols: "x11"
+cols: "x12"
+cols: "x13"
+cols: "x14"
+cols: "x15"
+cols: "x16"
+cols: "x17"
+cols: "x18"
+cols: "x19"
+adjustment_factor: 0.5
+transform_param {
+  transform_cols: 0
+  transform_cols: 1
+  transform_cols: 2
+  transform_cols: 3
+  transform_cols: 4
+  transform_cols: 5
+  transform_cols: 6
+  transform_cols: 7
+  transform_cols: 8
+  transform_cols: 9
+  transform_cols: 10
+  transform_cols: 11
+  transform_cols: 12
+  transform_cols: 13
+  transform_cols: 14
+  transform_cols: 15
+  transform_cols: 16
+  transform_cols: 17
+  transform_cols: 18
+  transform_cols: 19
+  transform_type: "bin_num"
+}
+method: "quantile"
+, 'FeatureBinningParam': binning_result {
+  binning_result {
+    key: "x0"
+    value {
+      split_points: -1.098366
+      split_points: -0.78595
+      split_points: -0.604181
+      split_points: -0.399691
+      split_points: -0.215082
+      split_points: -0.019112
+      split_points: 0.264902
+      split_points: 0.838611
+      split_points: 1.534446
+      split_points: 3.971288
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x1"
+    value {
+      split_points: -1.214647
+      split_points: -0.846971
+      split_points: -0.57005
+      split_points: -0.321053
+      split_points: -0.104636
+      split_points: 0.158322
+      split_points: 0.463168
+      split_points: 0.733108
+      split_points: 1.328837
+      split_points: 4.651889
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x10"
+    value {
+      split_points: -0.804753
+      split_points: -0.671573
+      split_points: -0.575929
+      split_points: -0.451772
+      split_points: -0.292245
+      split_points: -0.127304
+      split_points: 0.093579
+      split_points: 0.508999
+      split_points: 1.261881
+      split_points: 8.906909
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x11"
+    value {
+      split_points: -1.051691
+      split_points: -0.792602
+      split_points: -0.571797
+      split_points: -0.384375
+      split_points: -0.197498
+      split_points: 0.040181
+      split_points: 0.312333
+      split_points: 0.628029
+      split_points: 1.259421
+      split_points: 6.655279
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x12"
+    value {
+      split_points: -0.786633
+      split_points: -0.668321
+      split_points: -0.557434
+      split_points: -0.40942
+      split_points: -0.286652
+      split_points: -0.136163
+      split_points: 0.093531
+      split_points: 0.446983
+      split_points: 1.12765
+      split_points: 9.461986
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x13"
+    value {
+      split_points: -0.598822
+      split_points: -0.521376
+      split_points: -0.469232
+      split_points: -0.424349
+      split_points: -0.347783
+      split_points: -0.241955
+      split_points: -0.040639
+      split_points: 0.304128
+      split_points: 1.154494
+      split_points: 11.041842
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x14"
+    value {
+      split_points: -0.947031
+      split_points: -0.724356
+      split_points: -0.542015
+      split_points: -0.400009
+      split_points: -0.220335
+      split_points: -0.029327
+      split_points: 0.246684
+      split_points: 0.598031
+      split_points: 1.14972
+      split_points: 8.029999
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x15"
+    value {
+      split_points: -0.91151
+      split_points: -0.764465
+      split_points: -0.629212
+      split_points: -0.47328
+      split_points: -0.28102
+      split_points: -0.055227
+      split_points: 0.267256
+      split_points: 0.606506
+      split_points: 1.239175
+      split_points: 6.143482
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x16"
+    value {
+      split_points: -0.803352
+      split_points: -0.622812
+      split_points: -0.494494
+      split_points: -0.37944
+      split_points: -0.199065
+      split_points: -0.044554
+      split_points: 0.181577
+      split_points: 0.482311
+      split_points: 0.90009
+      split_points: 12.07268
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x17"
+    value {
+      split_points: -1.02389
+      split_points: -0.796147
+      split_points: -0.540667
+      split_points: -0.353802
+      split_points: -0.140496
+      split_points: 0.099574
+      split_points: 0.308825
+      split_points: 0.654332
+      split_points: 1.129606
+      split_points: 6.649601
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x18"
+    value {
+      split_points: -0.915632
+      split_points: -0.726749
+      split_points: -0.58872
+      split_points: -0.408313
+      split_points: -0.21943
+      split_points: -0.057185
+      split_points: 0.177707
+      split_points: 0.625698
+      split_points: 1.198399
+      split_points: 7.071917
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x19"
+    value {
+      split_points: -0.789374
+      split_points: -0.659256
+      split_points: -0.535568
+      split_points: -0.394858
+      split_points: -0.22994
+      split_points: -0.068427
+      split_points: 0.143394
+      split_points: 0.391905
+      split_points: 0.904814
+      split_points: 9.851593
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x2"
+    value {
+      split_points: -1.079967
+      split_points: -0.769805
+      split_points: -0.603397
+      split_points: -0.413922
+      split_points: -0.23598
+      split_points: -0.022203
+      split_points: 0.257479
+      split_points: 0.816841
+      split_points: 1.529432
+      split_points: 3.97613
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x3"
+    value {
+      split_points: -0.947908
+      split_points: -0.734885
+      split_points: -0.601781
+      split_points: -0.450759
+      split_points: -0.295187
+      split_points: -0.127954
+      split_points: 0.133704
+      split_points: 0.750021
+      split_points: 1.524754
+      split_points: 5.250529
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x4"
+    value {
+      split_points: -1.190618
+      split_points: -0.865392
+      split_points: -0.601368
+      split_points: -0.325246
+      split_points: -0.034891
+      split_points: 0.212053
+      split_points: 0.493868
+      split_points: 0.792763
+      split_points: 1.319387
+      split_points: 4.770911
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x5"
+    value {
+      split_points: -1.036286
+      split_points: -0.848666
+      split_points: -0.645696
+      split_points: -0.470394
+      split_points: -0.22194
+      split_points: 0.084505
+      split_points: 0.34414
+      split_points: 0.728855
+      split_points: 1.36752
+      split_points: 4.568425
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x6"
+    value {
+      split_points: -0.943246
+      split_points: -0.802254
+      split_points: -0.685995
+      split_points: -0.549271
+      split_points: -0.34224
+      split_points: -0.032007
+      split_points: 0.293795
+      split_points: 0.778417
+      split_points: 1.436297
+      split_points: 4.243589
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x7"
+    value {
+      split_points: -0.974217
+      split_points: -0.801139
+      split_points: -0.674233
+      split_points: -0.540104
+      split_points: -0.397721
+      split_points: -0.014681
+      split_points: 0.404988
+      split_points: 0.921641
+      split_points: 1.340793
+      split_points: 3.92793
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x8"
+    value {
+      split_points: -1.155957
+      split_points: -0.82007
+      split_points: -0.59006
+      split_points: -0.334494
+      split_points: -0.071627
+      split_points: 0.158383
+      split_points: 0.424902
+      split_points: 0.720628
+      split_points: 1.239062
+      split_points: 4.484751
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  binning_result {
+    key: "x9"
+    value {
+      split_points: -1.058611
+      split_points: -0.844553
+      split_points: -0.561032
+      split_points: -0.368238
+      split_points: -0.178279
+      split_points: 0.049955
+      split_points: 0.320717
+      split_points: 0.689294
+      split_points: 1.356986
+      split_points: 4.910919
+      is_woe_monotonic: true
+      bin_anonymous: "bin_0"
+      bin_anonymous: "bin_1"
+      bin_anonymous: "bin_2"
+      bin_anonymous: "bin_3"
+      bin_anonymous: "bin_4"
+      bin_anonymous: "bin_5"
+      bin_anonymous: "bin_6"
+      bin_anonymous: "bin_7"
+      bin_anonymous: "bin_8"
+      bin_anonymous: "bin_9"
+    }
+  }
+  role: "host"
+  party_id: "9999"
+}
+header: "x0"
+header: "x1"
+header: "x2"
+header: "x3"
+header: "x4"
+header: "x5"
+header: "x6"
+header: "x7"
+header: "x8"
+header: "x9"
+header: "x10"
+header: "x11"
+header: "x12"
+header: "x13"
+header: "x14"
+header: "x15"
+header: "x16"
+header: "x17"
+header: "x18"
+header: "x19"
+header_anonymous: "host_9999_0"
+header_anonymous: "host_9999_1"
+header_anonymous: "host_9999_2"
+header_anonymous: "host_9999_3"
+header_anonymous: "host_9999_4"
+header_anonymous: "host_9999_5"
+header_anonymous: "host_9999_6"
+header_anonymous: "host_9999_7"
+header_anonymous: "host_9999_8"
+header_anonymous: "host_9999_9"
+header_anonymous: "host_9999_10"
+header_anonymous: "host_9999_11"
+header_anonymous: "host_9999_12"
+header_anonymous: "host_9999_13"
+header_anonymous: "host_9999_14"
+header_anonymous: "host_9999_15"
+header_anonymous: "host_9999_16"
+header_anonymous: "host_9999_17"
+header_anonymous: "host_9999_18"
+header_anonymous: "host_9999_19"
+model_name: "binning_model"
+}}
+[DEBUG] [2020-11-20 02:36:21,813] [1708:140062557472576] - binning_adapter.py[line:37]: In binning adapter convert, host_results: []
+[DEBUG] [2020-11-20 02:36:21,814] [1708:140062557472576] - binning_adapter.py[line:50]: host_party_ids: [], host_values: [],host_col_names: []
+[DEBUG] [2020-11-20 02:36:21,815] [1708:140062557472576] - model_base.py[line:340]: In extract_data, data input: {'hetero_feature_binning_0.data': <fate_arch.computing.eggroll._table.Table object at 0x7f62c8e619e8>}
+[DEBUG] [2020-11-20 02:36:21,815] [1708:140062557472576] - model_base.py[line:162]: set flowid to transfer_variable, flowid: fit
+[DEBUG] [2020-11-20 02:36:21,816] [1708:140062557472576] - model_base.py[line:97]: func: <bound method BaseHeteroFeatureSelection.fit of <federatedml.feature.hetero_feature_selection.feature_selection_host.HeteroFeatureSelectionHost object at 0x7f62cc396278>>
+[INFO] [2020-11-20 02:36:21,817] [1708:140062557472576] - base_feature_selection.py[line:301]: Start Hetero Selection Fit and transform.
+[DEBUG] [2020-11-20 02:36:22,644] [1708:140062557472576] - abnormal_detection.py[line:81]: schema is {'header': ['x0', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9', 'x10', 'x11', 'x12', 'x13', 'x14', 'x15', 'x16', 'x17', 'x18', 'x19'], 'sid_name': 'id', 'label_name': 'y'}
+[DEBUG] [2020-11-20 02:36:22,644] [1708:140062557472576] - abnormal_detection.py[line:85]: header is ['x0', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9', 'x10', 'x11', 'x12', 'x13', 'x14', 'x15', 'x16', 'x17', 'x18', 'x19']
+[DEBUG] [2020-11-20 02:36:22,646] [1708:140062557472576] - abnormal_detection.py[line:95]: sid_name is id
+[DEBUG] [2020-11-20 02:36:22,647] [1708:140062557472576] - abnormal_detection.py[line:100]: label_name is y
+[DEBUG] [2020-11-20 02:36:22,648] [1708:140062557472576] - filter_factory.py[line:41]: Getting filter name: manually
+[DEBUG] [2020-11-20 02:36:22,651] [1708:140062557472576] - filter_base.py[line:63]: In set_selection_properties, header: ['x0', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9', 'x10', 'x11', 'x12', 'x13', 'x14', 'x15', 'x16', 'x17', 'x18', 'x19']
+[DEBUG] [2020-11-20 02:36:22,651] [1708:140062557472576] - manually_filter.py[line:63]: Col_idx: 0, col_names: x0, filter_out_indexes: [], filter_out_names: []
+[DEBUG] [2020-11-20 02:36:22,652] [1708:140062557472576] - manually_filter.py[line:63]: Col_idx: 1, col_names: x1, filter_out_indexes: [], filter_out_names: []
+[DEBUG] [2020-11-20 02:36:22,652] [1708:140062557472576] - manually_filter.py[line:63]: Col_idx: 2, col_names: x2, filter_out_indexes: [], filter_out_names: []
+[DEBUG] [2020-11-20 02:36:22,652] [1708:140062557472576] - manually_filter.py[line:63]: Col_idx: 3, col_names: x3, filter_out_indexes: [], filter_out_names: []
+[DEBUG] [2020-11-20 02:36:22,653] [1708:140062557472576] - manually_filter.py[line:63]: Col_idx: 4, col_names: x4, filter_out_indexes: [], filter_out_names: []
+[DEBUG] [2020-11-20 02:36:22,653] [1708:140062557472576] - manually_filter.py[line:63]: Col_idx: 5, col_names: x5, filter_out_indexes: [], filter_out_names: []
+[DEBUG] [2020-11-20 02:36:22,654] [1708:140062557472576] - manually_filter.py[line:63]: Col_idx: 6, col_names: x6, filter_out_indexes: [], filter_out_names: []
+[DEBUG] [2020-11-20 02:36:22,654] [1708:140062557472576] - manually_filter.py[line:63]: Col_idx: 7, col_names: x7, filter_out_indexes: [], filter_out_names: []
+[DEBUG] [2020-11-20 02:36:22,654] [1708:140062557472576] - manually_filter.py[line:63]: Col_idx: 8, col_names: x8, filter_out_indexes: [], filter_out_names: []
+[DEBUG] [2020-11-20 02:36:22,654] [1708:140062557472576] - manually_filter.py[line:63]: Col_idx: 9, col_names: x9, filter_out_indexes: [], filter_out_names: []
+[DEBUG] [2020-11-20 02:36:22,655] [1708:140062557472576] - manually_filter.py[line:63]: Col_idx: 10, col_names: x10, filter_out_indexes: [], filter_out_names: []
+[DEBUG] [2020-11-20 02:36:22,655] [1708:140062557472576] - manually_filter.py[line:63]: Col_idx: 11, col_names: x11, filter_out_indexes: [], filter_out_names: []
+[DEBUG] [2020-11-20 02:36:22,655] [1708:140062557472576] - manually_filter.py[line:63]: Col_idx: 12, col_names: x12, filter_out_indexes: [], filter_out_names: []
+[DEBUG] [2020-11-20 02:36:22,656] [1708:140062557472576] - manually_filter.py[line:63]: Col_idx: 13, col_names: x13, filter_out_indexes: [], filter_out_names: []
+[DEBUG] [2020-11-20 02:36:22,657] [1708:140062557472576] - manually_filter.py[line:63]: Col_idx: 14, col_names: x14, filter_out_indexes: [], filter_out_names: []
+[DEBUG] [2020-11-20 02:36:22,658] [1708:140062557472576] - manually_filter.py[line:63]: Col_idx: 15, col_names: x15, filter_out_indexes: [], filter_out_names: []
+[DEBUG] [2020-11-20 02:36:22,659] [1708:140062557472576] - manually_filter.py[line:63]: Col_idx: 16, col_names: x16, filter_out_indexes: [], filter_out_names: []
+[DEBUG] [2020-11-20 02:36:22,659] [1708:140062557472576] - manually_filter.py[line:63]: Col_idx: 17, col_names: x17, filter_out_indexes: [], filter_out_names: []
+[DEBUG] [2020-11-20 02:36:22,660] [1708:140062557472576] - manually_filter.py[line:63]: Col_idx: 18, col_names: x18, filter_out_indexes: [], filter_out_names: []
+[DEBUG] [2020-11-20 02:36:22,661] [1708:140062557472576] - manually_filter.py[line:63]: Col_idx: 19, col_names: x19, filter_out_indexes: [], filter_out_names: []
+[DEBUG] [2020-11-20 02:36:22,664] [1708:140062557472576] - model_base.py[line:303]: manually: {'last_col_nums': 20, 'left_col_nums': 20, 'left_col_names': ['x0', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9', 'x10', 'x11', 'x12', 'x13', 'x14', 'x15', 'x16', 'x17', 'x18', 'x19']} added to summary.
+[DEBUG] [2020-11-20 02:36:22,664] [1708:140062557472576] - base_feature_selection.py[line:293]: method: manually, selection_cols: ['x0', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9', 'x10', 'x11', 'x12', 'x13', 'x14', 'x15', 'x16', 'x17', 'x18', 'x19'], left_cols: ['x0', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9', 'x10', 'x11', 'x12', 'x13', 'x14', 'x15', 'x16', 'x17', 'x18', 'x19']
+[DEBUG] [2020-11-20 02:36:22,665] [1708:140062557472576] - base_feature_selection.py[line:296]: After updated, method: manually, selection_cols: ['x0', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9', 'x10', 'x11', 'x12', 'x13', 'x14', 'x15', 'x16', 'x17', 'x18', 'x19']
+[DEBUG] [2020-11-20 02:36:22,666] [1708:140062557472576] - model_base.py[line:303]: all: {'last_col_nums': 20, 'left_col_nums': 20, 'left_col_names': ['x0', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9', 'x10', 'x11', 'x12', 'x13', 'x14', 'x15', 'x16', 'x17', 'x18', 'x19']} added to summary.
+[DEBUG] [2020-11-20 02:36:30,481] [1708:140062557472576] - base_feature_selection.py[line:225]: When transfering, all left_col_names: ['x0', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9', 'x10', 'x11', 'x12', 'x13', 'x14', 'x15', 'x16', 'x17', 'x18', 'x19']
+[DEBUG] [2020-11-20 02:36:30,813] [1708:140062557472576] - base_feature_selection.py[line:233]: In feature selection transform, Before transform: [8. 0. 8. 8. 9. 9. 9. 9. 9. 9. 9. 3. 9. 9. 5. 9. 8. 8. 8. 9.], length: 20 After transform: [8. 0. 8. 8. 9. 9. 9. 9. 9. 9. 9. 3. 9. 9. 5. 9. 8. 8. 8. 9.], length: 20
+[DEBUG] [2020-11-20 02:36:30,816] [1708:140062557472576] - base_feature_selection.py[line:338]: Final summary: {'manually': {'last_col_nums': 20, 'left_col_nums': 20, 'left_col_names': ['x0', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9', 'x10', 'x11', 'x12', 'x13', 'x14', 'x15', 'x16', 'x17', 'x18', 'x19']}, 'all': {'last_col_nums': 20, 'left_col_nums': 20, 'left_col_names': ['x0', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9', 'x10', 'x11', 'x12', 'x13', 'x14', 'x15', 'x16', 'x17', 'x18', 'x19']}}
+[INFO] [2020-11-20 02:36:30,817] [1708:140062557472576] - base_feature_selection.py[line:339]: Finish Hetero Selection Fit and transform.
+[DEBUG] [2020-11-20 02:36:30,818] [1708:140062557472576] - model_base.py[line:109]: saved_result is : [<fate_arch.computing.eggroll._table.Table object at 0x7f62a2c0e710>], data_output: <fate_arch.computing.eggroll._table.Table object at 0x7f62a2c0e710>
+[INFO] [2020-11-20 02:36:30,819] [1708:140062557472576] - tracker_client.py[line:173]: Request save job 202011200231350021282 task 202011200231350021282_hetero_feature_selection_0 0 on host 9999 component summary
+[DEBUG] [2020-11-20 02:36:33,369] [1708:140062557472576] - base_feature_selection.py[line:139]: Model output is : None
+[DEBUG] [2020-11-20 02:36:33,370] [1708:140062557472576] - base_feature_selection.py[line:98]: curt_select_properties.left_col_name: [], completed_selection_result: ['x0', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9', 'x10', 'x11', 'x12', 'x13', 'x14', 'x15', 'x16', 'x17', 'x18', 'x19']
+[DEBUG] [2020-11-20 02:36:33,371] [1708:140062557472576] - base_feature_selection.py[line:100]: Length of left cols: 20
+[INFO] [2020-11-20 02:36:33,433] [1708:140062557472576] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_hetero_feature_selection_0 0 on host 9999
+[INFO] [2020-11-20 02:36:34,682] [1708:140062557472576] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_hetero_feature_selection_0 0 on host 9999

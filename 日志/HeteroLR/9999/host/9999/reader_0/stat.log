@@ -1,0 +1,10 @@
+[INFO] [2020-11-20 02:31:49,579] [977:140399604672320] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_reader_0 0 on host 9999
+[DEBUG] [2020-11-20 02:32:00,910] [977:140399604672320] - _federation.py[line:35]: [federation.eggroll]init federation: rp_session_id=202011200231350021282_reader_0_0_host_9999, rs_session_id=202011200231350021282_reader_0_0, party=Party(role=host, party_id=9999), proxy_endpoint=rollsite:9370
+[DEBUG] [2020-11-20 02:32:00,913] [977:140399604672320] - _federation.py[line:45]: [federation.eggroll]init federation context done
+[DEBUG] [2020-11-20 02:32:01,359] [977:140399604672320] - _session.py[line:144]: save session 202011200231350021282_reader_0_0_host_9999_storage_91d383682ad811eb8a243ea3df35c0a6 record
+[INFO] [2020-11-20 02:32:08,332] [977:140399604672320] - reader.py[line:84]: the EGGROLL engine input table does not require conversion to support computing engine EGGROLL
+[DEBUG] [2020-11-20 02:32:10,258] [977:140399604672320] - _session.py[line:153]: delete session 202011200231350021282_reader_0_0_host_9999_storage_91d383682ad811eb8a243ea3df35c0a6 record
+[INFO] [2020-11-20 02:32:10,260] [977:140399604672320] - tracker_client.py[line:127]: Request save job 202011200231350021282 task 202011200231350021282_reader_0 0 on host 9999 data table info
+[INFO] [2020-11-20 02:32:10,369] [977:140399604672320] - tracker_client.py[line:103]: Request save job 202011200231350021282 task 202011200231350021282_reader_0 0 on host 9999 metric reader_namespace reader_name meta
+[INFO] [2020-11-20 02:32:10,512] [977:140399604672320] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_reader_0 0 on host 9999
+[INFO] [2020-11-20 02:32:11,536] [977:140399604672320] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_reader_0 0 on host 9999

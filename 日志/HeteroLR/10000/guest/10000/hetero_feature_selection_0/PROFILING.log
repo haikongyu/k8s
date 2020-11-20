@@ -1,0 +1,40 @@
+[DEBUG] [2020-11-20 02:36:09,749] [2248:140191339607872] - profile.py[line:84]: [computing#41d092c3c4]function_stack: [component_properties.py:225]extract_input_data <-[component_properties.py:238]extract_running_rules <-[model_base.py:87]run
+[DEBUG] [2020-11-20 02:36:09,750] [2248:140191339607872] - profile.py[line:87]: [computing#41d092c3c4]start
+[DEBUG] [2020-11-20 02:36:09,818] [2248:140191339607872] - profile.py[line:93]: [computing#41d092c3c4]done, elapse: 0.06947135925292969, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:36:09,853] [2248:140191339607872] - profile.py[line:84]: [computing#28a1cc0adf]function_stack: [abnormal_detection.py:27]empty_table_detection <-[base_feature_selection.py:241]_abnormal_detection <-[base_feature_selection.py:302]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:36:09,854] [2248:140191339607872] - profile.py[line:87]: [computing#28a1cc0adf]start
+[DEBUG] [2020-11-20 02:36:09,906] [2248:140191339607872] - profile.py[line:93]: [computing#28a1cc0adf]done, elapse: 0.0531919002532959, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:36:09,910] [2248:140191339607872] - profile.py[line:84]: [computing#82cfbaa155]function_stack: [data_overview.py:27]get_features_shape <-[data_overview.py:105]is_empty_feature <-[abnormal_detection.py:33]empty_feature_detection <-[base_feature_selection.py:242]_abnormal_detection <-[base_feature_selection.py:302]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:36:09,910] [2248:140191339607872] - profile.py[line:87]: [computing#82cfbaa155]start
+[DEBUG] [2020-11-20 02:36:10,089] [2248:140191339607872] - profile.py[line:93]: [computing#82cfbaa155]done, elapse: 0.1797323226928711, function: first(self: Table(partition=8)) -> tuple
+[DEBUG] [2020-11-20 02:36:10,103] [2248:140191339607872] - profile.py[line:84]: [computing#7920ca5a63]function_stack: [base_feature_selection.py:218]_transfer_data <-[base_feature_selection.py:337]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:36:10,104] [2248:140191339607872] - profile.py[line:87]: [computing#7920ca5a63]start
+[DEBUG] [2020-11-20 02:36:10,269] [2248:140191339607872] - profile.py[line:93]: [computing#7920ca5a63]done, elapse: 0.1654500961303711, function: first(self: Table(partition=8)) -> tuple
+[DEBUG] [2020-11-20 02:36:10,271] [2248:140191339607872] - profile.py[line:84]: [computing#2b58dc3afe]function_stack: [base_feature_selection.py:222]_transfer_data <-[base_feature_selection.py:337]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:36:10,272] [2248:140191339607872] - profile.py[line:87]: [computing#2b58dc3afe]start
+[DEBUG] [2020-11-20 02:36:15,015] [2248:140191339607872] - profile.py[line:93]: [computing#2b58dc3afe]done, elapse: 4.743646144866943, function: mapValues(self: Table(partition=8), func: partial) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:36:15,018] [2248:140191339607872] - profile.py[line:84]: [computing#c7735f0630]function_stack: [base_feature_selection.py:229]_transfer_data <-[base_feature_selection.py:337]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:36:15,018] [2248:140191339607872] - profile.py[line:87]: [computing#c7735f0630]start
+[DEBUG] [2020-11-20 02:36:15,197] [2248:140191339607872] - profile.py[line:93]: [computing#c7735f0630]done, elapse: 0.17954778671264648, function: first(self: Table(partition=8)) -> tuple
+[INFO] [2020-11-20 02:36:15,668] [2248:140191339607872] - profile.py[line:249]: 
+Computing:
++----------+---------------------------------------------+
+| function |  function    n   sum(s)   mean(s)   max(s)  |
+|          | ----------- --- -------- --------- -------- |
+|          |  mapValues   1   4.744     4.744    4.744   |
+|          |    first     3   0.525     0.175     0.18   |
+|          |    load      1   0.284     0.284    0.284   |
+|          |    count     2   0.123     0.061    0.069   |
++----------+---------------------------------------------+
+|  total   |  n=7, sum=5.6752, mean=0.8107, max=4.7436   |
++----------+---------------------------------------------+
+
+Federation:
++--------+------------------------------------------+
+|  get   |                                          |
++--------+------------------------------------------+
+| remote |                                          |
++--------+------------------------------------------+
+| total  | n=0, sum=0.0000, mean=0.0000, max=0.0000 |
++--------+------------------------------------------+
+

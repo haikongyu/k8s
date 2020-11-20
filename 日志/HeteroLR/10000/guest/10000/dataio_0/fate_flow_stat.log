@@ -1,0 +1,3 @@
+[INFO] [2020-11-20 02:32:45,300] [983:140131884844864] - pipelined_model.py[line:73]: Save dataio_0 dataio DataIOMeta buffer
+[INFO] [2020-11-20 02:32:45,302] [983:140131884844864] - pipelined_model.py[line:73]: Save dataio_0 dataio DataIOParam buffer
+[INFO] [2020-11-20 02:32:45,312] [983:140131884844864] - pipelined_model.py[line:78]: Save dataio_0 dataio successfully

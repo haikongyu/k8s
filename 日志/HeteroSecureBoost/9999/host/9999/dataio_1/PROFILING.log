@@ -1,0 +1,39 @@
+[DEBUG] [2020-11-20 07:10:19,535] [19734:140323371067200] - profile.py[line:84]: [computing#41d092c3c4]function_stack: [component_properties.py:225]extract_input_data <-[component_properties.py:238]extract_running_rules <-[model_base.py:87]run
+[DEBUG] [2020-11-20 07:10:19,537] [19734:140323371067200] - profile.py[line:87]: [computing#41d092c3c4]start
+[DEBUG] [2020-11-20 07:10:19,590] [19734:140323371067200] - profile.py[line:93]: [computing#41d092c3c4]done, elapse: 0.05493354797363281, function: count(self: Table(partition=4)) -> int
+[DEBUG] [2020-11-20 07:10:19,602] [19734:140323371067200] - profile.py[line:84]: [computing#53262296b2]function_stack: [abnormal_detection.py:27]empty_table_detection <-[data_io.py:120]read_data <-[data_io.py:894]transform <-[model_base.py:98]run
+[DEBUG] [2020-11-20 07:10:19,603] [19734:140323371067200] - profile.py[line:87]: [computing#53262296b2]start
+[DEBUG] [2020-11-20 07:10:19,755] [19734:140323371067200] - profile.py[line:93]: [computing#53262296b2]done, elapse: 0.15248465538024902, function: count(self: Table(partition=4)) -> int
+[DEBUG] [2020-11-20 07:10:19,761] [19734:140323371067200] - profile.py[line:84]: [computing#3090ef87ae]function_stack: [data_io.py:143]read_data <-[data_io.py:894]transform <-[model_base.py:98]run
+[DEBUG] [2020-11-20 07:10:19,762] [19734:140323371067200] - profile.py[line:87]: [computing#3090ef87ae]start
+[DEBUG] [2020-11-20 07:10:21,684] [19734:140323371067200] - profile.py[line:93]: [computing#3090ef87ae]done, elapse: 1.9229648113250732, function: mapValues(self: Table(partition=4), func: function) -> Table(partition=4)
+[DEBUG] [2020-11-20 07:10:21,688] [19734:140323371067200] - profile.py[line:84]: [computing#3f295d236d]function_stack: [io_check.py:28]_func <-[data_io.py:148]read_data <-[data_io.py:894]transform <-[model_base.py:98]run
+[DEBUG] [2020-11-20 07:10:21,690] [19734:140323371067200] - profile.py[line:87]: [computing#3f295d236d]start
+[DEBUG] [2020-11-20 07:10:21,806] [19734:140323371067200] - profile.py[line:93]: [computing#3f295d236d]done, elapse: 0.11794257164001465, function: count(self: Table(partition=4)) -> int
+[DEBUG] [2020-11-20 07:10:21,815] [19734:140323371067200] - profile.py[line:84]: [computing#96c6e47577]function_stack: [data_io.py:227]gen_data_instance <-[data_io.py:175]transform <-[io_check.py:31]_func <-[data_io.py:148]read_data <-[data_io.py:894]transform <-[model_base.py:98]run
+[DEBUG] [2020-11-20 07:10:21,815] [19734:140323371067200] - profile.py[line:87]: [computing#96c6e47577]start
+[DEBUG] [2020-11-20 07:10:22,112] [19734:140323371067200] - profile.py[line:93]: [computing#96c6e47577]done, elapse: 0.29729747772216797, function: mapValues(self: Table(partition=4), func: function) -> Table(partition=4)
+[DEBUG] [2020-11-20 07:10:22,115] [19734:140323371067200] - profile.py[line:84]: [computing#05ca5110ba]function_stack: [io_check.py:34]_func <-[data_io.py:148]read_data <-[data_io.py:894]transform <-[model_base.py:98]run
+[DEBUG] [2020-11-20 07:10:22,116] [19734:140323371067200] - profile.py[line:87]: [computing#05ca5110ba]start
+[DEBUG] [2020-11-20 07:10:22,162] [19734:140323371067200] - profile.py[line:93]: [computing#05ca5110ba]done, elapse: 0.04746603965759277, function: count(self: Table(partition=4)) -> int
+[INFO] [2020-11-20 07:10:22,814] [19734:140323371067200] - profile.py[line:249]: 
+Computing:
++----------+---------------------------------------------+
+| function |  function    n   sum(s)   mean(s)   max(s)  |
+|          | ----------- --- -------- --------- -------- |
+|          |    load      1   6.463     6.463    6.463   |
+|          |  mapValues   2    2.22     1.11     1.923   |
+|          |    count     4   0.373     0.093    0.152   |
++----------+---------------------------------------------+
+|  total   |  n=7, sum=9.0565, mean=1.2938, max=6.4634   |
++----------+---------------------------------------------+
+
+Federation:
++--------+------------------------------------------+
+|  get   |                                          |
++--------+------------------------------------------+
+| remote |                                          |
++--------+------------------------------------------+
+| total  | n=0, sum=0.0000, mean=0.0000, max=0.0000 |
++--------+------------------------------------------+
+

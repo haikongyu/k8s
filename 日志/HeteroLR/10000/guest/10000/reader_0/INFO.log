@@ -1,0 +1,33 @@
+[INFO] [2020-11-20 02:31:46,894] [827:139969226749760] - task_executor.py[line:302]: report task 202011200231350021282_reader_0 0 guest 10000 to driver
+[INFO] [2020-11-20 02:31:46,896] [827:139969226749760] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_reader_0 0 on guest 10000
+[INFO] [2020-11-20 02:31:52,650] [827:139969226749760] - task_executor.py[line:156]: Run 202011200231350021282 reader_0 202011200231350021282_reader_0 guest 10000 task
+[INFO] [2020-11-20 02:31:52,651] [827:139969226749760] - task_executor.py[line:157]: Component parameters on party {'ReaderParam': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'dsl_version': '2', 'initiator': {'role': 'guest', 'party_id': 10000}, 'role': {'guest': [10000], 'host': [9999], 'arbiter': [9999]}, 'job_parameters': {'job_type': 'train', 'work_mode': 1, 'backend': 0, 'computing_engine': 'EGGROLL', 'federation_engine': 'EGGROLL', 'storage_engine': 'EGGROLL', 'engines_address': {'computing': {'cores_per_node': 20, 'nodes': 1}, 'federation': {'host': 'rollsite', 'port': 9370}, 'storage': {'cores_per_node': 20, 'nodes': 1}}, 'federated_mode': 'MULTIPLE', 'task_parallelism': 2, 'computing_partitions': 8, 'federated_status_collect_type': 'PUSH', 'model_id': 'arbiter-9999#guest-10000#host-9999#model', 'model_version': '202011200231350021282', 'eggroll_run': {'eggroll.session.processors.per.node': 2}, 'spark_run': {'num-executors': 1, 'executor-cores': 2}, 'rabbitmq_run': {}, 'adaptation_parameters': {'task_nodes': 1, 'task_cores_per_node': 2, 'task_memory_per_node': 0}}, 'component_parameters': {'common': {'intersect_0': {'intersect_method': 'raw', 'sync_intersect_ids': True, 'only_output_key': False}, 'hetero_lr_0': {'penalty': 'L2', 'optimizer': 'rmsprop', 'alpha': 0.01, 'max_iter': 3, 'batch_size': 320, 'learning_rate': 0.15, 'init_param': {'init_method': 'random_uniform'}}}, 'role': {'guest': {'0': {'reader_0': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': True, 'label_name': 'y', 'label_type': 'int', 'output_format': 'dense'}}}, 'host': {'0': {'reader_0': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': False, 'output_format': 'dense'}}}}}, 'config': '/data/projects/fate/python/fate_flow/examples/test_hetero_lr_job_conf.json', 'dsl': 'examples/test_hetero_lr_job_dsl.json', 'function': 'submit_job', 'local': {'role': 'guest', 'party_id': 10000}, 'CodePath': 'fate_flow/components/reader.py/Reader', 'module': 'Reader', 'output_data_name': ['table']}
+[INFO] [2020-11-20 02:31:52,652] [827:139969226749760] - task_executor.py[line:158]: Task input dsl {}
+[INFO] [2020-11-20 02:31:56,757] [827:139969226749760] - reader.py[line:84]: the EGGROLL engine input table does not require conversion to support computing engine EGGROLL
+[INFO] [2020-11-20 02:31:57,632] [827:139969226749760] - tracker_client.py[line:127]: Request save job 202011200231350021282 task 202011200231350021282_reader_0 0 on guest 10000 data table info
+[INFO] [2020-11-20 02:31:57,724] [827:139969226749760] - tracker_client.py[line:103]: Request save job 202011200231350021282 task 202011200231350021282_reader_0 0 on guest 10000 metric reader_namespace reader_name meta
+[INFO] [2020-11-20 02:31:57,849] [827:139969226749760] - profile.py[line:249]: 
+Computing:
++----------+------------------------------------------+
+| function |                                          |
++----------+------------------------------------------+
+|  total   | n=0, sum=0.0000, mean=0.0000, max=0.0000 |
++----------+------------------------------------------+
+
+Federation:
++--------+------------------------------------------+
+|  get   |                                          |
++--------+------------------------------------------+
+| remote |                                          |
++--------+------------------------------------------+
+| total  | n=0, sum=0.0000, mean=0.0000, max=0.0000 |
++--------+------------------------------------------+
+
+[INFO] [2020-11-20 02:31:57,853] [827:139969226749760] - task_executor.py[line:302]: report task 202011200231350021282_reader_0 0 guest 10000 to driver
+[INFO] [2020-11-20 02:31:57,854] [827:139969226749760] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_reader_0 0 on guest 10000
+[INFO] [2020-11-20 02:31:58,042] [827:139969226749760] - task_executor.py[line:207]: task 202011200231350021282_reader_0 guest 10000 start time: 2020-11-20 02:31:46
+[INFO] [2020-11-20 02:31:58,043] [827:139969226749760] - task_executor.py[line:209]: task 202011200231350021282_reader_0 guest 10000 end time: 2020-11-20 02:31:57
+[INFO] [2020-11-20 02:31:58,044] [827:139969226749760] - task_executor.py[line:211]: task 202011200231350021282_reader_0 guest 10000 takes 11.256s
+[INFO] [2020-11-20 02:31:58,045] [827:139969226749760] - task_executor.py[line:214]: Finish 202011200231350021282 reader_0 202011200231350021282_reader_0 0 guest 10000 task success
+[INFO] [2020-11-20 02:31:58,046] [827:139969226749760] - task_executor.py[line:302]: report task 202011200231350021282_reader_0 0 guest 10000 to driver
+[INFO] [2020-11-20 02:31:58,047] [827:139969226749760] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_reader_0 0 on guest 10000

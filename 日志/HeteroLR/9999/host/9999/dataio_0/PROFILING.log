@@ -1,0 +1,33 @@
+[DEBUG] [2020-11-20 02:33:01,872] [1045:140161495037760] - profile.py[line:84]: [computing#41d092c3c4]function_stack: [component_properties.py:225]extract_input_data <-[component_properties.py:238]extract_running_rules <-[model_base.py:87]run
+[DEBUG] [2020-11-20 02:33:01,875] [1045:140161495037760] - profile.py[line:87]: [computing#41d092c3c4]start
+[DEBUG] [2020-11-20 02:33:01,974] [1045:140161495037760] - profile.py[line:93]: [computing#41d092c3c4]done, elapse: 0.1016385555267334, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:33:01,984] [1045:140161495037760] - profile.py[line:84]: [computing#4a2ab9dfb5]function_stack: [abnormal_detection.py:27]empty_table_detection <-[data_io.py:120]read_data <-[data_io.py:885]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:33:01,985] [1045:140161495037760] - profile.py[line:87]: [computing#4a2ab9dfb5]start
+[DEBUG] [2020-11-20 02:33:02,128] [1045:140161495037760] - profile.py[line:93]: [computing#4a2ab9dfb5]done, elapse: 0.14380526542663574, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:33:02,132] [1045:140161495037760] - profile.py[line:84]: [computing#1a421ecb8d]function_stack: [data_io.py:143]read_data <-[data_io.py:885]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:33:02,132] [1045:140161495037760] - profile.py[line:87]: [computing#1a421ecb8d]start
+[DEBUG] [2020-11-20 02:33:04,120] [1045:140161495037760] - profile.py[line:93]: [computing#1a421ecb8d]done, elapse: 1.988394021987915, function: mapValues(self: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:33:04,130] [1045:140161495037760] - profile.py[line:84]: [computing#3d890bd53f]function_stack: [data_io.py:227]gen_data_instance <-[data_io.py:161]fit <-[data_io.py:146]read_data <-[data_io.py:885]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:33:04,131] [1045:140161495037760] - profile.py[line:87]: [computing#3d890bd53f]start
+[DEBUG] [2020-11-20 02:33:04,630] [1045:140161495037760] - profile.py[line:93]: [computing#3d890bd53f]done, elapse: 0.5005736351013184, function: mapValues(self: Table(partition=8), func: function) -> Table(partition=8)
+[INFO] [2020-11-20 02:33:05,812] [1045:140161495037760] - profile.py[line:249]: 
+Computing:
++----------+---------------------------------------------+
+| function |  function    n   sum(s)   mean(s)   max(s)  |
+|          | ----------- --- -------- --------- -------- |
+|          |    load      1   12.414   12.414    12.414  |
+|          |  mapValues   2   2.489     1.244    1.988   |
+|          |    count     2   0.245     0.123    0.144   |
++----------+---------------------------------------------+
+|  total   | n=5, sum=15.1482, mean=3.0296, max=12.4138  |
++----------+---------------------------------------------+
+
+Federation:
++--------+------------------------------------------+
+|  get   |                                          |
++--------+------------------------------------------+
+| remote |                                          |
++--------+------------------------------------------+
+| total  | n=0, sum=0.0000, mean=0.0000, max=0.0000 |
++--------+------------------------------------------+
+

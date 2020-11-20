@@ -1,0 +1,62 @@
+[INFO] [2020-11-20 02:40:25,197] [5052:140278284748608] - task_executor.py[line:302]: report task 202011200231350021282_evaluation_0 0 guest 10000 to driver
+[INFO] [2020-11-20 02:40:25,199] [5052:140278284748608] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000
+[INFO] [2020-11-20 02:40:30,973] [5052:140278284748608] - task_executor.py[line:156]: Run 202011200231350021282 evaluation_0 202011200231350021282_evaluation_0 guest 10000 task
+[INFO] [2020-11-20 02:40:30,974] [5052:140278284748608] - task_executor.py[line:157]: Component parameters on party {'EvaluateParam': {'eval_type': 'binary', 'pos_label': 1, 'need_run': True, 'metrics': None, 'run_clustering_arbiter_metric': False, 'default_metrics': {'binary': ['auc', 'ks', 'lift', 'gain', 'accuracy', 'precision', 'recall', 'roc', 'confusion_mat', 'psi', 'f1_score', 'quantile_pr'], 'multi': ['accuracy', 'precision', 'recall'], 'regression': ['explained_variance', 'mean_absolute_error', 'mean_squared_error', 'median_absolute_error', 'r2_score', 'root_mean_squared_error'], 'clustering': ['jaccard_similarity_score', 'fowlkes_mallows_score', 'adjusted_rand_score', 'davies_bouldin_index', 'distance_measure', 'contingency_matrix']}, 'allowed_metrics': {'binary': ['auc', 'ks', 'lift', 'gain', 'accuracy', 'precision', 'recall', 'roc', 'confusion_mat', 'psi', 'f1_score', 'quantile_pr'], 'multi': ['accuracy', 'precision', 'recall'], 'regression': ['explained_variance', 'mean_absolute_error', 'mean_squared_error', 'median_absolute_error', 'r2_score', 'root_mean_squared_error'], 'clustering': ['jaccard_similarity_score', 'fowlkes_mallows_score', 'adjusted_rand_score', 'davies_bouldin_index', 'distance_measure', 'contingency_matrix']}}, 'dsl_version': '2', 'initiator': {'role': 'guest', 'party_id': 10000}, 'role': {'guest': [10000], 'host': [9999], 'arbiter': [9999]}, 'job_parameters': {'job_type': 'train', 'work_mode': 1, 'backend': 0, 'computing_engine': 'EGGROLL', 'federation_engine': 'EGGROLL', 'storage_engine': 'EGGROLL', 'engines_address': {'computing': {'cores_per_node': 20, 'nodes': 1}, 'federation': {'host': 'rollsite', 'port': 9370}, 'storage': {'cores_per_node': 20, 'nodes': 1}}, 'federated_mode': 'MULTIPLE', 'task_parallelism': 2, 'computing_partitions': 8, 'federated_status_collect_type': 'PUSH', 'model_id': 'arbiter-9999#guest-10000#host-9999#model', 'model_version': '202011200231350021282', 'eggroll_run': {'eggroll.session.processors.per.node': 2}, 'spark_run': {'num-executors': 1, 'executor-cores': 2}, 'rabbitmq_run': {}, 'adaptation_parameters': {'task_nodes': 1, 'task_cores_per_node': 2, 'task_memory_per_node': 0}}, 'component_parameters': {'common': {'intersect_0': {'intersect_method': 'raw', 'sync_intersect_ids': True, 'only_output_key': False}, 'hetero_lr_0': {'penalty': 'L2', 'optimizer': 'rmsprop', 'alpha': 0.01, 'max_iter': 3, 'batch_size': 320, 'learning_rate': 0.15, 'init_param': {'init_method': 'random_uniform'}}}, 'role': {'guest': {'0': {'reader_0': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': True, 'label_name': 'y', 'label_type': 'int', 'output_format': 'dense'}}}, 'host': {'0': {'reader_0': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': False, 'output_format': 'dense'}}}}}, 'config': '/data/projects/fate/python/fate_flow/examples/test_hetero_lr_job_conf.json', 'dsl': 'examples/test_hetero_lr_job_dsl.json', 'function': 'submit_job', 'local': {'role': 'guest', 'party_id': 10000}, 'CodePath': 'federatedml/evaluation/evaluation.py/Evaluation', 'module': 'Evaluation', 'output_data_name': ['evaluate']}
+[INFO] [2020-11-20 02:40:30,975] [5052:140278284748608] - task_executor.py[line:158]: Task input dsl {'data': {'data': ['hetero_lr_0.train']}}
+[INFO] [2020-11-20 02:40:30,976] [5052:140278284748608] - tracker_client.py[line:150]: Request read job 202011200231350021282 task None None on guest 10000 data train info
+[INFO] [2020-11-20 02:40:31,083] [5052:140278284748608] - task_executor.py[line:260]: load computing table use 8
+[WARNING] [2020-11-20 02:40:33,099] [5052:140278284748608] - evaluation_param.py[line:130]: use default metric ['auc', 'ks', 'lift', 'gain', 'accuracy', 'precision', 'recall', 'roc', 'confusion_mat', 'psi', 'f1_score', 'quantile_pr'] for eval type binary
+[INFO] [2020-11-20 02:40:33,101] [5052:140278284748608] - evaluation_param.py[line:134]: Finish evaluation parameter check!
+[INFO] [2020-11-20 02:40:33,920] [5052:140278284748608] - tracker_client.py[line:70]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0 data
+[INFO] [2020-11-20 02:40:33,986] [5052:140278284748608] - tracker_client.py[line:103]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0 meta
+[INFO] [2020-11-20 02:40:34,053] [5052:140278284748608] - tracker_client.py[line:70]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0 data
+[INFO] [2020-11-20 02:40:34,115] [5052:140278284748608] - tracker_client.py[line:103]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0 meta
+[INFO] [2020-11-20 02:40:34,231] [5052:140278284748608] - tracker_client.py[line:70]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0_ks_fpr data
+[INFO] [2020-11-20 02:40:34,434] [5052:140278284748608] - tracker_client.py[line:103]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0_ks_fpr meta
+[INFO] [2020-11-20 02:40:34,534] [5052:140278284748608] - tracker_client.py[line:70]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0_ks_tpr data
+[INFO] [2020-11-20 02:40:34,811] [5052:140278284748608] - tracker_client.py[line:103]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0_ks_tpr meta
+[INFO] [2020-11-20 02:40:34,913] [5052:140278284748608] - tracker_client.py[line:70]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0_lift data
+[INFO] [2020-11-20 02:40:35,093] [5052:140278284748608] - tracker_client.py[line:103]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0_lift meta
+[INFO] [2020-11-20 02:40:35,156] [5052:140278284748608] - tracker_client.py[line:70]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0_gain data
+[INFO] [2020-11-20 02:40:35,340] [5052:140278284748608] - tracker_client.py[line:103]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0_gain meta
+[INFO] [2020-11-20 02:40:35,405] [5052:140278284748608] - tracker_client.py[line:70]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0_accuracy data
+[INFO] [2020-11-20 02:40:35,605] [5052:140278284748608] - tracker_client.py[line:103]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0_accuracy meta
+[INFO] [2020-11-20 02:40:35,669] [5052:140278284748608] - tracker_client.py[line:70]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0_precision data
+[INFO] [2020-11-20 02:40:35,835] [5052:140278284748608] - tracker_client.py[line:103]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0_precision meta
+[INFO] [2020-11-20 02:40:35,902] [5052:140278284748608] - tracker_client.py[line:70]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0_recall data
+[INFO] [2020-11-20 02:40:36,059] [5052:140278284748608] - tracker_client.py[line:103]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0_recall meta
+[INFO] [2020-11-20 02:40:36,119] [5052:140278284748608] - tracker_client.py[line:70]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0_roc data
+[INFO] [2020-11-20 02:40:36,324] [5052:140278284748608] - tracker_client.py[line:103]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0_roc meta
+[INFO] [2020-11-20 02:40:36,391] [5052:140278284748608] - tracker_client.py[line:103]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0_confusion_mat meta
+[INFO] [2020-11-20 02:40:36,451] [5052:140278284748608] - tracker_client.py[line:103]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0_f1_score meta
+[INFO] [2020-11-20 02:40:36,507] [5052:140278284748608] - tracker_client.py[line:103]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 metric train hetero_lr_0_quantile_pr meta
+[INFO] [2020-11-20 02:40:36,569] [5052:140278284748608] - tracker_client.py[line:173]: Request save job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000 component summary
+[INFO] [2020-11-20 02:40:36,832] [5052:140278284748608] - profile.py[line:249]: 
+Computing:
++----------+--------------------------------------------+
+| function |  function   n   sum(s)   mean(s)   max(s)  |
+|          | ---------- --- -------- --------- -------- |
+|          |    load     1   0.286     0.286    0.286   |
+|          |   count     1   0.062     0.062    0.062   |
+|          |  collect    1   0.003     0.003    0.003   |
++----------+--------------------------------------------+
+|  total   |  n=3, sum=0.3514, mean=0.1171, max=0.2860  |
++----------+--------------------------------------------+
+
+Federation:
++--------+------------------------------------------+
+|  get   |                                          |
++--------+------------------------------------------+
+| remote |                                          |
++--------+------------------------------------------+
+| total  | n=0, sum=0.0000, mean=0.0000, max=0.0000 |
++--------+------------------------------------------+
+
+[INFO] [2020-11-20 02:40:36,837] [5052:140278284748608] - task_executor.py[line:302]: report task 202011200231350021282_evaluation_0 0 guest 10000 to driver
+[INFO] [2020-11-20 02:40:36,838] [5052:140278284748608] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000
+[INFO] [2020-11-20 02:40:37,029] [5052:140278284748608] - task_executor.py[line:207]: task 202011200231350021282_evaluation_0 guest 10000 start time: 2020-11-20 02:40:24
+[INFO] [2020-11-20 02:40:37,030] [5052:140278284748608] - task_executor.py[line:209]: task 202011200231350021282_evaluation_0 guest 10000 end time: 2020-11-20 02:40:36
+[INFO] [2020-11-20 02:40:37,030] [5052:140278284748608] - task_executor.py[line:211]: task 202011200231350021282_evaluation_0 guest 10000 takes 11.973s
+[INFO] [2020-11-20 02:40:37,031] [5052:140278284748608] - task_executor.py[line:214]: Finish 202011200231350021282 evaluation_0 202011200231350021282_evaluation_0 0 guest 10000 task success
+[INFO] [2020-11-20 02:40:37,032] [5052:140278284748608] - task_executor.py[line:302]: report task 202011200231350021282_evaluation_0 0 guest 10000 to driver
+[INFO] [2020-11-20 02:40:37,033] [5052:140278284748608] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_evaluation_0 0 on guest 10000

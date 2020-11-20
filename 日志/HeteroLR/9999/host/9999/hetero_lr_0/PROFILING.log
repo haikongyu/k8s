@@ -1,0 +1,328 @@
+[DEBUG] [2020-11-20 02:37:27,876] [1888:140512266434368] - profile.py[line:84]: [computing#a07e8b9a9c]function_stack: [component_properties.py:221]extract_input_data <-[component_properties.py:238]extract_running_rules <-[model_base.py:87]run
+[DEBUG] [2020-11-20 02:37:27,878] [1888:140512266434368] - profile.py[line:87]: [computing#a07e8b9a9c]start
+[DEBUG] [2020-11-20 02:37:28,050] [1888:140512266434368] - profile.py[line:93]: [computing#a07e8b9a9c]done, elapse: 0.17396306991577148, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:37:28,058] [1888:140512266434368] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.one_vs_rest_transfer_variable.OneVsRestTransferVariable.aggregate_classes.fit]host<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:37:28,974] [1888:140512266434368] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.one_vs_rest_transfer_variable.OneVsRestTransferVariable.aggregate_classes.fit]host<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:37:29,056] [1888:140512266434368] - profile.py[line:84]: [computing#c52758049e]function_stack: [abnormal_detection.py:27]empty_table_detection <-[linear_model_base.py:134]_abnormal_detection <-[hetero_lr_host.py:93]fit_binary <-[hetero_lr_host.py:90]fit <-[model_base.py:101]run
+[DEBUG] [2020-11-20 02:37:29,057] [1888:140512266434368] - profile.py[line:87]: [computing#c52758049e]start
+[DEBUG] [2020-11-20 02:37:29,239] [1888:140512266434368] - profile.py[line:93]: [computing#c52758049e]done, elapse: 0.18338942527770996, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:37:29,244] [1888:140512266434368] - profile.py[line:84]: [computing#e2b496113f]function_stack: [data_overview.py:27]get_features_shape <-[data_overview.py:105]is_empty_feature <-[abnormal_detection.py:33]empty_feature_detection <-[linear_model_base.py:135]_abnormal_detection <-[hetero_lr_host.py:93]fit_binary <-[hetero_lr_host.py:90]fit <-[model_base.py:101]run
+[DEBUG] [2020-11-20 02:37:29,245] [1888:140512266434368] - profile.py[line:87]: [computing#e2b496113f]start
+[DEBUG] [2020-11-20 02:37:29,607] [1888:140512266434368] - profile.py[line:93]: [computing#e2b496113f]done, elapse: 0.3624715805053711, function: first(self: Table(partition=8)) -> tuple
+[DEBUG] [2020-11-20 02:37:29,615] [1888:140512266434368] - profile.py[line:84]: [computing#d5b6b86e09]function_stack: [linear_model_base.py:221]check_abnormal_values <-[hetero_lr_host.py:94]fit_binary <-[hetero_lr_host.py:90]fit <-[model_base.py:101]run
+[DEBUG] [2020-11-20 02:37:29,616] [1888:140512266434368] - profile.py[line:87]: [computing#d5b6b86e09]start
+[DEBUG] [2020-11-20 02:37:44,701] [1888:140512266434368] - profile.py[line:93]: [computing#d5b6b86e09]done, elapse: 15.085932493209839, function: applyPartitions(self: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:37:44,706] [1888:140512266434368] - profile.py[line:84]: [computing#e405086861]function_stack: [linear_model_base.py:222]check_abnormal_values <-[hetero_lr_host.py:94]fit_binary <-[hetero_lr_host.py:90]fit <-[model_base.py:101]run
+[DEBUG] [2020-11-20 02:37:44,707] [1888:140512266434368] - profile.py[line:87]: [computing#e405086861]start
+[DEBUG] [2020-11-20 02:37:44,841] [1888:140512266434368] - profile.py[line:93]: [computing#e405086861]done, elapse: 0.13546991348266602, function: reduce(self: Table(partition=8), func: function) -> bool
+[DEBUG] [2020-11-20 02:37:44,850] [1888:140512266434368] - profile.py[line:84]: [computing#0f1ee7fb99]function_stack: [hetero_lr_host.py:97]fit_binary <-[hetero_lr_host.py:90]fit <-[model_base.py:101]run
+[DEBUG] [2020-11-20 02:37:44,850] [1888:140512266434368] - profile.py[line:87]: [computing#0f1ee7fb99]start
+[DEBUG] [2020-11-20 02:37:45,008] [1888:140512266434368] - profile.py[line:93]: [computing#0f1ee7fb99]done, elapse: 0.15826797485351562, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:37:45,010] [1888:140512266434368] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.paillier_pubkey.fit]host<-[Party(role=arbiter, party_id=9999)] start
+[DEBUG] [2020-11-20 02:37:45,680] [1888:140512266434368] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.paillier_pubkey.fit]host<-[Party(role=arbiter, party_id=9999)] done
+[DEBUG] [2020-11-20 02:37:45,683] [1888:140512266434368] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.batch_info.fit]host<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:37:46,653] [1888:140512266434368] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.batch_info.fit]host<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:37:46,654] [1888:140512266434368] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.batch_data_index.fit.0]host<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:37:47,250] [1888:140512266434368] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.batch_data_index.fit.0]host<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:37:47,256] [1888:140512266434368] - profile.py[line:84]: [computing#0dc9689bb7]function_stack: [batch_generator.py:68]initialize_batch_generator <-[hetero_lr_host.py:102]fit_binary <-[hetero_lr_host.py:90]fit <-[model_base.py:101]run
+[DEBUG] [2020-11-20 02:37:47,257] [1888:140512266434368] - profile.py[line:87]: [computing#0dc9689bb7]start
+[DEBUG] [2020-11-20 02:37:47,789] [1888:140512266434368] - profile.py[line:93]: [computing#0dc9689bb7]done, elapse: 0.53304123878479, function: join(self: Table(partition=8), other: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:37:47,791] [1888:140512266434368] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.batch_data_index.fit.1]host<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:37:48,185] [1888:140512266434368] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.batch_data_index.fit.1]host<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:37:48,189] [1888:140512266434368] - profile.py[line:87]: [computing#0dc9689bb7]start
+[DEBUG] [2020-11-20 02:37:48,871] [1888:140512266434368] - profile.py[line:93]: [computing#0dc9689bb7]done, elapse: 0.6814918518066406, function: join(self: Table(partition=8), other: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:37:48,874] [1888:140512266434368] - profile.py[line:84]: [computing#107c5bfcc3]function_stack: [data_overview.py:27]get_features_shape <-[linear_model_base.py:83]get_features_shape <-[hetero_lr_host.py:111]fit_binary <-[hetero_lr_host.py:90]fit <-[model_base.py:101]run
+[DEBUG] [2020-11-20 02:37:48,875] [1888:140512266434368] - profile.py[line:87]: [computing#107c5bfcc3]start
+[DEBUG] [2020-11-20 02:37:49,146] [1888:140512266434368] - profile.py[line:93]: [computing#107c5bfcc3]done, elapse: 0.2715637683868408, function: first(self: Table(partition=8)) -> tuple
+[DEBUG] [2020-11-20 02:37:49,158] [1888:140512266434368] - profile.py[line:84]: [computing#55e5d336ba]function_stack: [batch_generator.py:75]generate_batch_data <-[hetero_lr_host.py:123]fit_binary <-[hetero_lr_host.py:90]fit <-[model_base.py:101]run
+[DEBUG] [2020-11-20 02:37:49,160] [1888:140512266434368] - profile.py[line:87]: [computing#55e5d336ba]start
+[DEBUG] [2020-11-20 02:37:49,338] [1888:140512266434368] - profile.py[line:93]: [computing#55e5d336ba]done, elapse: 0.17967748641967773, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:37:49,343] [1888:140512266434368] - profile.py[line:84]: [computing#eb2200c3aa]function_stack: [hetero_lr_host.py:126]fit_binary <-[hetero_lr_host.py:90]fit <-[model_base.py:101]run
+[DEBUG] [2020-11-20 02:37:49,344] [1888:140512266434368] - profile.py[line:87]: [computing#eb2200c3aa]start
+[DEBUG] [2020-11-20 02:37:49,472] [1888:140512266434368] - profile.py[line:93]: [computing#eb2200c3aa]done, elapse: 0.1290273666381836, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:37:49,477] [1888:140512266434368] - profile.py[line:84]: [computing#f6bbe8f714]function_stack: [hetero_lr_gradient_and_loss.py:130]compute_forwards <-[hetero_linear_model_gradient.py:225]compute_gradient_procedure <-[hetero_lr_host.py:130]fit_binary <-[hetero_lr_host.py:90]fit <-[model_base.py:101]run
+[DEBUG] [2020-11-20 02:37:49,478] [1888:140512266434368] - profile.py[line:87]: [computing#f6bbe8f714]start
+[DEBUG] [2020-11-20 02:37:50,120] [1888:140512266434368] - profile.py[line:93]: [computing#f6bbe8f714]done, elapse: 0.642566442489624, function: mapValues(self: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:37:50,123] [1888:140512266434368] - profile.py[line:84]: [computing#c6f0d692f1]function_stack: [encrypt_mode.py:94]encrypt <-[hetero_linear_model_gradient.py:226]compute_gradient_procedure <-[hetero_lr_host.py:130]fit_binary <-[hetero_lr_host.py:90]fit <-[model_base.py:101]run
+[DEBUG] [2020-11-20 02:37:50,124] [1888:140512266434368] - profile.py[line:87]: [computing#c6f0d692f1]start
+[DEBUG] [2020-11-20 02:37:51,139] [1888:140512266434368] - profile.py[line:93]: [computing#c6f0d692f1]done, elapse: 1.0161216259002686, function: mapValues(self: Table(partition=8), func: method) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:37:51,141] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_forward_dict.fit.0.0]host->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:37:51,150] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_forward_dict.fit.0.0]host->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:37:51,153] [1888:140512266434368] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.fore_gradient.fit.0.0]host<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:37:58,970] [1888:140512266434368] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.fore_gradient.fit.0.0]host<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:37:58,973] [1888:140512266434368] - profile.py[line:84]: [computing#8bba14b145]function_stack: [hetero_linear_model_gradient.py:110]compute_gradient <-[hetero_linear_model_gradient.py:233]compute_gradient_procedure <-[hetero_lr_host.py:130]fit_binary <-[hetero_lr_host.py:90]fit <-[model_base.py:101]run
+[DEBUG] [2020-11-20 02:37:58,974] [1888:140512266434368] - profile.py[line:87]: [computing#8bba14b145]start
+[DEBUG] [2020-11-20 02:37:59,388] [1888:140512266434368] - profile.py[line:93]: [computing#8bba14b145]done, elapse: 0.414600133895874, function: join(self: Table(partition=8), other: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:37:59,392] [1888:140512266434368] - profile.py[line:84]: [computing#acb7e40837]function_stack: [data_overview.py:112]is_sparse_data <-[hetero_linear_model_gradient.py:111]compute_gradient <-[hetero_linear_model_gradient.py:233]compute_gradient_procedure <-[hetero_lr_host.py:130]fit_binary <-[hetero_lr_host.py:90]fit <-[model_base.py:101]run
+[DEBUG] [2020-11-20 02:37:59,393] [1888:140512266434368] - profile.py[line:87]: [computing#acb7e40837]start
+[DEBUG] [2020-11-20 02:37:59,646] [1888:140512266434368] - profile.py[line:93]: [computing#acb7e40837]done, elapse: 0.2535691261291504, function: first(self: Table(partition=8)) -> tuple
+[DEBUG] [2020-11-20 02:37:59,649] [1888:140512266434368] - profile.py[line:84]: [computing#7f05bd4566]function_stack: [hetero_linear_model_gradient.py:115]compute_gradient <-[hetero_linear_model_gradient.py:233]compute_gradient_procedure <-[hetero_lr_host.py:130]fit_binary <-[hetero_lr_host.py:90]fit <-[model_base.py:101]run
+[DEBUG] [2020-11-20 02:37:59,650] [1888:140512266434368] - profile.py[line:87]: [computing#7f05bd4566]start
+[DEBUG] [2020-11-20 02:38:01,070] [1888:140512266434368] - profile.py[line:93]: [computing#7f05bd4566]done, elapse: 1.4207243919372559, function: applyPartitions(self: Table(partition=8), func: partial) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:38:01,073] [1888:140512266434368] - profile.py[line:84]: [computing#404eb6414c]function_stack: [hetero_linear_model_gradient.py:116]compute_gradient <-[hetero_linear_model_gradient.py:233]compute_gradient_procedure <-[hetero_lr_host.py:130]fit_binary <-[hetero_lr_host.py:90]fit <-[model_base.py:101]run
+[DEBUG] [2020-11-20 02:38:01,073] [1888:140512266434368] - profile.py[line:87]: [computing#404eb6414c]start
+[DEBUG] [2020-11-20 02:38:01,271] [1888:140512266434368] - profile.py[line:93]: [computing#404eb6414c]done, elapse: 0.19809508323669434, function: reduce(self: Table(partition=8), func: function) -> ndarray
+[DEBUG] [2020-11-20 02:38:01,273] [1888:140512266434368] - profile.py[line:84]: [computing#d725aa5626]function_stack: [hetero_linear_model_gradient.py:118]compute_gradient <-[hetero_linear_model_gradient.py:233]compute_gradient_procedure <-[hetero_lr_host.py:130]fit_binary <-[hetero_lr_host.py:90]fit <-[model_base.py:101]run
+[DEBUG] [2020-11-20 02:38:01,274] [1888:140512266434368] - profile.py[line:87]: [computing#d725aa5626]start
+[DEBUG] [2020-11-20 02:38:01,389] [1888:140512266434368] - profile.py[line:93]: [computing#d725aa5626]done, elapse: 0.11603927612304688, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:38:01,401] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.0.0]host->[Party(role=arbiter, party_id=9999)] start
+[DEBUG] [2020-11-20 02:38:01,413] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.0.0]host->[Party(role=arbiter, party_id=9999)] done
+[DEBUG] [2020-11-20 02:38:01,415] [1888:140512266434368] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.0.0]host<-[Party(role=arbiter, party_id=9999)] start
+[DEBUG] [2020-11-20 02:38:04,345] [1888:140512266434368] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.0.0]host<-[Party(role=arbiter, party_id=9999)] done
+[DEBUG] [2020-11-20 02:38:04,352] [1888:140512266434368] - profile.py[line:84]: [computing#44c9b5a8ac]function_stack: [hetero_lr_gradient_and_loss.py:144]compute_loss <-[hetero_lr_host.py:137]fit_binary <-[hetero_lr_host.py:90]fit <-[model_base.py:101]run
+[DEBUG] [2020-11-20 02:38:04,354] [1888:140512266434368] - profile.py[line:87]: [computing#44c9b5a8ac]start
+[DEBUG] [2020-11-20 02:38:05,162] [1888:140512266434368] - profile.py[line:93]: [computing#44c9b5a8ac]done, elapse: 0.8104212284088135, function: mapValues(self: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:38:05,165] [1888:140512266434368] - profile.py[line:87]: [computing#44c9b5a8ac]start
+[DEBUG] [2020-11-20 02:38:05,285] [1888:140512266434368] - profile.py[line:93]: [computing#44c9b5a8ac]done, elapse: 0.12079119682312012, function: reduce(self: Table(partition=8), func: function) -> float64
+[DEBUG] [2020-11-20 02:38:05,293] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss_intermediate.fit.0.0]host->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:05,306] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss_intermediate.fit.0.0]host->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:05,319] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_loss_regular.fit.0.0]host->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:05,324] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_loss_regular.fit.0.0]host->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:05,331] [1888:140512266434368] - profile.py[line:87]: [computing#55e5d336ba]start
+[DEBUG] [2020-11-20 02:38:05,471] [1888:140512266434368] - profile.py[line:93]: [computing#55e5d336ba]done, elapse: 0.14037704467773438, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:38:05,476] [1888:140512266434368] - profile.py[line:87]: [computing#eb2200c3aa]start
+[DEBUG] [2020-11-20 02:38:05,757] [1888:140512266434368] - profile.py[line:93]: [computing#eb2200c3aa]done, elapse: 0.28031492233276367, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:38:05,762] [1888:140512266434368] - profile.py[line:87]: [computing#f6bbe8f714]start
+[DEBUG] [2020-11-20 02:38:06,234] [1888:140512266434368] - profile.py[line:93]: [computing#f6bbe8f714]done, elapse: 0.47275757789611816, function: mapValues(self: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:38:06,237] [1888:140512266434368] - profile.py[line:87]: [computing#c6f0d692f1]start
+[DEBUG] [2020-11-20 02:38:07,265] [1888:140512266434368] - profile.py[line:93]: [computing#c6f0d692f1]done, elapse: 1.0278329849243164, function: mapValues(self: Table(partition=8), func: method) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:38:07,266] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_forward_dict.fit.0.1]host->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:07,281] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_forward_dict.fit.0.1]host->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:07,282] [1888:140512266434368] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.fore_gradient.fit.0.1]host<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:13,133] [1888:140512266434368] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.fore_gradient.fit.0.1]host<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:13,137] [1888:140512266434368] - profile.py[line:87]: [computing#8bba14b145]start
+[DEBUG] [2020-11-20 02:38:13,521] [1888:140512266434368] - profile.py[line:93]: [computing#8bba14b145]done, elapse: 0.3833441734313965, function: join(self: Table(partition=8), other: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:38:13,527] [1888:140512266434368] - profile.py[line:87]: [computing#acb7e40837]start
+[DEBUG] [2020-11-20 02:38:14,036] [1888:140512266434368] - profile.py[line:93]: [computing#acb7e40837]done, elapse: 0.5091986656188965, function: first(self: Table(partition=8)) -> tuple
+[DEBUG] [2020-11-20 02:38:14,040] [1888:140512266434368] - profile.py[line:87]: [computing#7f05bd4566]start
+[DEBUG] [2020-11-20 02:38:15,362] [1888:140512266434368] - profile.py[line:93]: [computing#7f05bd4566]done, elapse: 1.3227739334106445, function: applyPartitions(self: Table(partition=8), func: partial) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:38:15,368] [1888:140512266434368] - profile.py[line:87]: [computing#404eb6414c]start
+[DEBUG] [2020-11-20 02:38:15,547] [1888:140512266434368] - profile.py[line:93]: [computing#404eb6414c]done, elapse: 0.1794111728668213, function: reduce(self: Table(partition=8), func: function) -> ndarray
+[DEBUG] [2020-11-20 02:38:15,551] [1888:140512266434368] - profile.py[line:87]: [computing#d725aa5626]start
+[DEBUG] [2020-11-20 02:38:15,699] [1888:140512266434368] - profile.py[line:93]: [computing#d725aa5626]done, elapse: 0.14814329147338867, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:38:15,715] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.0.1]host->[Party(role=arbiter, party_id=9999)] start
+[DEBUG] [2020-11-20 02:38:15,727] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.0.1]host->[Party(role=arbiter, party_id=9999)] done
+[DEBUG] [2020-11-20 02:38:15,728] [1888:140512266434368] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.0.1]host<-[Party(role=arbiter, party_id=9999)] start
+[DEBUG] [2020-11-20 02:38:18,166] [1888:140512266434368] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.0.1]host<-[Party(role=arbiter, party_id=9999)] done
+[DEBUG] [2020-11-20 02:38:18,168] [1888:140512266434368] - profile.py[line:87]: [computing#44c9b5a8ac]start
+[DEBUG] [2020-11-20 02:38:18,536] [1888:140512266434368] - profile.py[line:93]: [computing#44c9b5a8ac]done, elapse: 0.36743783950805664, function: mapValues(self: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:38:18,539] [1888:140512266434368] - profile.py[line:87]: [computing#44c9b5a8ac]start
+[DEBUG] [2020-11-20 02:38:18,649] [1888:140512266434368] - profile.py[line:93]: [computing#44c9b5a8ac]done, elapse: 0.10971713066101074, function: reduce(self: Table(partition=8), func: function) -> float64
+[DEBUG] [2020-11-20 02:38:18,657] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss_intermediate.fit.0.1]host->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:18,664] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss_intermediate.fit.0.1]host->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:18,670] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_loss_regular.fit.0.1]host->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:18,685] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_loss_regular.fit.0.1]host->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:18,687] [1888:140512266434368] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.converge_flag.fit.0]host<-[Party(role=arbiter, party_id=9999)] start
+[DEBUG] [2020-11-20 02:38:23,400] [1888:140512266434368] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.converge_flag.fit.0]host<-[Party(role=arbiter, party_id=9999)] done
+[DEBUG] [2020-11-20 02:38:23,407] [1888:140512266434368] - profile.py[line:87]: [computing#55e5d336ba]start
+[DEBUG] [2020-11-20 02:38:23,750] [1888:140512266434368] - profile.py[line:93]: [computing#55e5d336ba]done, elapse: 0.3430049419403076, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:38:23,755] [1888:140512266434368] - profile.py[line:87]: [computing#eb2200c3aa]start
+[DEBUG] [2020-11-20 02:38:23,948] [1888:140512266434368] - profile.py[line:93]: [computing#eb2200c3aa]done, elapse: 0.19233012199401855, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:38:23,952] [1888:140512266434368] - profile.py[line:87]: [computing#f6bbe8f714]start
+[DEBUG] [2020-11-20 02:38:24,565] [1888:140512266434368] - profile.py[line:93]: [computing#f6bbe8f714]done, elapse: 0.6136038303375244, function: mapValues(self: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:38:24,570] [1888:140512266434368] - profile.py[line:87]: [computing#c6f0d692f1]start
+[DEBUG] [2020-11-20 02:38:25,645] [1888:140512266434368] - profile.py[line:93]: [computing#c6f0d692f1]done, elapse: 1.0751168727874756, function: mapValues(self: Table(partition=8), func: method) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:38:25,649] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_forward_dict.fit.1.0]host->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:25,658] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_forward_dict.fit.1.0]host->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:26,289] [1888:140512266434368] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.fore_gradient.fit.1.0]host<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:31,624] [1888:140512266434368] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.fore_gradient.fit.1.0]host<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:31,927] [1888:140512266434368] - profile.py[line:87]: [computing#8bba14b145]start
+[DEBUG] [2020-11-20 02:38:32,377] [1888:140512266434368] - profile.py[line:93]: [computing#8bba14b145]done, elapse: 0.45009851455688477, function: join(self: Table(partition=8), other: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:38:32,382] [1888:140512266434368] - profile.py[line:87]: [computing#acb7e40837]start
+[DEBUG] [2020-11-20 02:38:32,911] [1888:140512266434368] - profile.py[line:93]: [computing#acb7e40837]done, elapse: 0.529221773147583, function: first(self: Table(partition=8)) -> tuple
+[DEBUG] [2020-11-20 02:38:32,916] [1888:140512266434368] - profile.py[line:87]: [computing#7f05bd4566]start
+[DEBUG] [2020-11-20 02:38:34,539] [1888:140512266434368] - profile.py[line:93]: [computing#7f05bd4566]done, elapse: 1.6220767498016357, function: applyPartitions(self: Table(partition=8), func: partial) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:38:34,543] [1888:140512266434368] - profile.py[line:87]: [computing#404eb6414c]start
+[DEBUG] [2020-11-20 02:38:35,107] [1888:140512266434368] - profile.py[line:93]: [computing#404eb6414c]done, elapse: 0.5648148059844971, function: reduce(self: Table(partition=8), func: function) -> ndarray
+[DEBUG] [2020-11-20 02:38:35,112] [1888:140512266434368] - profile.py[line:87]: [computing#d725aa5626]start
+[DEBUG] [2020-11-20 02:38:35,284] [1888:140512266434368] - profile.py[line:93]: [computing#d725aa5626]done, elapse: 0.17171478271484375, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:38:35,303] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.1.0]host->[Party(role=arbiter, party_id=9999)] start
+[DEBUG] [2020-11-20 02:38:35,317] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.1.0]host->[Party(role=arbiter, party_id=9999)] done
+[DEBUG] [2020-11-20 02:38:35,319] [1888:140512266434368] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.1.0]host<-[Party(role=arbiter, party_id=9999)] start
+[DEBUG] [2020-11-20 02:38:38,019] [1888:140512266434368] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.1.0]host<-[Party(role=arbiter, party_id=9999)] done
+[DEBUG] [2020-11-20 02:38:38,024] [1888:140512266434368] - profile.py[line:87]: [computing#44c9b5a8ac]start
+[DEBUG] [2020-11-20 02:38:39,151] [1888:140512266434368] - profile.py[line:93]: [computing#44c9b5a8ac]done, elapse: 1.1271247863769531, function: mapValues(self: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:38:39,156] [1888:140512266434368] - profile.py[line:87]: [computing#44c9b5a8ac]start
+[DEBUG] [2020-11-20 02:38:39,493] [1888:140512266434368] - profile.py[line:93]: [computing#44c9b5a8ac]done, elapse: 0.33769726753234863, function: reduce(self: Table(partition=8), func: function) -> float64
+[DEBUG] [2020-11-20 02:38:39,501] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss_intermediate.fit.1.0]host->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:39,520] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss_intermediate.fit.1.0]host->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:39,530] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_loss_regular.fit.1.0]host->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:39,545] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_loss_regular.fit.1.0]host->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:39,550] [1888:140512266434368] - profile.py[line:87]: [computing#55e5d336ba]start
+[DEBUG] [2020-11-20 02:38:39,780] [1888:140512266434368] - profile.py[line:93]: [computing#55e5d336ba]done, elapse: 0.23101091384887695, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:38:39,786] [1888:140512266434368] - profile.py[line:87]: [computing#eb2200c3aa]start
+[DEBUG] [2020-11-20 02:38:39,907] [1888:140512266434368] - profile.py[line:93]: [computing#eb2200c3aa]done, elapse: 0.12170958518981934, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:38:39,913] [1888:140512266434368] - profile.py[line:87]: [computing#f6bbe8f714]start
+[DEBUG] [2020-11-20 02:38:40,289] [1888:140512266434368] - profile.py[line:93]: [computing#f6bbe8f714]done, elapse: 0.37653160095214844, function: mapValues(self: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:38:40,294] [1888:140512266434368] - profile.py[line:87]: [computing#c6f0d692f1]start
+[DEBUG] [2020-11-20 02:38:41,662] [1888:140512266434368] - profile.py[line:93]: [computing#c6f0d692f1]done, elapse: 1.367948293685913, function: mapValues(self: Table(partition=8), func: method) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:38:41,664] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_forward_dict.fit.1.1]host->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:41,675] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_forward_dict.fit.1.1]host->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:42,400] [1888:140512266434368] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.fore_gradient.fit.1.1]host<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:48,071] [1888:140512266434368] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.fore_gradient.fit.1.1]host<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:48,393] [1888:140512266434368] - profile.py[line:87]: [computing#8bba14b145]start
+[DEBUG] [2020-11-20 02:38:48,899] [1888:140512266434368] - profile.py[line:93]: [computing#8bba14b145]done, elapse: 0.5064725875854492, function: join(self: Table(partition=8), other: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:38:48,902] [1888:140512266434368] - profile.py[line:87]: [computing#acb7e40837]start
+[DEBUG] [2020-11-20 02:38:49,234] [1888:140512266434368] - profile.py[line:93]: [computing#acb7e40837]done, elapse: 0.3316986560821533, function: first(self: Table(partition=8)) -> tuple
+[DEBUG] [2020-11-20 02:38:49,238] [1888:140512266434368] - profile.py[line:87]: [computing#7f05bd4566]start
+[DEBUG] [2020-11-20 02:38:50,670] [1888:140512266434368] - profile.py[line:93]: [computing#7f05bd4566]done, elapse: 1.431734561920166, function: applyPartitions(self: Table(partition=8), func: partial) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:38:50,673] [1888:140512266434368] - profile.py[line:87]: [computing#404eb6414c]start
+[DEBUG] [2020-11-20 02:38:50,853] [1888:140512266434368] - profile.py[line:93]: [computing#404eb6414c]done, elapse: 0.1802525520324707, function: reduce(self: Table(partition=8), func: function) -> ndarray
+[DEBUG] [2020-11-20 02:38:50,857] [1888:140512266434368] - profile.py[line:87]: [computing#d725aa5626]start
+[DEBUG] [2020-11-20 02:38:50,946] [1888:140512266434368] - profile.py[line:93]: [computing#d725aa5626]done, elapse: 0.0884242057800293, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:38:50,962] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.1.1]host->[Party(role=arbiter, party_id=9999)] start
+[DEBUG] [2020-11-20 02:38:50,976] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.1.1]host->[Party(role=arbiter, party_id=9999)] done
+[DEBUG] [2020-11-20 02:38:50,978] [1888:140512266434368] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.1.1]host<-[Party(role=arbiter, party_id=9999)] start
+[DEBUG] [2020-11-20 02:38:54,170] [1888:140512266434368] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.1.1]host<-[Party(role=arbiter, party_id=9999)] done
+[DEBUG] [2020-11-20 02:38:54,175] [1888:140512266434368] - profile.py[line:87]: [computing#44c9b5a8ac]start
+[DEBUG] [2020-11-20 02:38:54,878] [1888:140512266434368] - profile.py[line:93]: [computing#44c9b5a8ac]done, elapse: 0.703402042388916, function: mapValues(self: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:38:54,880] [1888:140512266434368] - profile.py[line:87]: [computing#44c9b5a8ac]start
+[DEBUG] [2020-11-20 02:38:55,007] [1888:140512266434368] - profile.py[line:93]: [computing#44c9b5a8ac]done, elapse: 0.12637639045715332, function: reduce(self: Table(partition=8), func: function) -> float64
+[DEBUG] [2020-11-20 02:38:55,016] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss_intermediate.fit.1.1]host->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:55,028] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss_intermediate.fit.1.1]host->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:55,034] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_loss_regular.fit.1.1]host->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:55,045] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_loss_regular.fit.1.1]host->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:55,046] [1888:140512266434368] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.converge_flag.fit.1]host<-[Party(role=arbiter, party_id=9999)] start
+[DEBUG] [2020-11-20 02:39:00,459] [1888:140512266434368] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.converge_flag.fit.1]host<-[Party(role=arbiter, party_id=9999)] done
+[DEBUG] [2020-11-20 02:39:00,468] [1888:140512266434368] - profile.py[line:87]: [computing#55e5d336ba]start
+[DEBUG] [2020-11-20 02:39:00,760] [1888:140512266434368] - profile.py[line:93]: [computing#55e5d336ba]done, elapse: 0.2921319007873535, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:39:00,765] [1888:140512266434368] - profile.py[line:87]: [computing#eb2200c3aa]start
+[DEBUG] [2020-11-20 02:39:00,906] [1888:140512266434368] - profile.py[line:93]: [computing#eb2200c3aa]done, elapse: 0.1409752368927002, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:39:00,909] [1888:140512266434368] - profile.py[line:87]: [computing#f6bbe8f714]start
+[DEBUG] [2020-11-20 02:39:01,223] [1888:140512266434368] - profile.py[line:93]: [computing#f6bbe8f714]done, elapse: 0.3145468235015869, function: mapValues(self: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:39:01,227] [1888:140512266434368] - profile.py[line:87]: [computing#c6f0d692f1]start
+[DEBUG] [2020-11-20 02:39:02,273] [1888:140512266434368] - profile.py[line:93]: [computing#c6f0d692f1]done, elapse: 1.0462369918823242, function: mapValues(self: Table(partition=8), func: method) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:39:02,274] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_forward_dict.fit.2.0]host->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:39:02,289] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_forward_dict.fit.2.0]host->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:39:03,205] [1888:140512266434368] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.fore_gradient.fit.2.0]host<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:39:09,036] [1888:140512266434368] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.fore_gradient.fit.2.0]host<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:39:09,445] [1888:140512266434368] - profile.py[line:87]: [computing#8bba14b145]start
+[DEBUG] [2020-11-20 02:39:10,010] [1888:140512266434368] - profile.py[line:93]: [computing#8bba14b145]done, elapse: 0.5649771690368652, function: join(self: Table(partition=8), other: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:39:10,014] [1888:140512266434368] - profile.py[line:87]: [computing#acb7e40837]start
+[DEBUG] [2020-11-20 02:39:10,311] [1888:140512266434368] - profile.py[line:93]: [computing#acb7e40837]done, elapse: 0.2967960834503174, function: first(self: Table(partition=8)) -> tuple
+[DEBUG] [2020-11-20 02:39:10,316] [1888:140512266434368] - profile.py[line:87]: [computing#7f05bd4566]start
+[DEBUG] [2020-11-20 02:39:12,417] [1888:140512266434368] - profile.py[line:93]: [computing#7f05bd4566]done, elapse: 2.1010422706604004, function: applyPartitions(self: Table(partition=8), func: partial) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:39:12,421] [1888:140512266434368] - profile.py[line:87]: [computing#404eb6414c]start
+[DEBUG] [2020-11-20 02:39:12,817] [1888:140512266434368] - profile.py[line:93]: [computing#404eb6414c]done, elapse: 0.395479679107666, function: reduce(self: Table(partition=8), func: function) -> ndarray
+[DEBUG] [2020-11-20 02:39:12,820] [1888:140512266434368] - profile.py[line:87]: [computing#d725aa5626]start
+[DEBUG] [2020-11-20 02:39:13,030] [1888:140512266434368] - profile.py[line:93]: [computing#d725aa5626]done, elapse: 0.2102053165435791, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:39:13,051] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.2.0]host->[Party(role=arbiter, party_id=9999)] start
+[DEBUG] [2020-11-20 02:39:13,063] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.2.0]host->[Party(role=arbiter, party_id=9999)] done
+[DEBUG] [2020-11-20 02:39:13,066] [1888:140512266434368] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.2.0]host<-[Party(role=arbiter, party_id=9999)] start
+[DEBUG] [2020-11-20 02:39:15,352] [1888:140512266434368] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.2.0]host<-[Party(role=arbiter, party_id=9999)] done
+[DEBUG] [2020-11-20 02:39:15,355] [1888:140512266434368] - profile.py[line:87]: [computing#44c9b5a8ac]start
+[DEBUG] [2020-11-20 02:39:15,780] [1888:140512266434368] - profile.py[line:93]: [computing#44c9b5a8ac]done, elapse: 0.4249236583709717, function: mapValues(self: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:39:15,783] [1888:140512266434368] - profile.py[line:87]: [computing#44c9b5a8ac]start
+[DEBUG] [2020-11-20 02:39:15,883] [1888:140512266434368] - profile.py[line:93]: [computing#44c9b5a8ac]done, elapse: 0.10024023056030273, function: reduce(self: Table(partition=8), func: function) -> float64
+[DEBUG] [2020-11-20 02:39:15,893] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss_intermediate.fit.2.0]host->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:39:15,900] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss_intermediate.fit.2.0]host->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:39:15,911] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_loss_regular.fit.2.0]host->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:39:15,930] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_loss_regular.fit.2.0]host->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:39:15,939] [1888:140512266434368] - profile.py[line:87]: [computing#55e5d336ba]start
+[DEBUG] [2020-11-20 02:39:16,124] [1888:140512266434368] - profile.py[line:93]: [computing#55e5d336ba]done, elapse: 0.18571710586547852, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:39:16,128] [1888:140512266434368] - profile.py[line:87]: [computing#eb2200c3aa]start
+[DEBUG] [2020-11-20 02:39:16,385] [1888:140512266434368] - profile.py[line:93]: [computing#eb2200c3aa]done, elapse: 0.2568228244781494, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:39:16,391] [1888:140512266434368] - profile.py[line:87]: [computing#f6bbe8f714]start
+[DEBUG] [2020-11-20 02:39:17,039] [1888:140512266434368] - profile.py[line:93]: [computing#f6bbe8f714]done, elapse: 0.647963285446167, function: mapValues(self: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:39:17,042] [1888:140512266434368] - profile.py[line:87]: [computing#c6f0d692f1]start
+[DEBUG] [2020-11-20 02:39:18,076] [1888:140512266434368] - profile.py[line:93]: [computing#c6f0d692f1]done, elapse: 1.0341413021087646, function: mapValues(self: Table(partition=8), func: method) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:39:18,078] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_forward_dict.fit.2.1]host->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:39:18,088] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_forward_dict.fit.2.1]host->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:39:18,759] [1888:140512266434368] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.fore_gradient.fit.2.1]host<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:39:23,404] [1888:140512266434368] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.fore_gradient.fit.2.1]host<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:39:24,216] [1888:140512266434368] - profile.py[line:87]: [computing#8bba14b145]start
+[DEBUG] [2020-11-20 02:39:24,975] [1888:140512266434368] - profile.py[line:93]: [computing#8bba14b145]done, elapse: 0.759223222732544, function: join(self: Table(partition=8), other: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:39:24,979] [1888:140512266434368] - profile.py[line:87]: [computing#acb7e40837]start
+[DEBUG] [2020-11-20 02:39:25,528] [1888:140512266434368] - profile.py[line:93]: [computing#acb7e40837]done, elapse: 0.5489709377288818, function: first(self: Table(partition=8)) -> tuple
+[DEBUG] [2020-11-20 02:39:25,533] [1888:140512266434368] - profile.py[line:87]: [computing#7f05bd4566]start
+[DEBUG] [2020-11-20 02:39:26,862] [1888:140512266434368] - profile.py[line:93]: [computing#7f05bd4566]done, elapse: 1.3291330337524414, function: applyPartitions(self: Table(partition=8), func: partial) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:39:26,865] [1888:140512266434368] - profile.py[line:87]: [computing#404eb6414c]start
+[DEBUG] [2020-11-20 02:39:27,154] [1888:140512266434368] - profile.py[line:93]: [computing#404eb6414c]done, elapse: 0.28853368759155273, function: reduce(self: Table(partition=8), func: function) -> ndarray
+[DEBUG] [2020-11-20 02:39:27,161] [1888:140512266434368] - profile.py[line:87]: [computing#d725aa5626]start
+[DEBUG] [2020-11-20 02:39:27,465] [1888:140512266434368] - profile.py[line:93]: [computing#d725aa5626]done, elapse: 0.304110050201416, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:39:27,482] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.2.1]host->[Party(role=arbiter, party_id=9999)] start
+[DEBUG] [2020-11-20 02:39:27,497] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.2.1]host->[Party(role=arbiter, party_id=9999)] done
+[DEBUG] [2020-11-20 02:39:27,498] [1888:140512266434368] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.2.1]host<-[Party(role=arbiter, party_id=9999)] start
+[DEBUG] [2020-11-20 02:39:30,181] [1888:140512266434368] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.2.1]host<-[Party(role=arbiter, party_id=9999)] done
+[DEBUG] [2020-11-20 02:39:30,186] [1888:140512266434368] - profile.py[line:87]: [computing#44c9b5a8ac]start
+[DEBUG] [2020-11-20 02:39:30,853] [1888:140512266434368] - profile.py[line:93]: [computing#44c9b5a8ac]done, elapse: 0.6670637130737305, function: mapValues(self: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:39:30,857] [1888:140512266434368] - profile.py[line:87]: [computing#44c9b5a8ac]start
+[DEBUG] [2020-11-20 02:39:30,997] [1888:140512266434368] - profile.py[line:93]: [computing#44c9b5a8ac]done, elapse: 0.13979244232177734, function: reduce(self: Table(partition=8), func: function) -> float64
+[DEBUG] [2020-11-20 02:39:31,006] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss_intermediate.fit.2.1]host->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:39:31,019] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss_intermediate.fit.2.1]host->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:39:31,031] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_loss_regular.fit.2.1]host->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:39:31,039] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_loss_regular.fit.2.1]host->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:39:31,042] [1888:140512266434368] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.converge_flag.fit.2]host<-[Party(role=arbiter, party_id=9999)] start
+[DEBUG] [2020-11-20 02:39:34,904] [1888:140512266434368] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.converge_flag.fit.2]host<-[Party(role=arbiter, party_id=9999)] done
+[DEBUG] [2020-11-20 02:39:34,918] [1888:140512266434368] - profile.py[line:84]: [computing#d813e407d3]function_stack: [abnormal_detection.py:27]empty_table_detection <-[linear_model_base.py:134]_abnormal_detection <-[hetero_lr_host.py:165]predict <-[model_base.py:101]run
+[DEBUG] [2020-11-20 02:39:34,919] [1888:140512266434368] - profile.py[line:87]: [computing#d813e407d3]start
+[DEBUG] [2020-11-20 02:39:35,146] [1888:140512266434368] - profile.py[line:93]: [computing#d813e407d3]done, elapse: 0.22757554054260254, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:39:35,150] [1888:140512266434368] - profile.py[line:84]: [computing#62613f219d]function_stack: [data_overview.py:27]get_features_shape <-[data_overview.py:105]is_empty_feature <-[abnormal_detection.py:33]empty_feature_detection <-[linear_model_base.py:135]_abnormal_detection <-[hetero_lr_host.py:165]predict <-[model_base.py:101]run
+[DEBUG] [2020-11-20 02:39:35,150] [1888:140512266434368] - profile.py[line:87]: [computing#62613f219d]start
+[DEBUG] [2020-11-20 02:39:35,376] [1888:140512266434368] - profile.py[line:93]: [computing#62613f219d]done, elapse: 0.2267930507659912, function: first(self: Table(partition=8)) -> tuple
+[DEBUG] [2020-11-20 02:39:35,385] [1888:140512266434368] - profile.py[line:84]: [computing#55c9db76bb]function_stack: [base_logistic_regression.py:50]compute_wx <-[hetero_lr_host.py:173]predict <-[model_base.py:101]run
+[DEBUG] [2020-11-20 02:39:35,386] [1888:140512266434368] - profile.py[line:87]: [computing#55c9db76bb]start
+[DEBUG] [2020-11-20 02:39:35,952] [1888:140512266434368] - profile.py[line:93]: [computing#55c9db76bb]done, elapse: 0.5667481422424316, function: mapValues(self: Table(partition=8), func: function) -> Table(partition=8)
+[DEBUG] [2020-11-20 02:39:35,953] [1888:140512266434368] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_prob.validate]host->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:39:35,963] [1888:140512266434368] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_prob.validate]host->[Party(role=guest, party_id=10000)] done
+[INFO] [2020-11-20 02:39:38,569] [1888:140512266434368] - profile.py[line:249]: 
+Computing:
++----------+----------------------------------------------------+
+| function |     function       n    sum(s)   mean(s)   max(s)  |
+|          | ----------------- ---- -------- --------- -------- |
+|          |  applyPartitions   7    24.313    3.473    15.086  |
+|          |     mapValues      25   15.237    0.609    1.368   |
+|          |       join         8    4.293     0.537    0.759   |
+|          |       count        22   4.275     0.194    0.343   |
+|          |       first        9     3.33     0.37     0.549   |
+|          |      reduce        7    1.942     0.277    0.565   |
+|          |       load         1    0.612     0.612    0.612   |
++----------+----------------------------------------------------+
+|  total   |    n=79, sum=54.0026, mean=0.6836, max=15.0859     |
++----------+----------------------------------------------------+
+
+Federation:
++--------+-------------------------------------------------------------------------------------------------------------+
+|  get   |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 6 | 35.141 |  5.857  | 7.817   |
+|        |                   HeteroLRTransferVariable.fore_gradient                   |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 6 | 16.221 |  2.704  | 3.191   |
+|        |                HeteroLRTransferVariable.host_optim_gradient                |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 3 | 13.984 |  4.661  | 5.411   |
+|        |                   HeteroLRTransferVariable.converge_flag                   |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 2 | 0.983  |  0.491  | 0.596   |
+|        |                  HeteroLRTransferVariable.batch_data_index                 |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 1 | 0.969  |  0.969  | 0.969   |
+|        |                     HeteroLRTransferVariable.batch_info                    |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.one_vs_rest_transfer_variabl | 1 | 0.915  |  0.915  | 0.915   |
+|        |                e.OneVsRestTransferVariable.aggregate_classes               |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 1 | 0.669  |  0.669  | 0.669   |
+|        |                  HeteroLRTransferVariable.paillier_pubkey                  |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| remote |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 6 | 0.071  |  0.012  | 0.013   |
+|        |                   HeteroLRTransferVariable.host_gradient                   |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 6 | 0.065  |  0.011  | 0.014   |
+|        |                 HeteroLRTransferVariable.host_forward_dict                 |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 6 | 0.065  |  0.011  | 0.018   |
+|        |                 HeteroLRTransferVariable.host_loss_regular                 |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 6 | 0.063  |  0.01   | 0.017   |
+|        |                 HeteroLRTransferVariable.loss_intermediate                 |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 1 | 0.009  |  0.009  | 0.009   |
+|        |                     HeteroLRTransferVariable.host_prob                     |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| total  |                                 n=45, sum=69.1561, mean=1.5368, max=7.8169                                  |
++--------+-------------------------------------------------------------------------------------------------------------+
+

@@ -1,0 +1,6 @@
+/data/projects/fate/python/federatedml/optim/gradient/hetero_linear_model_gradient.py:316: FutureWarning: arrays to stack must be passed as a "sequence" type such as list or tuple. Support for non-sequence iterables such as generators is deprecated as of NumPy 1.16 and will raise an error in the future.
+  gradient = np.hstack((h for h in host_gradients))
+/data/projects/python/venv/lib/python3.6/site-packages/beautifultable/utils.py:113: FutureWarning: 'BeautifulTable.get_string' has been deprecated in 'v1.0.0' and will be removed in 'v1.2.0'. Use 'str' instead.
+  warnings.warn(message, FutureWarning)
+static conf path: /data/projects/fate/eggroll/conf/eggroll.properties
+Finish 202011200231350021282 hetero_lr_0 202011200231350021282_hetero_lr_0 0 arbiter 9999 task success

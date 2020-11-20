@@ -1,0 +1,3 @@
+[INFO] [2020-11-20 02:35:31,637] [1681:139887538198336] - pipelined_model.py[line:73]: Save hetero_feature_binning_0 hetero_feature_binning FeatureBinningMeta buffer
+[INFO] [2020-11-20 02:35:31,639] [1681:139887538198336] - pipelined_model.py[line:73]: Save hetero_feature_binning_0 hetero_feature_binning FeatureBinningParam buffer
+[INFO] [2020-11-20 02:35:31,660] [1681:139887538198336] - pipelined_model.py[line:78]: Save hetero_feature_binning_0 hetero_feature_binning successfully

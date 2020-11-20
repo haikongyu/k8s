@@ -1,0 +1,100 @@
+[INFO] [2020-11-20 02:37:01,567] [2588:139753512589120] - task_executor.py[line:302]: report task 202011200231350021282_hetero_lr_0 0 guest 10000 to driver
+[INFO] [2020-11-20 02:37:01,569] [2588:139753512589120] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_hetero_lr_0 0 on guest 10000
+[INFO] [2020-11-20 02:37:07,061] [2588:139753512589120] - task_executor.py[line:156]: Run 202011200231350021282 hetero_lr_0 202011200231350021282_hetero_lr_0 guest 10000 task
+[INFO] [2020-11-20 02:37:07,062] [2588:139753512589120] - task_executor.py[line:157]: Component parameters on party {'HeteroLogisticParam': {'penalty': 'L2', 'tol': 0.0001, 'alpha': 0.01, 'optimizer': 'rmsprop', 'batch_size': 320, 'learning_rate': 0.15, 'init_param': {'init_method': 'random_uniform', 'init_const': 1, 'fit_intercept': True, 'random_seed': None}, 'max_iter': 3, 'early_stop': 'diff', 'encrypt_param': {'method': 'Paillier', 'key_length': 1024}, 'predict_param': {'threshold': 0.5}, 'cv_param': {'n_splits': 5, 'mode': 'hetero', 'role': 'guest', 'shuffle': True, 'random_seed': 1, 'need_cv': False}, 'decay': 1, 'decay_sqrt': True, 'multi_class': 'ovr', 'validation_freqs': None, 'stepwise_param': {'score_name': 'AIC', 'mode': 'hetero', 'role': 'guest', 'direction': 'both', 'max_step': 10, 'nvmin': 2, 'nvmax': None, 'need_stepwise': False}, 'early_stopping_rounds': None, 'metrics': ['auc', 'ks'], 'use_first_metric_only': False, 'encrypted_mode_calculator_param': {'mode': 'strict', 're_encrypted_rate': 1}, 'sqn_param': {'update_interval_L': 3, 'memory_M': 5, 'sample_size': 5000, 'random_seed': None}}, 'dsl_version': '2', 'initiator': {'role': 'guest', 'party_id': 10000}, 'role': {'guest': [10000], 'host': [9999], 'arbiter': [9999]}, 'job_parameters': {'job_type': 'train', 'work_mode': 1, 'backend': 0, 'computing_engine': 'EGGROLL', 'federation_engine': 'EGGROLL', 'storage_engine': 'EGGROLL', 'engines_address': {'computing': {'cores_per_node': 20, 'nodes': 1}, 'federation': {'host': 'rollsite', 'port': 9370}, 'storage': {'cores_per_node': 20, 'nodes': 1}}, 'federated_mode': 'MULTIPLE', 'task_parallelism': 2, 'computing_partitions': 8, 'federated_status_collect_type': 'PUSH', 'model_id': 'arbiter-9999#guest-10000#host-9999#model', 'model_version': '202011200231350021282', 'eggroll_run': {'eggroll.session.processors.per.node': 2}, 'spark_run': {'num-executors': 1, 'executor-cores': 2}, 'rabbitmq_run': {}, 'adaptation_parameters': {'task_nodes': 1, 'task_cores_per_node': 2, 'task_memory_per_node': 0}}, 'component_parameters': {'common': {'intersect_0': {'intersect_method': 'raw', 'sync_intersect_ids': True, 'only_output_key': False}, 'hetero_lr_0': {'penalty': 'L2', 'optimizer': 'rmsprop', 'alpha': 0.01, 'max_iter': 3, 'batch_size': 320, 'learning_rate': 0.15, 'init_param': {'init_method': 'random_uniform'}}}, 'role': {'guest': {'0': {'reader_0': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': True, 'label_name': 'y', 'label_type': 'int', 'output_format': 'dense'}}}, 'host': {'0': {'reader_0': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': False, 'output_format': 'dense'}}}}}, 'config': '/data/projects/fate/python/fate_flow/examples/test_hetero_lr_job_conf.json', 'dsl': 'examples/test_hetero_lr_job_dsl.json', 'function': 'submit_job', 'local': {'role': 'guest', 'party_id': 10000}, 'CodePath': 'federatedml/linear_model/logistic_regression/hetero_logistic_regression/hetero_lr_guest.py/HeteroLRGuest', 'module': 'HeteroLR', 'output_data_name': ['train']}
+[INFO] [2020-11-20 02:37:07,064] [2588:139753512589120] - task_executor.py[line:158]: Task input dsl {'data': {'train_data': ['hetero_feature_selection_0.train']}}
+[INFO] [2020-11-20 02:37:07,065] [2588:139753512589120] - tracker_client.py[line:150]: Request read job 202011200231350021282 task None None on guest 10000 data train info
+[INFO] [2020-11-20 02:37:07,166] [2588:139753512589120] - task_executor.py[line:260]: load computing table use 8
+[INFO] [2020-11-20 02:37:16,820] [2588:139753512589120] - one_vs_rest.py[line:289]: Create one_vs_rest object, role: guest, mode: hetero
+[INFO] [2020-11-20 02:37:16,920] [2588:139753512589120] - hetero_lr_guest.py[line:65]: Enter hetero_lr_guest fit
+[INFO] [2020-11-20 02:37:25,136] [2588:139753512589120] - linear_model_base.py[line:226]: Check for abnormal value passed
+[INFO] [2020-11-20 02:37:25,455] [2588:139753512589120] - hetero_lr_guest.py[line:83]: Enter hetero_lr_guest fit
+[INFO] [2020-11-20 02:37:30,896] [2588:139753512589120] - hetero_lr_guest.py[line:91]: Generate mini-batch from input data
+[INFO] [2020-11-20 02:37:37,189] [2588:139753512589120] - hetero_lr_guest.py[line:100]: Start initialize model.
+[INFO] [2020-11-20 02:37:37,190] [2588:139753512589120] - hetero_lr_guest.py[line:101]: fit_intercept:True
+[INFO] [2020-11-20 02:37:37,992] [2588:139753512589120] - hetero_lr_guest.py[line:107]: iter:0
+[INFO] [2020-11-20 02:38:23,180] [2588:139753512589120] - hetero_lr_guest.py[line:140]: iter: 0,  is_converged: False
+[INFO] [2020-11-20 02:38:23,183] [2588:139753512589120] - hetero_lr_guest.py[line:107]: iter:1
+[INFO] [2020-11-20 02:39:00,278] [2588:139753512589120] - hetero_lr_guest.py[line:140]: iter: 1,  is_converged: False
+[INFO] [2020-11-20 02:39:00,281] [2588:139753512589120] - hetero_lr_guest.py[line:107]: iter:2
+[INFO] [2020-11-20 02:39:34,448] [2588:139753512589120] - hetero_lr_guest.py[line:140]: iter: 2,  is_converged: False
+[INFO] [2020-11-20 02:39:34,510] [2588:139753512589120] - hetero_lr_guest.py[line:171]: Start predict is a one_vs_rest task: False
+[INFO] [2020-11-20 02:39:36,762] [2588:139753512589120] - hetero_lr_guest.py[line:182]: Get probability from Host
+[INFO] [2020-11-20 02:39:42,641] [2588:139753512589120] - tracker_client.py[line:173]: Request save job 202011200231350021282 task 202011200231350021282_hetero_lr_0 0 on guest 10000 component summary
+[INFO] [2020-11-20 02:39:45,518] [2588:139753512589120] - profile.py[line:249]: 
+Computing:
++----------+----------------------------------------------------+
+| function |     function       n    sum(s)   mean(s)   max(s)  |
+|          | ----------------- ---- -------- --------- -------- |
+|          |       join         47   24.694    0.525    1.909   |
+|          |     mapValues      31   17.633    0.569    2.038   |
+|          |  applyPartitions   9    13.653    1.517    7.872   |
+|          |    parallelize     2    4.516     2.258    2.606   |
+|          |       first        9    2.306     0.256    0.715   |
+|          |       count        31   2.079     0.067    0.277   |
+|          |      reduce        7    0.499     0.071    0.078   |
+|          |       load         1    0.292     0.292    0.292   |
+|          |      collect       1    0.004     0.004    0.004   |
++----------+----------------------------------------------------+
+|  total   |    n=138, sum=65.6755, mean=0.4759, max=7.8720     |
++----------+----------------------------------------------------+
+
+Federation:
++--------+-------------------------------------------------------------------------------------------------------------+
+|  get   |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 6 | 36.279 |  6.047  | 6.999   |
+|        |                HeteroLRTransferVariable.guest_optim_gradient               |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 6 | 22.526 |  3.754  | 12.748  |
+|        |                 HeteroLRTransferVariable.host_forward_dict                 |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 3 | 5.627  |  1.876  | 2.079   |
+|        |                   HeteroLRTransferVariable.converge_flag                   |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 1 | 4.873  |  4.873  | 4.873   |
+|        |                  HeteroLRTransferVariable.paillier_pubkey                  |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 6 | 3.938  |  0.656  | 1.384   |
+|        |                 HeteroLRTransferVariable.loss_intermediate                 |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 6 | 2.343  |  0.39   | 0.422   |
+|        |                 HeteroLRTransferVariable.host_loss_regular                 |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 1 |  1.31  |  1.31   |  1.31   |
+|        |                     HeteroLRTransferVariable.host_prob                     |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| remote |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 2 | 0.066  |  0.033  | 0.059   |
+|        |                  HeteroLRTransferVariable.batch_data_index                 |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 6 | 0.064  |  0.011  | 0.013   |
+|        |                   HeteroLRTransferVariable.fore_gradient                   |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 6 | 0.055  |  0.009  | 0.029   |
+|        |                        HeteroLRTransferVariable.loss                       |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 2 | 0.044  |  0.022  | 0.028   |
+|        |                     HeteroLRTransferVariable.batch_info                    |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.one_vs_rest_transfer_variabl | 2 | 0.031  |  0.015  | 0.022   |
+|        |                e.OneVsRestTransferVariable.aggregate_classes               |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 6 | 0.026  |  0.004  | 0.005   |
+|        |                   HeteroLRTransferVariable.guest_gradient                  |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| total  |                                 n=53, sum=77.1816, mean=1.4563, max=12.7480                                 |
++--------+-------------------------------------------------------------------------------------------------------------+
+
+[INFO] [2020-11-20 02:39:47,313] [2588:139753512589120] - pipelined_model.py[line:73]: Save hetero_lr_0 hetero_lr HeteroLogisticRegressionMeta buffer
+[INFO] [2020-11-20 02:39:47,314] [2588:139753512589120] - pipelined_model.py[line:73]: Save hetero_lr_0 hetero_lr HeteroLogisticRegressionParam buffer
+[INFO] [2020-11-20 02:39:47,352] [2588:139753512589120] - pipelined_model.py[line:78]: Save hetero_lr_0 hetero_lr successfully
+[INFO] [2020-11-20 02:39:47,353] [2588:139753512589120] - task_executor.py[line:302]: report task 202011200231350021282_hetero_lr_0 0 guest 10000 to driver
+[INFO] [2020-11-20 02:39:47,354] [2588:139753512589120] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_hetero_lr_0 0 on guest 10000
+[INFO] [2020-11-20 02:39:47,489] [2588:139753512589120] - task_executor.py[line:207]: task 202011200231350021282_hetero_lr_0 guest 10000 start time: 2020-11-20 02:37:01
+[INFO] [2020-11-20 02:39:47,490] [2588:139753512589120] - task_executor.py[line:209]: task 202011200231350021282_hetero_lr_0 guest 10000 end time: 2020-11-20 02:39:47
+[INFO] [2020-11-20 02:39:47,490] [2588:139753512589120] - task_executor.py[line:211]: task 202011200231350021282_hetero_lr_0 guest 10000 takes 166.108s
+[INFO] [2020-11-20 02:39:47,491] [2588:139753512589120] - task_executor.py[line:214]: Finish 202011200231350021282 hetero_lr_0 202011200231350021282_hetero_lr_0 0 guest 10000 task success
+[INFO] [2020-11-20 02:39:47,492] [2588:139753512589120] - task_executor.py[line:302]: report task 202011200231350021282_hetero_lr_0 0 guest 10000 to driver
+[INFO] [2020-11-20 02:39:47,492] [2588:139753512589120] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_hetero_lr_0 0 on guest 10000

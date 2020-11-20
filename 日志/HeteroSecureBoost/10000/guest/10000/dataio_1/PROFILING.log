@@ -1,0 +1,47 @@
+[DEBUG] [2020-11-20 07:10:05,895] [6366:140464771700544] - profile.py[line:84]: [computing#41d092c3c4]function_stack: [component_properties.py:225]extract_input_data <-[component_properties.py:238]extract_running_rules <-[model_base.py:87]run
+[DEBUG] [2020-11-20 07:10:05,896] [6366:140464771700544] - profile.py[line:87]: [computing#41d092c3c4]start
+[DEBUG] [2020-11-20 07:10:05,929] [6366:140464771700544] - profile.py[line:93]: [computing#41d092c3c4]done, elapse: 0.0337369441986084, function: count(self: Table(partition=4)) -> int
+[DEBUG] [2020-11-20 07:10:05,936] [6366:140464771700544] - profile.py[line:84]: [computing#53262296b2]function_stack: [abnormal_detection.py:27]empty_table_detection <-[data_io.py:120]read_data <-[data_io.py:894]transform <-[model_base.py:98]run
+[DEBUG] [2020-11-20 07:10:05,936] [6366:140464771700544] - profile.py[line:87]: [computing#53262296b2]start
+[DEBUG] [2020-11-20 07:10:05,963] [6366:140464771700544] - profile.py[line:93]: [computing#53262296b2]done, elapse: 0.027268171310424805, function: count(self: Table(partition=4)) -> int
+[DEBUG] [2020-11-20 07:10:05,967] [6366:140464771700544] - profile.py[line:84]: [computing#7e9069e990]function_stack: [data_overview.py:92]get_data_shape <-[data_io.py:131]read_data <-[data_io.py:894]transform <-[model_base.py:98]run
+[DEBUG] [2020-11-20 07:10:05,968] [6366:140464771700544] - profile.py[line:87]: [computing#7e9069e990]start
+[DEBUG] [2020-11-20 07:10:06,080] [6366:140464771700544] - profile.py[line:93]: [computing#7e9069e990]done, elapse: 0.11327457427978516, function: first(self: Table(partition=4)) -> tuple
+[DEBUG] [2020-11-20 07:10:06,084] [6366:140464771700544] - profile.py[line:84]: [computing#3bf264ea2d]function_stack: [data_io.py:136]read_data <-[data_io.py:894]transform <-[model_base.py:98]run
+[DEBUG] [2020-11-20 07:10:06,084] [6366:140464771700544] - profile.py[line:87]: [computing#3bf264ea2d]start
+[DEBUG] [2020-11-20 07:10:07,045] [6366:140464771700544] - profile.py[line:93]: [computing#3bf264ea2d]done, elapse: 0.9617948532104492, function: mapValues(self: Table(partition=4), func: function) -> Table(partition=4)
+[DEBUG] [2020-11-20 07:10:07,048] [6366:140464771700544] - profile.py[line:84]: [computing#cfa21c3399]function_stack: [data_io.py:139]read_data <-[data_io.py:894]transform <-[model_base.py:98]run
+[DEBUG] [2020-11-20 07:10:07,048] [6366:140464771700544] - profile.py[line:87]: [computing#cfa21c3399]start
+[DEBUG] [2020-11-20 07:10:07,164] [6366:140464771700544] - profile.py[line:93]: [computing#cfa21c3399]done, elapse: 0.11661100387573242, function: mapValues(self: Table(partition=4), func: function) -> Table(partition=4)
+[DEBUG] [2020-11-20 07:10:07,167] [6366:140464771700544] - profile.py[line:84]: [computing#3f295d236d]function_stack: [io_check.py:28]_func <-[data_io.py:148]read_data <-[data_io.py:894]transform <-[model_base.py:98]run
+[DEBUG] [2020-11-20 07:10:07,168] [6366:140464771700544] - profile.py[line:87]: [computing#3f295d236d]start
+[DEBUG] [2020-11-20 07:10:07,197] [6366:140464771700544] - profile.py[line:93]: [computing#3f295d236d]done, elapse: 0.02926182746887207, function: count(self: Table(partition=4)) -> int
+[DEBUG] [2020-11-20 07:10:07,202] [6366:140464771700544] - profile.py[line:84]: [computing#05ed826622]function_stack: [data_io.py:224]gen_data_instance <-[data_io.py:175]transform <-[io_check.py:31]_func <-[data_io.py:148]read_data <-[data_io.py:894]transform <-[model_base.py:98]run
+[DEBUG] [2020-11-20 07:10:07,202] [6366:140464771700544] - profile.py[line:87]: [computing#05ed826622]start
+[DEBUG] [2020-11-20 07:10:07,392] [6366:140464771700544] - profile.py[line:93]: [computing#05ed826622]done, elapse: 0.19025802612304688, function: join(self: Table(partition=4), other: Table(partition=4), func: function) -> Table(partition=4)
+[DEBUG] [2020-11-20 07:10:07,395] [6366:140464771700544] - profile.py[line:84]: [computing#05ca5110ba]function_stack: [io_check.py:34]_func <-[data_io.py:148]read_data <-[data_io.py:894]transform <-[model_base.py:98]run
+[DEBUG] [2020-11-20 07:10:07,395] [6366:140464771700544] - profile.py[line:87]: [computing#05ca5110ba]start
+[DEBUG] [2020-11-20 07:10:07,422] [6366:140464771700544] - profile.py[line:93]: [computing#05ca5110ba]done, elapse: 0.02703857421875, function: count(self: Table(partition=4)) -> int
+[INFO] [2020-11-20 07:10:08,032] [6366:140464771700544] - profile.py[line:249]: 
+Computing:
++----------+---------------------------------------------+
+| function |  function    n   sum(s)   mean(s)   max(s)  |
+|          | ----------- --- -------- --------- -------- |
+|          |  mapValues   2   1.078     0.539    0.962   |
+|          |    load      1   0.203     0.203    0.203   |
+|          |    join      1    0.19     0.19      0.19   |
+|          |    count     4   0.117     0.029    0.034   |
+|          |    first     1   0.113     0.113    0.113   |
++----------+---------------------------------------------+
+|  total   |  n=9, sum=1.7022, mean=0.1891, max=0.9618   |
++----------+---------------------------------------------+
+
+Federation:
++--------+------------------------------------------+
+|  get   |                                          |
++--------+------------------------------------------+
+| remote |                                          |
++--------+------------------------------------------+
+| total  | n=0, sum=0.0000, mean=0.0000, max=0.0000 |
++--------+------------------------------------------+
+

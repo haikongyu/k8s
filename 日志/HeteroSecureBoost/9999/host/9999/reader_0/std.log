@@ -1,0 +1,4 @@
+/data/projects/python/venv/lib/python3.6/site-packages/beautifultable/utils.py:113: FutureWarning: 'BeautifulTable.get_string' has been deprecated in 'v1.0.0' and will be removed in 'v1.2.0'. Use 'str' instead.
+  warnings.warn(message, FutureWarning)
+static conf path: /data/projects/fate/eggroll/conf/eggroll.properties
+Finish 202011200707112994524 reader_0 202011200707112994524_reader_0 0 host 9999 task success

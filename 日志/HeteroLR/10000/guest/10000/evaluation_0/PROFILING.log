@@ -1,0 +1,27 @@
+[DEBUG] [2020-11-20 02:40:33,332] [5052:140278284748608] - profile.py[line:84]: [computing#41d092c3c4]function_stack: [component_properties.py:225]extract_input_data <-[component_properties.py:238]extract_running_rules <-[model_base.py:87]run
+[DEBUG] [2020-11-20 02:40:33,333] [5052:140278284748608] - profile.py[line:87]: [computing#41d092c3c4]start
+[DEBUG] [2020-11-20 02:40:33,394] [5052:140278284748608] - profile.py[line:93]: [computing#41d092c3c4]done, elapse: 0.06244301795959473, function: count(self: Table(partition=8)) -> int
+[DEBUG] [2020-11-20 02:40:33,399] [5052:140278284748608] - profile.py[line:84]: [computing#b2bc511574]function_stack: [evaluation.py:274]fit <-[model_base.py:98]run
+[DEBUG] [2020-11-20 02:40:33,400] [5052:140278284748608] - profile.py[line:87]: [computing#b2bc511574]start
+[DEBUG] [2020-11-20 02:40:33,402] [5052:140278284748608] - profile.py[line:93]: [computing#b2bc511574]done, elapse: 0.0029363632202148438, function: collect(self: Table(partition=8)) -> generator
+[INFO] [2020-11-20 02:40:36,832] [5052:140278284748608] - profile.py[line:249]: 
+Computing:
++----------+--------------------------------------------+
+| function |  function   n   sum(s)   mean(s)   max(s)  |
+|          | ---------- --- -------- --------- -------- |
+|          |    load     1   0.286     0.286    0.286   |
+|          |   count     1   0.062     0.062    0.062   |
+|          |  collect    1   0.003     0.003    0.003   |
++----------+--------------------------------------------+
+|  total   |  n=3, sum=0.3514, mean=0.1171, max=0.2860  |
++----------+--------------------------------------------+
+
+Federation:
++--------+------------------------------------------+
+|  get   |                                          |
++--------+------------------------------------------+
+| remote |                                          |
++--------+------------------------------------------+
+| total  | n=0, sum=0.0000, mean=0.0000, max=0.0000 |
++--------+------------------------------------------+
+

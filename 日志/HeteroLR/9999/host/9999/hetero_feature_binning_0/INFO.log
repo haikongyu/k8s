@@ -1,0 +1,53 @@
+[INFO] [2020-11-20 02:34:39,238] [1392:140407779477312] - task_executor.py[line:302]: report task 202011200231350021282_hetero_feature_binning_0 0 host 9999 to driver
+[INFO] [2020-11-20 02:34:39,241] [1392:140407779477312] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_hetero_feature_binning_0 0 on host 9999
+[INFO] [2020-11-20 02:34:50,151] [1392:140407779477312] - task_executor.py[line:156]: Run 202011200231350021282 hetero_feature_binning_0 202011200231350021282_hetero_feature_binning_0 host 9999 task
+[INFO] [2020-11-20 02:34:50,152] [1392:140407779477312] - task_executor.py[line:157]: Component parameters on party {'FeatureBinningParam': {'method': 'quantile', 'compress_thres': 10000, 'head_size': 10000, 'error': 0.001, 'adjustment_factor': 0.5, 'bin_num': 10, 'bin_indexes': -1, 'bin_names': None, 'category_indexes': None, 'category_names': None, 'local_only': False, 'transform_param': {'transform_cols': -1, 'transform_names': None, 'transform_type': 'bin_num'}, 'optimal_binning_param': {'init_bucket_method': 'quantile', 'metric_method': 'iv', 'max_bin': None, 'mixture': True, 'max_bin_pct': 1.0, 'min_bin_pct': 0.05, 'init_bin_nums': 1000, 'adjustment_factor': None}, 'need_run': True, 'skip_static': False}, 'dsl_version': '2', 'initiator': {'role': 'guest', 'party_id': 10000}, 'role': {'guest': [10000], 'host': [9999], 'arbiter': [9999]}, 'job_parameters': {'job_type': 'train', 'work_mode': 1, 'backend': 0, 'computing_engine': 'EGGROLL', 'federation_engine': 'EGGROLL', 'storage_engine': 'EGGROLL', 'engines_address': {'computing': {'cores_per_node': 20, 'nodes': 1}, 'federation': {'host': 'rollsite', 'port': 9370}, 'storage': {'cores_per_node': 20, 'nodes': 1}}, 'federated_mode': 'MULTIPLE', 'task_parallelism': 2, 'computing_partitions': 8, 'federated_status_collect_type': 'PUSH', 'model_id': 'arbiter-9999#guest-10000#host-9999#model', 'model_version': '202011200231350021282', 'eggroll_run': {'eggroll.session.processors.per.node': 2}, 'spark_run': {'num-executors': 1, 'executor-cores': 2}, 'rabbitmq_run': {}, 'adaptation_parameters': {'task_nodes': 1, 'task_cores_per_node': 2, 'task_memory_per_node': 0}}, 'component_parameters': {'common': {'intersect_0': {'intersect_method': 'raw', 'sync_intersect_ids': True, 'only_output_key': False}, 'hetero_lr_0': {'penalty': 'L2', 'optimizer': 'rmsprop', 'alpha': 0.01, 'max_iter': 3, 'batch_size': 320, 'learning_rate': 0.15, 'init_param': {'init_method': 'random_uniform'}}}, 'role': {'guest': {'0': {'reader_0': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': True, 'label_name': 'y', 'label_type': 'int', 'output_format': 'dense'}}}, 'host': {'0': {'reader_0': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': False, 'output_format': 'dense'}}}}}, 'config': '/data/projects/fate/python/fate_flow/examples/test_hetero_lr_job_conf.json', 'dsl': 'examples/test_hetero_lr_job_dsl.json', 'function': 'submit_job', 'local': {'role': 'host', 'party_id': 9999}, 'CodePath': 'federatedml/feature/hetero_feature_binning/hetero_binning_host.py/HeteroFeatureBinningHost', 'module': 'HeteroFeatureBinning', 'output_data_name': ['train']}
+[INFO] [2020-11-20 02:34:50,153] [1392:140407779477312] - task_executor.py[line:158]: Task input dsl {'data': {'data': ['intersect_0.train']}}
+[INFO] [2020-11-20 02:34:50,154] [1392:140407779477312] - tracker_client.py[line:150]: Request read job 202011200231350021282 task None None on host 9999 data train info
+[INFO] [2020-11-20 02:34:50,271] [1392:140407779477312] - task_executor.py[line:260]: load computing table use 8
+[INFO] [2020-11-20 02:35:14,475] [1392:140407779477312] - hetero_binning_host.py[line:66]: Get encrypted_label_table from guest
+[INFO] [2020-11-20 02:35:28,750] [1392:140407779477312] - tracker_client.py[line:173]: Request save job 202011200231350021282 task 202011200231350021282_hetero_feature_binning_0 0 on host 9999 component summary
+[INFO] [2020-11-20 02:35:30,691] [1392:140407779477312] - profile.py[line:249]: 
+Computing:
++----------+-------------------------------------------------------+
+| function |       function         n   sum(s)   mean(s)   max(s)  |
+|          | --------------------- --- -------- --------- -------- |
+|          |  mapReducePartitions   1   15.872   15.872    15.872  |
+|          |         join           1   7.931     7.931    7.931   |
+|          |        reduce          1    3.65     3.65      3.65   |
+|          |         first          5   2.389     0.478    0.974   |
+|          |         count          6   2.229     0.371    0.849   |
+|          |       mapValues        2   1.188     0.594    0.644   |
+|          |         load           1   0.988     0.988    0.988   |
+|          |    applyPartitions     1    0.83     0.83      0.83   |
+|          |        collect         1   0.003     0.003    0.003   |
++----------+-------------------------------------------------------+
+|  total   |      n=19, sum=35.0802, mean=1.8463, max=15.8723      |
++----------+-------------------------------------------------------+
+
+Federation:
++--------+-------------------------------------------------------------------------------------------------------------+
+|  get   |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_feature_binning_trans | 1 | 0.455  |  0.455  | 0.455   |
+|        |      fer_variable.HeteroFeatureBinningTransferVariable.encrypted_label     |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| remote |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_feature_binning_trans | 1 | 0.023  |  0.023  | 0.023   |
+|        |     fer_variable.HeteroFeatureBinningTransferVariable.encrypted_bin_sum    |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| total  |                                  n=2, sum=0.4783, mean=0.2392, max=0.4554                                   |
++--------+-------------------------------------------------------------------------------------------------------------+
+
+[INFO] [2020-11-20 02:35:33,278] [1392:140407779477312] - pipelined_model.py[line:73]: Save hetero_feature_binning_0 hetero_feature_binning FeatureBinningMeta buffer
+[INFO] [2020-11-20 02:35:33,280] [1392:140407779477312] - pipelined_model.py[line:73]: Save hetero_feature_binning_0 hetero_feature_binning FeatureBinningParam buffer
+[INFO] [2020-11-20 02:35:33,314] [1392:140407779477312] - pipelined_model.py[line:78]: Save hetero_feature_binning_0 hetero_feature_binning successfully
+[INFO] [2020-11-20 02:35:33,316] [1392:140407779477312] - task_executor.py[line:302]: report task 202011200231350021282_hetero_feature_binning_0 0 host 9999 to driver
+[INFO] [2020-11-20 02:35:33,317] [1392:140407779477312] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_hetero_feature_binning_0 0 on host 9999
+[INFO] [2020-11-20 02:35:34,619] [1392:140407779477312] - task_executor.py[line:207]: task 202011200231350021282_hetero_feature_binning_0 host 9999 start time: 2020-11-20 02:34:38
+[INFO] [2020-11-20 02:35:34,620] [1392:140407779477312] - task_executor.py[line:209]: task 202011200231350021282_hetero_feature_binning_0 host 9999 end time: 2020-11-20 02:35:33
+[INFO] [2020-11-20 02:35:34,622] [1392:140407779477312] - task_executor.py[line:211]: task 202011200231350021282_hetero_feature_binning_0 host 9999 takes 54.536s
+[INFO] [2020-11-20 02:35:34,623] [1392:140407779477312] - task_executor.py[line:214]: Finish 202011200231350021282 hetero_feature_binning_0 202011200231350021282_hetero_feature_binning_0 0 host 9999 task success
+[INFO] [2020-11-20 02:35:34,625] [1392:140407779477312] - task_executor.py[line:302]: report task 202011200231350021282_hetero_feature_binning_0 0 host 9999 to driver
+[INFO] [2020-11-20 02:35:34,627] [1392:140407779477312] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_hetero_feature_binning_0 0 on host 9999

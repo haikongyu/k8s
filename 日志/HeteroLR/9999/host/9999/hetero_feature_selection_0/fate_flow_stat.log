@@ -1,0 +1,5 @@
+[INFO] [2020-11-20 02:36:15,992] [1708:140062557472576] - pipelined_model.py[line:185]: parse FeatureBinningMeta proto object normal
+[INFO] [2020-11-20 02:36:16,005] [1708:140062557472576] - pipelined_model.py[line:185]: parse FeatureBinningParam proto object normal
+[INFO] [2020-11-20 02:36:33,375] [1708:140062557472576] - pipelined_model.py[line:73]: Save hetero_feature_selection_0 selected FeatureSelectionMeta buffer
+[INFO] [2020-11-20 02:36:33,377] [1708:140062557472576] - pipelined_model.py[line:73]: Save hetero_feature_selection_0 selected FeatureSelectionParam buffer
+[INFO] [2020-11-20 02:36:33,427] [1708:140062557472576] - pipelined_model.py[line:78]: Save hetero_feature_selection_0 selected successfully

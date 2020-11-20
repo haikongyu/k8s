@@ -1,0 +1,132 @@
+[DEBUG] [2020-11-20 02:37:29,035] [1896:140260009703232] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.one_vs_rest_transfer_variable.OneVsRestTransferVariable.aggregate_classes.fit]arbiter<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:37:30,168] [1896:140260009703232] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.one_vs_rest_transfer_variable.OneVsRestTransferVariable.aggregate_classes.fit]arbiter<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:37:30,227] [1896:140260009703232] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.paillier_pubkey.fit]arbiter->[Party(role=host, party_id=9999)] start
+[DEBUG] [2020-11-20 02:37:30,258] [1896:140260009703232] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.paillier_pubkey.fit]arbiter->[Party(role=host, party_id=9999)] done
+[DEBUG] [2020-11-20 02:37:30,259] [1896:140260009703232] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.paillier_pubkey.fit]arbiter->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:37:30,283] [1896:140260009703232] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.paillier_pubkey.fit]arbiter->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:37:30,284] [1896:140260009703232] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.batch_info.fit]arbiter<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:37:43,053] [1896:140260009703232] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.batch_info.fit]arbiter<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:37:43,056] [1896:140260009703232] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.0.0]arbiter<-[Party(role=host, party_id=9999)] start
+[DEBUG] [2020-11-20 02:38:02,369] [1896:140260009703232] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.0.0]arbiter<-[Party(role=host, party_id=9999)] done
+[DEBUG] [2020-11-20 02:38:02,371] [1896:140260009703232] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_gradient.fit.0.0]arbiter<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:03,297] [1896:140260009703232] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_gradient.fit.0.0]arbiter<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:03,369] [1896:140260009703232] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.0.0]arbiter->[Party(role=host, party_id=9999)] start
+[DEBUG] [2020-11-20 02:38:03,381] [1896:140260009703232] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.0.0]arbiter->[Party(role=host, party_id=9999)] done
+[DEBUG] [2020-11-20 02:38:03,382] [1896:140260009703232] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_optim_gradient.fit.0.0]arbiter->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:03,399] [1896:140260009703232] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_optim_gradient.fit.0.0]arbiter->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:03,407] [1896:140260009703232] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss.fit.0.0]arbiter<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:08,214] [1896:140260009703232] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss.fit.0.0]arbiter<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:08,218] [1896:140260009703232] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.0.1]arbiter<-[Party(role=host, party_id=9999)] start
+[DEBUG] [2020-11-20 02:38:16,673] [1896:140260009703232] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.0.1]arbiter<-[Party(role=host, party_id=9999)] done
+[DEBUG] [2020-11-20 02:38:16,675] [1896:140260009703232] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_gradient.fit.0.1]arbiter<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:17,250] [1896:140260009703232] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_gradient.fit.0.1]arbiter<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:17,306] [1896:140260009703232] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.0.1]arbiter->[Party(role=host, party_id=9999)] start
+[DEBUG] [2020-11-20 02:38:17,317] [1896:140260009703232] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.0.1]arbiter->[Party(role=host, party_id=9999)] done
+[DEBUG] [2020-11-20 02:38:17,318] [1896:140260009703232] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_optim_gradient.fit.0.1]arbiter->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:17,322] [1896:140260009703232] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_optim_gradient.fit.0.1]arbiter->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:17,322] [1896:140260009703232] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss.fit.0.1]arbiter<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:22,417] [1896:140260009703232] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss.fit.0.1]arbiter<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:22,558] [1896:140260009703232] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.converge_flag.fit.0]arbiter->[Party(role=host, party_id=9999)] start
+[DEBUG] [2020-11-20 02:38:22,565] [1896:140260009703232] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.converge_flag.fit.0]arbiter->[Party(role=host, party_id=9999)] done
+[DEBUG] [2020-11-20 02:38:22,570] [1896:140260009703232] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.converge_flag.fit.0]arbiter->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:22,575] [1896:140260009703232] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.converge_flag.fit.0]arbiter->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:22,583] [1896:140260009703232] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.1.0]arbiter<-[Party(role=host, party_id=9999)] start
+[DEBUG] [2020-11-20 02:38:36,220] [1896:140260009703232] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.1.0]arbiter<-[Party(role=host, party_id=9999)] done
+[DEBUG] [2020-11-20 02:38:36,222] [1896:140260009703232] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_gradient.fit.1.0]arbiter<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:36,875] [1896:140260009703232] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_gradient.fit.1.0]arbiter<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:36,951] [1896:140260009703232] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.1.0]arbiter->[Party(role=host, party_id=9999)] start
+[DEBUG] [2020-11-20 02:38:36,963] [1896:140260009703232] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.1.0]arbiter->[Party(role=host, party_id=9999)] done
+[DEBUG] [2020-11-20 02:38:36,964] [1896:140260009703232] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_optim_gradient.fit.1.0]arbiter->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:36,973] [1896:140260009703232] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_optim_gradient.fit.1.0]arbiter->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:36,974] [1896:140260009703232] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss.fit.1.0]arbiter<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:42,335] [1896:140260009703232] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss.fit.1.0]arbiter<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:42,339] [1896:140260009703232] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.1.1]arbiter<-[Party(role=host, party_id=9999)] start
+[DEBUG] [2020-11-20 02:38:52,394] [1896:140260009703232] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.1.1]arbiter<-[Party(role=host, party_id=9999)] done
+[DEBUG] [2020-11-20 02:38:52,397] [1896:140260009703232] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_gradient.fit.1.1]arbiter<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:53,112] [1896:140260009703232] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_gradient.fit.1.1]arbiter<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:53,213] [1896:140260009703232] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.1.1]arbiter->[Party(role=host, party_id=9999)] start
+[DEBUG] [2020-11-20 02:38:53,261] [1896:140260009703232] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.1.1]arbiter->[Party(role=host, party_id=9999)] done
+[DEBUG] [2020-11-20 02:38:53,264] [1896:140260009703232] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_optim_gradient.fit.1.1]arbiter->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:53,288] [1896:140260009703232] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_optim_gradient.fit.1.1]arbiter->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:53,290] [1896:140260009703232] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss.fit.1.1]arbiter<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:59,441] [1896:140260009703232] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss.fit.1.1]arbiter<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:59,693] [1896:140260009703232] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.converge_flag.fit.1]arbiter->[Party(role=host, party_id=9999)] start
+[DEBUG] [2020-11-20 02:38:59,700] [1896:140260009703232] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.converge_flag.fit.1]arbiter->[Party(role=host, party_id=9999)] done
+[DEBUG] [2020-11-20 02:38:59,703] [1896:140260009703232] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.converge_flag.fit.1]arbiter->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:38:59,711] [1896:140260009703232] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.converge_flag.fit.1]arbiter->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:38:59,714] [1896:140260009703232] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.2.0]arbiter<-[Party(role=host, party_id=9999)] start
+[DEBUG] [2020-11-20 02:39:13,896] [1896:140260009703232] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.2.0]arbiter<-[Party(role=host, party_id=9999)] done
+[DEBUG] [2020-11-20 02:39:13,897] [1896:140260009703232] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_gradient.fit.2.0]arbiter<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:39:14,613] [1896:140260009703232] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_gradient.fit.2.0]arbiter<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:39:14,678] [1896:140260009703232] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.2.0]arbiter->[Party(role=host, party_id=9999)] start
+[DEBUG] [2020-11-20 02:39:14,687] [1896:140260009703232] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.2.0]arbiter->[Party(role=host, party_id=9999)] done
+[DEBUG] [2020-11-20 02:39:14,688] [1896:140260009703232] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_optim_gradient.fit.2.0]arbiter->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:39:14,696] [1896:140260009703232] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_optim_gradient.fit.2.0]arbiter->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:39:14,699] [1896:140260009703232] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss.fit.2.0]arbiter<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:39:20,257] [1896:140260009703232] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss.fit.2.0]arbiter<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:39:20,260] [1896:140260009703232] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.2.1]arbiter<-[Party(role=host, party_id=9999)] start
+[DEBUG] [2020-11-20 02:39:28,420] [1896:140260009703232] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_gradient.fit.2.1]arbiter<-[Party(role=host, party_id=9999)] done
+[DEBUG] [2020-11-20 02:39:28,423] [1896:140260009703232] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_gradient.fit.2.1]arbiter<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:39:29,125] [1896:140260009703232] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_gradient.fit.2.1]arbiter<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:39:29,197] [1896:140260009703232] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.2.1]arbiter->[Party(role=host, party_id=9999)] start
+[DEBUG] [2020-11-20 02:39:29,208] [1896:140260009703232] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.host_optim_gradient.fit.2.1]arbiter->[Party(role=host, party_id=9999)] done
+[DEBUG] [2020-11-20 02:39:29,209] [1896:140260009703232] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_optim_gradient.fit.2.1]arbiter->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:39:29,226] [1896:140260009703232] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.guest_optim_gradient.fit.2.1]arbiter->[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:39:29,234] [1896:140260009703232] - profile.py[line:237]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss.fit.2.1]arbiter<-[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:39:33,587] [1896:140260009703232] - profile.py[line:216]: [federation.get.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.loss.fit.2.1]arbiter<-[Party(role=guest, party_id=10000)] done
+[DEBUG] [2020-11-20 02:39:33,790] [1896:140260009703232] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.converge_flag.fit.2]arbiter->[Party(role=host, party_id=9999)] start
+[DEBUG] [2020-11-20 02:39:33,916] [1896:140260009703232] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.converge_flag.fit.2]arbiter->[Party(role=host, party_id=9999)] done
+[DEBUG] [2020-11-20 02:39:33,919] [1896:140260009703232] - profile.py[line:232]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.converge_flag.fit.2]arbiter->[Party(role=guest, party_id=10000)] start
+[DEBUG] [2020-11-20 02:39:33,926] [1896:140260009703232] - profile.py[line:185]: [federation.remote.federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable.HeteroLRTransferVariable.converge_flag.fit.2]arbiter->[Party(role=guest, party_id=10000)] done
+[INFO] [2020-11-20 02:39:34,445] [1896:140260009703232] - profile.py[line:249]: 
+Computing:
++----------+------------------------------------------+
+| function |                                          |
++----------+------------------------------------------+
+|  total   | n=0, sum=0.0000, mean=0.0000, max=0.0000 |
++----------+------------------------------------------+
+
+Federation:
++--------+-------------------------------------------------------------------------------------------------------------+
+|  get   |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 6 | 73.798 |  12.3   | 19.312  |
+|        |                   HeteroLRTransferVariable.host_gradient                   |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 6 | 31.316 |  5.219  |  6.15   |
+|        |                        HeteroLRTransferVariable.loss                       |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 1 | 12.768 | 12.768  | 12.768  |
+|        |                     HeteroLRTransferVariable.batch_info                    |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 6 |  4.28  |  0.713  | 0.924   |
+|        |                   HeteroLRTransferVariable.guest_gradient                  |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.one_vs_rest_transfer_variabl | 1 | 1.132  |  1.132  | 1.132   |
+|        |                e.OneVsRestTransferVariable.aggregate_classes               |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| remote |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 6 | 0.155  |  0.026  | 0.125   |
+|        |                   HeteroLRTransferVariable.converge_flag                   |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 6 | 0.094  |  0.016  | 0.046   |
+|        |                HeteroLRTransferVariable.host_optim_gradient                |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 6 |  0.07  |  0.012  | 0.023   |
+|        |                HeteroLRTransferVariable.guest_optim_gradient               |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_lr_transfer_variable. | 2 | 0.051  |  0.026  | 0.028   |
+|        |                  HeteroLRTransferVariable.paillier_pubkey                  |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| total  |                                n=40, sum=123.6639, mean=3.0916, max=19.3119                                 |
++--------+-------------------------------------------------------------------------------------------------------------+
+
+[DEBUG] [2020-11-20 02:39:34,447] [1896:140260009703232] - profile.py[line:250]: 
+Detailed Computing:
++-------+------------------------------------------+
+| stack |                                          |
++-------+------------------------------------------+
+| total | n=0, sum=0.0000, mean=0.0000, max=0.0000 |
++-------+------------------------------------------+
+

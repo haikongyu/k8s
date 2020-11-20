@@ -1,0 +1,268 @@
+[INFO] [2020-11-20 07:12:48,465] [20527:139871606757184] - task_executor.py[line:302]: report task 202011200707112994524_hetero_secure_boost_0 0 host 9999 to driver
+[INFO] [2020-11-20 07:12:48,469] [20527:139871606757184] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on host 9999
+[INFO] [2020-11-20 07:13:00,740] [20527:139871606757184] - task_executor.py[line:156]: Run 202011200707112994524 hetero_secure_boost_0 202011200707112994524_hetero_secure_boost_0 host 9999 task
+[INFO] [2020-11-20 07:13:00,743] [20527:139871606757184] - task_executor.py[line:157]: Component parameters on party {'HeteroSecureBoostParam': {'task_type': 'classification', 'objective_param': {'objective': 'cross_entropy', 'params': None}, 'learning_rate': 0.3, 'num_trees': 3, 'subsample_feature_rate': 1.0, 'n_iter_no_change': True, 'tol': 0.0001, 'bin_num': 32, 'predict_param': {'threshold': 0.5}, 'cv_param': {'n_splits': 5, 'mode': 'hetero', 'role': 'guest', 'shuffle': True, 'random_seed': 1, 'need_cv': False}, 'validation_freqs': 1, 'metrics': None, 'subsample_random_seed': None, 'binning_error': 0.001, 'encrypt_param': {'method': 'iterativeAffine', 'key_length': 1024}, 'encrypted_mode_calculator_param': {'mode': 'strict', 're_encrypted_rate': 1}, 'early_stopping_rounds': None, 'use_first_metric_only': False, 'tree_param': {'criterion_method': 'xgboost', 'criterion_params': [0.1], 'max_depth': 3, 'min_sample_split': 2, 'min_impurity_split': 0.001, 'min_leaf_node': 1, 'max_split_nodes': 65536, 'feature_importance_type': 'split', 'n_iter_no_change': True, 'tol': 0.001, 'use_missing': False, 'zero_as_missing': False}, 'zero_as_missing': False, 'use_missing': False, 'complete_secure': False, 'sparse_optimization': False}, 'dsl_version': 2, 'initiator': {'role': 'guest', 'party_id': 10000}, 'role': {'host': [9999], 'guest': [10000]}, 'job_parameters': {'job_type': 'train', 'work_mode': 1, 'backend': 0, 'computing_engine': 'EGGROLL', 'federation_engine': 'EGGROLL', 'storage_engine': 'EGGROLL', 'engines_address': {'computing': {'cores_per_node': 20, 'nodes': 1}, 'federation': {'host': 'rollsite', 'port': 9370}, 'storage': {'cores_per_node': 20, 'nodes': 1}}, 'federated_mode': 'MULTIPLE', 'task_parallelism': 1, 'computing_partitions': 4, 'federated_status_collect_type': 'PUSH', 'model_id': 'guest-10000#host-9999#model', 'model_version': '202011200707112994524', 'eggroll_run': {'eggroll.session.processors.per.node': 4}, 'spark_run': {}, 'rabbitmq_run': {}, 'adaptation_parameters': {'task_nodes': 1, 'task_cores_per_node': 4, 'task_memory_per_node': 0}}, 'component_parameters': {'common': {'hetero_secure_boost_0': {'task_type': 'classification', 'objective_param': {'objective': 'cross_entropy'}, 'num_trees': 3, 'validation_freqs': 1, 'encrypt_param': {'method': 'iterativeAffine'}, 'tree_param': {'max_depth': 3}}, 'evaluation_0': {'eval_type': 'binary'}}, 'role': {'guest': {'0': {'reader_1': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'reader_0': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': True, 'output_format': 'dense'}, 'dataio_1': {'with_label': True, 'output_format': 'dense'}}}, 'host': {'0': {'reader_1': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'reader_0': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': False}, 'dataio_1': {'with_label': False}}}}}, 'config': '/data/projects/fate/python/fate_flow/examples/hetero_secureboost_conf.json', 'dsl': 'examples/hetero_secureboost_dsl.json', 'function': 'submit_job', 'local': {'role': 'host', 'party_id': 9999}, 'CodePath': 'federatedml/ensemble/boosting/hetero/hetero_secureboost_host.py/HeteroSecureBoostingTreeHost', 'module': 'HeteroSecureBoost', 'output_data_name': ['data']}
+[INFO] [2020-11-20 07:13:00,744] [20527:139871606757184] - task_executor.py[line:158]: Task input dsl {'data': {'train_data': ['intersection_0.data'], 'validate_data': ['intersection_1.data']}}
+[INFO] [2020-11-20 07:13:00,745] [20527:139871606757184] - tracker_client.py[line:150]: Request read job 202011200707112994524 task None None on host 9999 data data info
+[INFO] [2020-11-20 07:13:00,876] [20527:139871606757184] - task_executor.py[line:260]: load computing table use 4
+[INFO] [2020-11-20 07:13:01,363] [20527:139871606757184] - tracker_client.py[line:150]: Request read job 202011200707112994524 task None None on host 9999 data data info
+[INFO] [2020-11-20 07:13:01,460] [20527:139871606757184] - task_executor.py[line:260]: load computing table use 4
+[INFO] [2020-11-20 07:13:13,922] [20527:139871606757184] - hetero_boosting.py[line:278]: begin to fit a hetero boosting model, model is HeteroSecureBoost
+[INFO] [2020-11-20 07:13:26,907] [20527:139871606757184] - boosting.py[line:167]: convert feature to bins
+[INFO] [2020-11-20 07:13:34,371] [20527:139871606757184] - boosting.py[line:176]: convert feature to bins over
+[INFO] [2020-11-20 07:13:35,189] [20527:139871606757184] - hetero_boosting.py[line:263]: sync booster dim from guest
+[INFO] [2020-11-20 07:13:35,992] [20527:139871606757184] - hetero_boosting.py[line:265]: booster dim is 1
+[INFO] [2020-11-20 07:13:35,993] [20527:139871606757184] - hetero_boosting.py[line:62]: generate encrypter
+[INFO] [2020-11-20 07:13:36,005] [20527:139871606757184] - hetero_boosting.py[line:288]: cur epoch idx is 0
+[INFO] [2020-11-20 07:13:36,007] [20527:139871606757184] - splitter.py[line:59]: splitter init!
+[INFO] [2020-11-20 07:13:36,011] [20527:139871606757184] - hetero_decision_tree_host.py[line:57]: set input info
+[INFO] [2020-11-20 07:13:36,012] [20527:139871606757184] - boosting.py[line:181]: sample valid features
+[INFO] [2020-11-20 07:13:36,015] [20527:139871606757184] - decision_tree.py[line:101]: set valid features
+[INFO] [2020-11-20 07:13:36,016] [20527:139871606757184] - boosting.py[line:391]: generate flowid, flowid fit
+[INFO] [2020-11-20 07:13:36,017] [20527:139871606757184] - decision_tree.py[line:93]: set flowid, flowid is fit.0.0
+[INFO] [2020-11-20 07:13:36,019] [20527:139871606757184] - hetero_decision_tree_host.py[line:350]: begin to fit host decision tree
+[INFO] [2020-11-20 07:13:36,020] [20527:139871606757184] - hetero_decision_tree_host.py[line:106]: get encrypted grad and hess
+[INFO] [2020-11-20 07:13:36,500] [20527:139871606757184] - hetero_decision_tree_host.py[line:116]: get tree node queue of depth 0
+[INFO] [2020-11-20 07:13:37,119] [20527:139871606757184] - hetero_decision_tree_host.py[line:110]: get tree node queue of depth 0
+[INFO] [2020-11-20 07:13:37,791] [20527:139871606757184] - decision_tree.py[line:114]: start to get node histograms
+[INFO] [2020-11-20 07:13:37,792] [20527:139871606757184] - feature_histogram.py[line:197]: bin_shape is (20, 32), node num is 1
+[INFO] [2020-11-20 07:13:41,289] [20527:139871606757184] - splitter.py[line:236]: splitter find split of host
+[INFO] [2020-11-20 07:13:41,921] [20527:139871606757184] - hetero_decision_tree_host.py[line:121]: send encrypted splitinfo of depth 0, batch 0
+[INFO] [2020-11-20 07:13:41,961] [20527:139871606757184] - hetero_decision_tree_host.py[line:128]: get federated best splitinfo of depth 0, batch 0
+[INFO] [2020-11-20 07:13:47,467] [20527:139871606757184] - hetero_decision_tree_host.py[line:135]: send host final splitinfo of depth 0, batch 0
+[INFO] [2020-11-20 07:13:47,484] [20527:139871606757184] - hetero_decision_tree_host.py[line:161]: get node from host to dispath, depth is 0
+[INFO] [2020-11-20 07:13:50,267] [20527:139871606757184] - hetero_decision_tree_host.py[line:247]: start to find host dispath of depth 0
+[INFO] [2020-11-20 07:13:50,838] [20527:139871606757184] - hetero_decision_tree_host.py[line:167]: send host dispatch result, depth is 0
+[INFO] [2020-11-20 07:13:50,852] [20527:139871606757184] - hetero_decision_tree_host.py[line:116]: get tree node queue of depth 1
+[INFO] [2020-11-20 07:13:53,312] [20527:139871606757184] - hetero_decision_tree_host.py[line:110]: get tree node queue of depth 1
+[INFO] [2020-11-20 07:13:54,026] [20527:139871606757184] - decision_tree.py[line:114]: start to get node histograms
+[INFO] [2020-11-20 07:13:54,028] [20527:139871606757184] - feature_histogram.py[line:197]: bin_shape is (20, 32), node num is 2
+[INFO] [2020-11-20 07:13:56,092] [20527:139871606757184] - splitter.py[line:236]: splitter find split of host
+[INFO] [2020-11-20 07:13:57,258] [20527:139871606757184] - hetero_decision_tree_host.py[line:121]: send encrypted splitinfo of depth 1, batch 0
+[INFO] [2020-11-20 07:13:57,359] [20527:139871606757184] - hetero_decision_tree_host.py[line:128]: get federated best splitinfo of depth 1, batch 0
+[INFO] [2020-11-20 07:14:04,547] [20527:139871606757184] - hetero_decision_tree_host.py[line:135]: send host final splitinfo of depth 1, batch 0
+[INFO] [2020-11-20 07:14:04,572] [20527:139871606757184] - hetero_decision_tree_host.py[line:161]: get node from host to dispath, depth is 1
+[INFO] [2020-11-20 07:14:07,604] [20527:139871606757184] - hetero_decision_tree_host.py[line:247]: start to find host dispath of depth 1
+[INFO] [2020-11-20 07:14:07,911] [20527:139871606757184] - hetero_decision_tree_host.py[line:167]: send host dispatch result, depth is 1
+[INFO] [2020-11-20 07:14:07,925] [20527:139871606757184] - hetero_decision_tree_host.py[line:116]: get tree node queue of depth 2
+[INFO] [2020-11-20 07:14:09,819] [20527:139871606757184] - hetero_decision_tree_host.py[line:110]: get tree node queue of depth 2
+[INFO] [2020-11-20 07:14:10,805] [20527:139871606757184] - decision_tree.py[line:114]: start to get node histograms
+[INFO] [2020-11-20 07:14:10,806] [20527:139871606757184] - feature_histogram.py[line:197]: bin_shape is (20, 32), node num is 4
+[INFO] [2020-11-20 07:14:13,175] [20527:139871606757184] - splitter.py[line:236]: splitter find split of host
+[INFO] [2020-11-20 07:14:14,145] [20527:139871606757184] - hetero_decision_tree_host.py[line:121]: send encrypted splitinfo of depth 2, batch 0
+[INFO] [2020-11-20 07:14:14,253] [20527:139871606757184] - hetero_decision_tree_host.py[line:128]: get federated best splitinfo of depth 2, batch 0
+[INFO] [2020-11-20 07:14:22,658] [20527:139871606757184] - hetero_decision_tree_host.py[line:135]: send host final splitinfo of depth 2, batch 0
+[INFO] [2020-11-20 07:14:22,691] [20527:139871606757184] - hetero_decision_tree_host.py[line:161]: get node from host to dispath, depth is 2
+[INFO] [2020-11-20 07:14:26,135] [20527:139871606757184] - hetero_decision_tree_host.py[line:247]: start to find host dispath of depth 2
+[INFO] [2020-11-20 07:14:26,454] [20527:139871606757184] - hetero_decision_tree_host.py[line:167]: send host dispatch result, depth is 2
+[INFO] [2020-11-20 07:14:26,767] [20527:139871606757184] - hetero_decision_tree_host.py[line:175]: sync tree from guest
+[INFO] [2020-11-20 07:14:28,994] [20527:139871606757184] - hetero_decision_tree_host.py[line:278]: convert tree node bins to real value
+[INFO] [2020-11-20 07:14:28,995] [20527:139871606757184] - hetero_decision_tree_host.py[line:272]: remove duplicated nodes from split mask dict
+[INFO] [2020-11-20 07:14:28,996] [20527:139871606757184] - hetero_decision_tree_host.py[line:375]: end to fit guest decision tree
+[INFO] [2020-11-20 07:14:29,069] [20527:139871606757184] - hetero_secureboost_host.py[line:182]: running prediction
+[INFO] [2020-11-20 07:14:31,033] [20527:139871606757184] - splitter.py[line:59]: splitter init!
+[INFO] [2020-11-20 07:14:31,034] [20527:139871606757184] - decision_tree.py[line:229]: load tree model
+[INFO] [2020-11-20 07:14:31,036] [20527:139871606757184] - boosting.py[line:391]: generate flowid, flowid fit_iteration_0_validate
+[INFO] [2020-11-20 07:14:31,038] [20527:139871606757184] - decision_tree.py[line:93]: set flowid, flowid is fit_iteration_0_validate.0.0
+[INFO] [2020-11-20 07:14:33,184] [20527:139871606757184] - hetero_boosting.py[line:268]: sync stop flag from guest, boosting_core round is 0
+[INFO] [2020-11-20 07:14:35,741] [20527:139871606757184] - hetero_boosting.py[line:288]: cur epoch idx is 1
+[INFO] [2020-11-20 07:14:35,743] [20527:139871606757184] - splitter.py[line:59]: splitter init!
+[INFO] [2020-11-20 07:14:35,744] [20527:139871606757184] - hetero_decision_tree_host.py[line:57]: set input info
+[INFO] [2020-11-20 07:14:35,746] [20527:139871606757184] - boosting.py[line:181]: sample valid features
+[INFO] [2020-11-20 07:14:35,750] [20527:139871606757184] - decision_tree.py[line:101]: set valid features
+[INFO] [2020-11-20 07:14:35,752] [20527:139871606757184] - boosting.py[line:391]: generate flowid, flowid fit
+[INFO] [2020-11-20 07:14:35,753] [20527:139871606757184] - decision_tree.py[line:93]: set flowid, flowid is fit.1.0
+[INFO] [2020-11-20 07:14:35,754] [20527:139871606757184] - hetero_decision_tree_host.py[line:350]: begin to fit host decision tree
+[INFO] [2020-11-20 07:14:35,755] [20527:139871606757184] - hetero_decision_tree_host.py[line:106]: get encrypted grad and hess
+[INFO] [2020-11-20 07:14:38,868] [20527:139871606757184] - hetero_decision_tree_host.py[line:116]: get tree node queue of depth 0
+[INFO] [2020-11-20 07:14:39,541] [20527:139871606757184] - hetero_decision_tree_host.py[line:110]: get tree node queue of depth 0
+[INFO] [2020-11-20 07:14:40,401] [20527:139871606757184] - decision_tree.py[line:114]: start to get node histograms
+[INFO] [2020-11-20 07:14:40,402] [20527:139871606757184] - feature_histogram.py[line:197]: bin_shape is (20, 32), node num is 1
+[INFO] [2020-11-20 07:14:42,540] [20527:139871606757184] - splitter.py[line:236]: splitter find split of host
+[INFO] [2020-11-20 07:14:43,156] [20527:139871606757184] - hetero_decision_tree_host.py[line:121]: send encrypted splitinfo of depth 0, batch 0
+[INFO] [2020-11-20 07:14:43,202] [20527:139871606757184] - hetero_decision_tree_host.py[line:128]: get federated best splitinfo of depth 0, batch 0
+[INFO] [2020-11-20 07:14:47,444] [20527:139871606757184] - hetero_decision_tree_host.py[line:135]: send host final splitinfo of depth 0, batch 0
+[INFO] [2020-11-20 07:14:47,468] [20527:139871606757184] - hetero_decision_tree_host.py[line:161]: get node from host to dispath, depth is 0
+[INFO] [2020-11-20 07:14:50,586] [20527:139871606757184] - hetero_decision_tree_host.py[line:247]: start to find host dispath of depth 0
+[INFO] [2020-11-20 07:14:50,913] [20527:139871606757184] - hetero_decision_tree_host.py[line:167]: send host dispatch result, depth is 0
+[INFO] [2020-11-20 07:14:51,443] [20527:139871606757184] - hetero_decision_tree_host.py[line:116]: get tree node queue of depth 1
+[INFO] [2020-11-20 07:14:52,784] [20527:139871606757184] - hetero_decision_tree_host.py[line:110]: get tree node queue of depth 1
+[INFO] [2020-11-20 07:14:53,681] [20527:139871606757184] - decision_tree.py[line:114]: start to get node histograms
+[INFO] [2020-11-20 07:14:53,681] [20527:139871606757184] - feature_histogram.py[line:197]: bin_shape is (20, 32), node num is 2
+[INFO] [2020-11-20 07:14:55,675] [20527:139871606757184] - splitter.py[line:236]: splitter find split of host
+[INFO] [2020-11-20 07:14:56,859] [20527:139871606757184] - hetero_decision_tree_host.py[line:121]: send encrypted splitinfo of depth 1, batch 0
+[INFO] [2020-11-20 07:14:56,956] [20527:139871606757184] - hetero_decision_tree_host.py[line:128]: get federated best splitinfo of depth 1, batch 0
+[INFO] [2020-11-20 07:15:03,505] [20527:139871606757184] - hetero_decision_tree_host.py[line:135]: send host final splitinfo of depth 1, batch 0
+[INFO] [2020-11-20 07:15:03,534] [20527:139871606757184] - hetero_decision_tree_host.py[line:161]: get node from host to dispath, depth is 1
+[INFO] [2020-11-20 07:15:06,715] [20527:139871606757184] - hetero_decision_tree_host.py[line:247]: start to find host dispath of depth 1
+[INFO] [2020-11-20 07:15:06,977] [20527:139871606757184] - hetero_decision_tree_host.py[line:167]: send host dispatch result, depth is 1
+[INFO] [2020-11-20 07:15:07,267] [20527:139871606757184] - hetero_decision_tree_host.py[line:116]: get tree node queue of depth 2
+[INFO] [2020-11-20 07:15:08,497] [20527:139871606757184] - hetero_decision_tree_host.py[line:110]: get tree node queue of depth 2
+[INFO] [2020-11-20 07:15:09,278] [20527:139871606757184] - decision_tree.py[line:114]: start to get node histograms
+[INFO] [2020-11-20 07:15:09,279] [20527:139871606757184] - feature_histogram.py[line:197]: bin_shape is (20, 32), node num is 4
+[INFO] [2020-11-20 07:15:11,424] [20527:139871606757184] - splitter.py[line:236]: splitter find split of host
+[INFO] [2020-11-20 07:15:12,396] [20527:139871606757184] - hetero_decision_tree_host.py[line:121]: send encrypted splitinfo of depth 2, batch 0
+[INFO] [2020-11-20 07:15:12,569] [20527:139871606757184] - hetero_decision_tree_host.py[line:128]: get federated best splitinfo of depth 2, batch 0
+[INFO] [2020-11-20 07:15:21,607] [20527:139871606757184] - hetero_decision_tree_host.py[line:135]: send host final splitinfo of depth 2, batch 0
+[INFO] [2020-11-20 07:15:21,622] [20527:139871606757184] - hetero_decision_tree_host.py[line:161]: get node from host to dispath, depth is 2
+[INFO] [2020-11-20 07:15:24,394] [20527:139871606757184] - hetero_decision_tree_host.py[line:247]: start to find host dispath of depth 2
+[INFO] [2020-11-20 07:15:24,971] [20527:139871606757184] - hetero_decision_tree_host.py[line:167]: send host dispatch result, depth is 2
+[INFO] [2020-11-20 07:15:25,281] [20527:139871606757184] - hetero_decision_tree_host.py[line:175]: sync tree from guest
+[INFO] [2020-11-20 07:15:27,839] [20527:139871606757184] - hetero_decision_tree_host.py[line:278]: convert tree node bins to real value
+[INFO] [2020-11-20 07:15:27,844] [20527:139871606757184] - hetero_decision_tree_host.py[line:272]: remove duplicated nodes from split mask dict
+[INFO] [2020-11-20 07:15:27,847] [20527:139871606757184] - hetero_decision_tree_host.py[line:375]: end to fit guest decision tree
+[INFO] [2020-11-20 07:15:27,906] [20527:139871606757184] - hetero_secureboost_host.py[line:182]: running prediction
+[INFO] [2020-11-20 07:15:29,408] [20527:139871606757184] - splitter.py[line:59]: splitter init!
+[INFO] [2020-11-20 07:15:29,409] [20527:139871606757184] - decision_tree.py[line:229]: load tree model
+[INFO] [2020-11-20 07:15:29,411] [20527:139871606757184] - boosting.py[line:391]: generate flowid, flowid fit_iteration_1_validate
+[INFO] [2020-11-20 07:15:29,412] [20527:139871606757184] - decision_tree.py[line:93]: set flowid, flowid is fit_iteration_1_validate.1.0
+[INFO] [2020-11-20 07:15:35,960] [20527:139871606757184] - hetero_boosting.py[line:268]: sync stop flag from guest, boosting_core round is 1
+[INFO] [2020-11-20 07:15:38,817] [20527:139871606757184] - hetero_boosting.py[line:288]: cur epoch idx is 2
+[INFO] [2020-11-20 07:15:38,819] [20527:139871606757184] - splitter.py[line:59]: splitter init!
+[INFO] [2020-11-20 07:15:38,821] [20527:139871606757184] - hetero_decision_tree_host.py[line:57]: set input info
+[INFO] [2020-11-20 07:15:38,823] [20527:139871606757184] - boosting.py[line:181]: sample valid features
+[INFO] [2020-11-20 07:15:38,825] [20527:139871606757184] - decision_tree.py[line:101]: set valid features
+[INFO] [2020-11-20 07:15:38,827] [20527:139871606757184] - boosting.py[line:391]: generate flowid, flowid fit
+[INFO] [2020-11-20 07:15:38,828] [20527:139871606757184] - decision_tree.py[line:93]: set flowid, flowid is fit.2.0
+[INFO] [2020-11-20 07:15:38,830] [20527:139871606757184] - hetero_decision_tree_host.py[line:350]: begin to fit host decision tree
+[INFO] [2020-11-20 07:15:38,832] [20527:139871606757184] - hetero_decision_tree_host.py[line:106]: get encrypted grad and hess
+[INFO] [2020-11-20 07:15:42,523] [20527:139871606757184] - hetero_decision_tree_host.py[line:116]: get tree node queue of depth 0
+[INFO] [2020-11-20 07:15:43,112] [20527:139871606757184] - hetero_decision_tree_host.py[line:110]: get tree node queue of depth 0
+[INFO] [2020-11-20 07:15:44,148] [20527:139871606757184] - decision_tree.py[line:114]: start to get node histograms
+[INFO] [2020-11-20 07:15:44,149] [20527:139871606757184] - feature_histogram.py[line:197]: bin_shape is (20, 32), node num is 1
+[INFO] [2020-11-20 07:15:45,958] [20527:139871606757184] - splitter.py[line:236]: splitter find split of host
+[INFO] [2020-11-20 07:15:46,711] [20527:139871606757184] - hetero_decision_tree_host.py[line:121]: send encrypted splitinfo of depth 0, batch 0
+[INFO] [2020-11-20 07:15:46,785] [20527:139871606757184] - hetero_decision_tree_host.py[line:128]: get federated best splitinfo of depth 0, batch 0
+[INFO] [2020-11-20 07:15:51,574] [20527:139871606757184] - hetero_decision_tree_host.py[line:135]: send host final splitinfo of depth 0, batch 0
+[INFO] [2020-11-20 07:15:51,599] [20527:139871606757184] - hetero_decision_tree_host.py[line:161]: get node from host to dispath, depth is 0
+[INFO] [2020-11-20 07:15:54,237] [20527:139871606757184] - hetero_decision_tree_host.py[line:247]: start to find host dispath of depth 0
+[INFO] [2020-11-20 07:15:54,746] [20527:139871606757184] - hetero_decision_tree_host.py[line:167]: send host dispatch result, depth is 0
+[INFO] [2020-11-20 07:15:55,104] [20527:139871606757184] - hetero_decision_tree_host.py[line:116]: get tree node queue of depth 1
+[INFO] [2020-11-20 07:15:56,430] [20527:139871606757184] - hetero_decision_tree_host.py[line:110]: get tree node queue of depth 1
+[INFO] [2020-11-20 07:15:57,367] [20527:139871606757184] - decision_tree.py[line:114]: start to get node histograms
+[INFO] [2020-11-20 07:15:57,369] [20527:139871606757184] - feature_histogram.py[line:197]: bin_shape is (20, 32), node num is 2
+[INFO] [2020-11-20 07:16:00,920] [20527:139871606757184] - splitter.py[line:236]: splitter find split of host
+[INFO] [2020-11-20 07:16:01,735] [20527:139871606757184] - hetero_decision_tree_host.py[line:121]: send encrypted splitinfo of depth 1, batch 0
+[INFO] [2020-11-20 07:16:01,827] [20527:139871606757184] - hetero_decision_tree_host.py[line:128]: get federated best splitinfo of depth 1, batch 0
+[INFO] [2020-11-20 07:16:08,203] [20527:139871606757184] - hetero_decision_tree_host.py[line:135]: send host final splitinfo of depth 1, batch 0
+[INFO] [2020-11-20 07:16:08,218] [20527:139871606757184] - hetero_decision_tree_host.py[line:161]: get node from host to dispath, depth is 1
+[INFO] [2020-11-20 07:16:11,765] [20527:139871606757184] - hetero_decision_tree_host.py[line:247]: start to find host dispath of depth 1
+[INFO] [2020-11-20 07:16:12,109] [20527:139871606757184] - hetero_decision_tree_host.py[line:167]: send host dispatch result, depth is 1
+[INFO] [2020-11-20 07:16:12,409] [20527:139871606757184] - hetero_decision_tree_host.py[line:116]: get tree node queue of depth 2
+[INFO] [2020-11-20 07:16:13,639] [20527:139871606757184] - hetero_decision_tree_host.py[line:110]: get tree node queue of depth 2
+[INFO] [2020-11-20 07:16:14,905] [20527:139871606757184] - decision_tree.py[line:114]: start to get node histograms
+[INFO] [2020-11-20 07:16:14,906] [20527:139871606757184] - feature_histogram.py[line:197]: bin_shape is (20, 32), node num is 4
+[INFO] [2020-11-20 07:16:19,493] [20527:139871606757184] - splitter.py[line:236]: splitter find split of host
+[INFO] [2020-11-20 07:16:20,632] [20527:139871606757184] - hetero_decision_tree_host.py[line:121]: send encrypted splitinfo of depth 2, batch 0
+[INFO] [2020-11-20 07:16:20,821] [20527:139871606757184] - hetero_decision_tree_host.py[line:128]: get federated best splitinfo of depth 2, batch 0
+[INFO] [2020-11-20 07:16:30,099] [20527:139871606757184] - hetero_decision_tree_host.py[line:135]: send host final splitinfo of depth 2, batch 0
+[INFO] [2020-11-20 07:16:30,130] [20527:139871606757184] - hetero_decision_tree_host.py[line:161]: get node from host to dispath, depth is 2
+[INFO] [2020-11-20 07:16:33,143] [20527:139871606757184] - hetero_decision_tree_host.py[line:247]: start to find host dispath of depth 2
+[INFO] [2020-11-20 07:16:33,533] [20527:139871606757184] - hetero_decision_tree_host.py[line:167]: send host dispatch result, depth is 2
+[INFO] [2020-11-20 07:16:33,798] [20527:139871606757184] - hetero_decision_tree_host.py[line:175]: sync tree from guest
+[INFO] [2020-11-20 07:16:36,820] [20527:139871606757184] - hetero_decision_tree_host.py[line:278]: convert tree node bins to real value
+[INFO] [2020-11-20 07:16:36,823] [20527:139871606757184] - hetero_decision_tree_host.py[line:272]: remove duplicated nodes from split mask dict
+[INFO] [2020-11-20 07:16:36,825] [20527:139871606757184] - hetero_decision_tree_host.py[line:375]: end to fit guest decision tree
+[INFO] [2020-11-20 07:16:36,979] [20527:139871606757184] - hetero_secureboost_host.py[line:182]: running prediction
+[INFO] [2020-11-20 07:16:37,761] [20527:139871606757184] - splitter.py[line:59]: splitter init!
+[INFO] [2020-11-20 07:16:37,763] [20527:139871606757184] - decision_tree.py[line:229]: load tree model
+[INFO] [2020-11-20 07:16:37,765] [20527:139871606757184] - boosting.py[line:391]: generate flowid, flowid fit_iteration_2_validate
+[INFO] [2020-11-20 07:16:37,767] [20527:139871606757184] - decision_tree.py[line:93]: set flowid, flowid is fit_iteration_2_validate.2.0
+[INFO] [2020-11-20 07:16:44,115] [20527:139871606757184] - hetero_boosting.py[line:268]: sync stop flag from guest, boosting_core round is 2
+[INFO] [2020-11-20 07:16:47,899] [20527:139871606757184] - hetero_secureboost_host.py[line:182]: running prediction
+[INFO] [2020-11-20 07:16:49,867] [20527:139871606757184] - splitter.py[line:59]: splitter init!
+[INFO] [2020-11-20 07:16:49,868] [20527:139871606757184] - decision_tree.py[line:229]: load tree model
+[INFO] [2020-11-20 07:16:49,870] [20527:139871606757184] - boosting.py[line:391]: generate flowid, flowid validate
+[INFO] [2020-11-20 07:16:49,871] [20527:139871606757184] - decision_tree.py[line:93]: set flowid, flowid is validate.0.0
+[INFO] [2020-11-20 07:16:49,872] [20527:139871606757184] - splitter.py[line:59]: splitter init!
+[INFO] [2020-11-20 07:16:49,873] [20527:139871606757184] - decision_tree.py[line:229]: load tree model
+[INFO] [2020-11-20 07:16:49,875] [20527:139871606757184] - boosting.py[line:391]: generate flowid, flowid validate
+[INFO] [2020-11-20 07:16:49,876] [20527:139871606757184] - decision_tree.py[line:93]: set flowid, flowid is validate.1.0
+[INFO] [2020-11-20 07:16:49,877] [20527:139871606757184] - splitter.py[line:59]: splitter init!
+[INFO] [2020-11-20 07:16:49,879] [20527:139871606757184] - decision_tree.py[line:229]: load tree model
+[INFO] [2020-11-20 07:16:49,881] [20527:139871606757184] - boosting.py[line:391]: generate flowid, flowid validate
+[INFO] [2020-11-20 07:16:49,883] [20527:139871606757184] - decision_tree.py[line:93]: set flowid, flowid is validate.2.0
+[INFO] [2020-11-20 07:16:55,509] [20527:139871606757184] - hetero_secureboost_host.py[line:182]: running prediction
+[INFO] [2020-11-20 07:16:57,948] [20527:139871606757184] - tracker_client.py[line:173]: Request save job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on host 9999 component summary
+[INFO] [2020-11-20 07:17:01,998] [20527:139871606757184] - profile.py[line:249]: 
+Computing:
++----------+--------------------------------------------------------+
+| function |       function         n    sum(s)   mean(s)   max(s)  |
+|          | --------------------- ---- -------- --------- -------- |
+|          |  mapReducePartitions   10   23.273    2.327    5.921   |
+|          |       mapValues        22   19.996    0.909    12.676  |
+|          |         join           30   11.761    0.392    0.813   |
+|          |         count          20   2.091     0.105     0.41   |
+|          |         first          6     1.55     0.258    0.386   |
+|          |         load           2    0.845     0.423    0.484   |
+|          |        collect         10   0.054     0.005    0.007   |
++----------+--------------------------------------------------------+
+|  total   |      n=100, sum=59.5700, mean=0.5957, max=12.6755      |
++----------+--------------------------------------------------------+
+
+Federation:
++--------+-------------------------------------------------------------------------------------------------------------+
+|  get   |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfe | 9 | 61.26  |  6.807  | 9.274   |
+|        |  r_variable.HeteroDecisionTreeTransferVariable.federated_best_splitinfo_ho |   |        |         |         |
+|        |                                     st                                     |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfe | 9 | 25.553 |  2.839  | 3.307   |
+|        |      r_variable.HeteroDecisionTreeTransferVariable.dispatch_node_host      |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_secure_boosting_predi | 8 | 18.665 |  2.333  | 3.353   |
+|        |  ct_transfer_variable.HeteroSecureBoostTransferVariable.predict_stop_flag  |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfe | 9 | 11.322 |  1.258  | 2.456   |
+|        |        r_variable.HeteroDecisionTreeTransferVariable.tree_node_queue       |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_boosting_transfer_var | 3 | 8.826  |  2.942  | 3.419   |
+|        |               iable.HeteroBoostingTransferVariable.stop_flag               |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfe | 3 | 7.793  |  2.598  | 3.017   |
+|        |             r_variable.HeteroDecisionTreeTransferVariable.tree             |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfe | 3 | 7.074  |  2.358  | 3.486   |
+|        |    r_variable.HeteroDecisionTreeTransferVariable.encrypted_grad_and_hess   |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_boosting_transfer_var | 5 | 4.644  |  0.929  |  1.49   |
+|        |          iable.HeteroBoostingTransferVariable.predict_start_round          |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfe | 9 | 3.251  |  0.361  |  0.45   |
+|        |        r_variable.HeteroDecisionTreeTransferVariable.node_positions        |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_secure_boosting_predi | 3 | 1.001  |  0.334  | 0.425   |
+|        |  ct_transfer_variable.HeteroSecureBoostTransferVariable.guest_predict_data |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_boosting_transfer_var | 1 | 0.799  |  0.799  | 0.799   |
+|        |              iable.HeteroBoostingTransferVariable.booster_dim              |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| remote |                                    name                                    | n | sum(s) | mean(s) | max(s)  |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfe | 9 | 0.866  |  0.096  | 0.183   |
+|        |   r_variable.HeteroDecisionTreeTransferVariable.encrypted_splitinfo_host   |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfe | 9 |  0.15  |  0.017  | 0.048   |
+|        |   r_variable.HeteroDecisionTreeTransferVariable.dispatch_node_host_result  |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_decision_tree_transfe | 9 | 0.108  |  0.012  | 0.026   |
+|        |     r_variable.HeteroDecisionTreeTransferVariable.final_splitinfo_host     |   |        |         |         |
+|        | ---------------------------------------------------------------------------+---+--------+---------+-------- |
+|        |  federatedml.transfer_variable.transfer_class.hetero_secure_boosting_predi | 3 | 0.031  |  0.01   | 0.011   |
+|        |  ct_transfer_variable.HeteroSecureBoostTransferVariable.host_predict_data  |   |        |         |         |
++--------+-------------------------------------------------------------------------------------------------------------+
+| total  |                                 n=92, sum=151.3435, mean=1.6450, max=9.2742                                 |
++--------+-------------------------------------------------------------------------------------------------------------+
+
+[INFO] [2020-11-20 07:17:02,013] [20527:139871606757184] - pipelined_model.py[line:73]: Save hetero_secure_boost_0 model HeteroSecureBoostingTreeHostMeta buffer
+[INFO] [2020-11-20 07:17:02,016] [20527:139871606757184] - pipelined_model.py[line:73]: Save hetero_secure_boost_0 model HeteroSecureBoostingTreeHostParam buffer
+[INFO] [2020-11-20 07:17:02,062] [20527:139871606757184] - pipelined_model.py[line:78]: Save hetero_secure_boost_0 model successfully
+[INFO] [2020-11-20 07:17:02,064] [20527:139871606757184] - task_executor.py[line:302]: report task 202011200707112994524_hetero_secure_boost_0 0 host 9999 to driver
+[INFO] [2020-11-20 07:17:02,066] [20527:139871606757184] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on host 9999
+[INFO] [2020-11-20 07:17:03,389] [20527:139871606757184] - task_executor.py[line:207]: task 202011200707112994524_hetero_secure_boost_0 host 9999 start time: 2020-11-20 07:12:48
+[INFO] [2020-11-20 07:17:03,390] [20527:139871606757184] - task_executor.py[line:209]: task 202011200707112994524_hetero_secure_boost_0 host 9999 end time: 2020-11-20 07:17:02
+[INFO] [2020-11-20 07:17:03,391] [20527:139871606757184] - task_executor.py[line:211]: task 202011200707112994524_hetero_secure_boost_0 host 9999 takes 254.014s
+[INFO] [2020-11-20 07:17:03,392] [20527:139871606757184] - task_executor.py[line:214]: Finish 202011200707112994524 hetero_secure_boost_0 202011200707112994524_hetero_secure_boost_0 0 host 9999 task success
+[INFO] [2020-11-20 07:17:03,393] [20527:139871606757184] - task_executor.py[line:302]: report task 202011200707112994524_hetero_secure_boost_0 0 host 9999 to driver
+[INFO] [2020-11-20 07:17:03,393] [20527:139871606757184] - control_client.py[line:42]: request update job 202011200707112994524 task 202011200707112994524_hetero_secure_boost_0 0 on host 9999

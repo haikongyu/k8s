@@ -1,0 +1,3 @@
+[INFO] [2020-11-20 02:39:34,452] [1896:140260009703232] - pipelined_model.py[line:73]: Save hetero_lr_0 hetero_lr HeteroLogisticRegressionMeta buffer
+[INFO] [2020-11-20 02:39:34,455] [1896:140260009703232] - pipelined_model.py[line:73]: Save hetero_lr_0 hetero_lr HeteroLogisticRegressionParam buffer
+[INFO] [2020-11-20 02:39:34,476] [1896:140260009703232] - pipelined_model.py[line:78]: Save hetero_lr_0 hetero_lr successfully

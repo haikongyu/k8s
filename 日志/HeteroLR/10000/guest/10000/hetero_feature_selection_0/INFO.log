@@ -1,0 +1,45 @@
+[INFO] [2020-11-20 02:35:59,760] [2248:140191339607872] - task_executor.py[line:302]: report task 202011200231350021282_hetero_feature_selection_0 0 guest 10000 to driver
+[INFO] [2020-11-20 02:35:59,763] [2248:140191339607872] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_hetero_feature_selection_0 0 on guest 10000
+[INFO] [2020-11-20 02:36:05,612] [2248:140191339607872] - task_executor.py[line:156]: Run 202011200231350021282 hetero_feature_selection_0 202011200231350021282_hetero_feature_selection_0 guest 10000 task
+[INFO] [2020-11-20 02:36:05,613] [2248:140191339607872] - task_executor.py[line:157]: Component parameters on party {'FeatureSelectionParam': {'select_col_indexes': -1, 'select_names': [], 'filter_methods': ['manually'], 'unique_param': {'eps': 1e-05}, 'iv_value_param': {'value_threshold': 0.0, 'host_thresholds': None, 'local_only': False}, 'iv_percentile_param': {'percentile_threshold': 1.0, 'local_only': False}, 'iv_top_k_param': {'k': 10, 'local_only': False}, 'variance_coe_param': {'value_threshold': 1.0}, 'outlier_param': {'percentile': 1.0, 'upper_threshold': 1.0}, 'percentage_value_param': {'upper_pct': 1.0}, 'manually_param': {'filter_out_indexes': None, 'filter_out_names': None, 'left_col_indexes': None, 'left_col_names': None}, 'iv_param': {'metrics': 'iv', 'filter_type': 'threshold', 'take_high': True, 'threshold': 1, 'host_thresholds': None, 'select_federated': True}, 'statistic_param': {'metrics': 'mean', 'filter_type': 'threshold', 'take_high': True, 'threshold': 1, 'host_thresholds': None, 'select_federated': True}, 'psi_param': {'metrics': 'psi', 'filter_type': 'threshold', 'take_high': False, 'threshold': 1, 'host_thresholds': None, 'select_federated': True}, 'sbt_param': {'metrics': 'feature_importance', 'filter_type': 'threshold', 'take_high': True, 'threshold': 1, 'host_thresholds': None, 'select_federated': True}, 'need_run': True}, 'dsl_version': '2', 'initiator': {'role': 'guest', 'party_id': 10000}, 'role': {'guest': [10000], 'host': [9999], 'arbiter': [9999]}, 'job_parameters': {'job_type': 'train', 'work_mode': 1, 'backend': 0, 'computing_engine': 'EGGROLL', 'federation_engine': 'EGGROLL', 'storage_engine': 'EGGROLL', 'engines_address': {'computing': {'cores_per_node': 20, 'nodes': 1}, 'federation': {'host': 'rollsite', 'port': 9370}, 'storage': {'cores_per_node': 20, 'nodes': 1}}, 'federated_mode': 'MULTIPLE', 'task_parallelism': 2, 'computing_partitions': 8, 'federated_status_collect_type': 'PUSH', 'model_id': 'arbiter-9999#guest-10000#host-9999#model', 'model_version': '202011200231350021282', 'eggroll_run': {'eggroll.session.processors.per.node': 2}, 'spark_run': {'num-executors': 1, 'executor-cores': 2}, 'rabbitmq_run': {}, 'adaptation_parameters': {'task_nodes': 1, 'task_cores_per_node': 2, 'task_memory_per_node': 0}}, 'component_parameters': {'common': {'intersect_0': {'intersect_method': 'raw', 'sync_intersect_ids': True, 'only_output_key': False}, 'hetero_lr_0': {'penalty': 'L2', 'optimizer': 'rmsprop', 'alpha': 0.01, 'max_iter': 3, 'batch_size': 320, 'learning_rate': 0.15, 'init_param': {'init_method': 'random_uniform'}}}, 'role': {'guest': {'0': {'reader_0': {'table': {'name': 'breast_hetero_guest', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': True, 'label_name': 'y', 'label_type': 'int', 'output_format': 'dense'}}}, 'host': {'0': {'reader_0': {'table': {'name': 'breast_hetero_host', 'namespace': 'experiment'}}, 'dataio_0': {'with_label': False, 'output_format': 'dense'}}}}}, 'config': '/data/projects/fate/python/fate_flow/examples/test_hetero_lr_job_conf.json', 'dsl': 'examples/test_hetero_lr_job_dsl.json', 'function': 'submit_job', 'local': {'role': 'guest', 'party_id': 10000}, 'CodePath': 'federatedml/feature/hetero_feature_selection/feature_selection_guest.py/HeteroFeatureSelectionGuest', 'module': 'HeteroFeatureSelection', 'output_data_name': ['train']}
+[INFO] [2020-11-20 02:36:05,614] [2248:140191339607872] - task_executor.py[line:158]: Task input dsl {'data': {'data': ['hetero_feature_binning_0.train']}, 'isometric_model': ['hetero_feature_binning_0.hetero_feature_binning']}
+[INFO] [2020-11-20 02:36:05,615] [2248:140191339607872] - tracker_client.py[line:150]: Request read job 202011200231350021282 task None None on guest 10000 data train info
+[INFO] [2020-11-20 02:36:05,737] [2248:140191339607872] - task_executor.py[line:260]: load computing table use 8
+[INFO] [2020-11-20 02:36:06,062] [2248:140191339607872] - pipelined_model.py[line:185]: parse FeatureBinningMeta proto object normal
+[INFO] [2020-11-20 02:36:06,069] [2248:140191339607872] - pipelined_model.py[line:185]: parse FeatureBinningParam proto object normal
+[INFO] [2020-11-20 02:36:09,850] [2248:140191339607872] - base_feature_selection.py[line:301]: Start Hetero Selection Fit and transform.
+[INFO] [2020-11-20 02:36:15,202] [2248:140191339607872] - base_feature_selection.py[line:339]: Finish Hetero Selection Fit and transform.
+[INFO] [2020-11-20 02:36:15,203] [2248:140191339607872] - tracker_client.py[line:173]: Request save job 202011200231350021282 task 202011200231350021282_hetero_feature_selection_0 0 on guest 10000 component summary
+[INFO] [2020-11-20 02:36:15,668] [2248:140191339607872] - profile.py[line:249]: 
+Computing:
++----------+---------------------------------------------+
+| function |  function    n   sum(s)   mean(s)   max(s)  |
+|          | ----------- --- -------- --------- -------- |
+|          |  mapValues   1   4.744     4.744    4.744   |
+|          |    first     3   0.525     0.175     0.18   |
+|          |    load      1   0.284     0.284    0.284   |
+|          |    count     2   0.123     0.061    0.069   |
++----------+---------------------------------------------+
+|  total   |  n=7, sum=5.6752, mean=0.8107, max=4.7436   |
++----------+---------------------------------------------+
+
+Federation:
++--------+------------------------------------------+
+|  get   |                                          |
++--------+------------------------------------------+
+| remote |                                          |
++--------+------------------------------------------+
+| total  | n=0, sum=0.0000, mean=0.0000, max=0.0000 |
++--------+------------------------------------------+
+
+[INFO] [2020-11-20 02:36:16,288] [2248:140191339607872] - pipelined_model.py[line:73]: Save hetero_feature_selection_0 selected FeatureSelectionMeta buffer
+[INFO] [2020-11-20 02:36:16,290] [2248:140191339607872] - pipelined_model.py[line:73]: Save hetero_feature_selection_0 selected FeatureSelectionParam buffer
+[INFO] [2020-11-20 02:36:16,319] [2248:140191339607872] - pipelined_model.py[line:78]: Save hetero_feature_selection_0 selected successfully
+[INFO] [2020-11-20 02:36:16,321] [2248:140191339607872] - task_executor.py[line:302]: report task 202011200231350021282_hetero_feature_selection_0 0 guest 10000 to driver
+[INFO] [2020-11-20 02:36:16,322] [2248:140191339607872] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_hetero_feature_selection_0 0 on guest 10000
+[INFO] [2020-11-20 02:36:16,445] [2248:140191339607872] - task_executor.py[line:207]: task 202011200231350021282_hetero_feature_selection_0 guest 10000 start time: 2020-11-20 02:35:59
+[INFO] [2020-11-20 02:36:16,446] [2248:140191339607872] - task_executor.py[line:209]: task 202011200231350021282_hetero_feature_selection_0 guest 10000 end time: 2020-11-20 02:36:16
+[INFO] [2020-11-20 02:36:16,446] [2248:140191339607872] - task_executor.py[line:211]: task 202011200231350021282_hetero_feature_selection_0 guest 10000 takes 16.883s
+[INFO] [2020-11-20 02:36:16,447] [2248:140191339607872] - task_executor.py[line:214]: Finish 202011200231350021282 hetero_feature_selection_0 202011200231350021282_hetero_feature_selection_0 0 guest 10000 task success
+[INFO] [2020-11-20 02:36:16,448] [2248:140191339607872] - task_executor.py[line:302]: report task 202011200231350021282_hetero_feature_selection_0 0 guest 10000 to driver
+[INFO] [2020-11-20 02:36:16,449] [2248:140191339607872] - control_client.py[line:42]: request update job 202011200231350021282 task 202011200231350021282_hetero_feature_selection_0 0 on guest 10000
