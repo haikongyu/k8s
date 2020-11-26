@@ -1443,7 +1443,6 @@ fi
 EOF
 
 chmod +x /etc/keepalived/check_nginx.sh
-
 ```
 
 ### 启动并设置开机启动(k8s-lb1/2)
@@ -1453,7 +1452,6 @@ systemctl start nginx
 systemctl start keepalived
 systemctl enable nginx
 systemctl enable keepalived
-
 ```
 ### 查看keepalived工作状态(k8s-lb1)
 `ip a`
@@ -1461,19 +1459,16 @@ systemctl enable keepalived
 k8s-lb1执行
 ```
 pkill nginx
-
 ```
 k8s-lb1执行
 ```
 ip a
-
 ```
 查看是否绑定vip
 
 ### 集群内任一节点测试
 ```
 curl -k https://$vip:6443/version
-
 ```
 
 ## 修改worker 连接LB VIP(k8s-master1/2/3,k8s-node1/2)
@@ -1663,11 +1658,9 @@ sed -i '22,24d' cluster.yaml
 ```
 
 B方 master
-```
+```bash
 sed -i "s|registry: \"\"|registry: \"hub.c.163.com/federatedai\"|" cluster.yaml
-
-sed -i "27s|192.168.10.1|192.168.92.128|" cluster.yaml
-sed -i '22,24d' cluster.yaml
+sed -i "s|"
 ```
 ### kubefate移入到服务(AB双方master主机执行)
 ````
@@ -1719,6 +1712,47 @@ kubefate job ls
 ```
 
 当状态为sucess时部署完成
+
+### bug修复
+
+通过修改deployment/python修正1.5.0版本的bug
+
+```
+# 进入deployment/python开始修正
+kubectl edit deployment python -n fate-10000
+```
+
+针对以下部分进行修正
+
+```
+        image: hub.c.163.com/federatedai/client:1.5.0-release
+        imagePullPolicy: IfNotPresent
+        name: client
+        ports:
+        - containerPort: 20000
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+```
+
+修正后
+
+```
+        image: hub.c.163.com/federatedai/client:1.5.0-release
+        imagePullPolicy: IfNotPresent
+        name: client
+        command: ["/bin/bash"]
+        args: ["-c", "flow init --ip=${POD_IP} --port=9380 && pipeline init --ip=${POD_IP} --port=9380 && jupyter notebook --ip=0.0.0.0 --port=20000 --allow-root --debug --NotebookApp.notebook_dir='/fml_manager/Examples' --no-browser --NotebookApp.token='' --NotebookApp.password=''"]
+        ports:
+        - containerPort: 20000
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+```
 
 ## 测试toy_example
 ### 双方分别进入容器
@@ -1794,5 +1828,161 @@ kubectl cp python-5594d88c57-5lnxn:/data/projects/fate/logs/20201120023135002128
 
 ```
 python fate_flow_client.py -f stop_job -j $job_id
+```
+
+## 安装NFS
+
+在k8s-node2上安装nfs server
+
+```bash
+yum install -y nfs-utils rpcbind
+mkdir /var/nfs -p
+echo "/var/nfs 192.168.92.0/24(rw,sync,all_squash)" > /etc/exports
+chown nfsnobody //var/nfs
+systemctl start nfs
+systemctl enable nfs
+```
+
+## 创建StorageClass
+
+rbac
+
+```bash
+cd ~
+mkdir nfs
+cd nfs
+```
+
+
+
+```
+cat > rbac.yaml << EOF
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: nfs-client-provisioner
+  # replace with namespace where provisioner is deployed
+  namespace: default        #根据实际环境设定namespace,下面类同
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: nfs-client-provisioner-runner
+rules:
+  - apiGroups: [""]
+    resources: ["persistentvolumes"]
+    verbs: ["get", "list", "watch", "create", "delete"]
+  - apiGroups: [""]
+    resources: ["persistentvolumeclaims"]
+    verbs: ["get", "list", "watch", "update"]
+  - apiGroups: ["storage.k8s.io"]
+    resources: ["storageclasses"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: [""]
+    resources: ["events"]
+    verbs: ["create", "update", "patch"]
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: run-nfs-client-provisioner
+subjects:
+  - kind: ServiceAccount
+    name: nfs-client-provisioner
+    # replace with namespace where provisioner is deployed
+    namespace: default
+roleRef:
+  kind: ClusterRole
+  name: nfs-client-provisioner-runner
+  apiGroup: rbac.authorization.k8s.io
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: leader-locking-nfs-client-provisioner
+    # replace with namespace where provisioner is deployed
+  namespace: default
+rules:
+  - apiGroups: [""]
+    resources: ["endpoints"]
+    verbs: ["get", "list", "watch", "create", "update", "patch"]
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: leader-locking-nfs-client-provisioner
+subjects:
+  - kind: ServiceAccount
+    name: nfs-client-provisioner
+    # replace with namespace where provisioner is deployed
+    namespace: default
+roleRef:
+  kind: Role
+  name: leader-locking-nfs-client-provisioner
+  apiGroup: rbac.authorization.k8s.io
+EOF
+```
+
+创建NFS资源的StorageClass
+
+```
+cat > nfs-StorageClass.yaml << EOF
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: managed-nfs-storage
+provisioner: qgg-nfs-storage #这里的名称要和provisioner配置文件中的环境变量PROVISIONER_NAME保持一致
+parameters:
+  archiveOnDelete: "false"
+EOF
+```
+
+创建NFS provisioner
+
+```
+cat > nfs-provisioner.yaml << EOF
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nfs-client-provisioner
+  labels:
+    app: nfs-client-provisioner
+  # replace with namespace where provisioner is deployed
+  namespace: default  #与RBAC文件中的namespace保持一致
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nfs-client-provisioner
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: nfs-client-provisioner
+  template:
+    metadata:
+      labels:
+        app: nfs-client-provisioner
+    spec:
+      serviceAccountName: nfs-client-provisioner
+      containers:
+        - name: nfs-client-provisioner
+          image: quay.io/external_storage/nfs-client-provisioner:latest
+          volumeMounts:
+            - name: nfs-client-root
+              mountPath: /persistentvolumes
+          env:
+            - name: PROVISIONER_NAME
+              value: qgg-nfs-storage  #provisioner名称,请确保该名称与 nfs-StorageClass.yaml文件中的provisioner名称保持一致
+            - name: NFS_SERVER
+              value: 172.16.155.227   #NFS Server IP地址
+            - name: NFS_PATH  
+              value: /data/volumes    #NFS挂载卷
+      volumes:
+        - name: nfs-client-root
+          nfs:
+            server: $k8s-node2_ip  #NFS Server IP地址
+            path: /var/nfs     #NFS 挂载卷
+EOF            
 ```
 
