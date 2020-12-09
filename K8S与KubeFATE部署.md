@@ -22,31 +22,44 @@
 ### 设置每台主机的主机名，加入k8s时默认以主机名作为k8s集群中的节点名
 k8s-master1主机
 
-` hostnamectl set-hostname k8s-master1`
+``` 
+hostnamectl set-hostname k8s-master1
+```
 
 k8s-master2主机
 
-` hostnamectl set-hostname k8s-master2`
+```
+hostnamectl set-hostname k8s-master2
+```
 
 k8s-master3主机
 
-` hostnamectl set-hostname k8s-master3`
+```
+hostnamectl set-hostname k8s-master3
+```
 
 k8s-node1主机
 
-` hostnamectl set-hostname k8s-node1`
+```hostnamectl set-hostname k8s-node1
+```
 
 k8s-node2主机
 
-` hostnamectl set-hostname k8s-node2`
+```
+hostnamectl set-hostname k8s-node2
+```
 
 k8s-lb1主机
 
-` hostnamectl set-hostname k8s-lb1`
+```
+hostnamectl set-hostname k8s-lb1
+```
 
 k8s-lb2主机
 
-` hostnamectl set-hostname k8s-lb2`
+```
+hostnamectl set-hostname k8s-lb2
+```
 
 
 可以通过`hostname` 查看主机名
@@ -77,6 +90,7 @@ repo_gpgcheck=1
 gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
 EOF
 
+yum install -y yum-utils
 yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 ```
 ### 关闭防火墙(每台主机都需要执行)
@@ -123,7 +137,9 @@ systemctl restart firewalld
 备注：8472/udp为flannel的通信端口，443/tcp 为Kubernetes server端口
 如果需要使用istio则应将istio-pilot的端口加到防火墙里：
 
-`firewall-cmd --permanent --add-port=15010-15014/tcp`
+```
+firewall-cmd --permanent --add-port=15010-15014/tcp
+```
 
 ### 关闭SWAP(每台主机都需要执行)
 ```
@@ -216,6 +232,7 @@ docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/coredns:1.7.0 k8s
 |k8s-master3|$k8s-master3_ip|etcd-3|
 ### 准备cfssl证书生成工具(k8s-master1)
 ```
+yum install -y wget
 wget https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
 wget https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
 wget https://pkg.cfssl.org/R1.2/cfssl-certinfo_linux-amd64
@@ -302,7 +319,9 @@ cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=www 
 ls server*pem
 ```
 ### 下载二进制文件(k8s-master1)
-`wget https://github.com/etcd-io/etcd/releases/download/v3.4.13/etcd-v3.4.13-linux-amd64.tar.gz `
+```
+wget https://github.com/etcd-io/etcd/releases/download/v3.4.13/etcd-v3.4.13-linux-amd64.tar.gz 
+```
 
 ### 创建工作目录（k8s-master1）
 ```
@@ -354,7 +373,9 @@ EOF
 
 ```
 ### 拷贝证书(k8s-master1)
-`cp ~/TLS/etcd/ca*pem ~/TLS/etcd/server*pem /opt/etcd/ssl/`
+```
+cp ~/TLS/etcd/ca*pem ~/TLS/etcd/server*pem /opt/etcd/ssl/
+```
 
 ### 文件拷贝到k8s-master2. k8s-master3(k8s-master1)
 ```
@@ -493,7 +514,9 @@ cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=kube
 ls server*pem
 ```
 ### 下载二进制文件(k8s-master1)
-`wget https://dl.k8s.io/v1.18.10/kubernetes-server-linux-amd64.tar.gz`
+```
+wget https://dl.k8s.io/v1.18.10/kubernetes-server-linux-amd64.tar.gz
+```
 
 ### 解压(k8s-master1)
 ```
@@ -986,7 +1009,9 @@ kubectl get csr
 kubectl certificate approve $name
 ```
 ### 查看node状态(k8s-master1)
-`kubectl get node`
+```
+kubectl get node
+```
 
 ### 调理master最大pod数量
 
@@ -1253,16 +1278,16 @@ rm -f /opt/kubernetes/ssl/kubelet*
 ### 修改配置文件IP和主机名（k8s-master2/3）
 ```
 vi /opt/kubernetes/cfg/kube-apiserver.conf 
-...
---bind-address=10.1.1.230 \ #修改为本地ip
---advertise-address=10.1.1.230 \  #修改为本地ip
-...
+    ...
+    --bind-address=10.1.1.230 \ #修改为本地ip
+    --advertise-address=10.1.1.230 \  #修改为本地ip
+    ...
 
 vi /opt/kubernetes/cfg/kubelet.conf
---hostname-override=k8s-master2 #修改为本地主机名
+    --hostname-override=k8s-master2 #修改为本地主机名
 
 vi /opt/kubernetes/cfg/kube-proxy-config.yml
-hostnameOverride: k8s-master2 #修改为本地主机名
+    hostnameOverride: k8s-master2 #修改为本地主机名
 
 ```
 ### 启动并设置开机启动(k8s-master2/3)
@@ -1456,24 +1481,23 @@ systemctl enable keepalived
 
 ```
 ### 查看keepalived工作状态(k8s-lb1)
-`ip a`
+```
+ip a
+```
 ### kube-apiserver高可用测试
 k8s-lb1执行
 ```
 pkill nginx
-
 ```
 k8s-lb1执行
 ```
 ip a
-
 ```
 查看是否绑定vip
 
 ### 集群内任一节点测试
 ```
 curl -k https://$vip:6443/version
-
 ```
 
 ## 修改worker 连接LB VIP(k8s-master1/2/3,k8s-node1/2)
@@ -1591,11 +1615,15 @@ kubefate job ls
 ### 双方分别进入容器
 A方 master
 
-`kubectl exec -it svc/fateflow -c python -n fate-10000 -- bash`
+```
+kubectl exec -it svc/fateflow -c python -n fate-10000 -- bash
+```
 
 B方 master
 
-`kubectl exec -it svc/fateflow -c python -n fate-9999 -- bash`
+```
+kubectl exec -it svc/fateflow -c python -n fate-9999 -- bash
+```
 
 ### 开始测试
 A方master执行
@@ -1796,3 +1824,9 @@ kubectl cp python-5594d88c57-5lnxn:/data/projects/fate/logs/20201120023135002128
 python fate_flow_client.py -f stop_job -j $job_id
 ```
 
+## python pod故障重建容器
+python pod出现故障后，一般会自动新建pod, 但原先的pod 为terminating状态，并导致pipeline不能正常使用使用以下命令立即删除故障pod
+```
+kubectl delete  --force pod $pod_name -n $fate_namespace
+```
+以后在notebook里重新启动kernel
