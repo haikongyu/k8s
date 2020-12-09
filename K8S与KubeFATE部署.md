@@ -1877,3 +1877,269 @@ python pod出现故障后，一般会自动新建pod, 但原先的pod 为termina
 kubectl delete  --force pod $pod_name -n $fate_namespace
 ```
 以后在notebook里重新启动kernel
+## 安装NFS
+
+在k8s-node2上安装nfs server
+
+```bash
+yum install -y nfs-utils rpcbind
+mkdir /var/nfs -p
+echo "/var/nfs 192.168.92.0/24(rw,sync,no_subtree_check,no_root_squash)" > /etc/exports
+chown nfsnobody //var/nfs
+systemctl start nfs
+systemctl enable nfs
+```
+
+## 创建StorageClass
+
+rbac
+
+```bash
+cd ~
+mkdir nfs
+cd nfs
+```
+
+
+
+```
+cat > rbac.yaml << EOF
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: nfs-client-provisioner
+  # replace with namespace where provisioner is deployed
+  namespace: default        #根据实际环境设定namespace,下面类同
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: nfs-client-provisioner-runner
+rules:
+  - apiGroups: [""]
+    resources: ["persistentvolumes"]
+    verbs: ["get", "list", "watch", "create", "delete"]
+  - apiGroups: [""]
+    resources: ["persistentvolumeclaims"]
+    verbs: ["get", "list", "watch", "update"]
+  - apiGroups: ["storage.k8s.io"]
+    resources: ["storageclasses"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: [""]
+    resources: ["events"]
+    verbs: ["create", "update", "patch"]
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: run-nfs-client-provisioner
+subjects:
+  - kind: ServiceAccount
+    name: nfs-client-provisioner
+    # replace with namespace where provisioner is deployed
+    namespace: default
+roleRef:
+  kind: ClusterRole
+  name: nfs-client-provisioner-runner
+  apiGroup: rbac.authorization.k8s.io
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: leader-locking-nfs-client-provisioner
+    # replace with namespace where provisioner is deployed
+  namespace: default
+rules:
+  - apiGroups: [""]
+    resources: ["endpoints"]
+    verbs: ["get", "list", "watch", "create", "update", "patch"]
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: leader-locking-nfs-client-provisioner
+subjects:
+  - kind: ServiceAccount
+    name: nfs-client-provisioner
+    # replace with namespace where provisioner is deployed
+    namespace: default
+roleRef:
+  kind: Role
+  name: leader-locking-nfs-client-provisioner
+  apiGroup: rbac.authorization.k8s.io
+EOF
+```
+
+创建NFS资源的StorageClass
+
+```
+cat > nfs-StorageClass.yaml << EOF
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: managed-nfs-storage
+provisioner: qgg-nfs-storage #这里的名称要和provisioner配置文件中的环境变量PROVISIONER_NAME保持一致
+parameters:
+  archiveOnDelete: "false"
+reclaimPolicy: Retain
+EOF
+```
+
+创建NFS provisioner
+
+```
+cat > nfs-provisioner.yaml << EOF
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nfs-client-provisioner
+  labels:
+    app: nfs-client-provisioner
+  # replace with namespace where provisioner is deployed
+  namespace: default  #与RBAC文件中的namespace保持一致
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nfs-client-provisioner
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: nfs-client-provisioner
+  template:
+    metadata:
+      labels:
+        app: nfs-client-provisioner
+    spec:
+      serviceAccountName: nfs-client-provisioner
+      containers:
+        - name: nfs-client-provisioner
+          image: quay.io/external_storage/nfs-client-provisioner:latest
+          volumeMounts:
+            - name: nfs-client-root
+              mountPath: /persistentvolumes
+          env:
+            - name: PROVISIONER_NAME
+              value: qgg-nfs-storage  #provisioner名称,请确保该名称与 nfs-StorageClass.yaml文件中的provisioner名称保持一致
+            - name: NFS_SERVER
+              value: $k8s-node2_ip  #NFS Server IP地址
+            - name: NFS_PATH  
+              value: /var/nfs    #NFS挂载卷
+      volumes:
+        - name: nfs-client-root
+          nfs:
+            server: $k8s-node2_ip  #NFS Server IP地址
+            path: /var/nfs     #NFS 挂载卷
+EOF            
+```
+
+为mysql创建pvc
+
+```
+cat > mysql-pvc.yaml << EOF
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: mysql-data
+  namespace: fate-8888
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "managed-nfs-storage"   #与nfs-StorageClass.yaml metadata.name保持一致
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 500Mi
+EOF
+
+kubectl replace --force -f mysql-pve.yaml
+```
+
+mysql与nfs有冲突，需要设置mysql不使用pvc
+
+```
+kubectl edit deployment mysql -n fate-8888
+# 找到pvc对应的volume 替换为
+- emptyDir: {}
+name: data
+```
+
+为nodemanager0开启pvc
+
+```
+cat > nodemanager0-pvc.yaml << EOF
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: nodemanager-0-data
+  namespace: fate-8888
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "managed-nfs-storage"   #与nfs-StorageClass.yaml metadata.name保持一致
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 500Mi
+EOF
+
+kubectl replace --force -f nodemanager0-pvc.yaml
+```
+
+为nodemanager1开启pvc
+
+```
+cat > nodemanager1-pvc.yaml << EOF
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: nodemanager-1-data
+  namespace: fate-8888
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "managed-nfs-storage"   #与nfs-StorageClass.yaml metadata.name保持一致
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 500Mi
+EOF
+
+kubectl replace --force -f nodemanager1-pvc.yaml
+```
+
+为notebook开启持久化存储
+
+```
+kubectl edit deployment python -n fate-10000
+# 在Volume里增加
+      - name: notebook-dir
+        persistentVolumeClaim:
+          claimName: notebook-data
+# 在client镜像volumeMount中添加
+        - mountPath: /fml_manager/Examples
+          name: notebook-dir
+```
+
+构建python-pvc
+
+```
+echo > python-pvc.yaml << EOF
+apiVersion: v1
+metadata:
+  name: notebook-data
+  namespace: fate-10000
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "managed-nfs-storage"   #与nfs-StorageClass.yaml metadata.name保持一致
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 500Mi
+EOF
+
+kubectl replace --force -f python-pvc.yaml
+```
+
