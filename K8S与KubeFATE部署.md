@@ -40,7 +40,8 @@ hostnamectl set-hostname k8s-master3
 
 k8s-node1主机
 
-```hostnamectl set-hostname k8s-node1
+```
+hostnamectl set-hostname k8s-node1
 ```
 
 k8s-node2主机
