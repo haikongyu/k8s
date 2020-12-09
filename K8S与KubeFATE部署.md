@@ -1612,6 +1612,52 @@ kubefate job ls
 
 当状态为sucess时部署完成
 
+
+### bug修复
+
+通过修改deployment/python修正1.5.0版本的bug
+
+```
+# 进入deployment/python开始修正
+kubectl edit deployment python -n fate-10000
+```
+
+针对以下部分进行修正
+
+```
+        image: hub.c.163.com/federatedai/client:1.5.0-release
+        imagePullPolicy: IfNotPresent
+        name: client
+        ports:
+        - containerPort: 20000
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+```
+
+修正后
+
+```
+        image: hub.c.163.com/federatedai/client:1.5.0-release
+        imagePullPolicy: IfNotPresent
+        name: client
+        command: ["/bin/bash"]
+        args: ["-c", "flow init --ip=${POD_IP} --port=9380 && pipeline init --ip=${POD_IP} --port=9380 && jupyter notebook --ip=0.0.0.0 --port=20000 --allow-root --debug --NotebookApp.notebook_dir='/fml_manager/Examples' --no-browser --NotebookApp.token='' --NotebookApp.password=''"]
+        ports:
+        - containerPort: 20000
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+```
+
+## 
+
+
+
 ## 测试toy_example
 ### 双方分别进入容器
 A方 master
