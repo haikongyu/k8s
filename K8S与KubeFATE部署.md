@@ -2143,3 +2143,19 @@ EOF
 kubectl replace --force -f python-pvc.yaml
 ```
 
+## model-local-cache保存
+```
+kubectl edit deployment python -n fate-10000
+```
+在volumes加入
+```
+      - name: model-local-cache
+        persistentVolumeClaim:
+          claimName: model-data
+
+```
+python容器中挂载
+```
+        - mountPath: /data/projects/fate/model_local_cache/
+          name: model-local-cache
+```
