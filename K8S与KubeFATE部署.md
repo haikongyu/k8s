@@ -2163,7 +2163,6 @@ python容器中挂载
 ## etcd备份
 ```
 echo > /opt/etcd/bak.sh << EOF
-#!/bin/bash
 
 if [ -d "/data/etcd_bak" ]; then
     echo "the folder is exists"
