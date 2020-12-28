@@ -2159,3 +2159,44 @@ python容器中挂载
         - mountPath: /data/projects/fate/model_local_cache/
           name: model-local-cache
 ```
+
+## etcd备份
+```
+echo > /opt/etcd/bak.sh << EOF
+#!/bin/bash
+
+if [ -d "/data/etcd_bak" ]; then
+    echo "the folder is exists"
+else
+    mkdir -p "/data/etcd_bak"
+    echo "the folder is created"
+fi
+
+if [ ! -f "/data/etcd_bak/etcd1.db" ]; then 
+    echo "Creating the first db"
+    ETCDCTL_API=3 /opt/etcd/bin/etcdctl --endpoints="https://$k8s-master1_ip:2379" --cert=/opt/etcd/ssl/server.pem --key=/opt/etcd/ssl/server-key.pem --cacert=/opt/etcd/ssl/ca.pem snapshot save /data/etcd_bak/etcd1.db
+else
+    if [ ! -f "/data/etcd_bak/etcd2.db" ]; then
+        echo "Creating the second db"
+        ETCDCTL_API=3 /opt/etcd/bin/etcdctl --endpoints="https://$k8s-master1_ip:2379" --cert=/opt/etcd/ssl/server.pem --key=/opt/etcd/ssl/server-key.pem --cacert=/opt/etcd/ssl/ca.pem snapshot save  /data/etcd_bak/etcd2.db
+    else
+        if [ ! -f "/data/etcd_bak/etcd3.db" ]; then
+            echo "Creating the third db"
+            ETCDCTL_API=3 /opt/etcd/bin/etcdctl --endpoints="https://$k8s-master1_ip:2379" --cert=/opt/etcd/ssl/server.pem --key=/opt/etcd/ssl/server-key.pem --cacert=/opt/etcd/ssl/ca.pem snapshot save /data/etcd_bak/etcd3.db
+        else
+            mv /data/etcd_bak/etcd2.db /data/etcd_bak/etcd1.db
+            mv /data/etcd_bak/etcd3.db /data/etcd_bak/etcd2.db
+            ETCDCTL_API=3 /opt/etcd/bin/etcdctl --endpoints="https://$k8s-master1_ip:2379" --cert=/opt/etcd/ssl/server.pem --key=/opt/etcd/ssl/server-key.pem --cacert=/opt/etcd/ssl/ca.pem snapshot save /data/etcd_bak/etcd3.db
+        fi
+    fi
+fi
+EOF
+
+chmod +x /opt/etcd/bak.sh
+```
+
+```
+crontab -e
+
+*/1 * * * * /opt/etcd/bak.sh
+```
