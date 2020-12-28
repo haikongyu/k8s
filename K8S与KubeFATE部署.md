@@ -2198,5 +2198,5 @@ chmod +x /opt/etcd/bak.sh
 ```
 crontab -e
 
-*/1 * * * * /opt/etcd/bak.sh
+*/15 * * * * /opt/etcd/bak.sh
 ```
