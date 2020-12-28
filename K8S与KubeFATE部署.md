@@ -2233,5 +2233,5 @@ k8s-master1/2
 ```
 crontab -e
 
-*/15 * * * * /opt/etcd/bak.sh
+*/15 * * * * /opt/etcd/bak.sh &> /dev/null
 ```
