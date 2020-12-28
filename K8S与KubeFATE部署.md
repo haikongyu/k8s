@@ -2125,7 +2125,7 @@ kubectl edit deployment python -n fate-10000
 构建python-pvc
 
 ```
-echo > python-pvc.yaml << EOF
+cat > python-pvc.yaml << EOF
 apiVersion: v1
 metadata:
   name: notebook-data
@@ -2162,7 +2162,8 @@ python容器中挂载
 
 ## etcd备份
 ```
-echo > /opt/etcd/bak.sh << EOF
+cat > /opt/etcd/bak.sh << EOF
+#!/bin/bash
 
 if [ -d "/data/etcd_bak" ]; then
     echo "the folder is exists"
