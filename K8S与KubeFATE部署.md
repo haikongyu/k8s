@@ -2248,3 +2248,15 @@ passwd("a")
         command: ["/bin/bash"]
         args: ["-c", "flow init -c /data/projects/fate/conf/service_conf.yaml && pipeline init -c /data/projects/fate/conf/pipeline_conf.yaml  && jupyter notebook --ip=0.0.0.0 --port=20000 --allow-root --debug --NotebookApp.notebook_dir='/fml_manager/Examples' --no-browser --NotebookApp.token='' --NotebookApp.password='argon2:$argon2id$v=19$m=10240,t=10,p=8$tB4l+mRc0ADko6HNh986ZQ$8pGJ1hfIEEnPUKn+FNs3bg'"]
 ```
+## 污点化master节点，使其不可调度
+```
+kubectl taint nodes k8s-master1 node.kubernetes.io/unreachable:NoSchedule
+kubectl taint nodes k8s-master2 node.kubernetes.io/unreachable:NoSchedule
+kubectl taint nodes k8s-master3 node.kubernetes.io/unreachable:NoSchedule
+```
+去除污点
+```
+kubectl taint nodes k8s-master1 node.kubernetes.io/unreachable:NoSchedule-
+kubectl taint nodes k8s-master2 node.kubernetes.io/unreachable:NoSchedule-
+kubectl taint nodes k8s-master3 node.kubernetes.io/unreachable:NoSchedule-
+```
