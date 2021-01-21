@@ -1885,9 +1885,15 @@ kubectl delete  --force pod $pod_name -n $fate_namespace
 yum install -y nfs-utils rpcbind
 mkdir /var/nfs -p
 echo "/var/nfs 192.168.92.0/24(rw,sync,no_subtree_check,no_root_squash)" > /etc/exports
-chown nfsnobody //var/nfs
+chown nfsnobody /var/nfs
 systemctl start nfs
 systemctl enable nfs
+```
+其他机器
+```
+yum -y install nfs-utils
+systemctl start nfs-utils
+systemctl enable nfs-utils
 ```
 
 ## 创建StorageClass
