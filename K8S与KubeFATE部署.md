@@ -2251,6 +2251,9 @@ from notebook.auth import passwd
 passwd("a")
 ```
 ```
+kubectl edit deployment python -n fate-10000
+```
+```
         command: ["/bin/bash"]
         args: ["-c", "flow init -c /data/projects/fate/conf/service_conf.yaml && pipeline init -c /data/projects/fate/conf/pipeline_conf.yaml  && jupyter notebook --ip=0.0.0.0 --port=20000 --allow-root --debug --NotebookApp.notebook_dir='/fml_manager/Examples' --no-browser --NotebookApp.token='' --NotebookApp.password='argon2:$argon2id$v=19$m=10240,t=10,p=8$tB4l+mRc0ADko6HNh986ZQ$8pGJ1hfIEEnPUKn+FNs3bg'"]
 ```
