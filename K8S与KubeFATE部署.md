@@ -2269,3 +2269,241 @@ kubectl taint nodes k8s-master1 node.kubernetes.io/unreachable:NoSchedule-
 kubectl taint nodes k8s-master2 node.kubernetes.io/unreachable:NoSchedule-
 kubectl taint nodes k8s-master3 node.kubernetes.io/unreachable:NoSchedule-
 ```
+
+# Fate-Serving安装
+
+计划将fate-serving安装在k8s-node2节点上，为此对于k8s-node2需要安装redis和zookeper
+
+## k8s-node2安装 redis
+
+```
+sudo yum install epel-release yum-utils -y
+sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
+sudo yum-config-manager --enable remi
+sudo yum install redis -y
+sudo systemctl start redis
+sudo systemctl enable redis
+sudo systemctl status redis
+```
+
+Configure Redis Remote Access
+
+```
+sudo yum install -y vim
+sudo vim /etc/redis.conf
+```
+
+Locate the line that begins with bind 127.0.0.1 and add your server private IP address after 127.0.0.1. Example
+
+```
+bind 127.0.0.1 192.168.121.233
+```
+
+Restart the redis service for changes to take effect.
+
+```
+sudo systemctl restart redis
+```
+
+Use the ss command to verify that the redis server is listening on your private interface on port 6379.
+
+```
+ss -an| grep 6379
+```
+
+Assuming you are using FirewallD to manage you firewall and you wang to allow access from the 192.168.121.0/24 subnet you would run the folling commands:
+
+```
+sudo firewall-cmd --new-zone=redis --permanent
+sudo firewall-cmd --zone=redis --add-port=6379/tcp --permanent
+sudo firewall-cmd --zone=redis --add-source=192.168.121.0/24 --permanent
+sudo firewall-cmd --reload
+```
+
+The commands above create a new zone named redis, opens the port 6379 and allows access from the private network. At this point, redis server will accept remote connections on TCP port 6379.
+
+Make sure your firewall is configured to accept connections only from trusted IP ranges.
+
+To verify that everything is set up properly, you can try to ping the redis server from your remote machine using the redis-cli utility which provider a command-line interface to ta redis server:
+
+```
+redis-cli -h <redis_id_address> ping
+```
+
+This command should return response of Pong:
+
+```
+PONG
+```
+
+## ZooKeeper 
+
+Step 1. Install Java
+
+```
+sudo yum install java-16-openjdk-devel -y
+java -version
+sudo yum install java-16-openjdk -y
+```
+
+查看java安装路径
+
+```
+sudo alternatives --config java
+```
+
+增加环境变量
+
+```
+cd
+cat >> .bashrc <<EOF
+JAVA_HOME="/usr/lib/jvm/java-16-openjdk-16.0.0.0.36-1.rolling.el7.x86_64"
+EOF
+
+source .bashrc
+```
+
+Step 2. Install zookeeper
+
+```
+cd /opt
+yum install -y wget
+wget https://mirrors.tuna.tsinghua.edu.cn/apache/zookeeper/zookeeper-3.7.0/apache-zookeeper-3.7.0-bin.tar.gz
+tar -zxf apache-zookeeper-3.7.0-bin.tar.gz
+cd apache-zookeeper-3.7.0-bin
+mkdir data
+cat > conf/zoo.cfg << EOF
+tickTime=2000
+dataDir=/opt/apache-zookeeper-3.7.0-bin/data
+clientPort=2181
+initLimit=5
+syncLimit=2
+EOF
+
+bin/zkServer.sh start
+```
+
+Start CLI type the folling command:
+
+```
+bin/zkClit.sh
+```
+
+Exit CLI
+
+```
+quit
+```
+
+Stop the zookeeper by using the folling command:
+
+``` 
+bin/zkServer.sh stop
+```
+
+## Fate-Serving
+
+Step 1. 下载编译后的文件
+
+```
+cd 
+wget https://webank-ai-1251170195.cos.ap-guangzhou.myqcloud.com/fate-serving-server-2.0.4-release.zip
+wget https://webank-ai-1251170195.cos.ap-guangzhou.myqcloud.com/fate-serving-proxy-2.0.4-release.zip
+wget https://webank-ai-1251170195.cos.ap-guangzhou.myqcloud.com/fate-serving-admin-2.0.4-release.zip
+yum install -y unzip
+unzip -d fate-serving-server fate-serving-server-2.0.4-release.zip
+unzip -d fate-serving-proxy fate-serving-proxy-2.0.4-release.zip
+unzip -d fate-serving-admin fate-serving-admin-2.0.4-release.zip
+mv fate-serving-server /opt
+mv fate-serving-proxy /opt
+mv fate-serving-admin /opt
+cd /opt
+vim fate-serving-server/conf/serving-server.properties
+```
+
+检查server配置信息
+
+zk.url 是否配置正确
+
+model.transfer.url是否配置正确，需要配置真实ip地址
+
+启动server
+
+```
+cd fate-serving-server
+sh service.sh start
+```
+
+Step 2. Proxy配置
+
+```
+cd ../fate-serving-proxy
+vim conf/application.properties
+vim conf/router_table.json
+sh service.sh start
+```
+
+Step 3. admin配置
+
+```
+cd ../fate-serving-admin
+vim conf/application.properties
+sh service.sh start
+```
+
+
+
+# 模型推送与发布 目前只能用DSL 1.0
+
+Step 1. 进入容器
+
+```
+kubectl exec -it svc/fateflow -c python -n fate-7777 -- bash
+```
+
+Step 2. 模型推送
+
+```
+vi /data/projects/fate/python/fate_flow/examples/bind_model_service.json
+
+cd fate_flow
+python fate_flow_client.py -f load -c /data/projects/fate/python/fate_flow/examples/publish_load_model.json
+```
+
+Step 3. 模型绑定
+
+```
+vi /data/projects/fate/python/fate_flow/examples/bind_model_service.json
+
+python fate_flow_client.py -f bind -c /data/projects/fate/python/fate_flow/examples/bind_model_service.json
+```
+
+Step 4. 下http地址为serving-proxy 8059
+
+```
+curl -X POST -H 'Content-Type: application/json' -i 'http://10.0.0.75:8059/federation/v1/inference' --data '{
+  "head": {
+    "serviceId": "test"
+  },
+  "body": {
+    "featureData": {
+      "x0": 0.254879,
+      "x1": -1.046633,
+      "x2": 0.209656,
+      "x3": 0.074214,
+      "x4": -0.441366,
+      "x5": -0.377645,
+      "x6": -0.485934,
+      "x7": 0.347072,
+      "x8": -0.287570,
+      "x9": -0.733474
+    },
+    "sendToRemoteFeatureData": {
+      "id": "123"
+    }
+  }
+}'
+```
+
+参考 https://github.com/FederatedAI/KubeFATE/blob/master/docker-deploy/README_zh.md
+
