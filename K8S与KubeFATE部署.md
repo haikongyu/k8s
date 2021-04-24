@@ -20,6 +20,9 @@
 
 以下使用到各主机ip时会使用$k8s-master1_ip, $k8s-master2_ip, ... $vip替代。
 ### 设置每台主机的主机名，加入k8s时默认以主机名作为k8s集群中的节点名
+
+主机名仅可包含字母数字.-且以字母数字作始尾
+
 k8s-master1主机
 
 ``` 
@@ -123,6 +126,7 @@ systemctl restart firewalld
 ```
 worker
 ```
+systemctl restart firewalld
 firewall-cmd --permanent --add-port=10250/tcp
 firewall-cmd --permanent --add-port=10255/tcp
 firewall-cmd --permanent --add-port=8472/udp
@@ -163,6 +167,10 @@ systemctl enable docker
 ```
 版本应为19.x
 ### 修改docker cgroup 和添加registry-mirrors(每台主机都需要执行)
+docker文件存放位置
+```
+    "graph": "/app/weblogic/docker"
+```
 ```
 cat > /etc/docker/daemon.json <<EOF
 {
