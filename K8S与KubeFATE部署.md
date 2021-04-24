@@ -1791,6 +1791,11 @@ exit
 ```
 ctrl + A +D
 ```
+### chart
+chart 下载位置https://github.com/FederatedAI/KubeFATE/releases
+```
+kubefate chart upload -f fate-v1.5.0.tgz
+```
 ### 开始部署(AB双方master主机执行)
 ```
 kubefate cluster install -f ./cluster.yaml
