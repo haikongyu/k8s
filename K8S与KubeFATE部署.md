@@ -1901,6 +1901,15 @@ echo "/var/nfs 192.168.92.0/24(rw,sync,no_subtree_check,no_root_squash)" > /etc/
 chown nfsnobody /var/nfs
 systemctl start nfs
 systemctl enable nfs
+
+firewall-cmd --permanent --add-port=111/tcp
+firewall-cmd --permanent --add-port=54302/tcp
+firewall-cmd --permanent --add-port=20048/tcp
+firewall-cmd --permanent --add-port=2049/tcp
+firewall-cmd --permanent --add-port=46666/tcp
+firewall-cmd --permanent --add-port=42955/tcp
+firewall-cmd --permanent --add-port=875/tcp
+firewall-cmd --reload
 ```
 其他机器
 ```
@@ -2072,7 +2081,7 @@ spec:
       storage: 500Mi
 EOF
 
-kubectl replace --force -f mysql-pve.yaml
+kubectl replace --force -f mysql-pvc.yaml
 ```
 
 mysql与nfs有冲突，需要设置mysql不使用pvc
