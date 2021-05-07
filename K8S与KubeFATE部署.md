@@ -2509,11 +2509,11 @@ rollsite:
 
 python:
   type: NodePort
-  httpNodePort: 30108
+  httpNodePort: 30110
   grpcNodePort: 30102
 
 servingIp: 本机地址
-servingPort: 30106
+servingPort: 30109
 ```
 
 cluster-serving.yaml
@@ -2525,7 +2525,7 @@ chartVersion: v2.0.0
 partyId: 9933
 registry: ""
 pullPolicy: 
-persistence: true
+persistence: false
 istio:
   enabled: false
 modules:
@@ -2544,10 +2544,10 @@ servingProxy:
 
 servingServer:
   type: NodePort
-  nodePort: 30106
+  nodePort: 30109
   fateflow:
     ip: 本地地址
-    port: 30108
+    port: 30110
   subPath: ""
   existingClaim: ""
   storageClass: "serving-server"
@@ -2563,12 +2563,33 @@ servingRedis:
   storageClass: "serving-redis"
   accessMode: ReadWriteOnce
   size: 1Gi
-
-# externalRedisIp: serving-redis
-# externalRedisPort: 6379
-# externalRedisDatabase: 0
-# externalRedisPassword: fate_dev
 ```
+持久化存储
+```
+kubectl -n fate-serving-9933 edit deployment serving-redis
+```
+内容修改
+```
+        - mountPath: /var/lib/redis
+          name: data
+          subPath: fate_dev
+          
+          # 修改为
+        - mountPath: /var/lib/redis
+          name: fate-redis
+          subPath: fate_dev
+```
+
+```
+      - emptyDir: {}
+        name: data
+# 修改为
+
+      - name: fate-redis
+        persistentVolumeClaim:
+          claimName: fate-redis-data
+```
+然后创建相应的yaml文件并apply
 
 Step 1. 进入容器
 
