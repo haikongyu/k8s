@@ -2476,6 +2476,99 @@ sh service.sh start
 
 
 # 模型推送与发布 目前只能用DSL 1.0
+cluster.yaml
+```
+name: fate-9933
+namespace: fate-9933
+chartName: fate
+chartVersion: v1.5.0
+partyId: 9933
+registry: "hub.c.163.com/federatedai"
+pullPolicy: 
+persistence: true
+istio:
+  enabled: false
+modules:
+  - rollsite
+  - clustermanager
+  - nodemanager
+  - mysql
+  - python
+  - fateboard
+  - client
+
+backend: eggroll
+
+rollsite: 
+  type: NodePort
+  nodePort: 30107
+  partyList:
+  - partyId: 9999
+    partyIp: 对方地址
+    partyPort: 30107
+
+python:
+  type: NodePort
+  httpNodePort: 30108
+  grpcNodePort: 30102
+
+servingIp: 本机地址
+servingPort: 30106
+```
+
+cluster-serving.yaml
+```
+name: fate-serving-9933
+namespace: fate-serving-9933
+chartName: fate-serving
+chartVersion: v2.0.0
+partyId: 9933
+registry: ""
+pullPolicy: 
+persistence: true
+istio:
+  enabled: false
+modules:
+  - servingProxy
+  - servingRedis
+  - servingServer
+
+servingProxy: 
+  nodePort: 30105
+  ingerssHost: 9933.serving-proxy.kubefate.net
+  partyList:
+  - partyId: 9999
+    partyIp: 对方地址
+    partyPort: 30105
+  nodeSelector: {}
+
+servingServer:
+  type: NodePort
+  nodePort: 30106
+  fateflow:
+    ip: 本地地址
+    port: 30108
+  subPath: ""
+  existingClaim: ""
+  storageClass: "serving-server"
+  accessMode: ReadWriteOnce
+  size: 1Gi
+  nodeSelector: {}
+
+servingRedis:
+  password: fate_dev
+  nodeSelector: {}
+  subPath: ""
+  existingClaim: ""
+  storageClass: "serving-redis"
+  accessMode: ReadWriteOnce
+  size: 1Gi
+
+# externalRedisIp: serving-redis
+# externalRedisPort: 6379
+# externalRedisDatabase: 0
+# externalRedisPassword: fate_dev
+```
 
 Step 1. 进入容器
 
