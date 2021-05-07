@@ -2591,6 +2591,32 @@ kubectl -n fate-serving-9933 edit deployment serving-redis
 ```
 然后创建相应的yaml文件并apply
 
+```
+kubectl -n fate-serving-9933 edit deployment serving-server
+```
+内容修改
+```
+        - mountPath: /root/.fate
+          name: data
+          subPath: fate_dev
+          
+          # 修改为
+        - mountPath: /root/.fate
+          name: fate-server
+          subPath: fate_dev
+```
+
+```
+      - emptyDir: {}
+        name: data
+# 修改为
+
+      - name: fate-server
+        persistentVolumeClaim:
+          claimName: fate-server-data
+```
+然后创建相应的yaml文件并apply
+
 Step 1. 进入容器
 
 ```
