@@ -2669,3 +2669,10 @@ curl -X POST -H 'Content-Type: application/json' -i 'http://10.0.0.75:8059/feder
 
 参考 https://github.com/FederatedAI/KubeFATE/blob/master/docker-deploy/README_zh.md
 
+各参与方均需要做修改
+```
+kubectl -n fate- edit cm rollsite-config
+# 在route-table中增加 其余各方的partyId， Ip， Port
+# 更新Pod
+kubectl -n fate- delete pod python-
+```
