@@ -2676,3 +2676,34 @@ kubectl -n fate- edit cm rollsite-config
 # 更新Pod
 kubectl -n fate- delete pod python-
 ```
+
+## 在有防火墙等出入站限制时需要把fate rollsite容器部署在可以通信的Node上，可通过deployment中的nodeSelector设置
+
+step1 为通信Node打标签
+```
+kubectl label $theNode app=exposed
+kubectl get node --show-labels
+```
+
+step2 修改rollsite deployment
+```
+kubectl edit deployment rollsite -n fate-
+```
+作以下修改
+```
+spec:
+  templates:
+    spec:
+    # 仅以下两行为新增内容
+      nodeSelector:
+        app: exposed
+```
+
+## 修改节点最大Pod数量
+```
+vim /opt/kubernetes/cfg/kubelet-config.yaml
+```
+Change MaxPods to the value you want. Then restart kubelet
+```
+systemctl restart kubelet
+```
