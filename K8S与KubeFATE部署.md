@@ -2681,7 +2681,7 @@ kubectl -n fate- delete pod python-
 
 step1 为通信Node打标签
 ```
-kubectl label $theNode app=exposed
+kubectl label node $theNode app=exposed
 kubectl get node --show-labels
 ```
 
