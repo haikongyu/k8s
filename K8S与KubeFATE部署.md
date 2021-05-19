@@ -2699,6 +2699,27 @@ spec:
         app: exposed
 ```
 
+如果依然有问题尝试使pod使用hostNetwork
+```
+kubectl -n fate-9933 edit deployment rollsite
+
+# 增加
+spec:
+  template:
+    spec:
+      hostNetwork: true
+```
+
+```
+kubectl -n fate-9933 edit deployment python
+
+# 增加
+spec:
+  template:
+    spec:
+      hostNetwork: true
+```
+
 ## 修改节点最大Pod数量
 ```
 vim /opt/kubernetes/cfg/kubelet-config.yaml
